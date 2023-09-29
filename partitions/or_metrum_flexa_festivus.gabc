@@ -1,0 +1,28 @@
+name: metrum flexa example;
+%%
+(c3) pi<alt>Metrum cum supervenienti.</alt>(h)e(h)tá(h)te(g) (:) pro(f)sé(h)que(h)re:(h.) …(;) (////) (////) sol(h)e(h)mni(h)tá(h)te(g) læ(f)tí(h)fi(h)cas:(h) (Z-)
+
+mo<alt>Metrum in monosyllaba.</alt>(h)ri(h)én(h)do(g) con(f)fés(h)si(hr) sunt.(h.) (::) <v>\rubrique{vel}</v>(//) con(h) (:) fés(g)si(f) sunt.(h.) …(::) (Z-)
+
+de(h)co(h)rá(h)re(h) di(h)gná(g)tus(f) es.(h.) (::) <v>\rubrique{vel}</v>(//) de(h)co(h)rá(h)re(g) di(f)gná(h)tus(h) es.(h.) …(::) (Z-)
+
+per<alt>Flexa cum supervenienti.</alt>(h)cé(h)pi(h)mus(g.) (;) quǽ(h)su(h)mus(g.) …(;)
+quæ(h) re(h)cta(h) sunt.(g.) …(;)
+pro(h)te(h)gen(h)dum(h) nos.(g.) …(::)
+
+%%Latin
+%
+%pi<alt>Metrum.</alt>(h)e(h)tá(h) (:) te(g) (:) pro(f) (:) sé(h)que(hr) (:) re.(h.) (::) (////) (////) per<alt>Flexa.</alt>(h) (:)cé(h)pi(hr) (:?) mus(g.) (::) (Z-)
+%
+%mo(h)ri(h)én(h) (:) do(g) con(f) (:) fés(h)si(hr) sunt.(h.) (::) <v>(</v>A<v>)</v>(////) (////) quæ(h) (:) re(h)cta(hr) (:?) sunt.(g.) (::) (Z-)
+%
+%<v>\rubrique{or}</v>()() con(h) (:) fés(g)si(f) sunt.(h.) (::)<v>(</v>B<v>)</v>()
+
+
+%%%Français
+%
+%pi<alt>Mètre.</alt>(h)e(h)tá(h) (:) te(g) (:) pro(f) (:) sé(h)que(hr) (:) re.(h.) (::) (////) (////) per<alt>Flexe.</alt>(h) (:)cé(h)pi(hr) (:?) mus(g.) (::) (Z-)
+%
+%mo(h)ri(h)én(h) (:) do(g) con(f) (:) fés(h)si(hr) sunt.(h.) (::) <v>(</v>A<v>)</v>(////) (////) quæ(h) (:) re(h)cta(hr) (:?) sunt.(g.) (::) (Z-)
+%
+%<v>\rubrique{or}</v>()() con(h) (:) fés(g)si(f) sunt.(h.) (::)<v>(</v>B<v>)</v>()
