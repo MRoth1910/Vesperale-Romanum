@@ -1,7 +1,13 @@
 # Vesperale-Romanum
 Main repository for the Vesperale Romanum  The Vesperale Romanum is an excerpt of the Antiphonale Romanum, the chant book of the Roman Rite for chanting Vespers and Compline, the evening hours of the Divine Office. The rubrics followed will be Divino Afflatu, following the calendar until the changes of Pope Pius XII (see below).
 
-The Vesperale Romanum has thousands pieces that need to be proofread and then typeset. Some pieces (mostly antiphons of the Proprium Tempore) remain to be transcribed and uploaded to Gregobase or edited there. At that point, they can then be typeset.
+# Contact
+
+You can open an Issue. Or if you'd like, vesperaleromanum(at)gmail.com
+
+# About
+
+The Vesperale Romanum has thousands of pieces that need to be proofread and then typeset. Some pieces (mostly antiphons of the Proprium Tempore) remain to be transcribed and uploaded to Gregobase or edited there. At that point, they can then be typeset.
 
 Our project builds upon the great work of the Vatican commission, which published the official edition of the Antiphonale Romanum in 1912 (a vesperale followed in 1913) and the monks of the abbey of Saint-Pierre de Solesmes, whose research of medieval manuscripts led to the Vatican commission and to subsequent editions published with the rhythmic signs favored by Solesmes.
 
@@ -43,9 +49,17 @@ We wish to thank Matthias Bry for his help with LaTeX, Gregorio, and Github, and
 
 Olivier Berten set up and maintains Gregobase, for which Andrew Hinkley transcribed the Liber Usualis and the Liber Antiphonarius. Jacques Perrière fixes things such as syllabification, spacing, and the placement of rhythmic signs; they walked so that we can run.
 
-The [Gregorio mailing list](https://groups.google.com/g/gregorio-users) and [project](http://gregorio-project.github.io/index.html) allow for high-quality typesetting, so our thanks goes out to developers, skilled users, and others invested in singing and producing books of Gregorian chant.
+The [Gregorio mailing list](https://groups.google.com/g/gregorio-users) and [project](http://gregorio-project.github.io/index.html) allow for high-quality typesetting, so our thanks goes out to developers, including the font designers, skilled users, and others invested in singing and producing books of Gregorian chant
 
 We also thank those who inspired us to chant in the first place and our teachers, especially for those who are in the lineage of Dom André Mocquereau and Dom Joseph Gajard, the masters themselves, for we would have no need of a new book without them, and it is Dom Mocquereau in particular who directed the publication of the Solesmes editions as we know them, in whose footsteps Dom Gajard continued after the death of his confrère.
+
+Finally, Georg Duffner and Octavio Pardo designed the font used for the body, and Georg is currently working on improving it.
+
+# Contributions
+
+- To actually compile documents, you need a working LaTeX distribution and an editor (either a GUI for LaTeX specifically or your text editor of choice. See [here](https://latex-tutorial.com/installation/) for information about MikTeX, [here](https://tug.org/mactex/) for MacTeX (which works very well on macOS), and [here](https://tug.org/texlive/acquire-netinstall.html) for TeXLive. You can also work on [Overleaf](https://www.overleaf.com) if you really want.
+- It may be helpful to edit gabc files in a visual editor such as [Source and Summit](https://www.sourceandsummit.com/editor/alpha) (but note that it isn't up to date, so some Gregorio features won't work correctly!).
+- See below for font information.
 
 # To Do
 
@@ -65,6 +79,10 @@ We also thank those who inspired us to chant in the first place and our teachers
   -  Since the chants are not being restored, a musicologist seems overkill, but a monk of Fontgombault or one of its foundations as well as a priest from a traditional community who sings Vespers regularly would be helpful.
     -  Ditto consultations with a monk of Solesmes or a monk or nun of another abbey that has experience with using LuaLaTeX to make an entire book (particularly with Gregorio).
 
+# Fonts and other things
 
+EB Garamond is the body font (used for anything except the chant scores, for which the fonts are contained in the `gregoriotex` package that comes with a standard TeX distribution or is installed separately).
+
+The fonts are subject to revision since the original designer has returned; the initials font in particular is being completed, but this will take time. If and when 
 
 
