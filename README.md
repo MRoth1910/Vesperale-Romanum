@@ -50,6 +50,7 @@ We also thank those who inspired us to chant in the first place and our teachers
 # To Do
 
 - Collect all chants from Gregobase of the psalter, the proper of time, the commons of saints, and the proper of saints as well as the appendix for benediction.
+  - Remove `--` in file name and replace with `_` (to allow for easier copying/pasting in some LaTeX editors such as in TeXShop).
 - Proofread (add EUOUAE to Magnificat endings, comment off EUOUAE to psalm endings — psalms will need this only when the psalm is not printed below an antiphon), remove space before commas, change `ae` or `oe` `æ` and `œ` respectively as well as `aé` to `ǽ` (U+01fd) (but not, for now `œ` with an acute accent)
 - Correct italics of psalm tex files (See this [issue](https://github.com/Nocturnale-Romanum/nocturnale-romanum/issues/17#issue-1714660808).) 
 - Transcribe versicles of feasts where the solemn tone is given and create gabc file.
