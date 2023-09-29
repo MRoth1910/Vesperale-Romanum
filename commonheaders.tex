@@ -1,0 +1,537 @@
+%%%%%%%%%%%%%%% STANDARD PACKAGES %%%%%%%%%%%%%%%
+
+%% much is based on the work of Matthias Bry (hereafter Matthias or MB) for the Nocturnale Romanum project. https://github.com/Nocturnale-Romanum/nocturnale-romanum
+%% for personal reasons, the commands are a mix of French and English names. Feel free to choose one or the other if you make use of them. This file is subject to change.
+
+%% This is the format of the recent Solesmes books.
+\usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
+
+\usepackage{fontspec}
+\usepackage[ecclesiasticlatin.usej]{babel}
+     \babelprovide[hyphenrules=latin]{ecclesiasticlatin}
+          \usepackage{xspace}
+%     \usepackage{multicol}
+%\usepackage{paracol}
+%\footnotelayout{m} %% this allows merged footnote if text is in parallel columns (mostly translations)
+\usepackage[savepos]{zref}
+\usepackage{fancyhdr}
+\usepackage{needspace} %%pour réserver de l'espace en bas de page ; ça évite des séparations entre les titres et la partition ou le texte qui les suivent.
+\usepackage[compact]{titlesec}
+\usepackage{xcolor}
+%\usepackage{xstring}
+\usepackage{enumitem} %% nécessaire pour les textes des psaumes.
+%\usepackage{expl3}
+\usepackage{etoolbox}
+\usepackage{lettrine}
+\usepackage{perpage}%%%to reset footnotes at each page%%%
+\usepackage{hyperref}
+\usepackage{refcount}
+
+
+%%%%%%%%%%%%%%% HYPHENATION AND TYPOGRAPHICAL CONVENTIONS %%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% GEOMETRY %%%%%%%%%%%%%%%
+\geometry{bindingoffset=5mm,
+inner=10mm,
+outer=10mm,
+top=12mm,
+bottom=15mm,
+headsep=3mm,
+} %%borrowed from MB, based on the Solesmes books; binding offset TBD. He has inner=15mm instead.
+
+%% General scale of all graphical elements. Also borrowed from MB
+%% Values different from 1 are largely untested.
+%% Used in those commands (e.g. everything FontSpec) that use a scale parameter.
+\newcommand{\customscale}{1}
+
+
+\AtBeginDocument{\setlength{\parindent}{1em}} %%  default is 20 pt
+
+\sloppy %% to allow larger spaces which avoid overfull hbox (MB: %% We want to allow large inter-words space 
+%% to avoid overfull boxes in two-columns rubrics.
+
+%%%%%%%%%%%%%%% GREGORIO CONFIG %%%%%%%%%%%%%%%
+
+\usepackage[autocompile]{gregoriotex}
+
+%% sets * and † to font called via fontspec
+\def\GreStar{*}
+\def\GreDagger{†}
+
+%% should prevent flat turning custos into a clef, as Solesmes  uses an altered custos in only one chant per Élie Roux.
+\gresetcustosalteration{invisible}
+
+
+  \NewDocumentCommand{\initialscore}{O{}m}{%
+    \grechangedim{initialraise}{0.5cm}{scalable}%
+  \greannotation{#1}%
+   \grechangestyle{initial}{\fontspec{EB Garamond Initials}\fontsize{45}{45}\selectfont}% larger, illustrated initial for first antiphon
+ \gregorioscore{partitions/#2}%
+  \grechangedim{initialraise}{0cm}{scalable}}
+
+%produces a score with a smaller initial (default is 40 pt) and annotations like in the Solesmes books; the 1st is optional and can be omitted as needed. %%update 23/5/23 apparently
+ \NewDocumentCommand{\gscore}{O{}mm}{%    %%you can also omit the mode and it typesets correctly.
+ \greannotation{#1}%
+\greannotation{#2}%
+\grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
+ \gregorioscore{partitions/#3}%
+ }
+
+%% score with no initial, e.g psalms, common tones, etc.
+\newcommand{\smallscore}[2][y]{
+  \gresetinitiallines{0}
+  \gregorioscore{partitions/#2} %% à remplacer avec NewDocumentCommand ; les arguments ne marchent pas correctement … que fait le [y] ?
+  \gresetinitiallines{1}
+}
+
+ \NewDocumentCommand{\MagAnnotation}{}{%
+ \grechangedim{annotationseparation}{-0.01cm}{fixed}%
+ } %% pour les antiennes où le chiffre convient mieux aux miniscules (parfois 1, 2, 4, 7…) ; il n'est pas nécessaire pour 6 ou 8.
+%\gresetheadercapture{annotation}{greannotation}{string}
+
+%% A-bove L-ines T-ext shall be italicized and in a smaller font
+\grechangestyle{abovelinestext}{\itshape\fontsize{8}{10}\selectfont}
+%% for psalm tones etc. Roman/upright text is what the Liber Usualis uses. 
+\NewDocumentCommand{\altnormal}{}{\grechangestyle{abovelinestext}{\normalfont\fontsize{8}{10}\selectfont}}
+%%  resets ALT font
+\NewDocumentCommand{\altitshape}{}{\grechangestyle{abovelinestext}{\itshape\fontsize{8}{10}\selectfont}} 
+
+
+%% fine-tuning of space between the staff and the text above lines (used for Magnificats; needs to be rethought (again, should 2 and 3 be raised or not?) and worked into \smallscore
+\newcommand{\altraise}{-0.2cm} %% default is -0.1cm %% needs to be fine-tuned for \rubrique command with EB Garamond font. -0.4mm is MB value, previously 1.4mm
+\grechangedim{abovelinestextraise}{\altraise}{scalable}
+
+\newcommand{\altheight}{0.5cm} %% default is 0.3cm and value must be bigger than text height; this should fix the problem. but needs further investigation. currently 6mm in MB command
+\grechangedim{abovelinestextheight}{\altheight}{scalable} %% this is a very finicky command.
+
+
+%% fine-tuning of space between the staff and the lyrics
+
+%\newcommand{\textraise}{2.8ex} %% default is 3.48471 ex MB 2.8ex
+%\grechangedim{spacelinestext}{\textraise}{scalable}
+
+%%% fine-tuning of space between the initial and the annotations
+%\newcommand{\annraise}{0mm} %% default is -0.2mm MB 0mm
+%\grechangedim{annotationraise}{\annraise}{scalable}
+
+%% fine-tuning the behavior of text placed under bars. We use the so-called "new algorithm" which
+%% places the bar in the middle of surrounding notes, and the text in the middle of surrounding text.
+%% however, we restrict drastically the deviation of the text from the position of the bar.
+
+%\grechangedim{maxbaroffsettextleft}{0.5mm}{scalable} MB 0.5mm
+%\grechangedim{maxbaroffsettextright}{0.5mm}{scalable}
+
+
+%% allows printing of glyphs from Gregorio score font  as text (available glyphs are listed in the Gregorio documentation).
+\makeatletter
+\def\gretextglyph#1{{\gre@font@music\csname GreCP#1\endcsname}}
+\makeatother
+
+%%% FONT %%%
+\setmainfont{EB Garamond}[UprightFont=EB Garamond Regular,
+ItalicFont= EB Garamond Italic,
+BoldFont= EB Garamond Bold,
+Ligatures=Rare,
+Numbers=Proportional,
+Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/adjusted if this font is abandoned.
+\newfontfamily\symbolfont{liturgy}
+  %% text must be written {\symbolfont{+}} or called via a command but may conflict as + is † in gabc. Cross should be \small or even \footnotesize. Font also supports V & R for verse/response, but EB Garamond contains appropriate matching glyphs.
+
+%StylisticSet=6 is long Q.
+
+
+%%%Roman numerals for the year %% https://tex.stackexchange.com/questions/185548/the-year-in-roman-and-the-month-in-text
+
+\makeatletter
+\newcommand{\YEAR}{\@Roman{\the\year}}
+\makeatother
+
+
+%%% TYPOGRAPHICAL AND SYMBOL COMMANDS  %%%%
+
+%% \P is pilcrow and is defined in LaTeX as is.
+%% Add {\textcolor{gregoriocolor} as first part of command's definition if changing to red.
+
+%%for proper spacing of all-caps letters to prevent clashes, e.g. serif strokes touching.
+
+\NewDocumentCommand\capspace{m}{%
+{\addfontfeature{LetterSpace=5.0}%
+{%
+#1}%
+}}
+\NewDocumentCommand\scspace{m}{\textsc{{{\addfontfeature{LetterSpace=5.0}{#1}}}}}
+
+%% macro to print Alleluia for versicles.
+\NewDocumentCommand{\tpalleluia}{}{(\textit{T.P.} Allelúia.)}
+
+\newcommand{\specialcharhsep}{3mm} % space after invoking R/ or V/ or A/ outside rubrics from Matthias with value of 3mm
+%%will leave in, but this value is quite big!
+
+%\newcommand{\vv}{\textcolor{gregoriocolor}{\fontspec[Scale=\customscale]{Charis SIL}℣.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}} %% format from MB
+
+%\newcommand{\vv}{{\normalfont ℣.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}}
+%\newcommand{\rr}{{\normalfont ℟.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}}
+
+\newcommand{\vv}{{\normalfont ℣.~}} %%at the beginning of a line so it shouldn't ever split from the rest but space is needed for macro to work
+\newcommand{\rr}{{\normalfont ℟.~}}
+
+%\newcommand{\cc}{{\fontspec[Scale=\customscale]{FreeSerif}\symbol{"2720}~}}%from Matthias
+
+
+%% typesets a cross pattée
+\NewDocumentCommand{\cc}{}{%
+    % Grouping to keep font changes local
+    {%
+        % Ensure we're not in italics (since liturgy.ttf doesn't have italic)
+        \normalfont%
+        % Select the font liturgy.ttf
+        \symbolfont%
+        % Set the size
+        \footnotesize%
+        % In liturgy.ttf, the plus (+) is a cross pattée
+        +%
+    }~%    
+} 
+%%  can replace <+> with <U+2720> (see above) if a suitable font is found (or EB Garamond font is fixed); command will be useful in lieu of typing the Unicode.
+%% use <v> tag to insert into a gabc score (usually for the faithful or for blessings, e.g. the font.
+
+%% Same special characters, for in-score use (<sp>V/ R/ A/ +</sp>)
+
+\gresetspecial{V/}{{\fontspec[Scale=\customscale]{EB Garamond}℣.~}}
+\gresetspecial{R/}{{\fontspec[Scale=\customscale]{EB Garamond}℟.~}}
+\gresetspecial{+}{{\fontspec[Scale=\customscale]{EB Garamond}†~}}
+\gresetspecial{*}{\gresixstar}
+\gresetspecial{cross}{\cc}
+
+%% Same special characters, for use in rubrics (no added space will keep symbol together with incipit)
+
+\newcommand{\vvrub}{{\normalfont ℣.~}}
+\newcommand{\rrrub}{{\normalfont ℟.~}}
+
+%%rubrics: black italics, smaller than body of psalms etc
+
+\NewDocumentCommand{\rubrique}{m}{%
+    {%
+        \fontsize{8}{10}%
+        \selectfont%
+        \textit{%
+        %
+        #1%
+    }%
+    }}
+    
+%% macro to print normal text inside of rubric (name of a chant or prayer, etc.)
+
+\NewDocumentCommand{\normaltext}{m}{%
+    {%
+        \normalfont%
+        #1%
+    }%
+    }
+    
+%% in case something should be bolded inside of a rubrique
+\NewDocumentCommand{\rubriquegras}{m}{%
+    {%
+        \normalfont%
+\textbf{#1%
+}%
+}}
+
+%% to print in red instead of italicizing
+\NewDocumentCommand{\rouge}{m}{%
+\textcolor{gregoriocolor}%
+{\fontsize{8}{10}%
+\selectfont{%
+#1%
+}%
+}}
+
+%% to print in black within rouge group.
+
+%\NewDocumentCommand{\textenoir}{m}{%
+
+\NewDocumentCommand{\textenoir}{m}{%
+\textcolor{black}%
+{%
+\normalfont%
+#1%
+}%
+}
+
+%% rouge but in italic (this is technically not correct).
+\NewDocumentCommand{\rougeit}{m}{%
+\textcolor{gregoriocolor}%
+{\fontsize{8}{10}%
+\selectfont%
+\textit{#1%
+}%
+}}
+
+%%https://tex.stackexchange.com/questions/156540/spacing-between-single-line-paragraph-with-lettrine%
+%\pretocmd{\lettrine}{\checklettrine}{}{} 
+%\newcommand{\checklettrine}{%
+%  \ifnum\prevgraf<2 \vspace{\baselineskip}\fi
+%}
+
+%%macro to space punctuation with ecclesiasticlatin language from babel.
+\NewDocumentCommand{\espaceponctuation}{}{\hspace{0.10em}} %%this value seems more balanced with this font than the definition provided in the ecclesiasticlatin documentation.
+
+\NewDocumentCommand{\myrule}{}{%
+    \par%
+    {%
+        \centering%
+        \rule{0.3\textwidth}{0.4pt}%
+        \par%
+    }% typesets a horizontal rule like on the page with the prayers before and after the office.
+}  %%If you're using color at all in your document, you might want to either force \myrule to use black or make it cusotmizable. (from u/Independent-Comb-257)
+
+\NewDocumentCommand{\textrule}{}{%
+    \par%
+\noindent%
+\rule{\textwidth}{0.6pt}%
+} %%typesets rule width of text: thickness can be modified (and so can rule if textwidth changes); thickness started at 0.4pt
+
+%% macro to format psalm text
+
+\NewDocumentCommand{\pstexte}{ m }{%
+    \smallskip%
+    \noindent%
+    \begin{itemize}[%
+    		label=\null, %
+			leftmargin=0pt, %
+			itemindent=0mm, %
+			labelsep=0pt, %
+			labelwidth=0pt, %
+			rightmargin=0pt, %
+			parsep=0pt, %
+			topsep=0pt, %
+			itemsep=0pt]%
+    \input{psaumes/#1}
+    \end{itemize}}
+    
+%        \NewDocumentCommand{\pstexte}{ m }{%
+%    \smallskip%
+%    \noindent%%
+%   \begin{multicols}{2}
+%    \begin{itemize}[%
+%    		label=\null, %
+%			leftmargin=0pt, %
+%			itemindent=3mm, %
+%			labelsep=0pt, %
+%			labelwidth=0pt, %
+%			rightmargin=0pt, %
+%			parsep=0pt, %
+%			topsep=0pt, %
+%			itemsep=0pt]%
+%    \input{psaumes/#1}
+%    \end{itemize}
+%    \end{multicols}} %% modified from original in order to allow 2 column psalms
+    
+    %% Command de Matthias Bry modifié, prints psalm incipit score with the text
+    \NewDocumentCommand{\psalmus}{mmm}{
+	\needspace{4\baselineskip}
+	\smalltitle{Psalmus #1.}
+	\smallscore[n]{#2}
+	\pstexte{#3}
+}
+
+%% sd=semiduplex. especially for Dominica ad Vesperas in the Psalterium (the only example which comes to mind, in fact!)
+ \NewDocumentCommand{\sdpsalmus}{mm}{
+	\needspace{4\baselineskip}%
+		\smalltitle{Psalmus #1.}%
+	\pstexte{#2}%
+}
+
+    %% Command de Matthias Bry modifié, prints canticle incipit score with the text and scriptural reference
+    \NewDocumentCommand{\canticum}{mmmm}{%
+	\needspace{4\baselineskip}%
+	\smalltitle{Canticum #1.}%
+	\smalltitle{\textit{#2.}}%
+	\smallscore[n]{#3}%
+	\pstexte{#4}%
+}
+
+% Could use \grecommentary{#2} but this sits too low on Nunc Dimittis
+    
+ %% macro to print any additional text (Capitiulum, oratio, rubrics)
+ \NewDocumentCommand{\textes}{ m }{%
+    \input{textes/#1}%
+    }
+    
+    
+    %% SC work for page headers and for secondary headings but not so much for things like "Dominica…" and certainly not the feast name%%
+    
+    %%%% Headers%%%%
+    \pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyhead[RO]{\small\rightmark\hspace{0.5cm}\thepage}
+\fancyhead[LE]{\small\thepage\hspace{0.5cm}\leftmark}
+
+\newcommand{\setheaders}[2]{
+	\renewcommand{\rightmark}{{\sc#2}}
+	\renewcommand{\leftmark}{{\sc#1}}
+}
+\setheaders{}{}
+
+
+ %% TITLE COMMANDS %%%% had been dead in NR version of the same, but Matthias says this isn't a good idea.
+ %%need to figure out multiple section headers AND a chapter header so that everything fits…
+ 
+ 
+ \titleformat{\chapter}[display]{\Huge\filcenter\sc\addfontfeature{LetterSpace=5.0}}{}{0pt}{} %%
+\titleformat{\section}[display]{\huge\filcenter\sc\addfontfeature{LetterSpace=5.0}}{}{}{} %%
+\titleformat{\subsection}[display]{\LARGE\filcenter\sc\addfontfeature{LetterSpace=5.0}}{}{}{} %%originally \large, then \Large
+\setcounter{secnumdepth}{0}
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt} %%this should reduce spacing before chapter title https://tex.stackexchange.com/questions/63390/how-to-decrease-spacing-before-chapter-title
+\titlespacing{\section}{0pt}{*0}{*0}
+
+%%need section titleformat more appropriate for weekdays of psalter and minor feasts 
+% See https://tex.stackexchange.com/questions/623797/multiple-section-styles-in-same-document.
+
+%this command still needs work
+\NewDocumentCommand{\header}{m}{\setheaders{{\scshape\addfontfeature{LetterSpace=5.0}#1}}{{\scshape\addfontfeature{LetterSpace=5.0} #1}}}
+
+\NewDocumentCommand{\smalltitle}{m}{
+\needspace{5\baselineskip}%  %% very small if there are neumes above the staff, including flats in mode 2, e.g. O Doctor optime
+\vspace{\baselineskip}%
+ {\centering #1\par}%
+ }
+ 
+ \NewDocumentCommand{\bigtitle}{m}{
+\needspace{5\baselineskip}
+\vspace{\baselineskip}
+ {\centering{\Large#1}\par}
+}
+ 
+%  \NewDocumentCommand{\date}{m}{%
+%\needspace{5\baselineskip}  %% very small if there are neumes above the staff, including flats in mode 2, e.g. O Doctor optime
+%\vspace{\baselineskip}
+% {\centering{\large #1}}\par} %%formatting date on major feasts of sanctoral cycle or moveable feasts that follow Easter where this is listed in antiphonal.
+%}
+ 
+ \NewDocumentCommand{\rank}{m}{%
+\needspace{5\baselineskip}
+\vspace{\baselineskip}
+ {\centering{\textit{\large #1}}\par}
+}
+
+%%for feasts where the third verse (third part of 1st verse in modern terms) is changed (Mutatur tertius vers.)
+
+\NewDocumentCommand{\mtv}{}{%
+{\normalfont{(m.t.v.)}%
+}%
+}
+
+%%for Scriptural references of the chapter.
+\NewDocumentCommand{\scripture}{m}{%
+{\raggedleft{\textit{#1}%
+}%
+\par}%
+}
+
+%%for vel where this occurs between texts or chants
+
+\NewDocumentCommand{\vel}{}{%
+{\rubrique{Vel:}%
+}%
+}
+
+%% for prayers, e.g. at beginning (and end) of office.
+\NewDocumentCommand{\secreto}{}{%
+Pater noster. \rubrique{secreto.}%
+}
+
+\NewDocumentCommand{\pateravedeus}{}{%
+Pater noster et Ave María. ℣. Deus in adjutórium.%
+}
+
+\NewDocumentCommand{\pateravecredo}{}{%
+Pater noster, Ave María, \textit{et} Credo.%
+}
+
+%%above collect (Oratio)
+\NewDocumentCommand{\oratio}{}{%
+\smalltitle{Oratio.}%
+}
+
+%%above chapter (Capitulum)
+\NewDocumentCommand{\capitulum}{}{%
+\smalltitle{Capitulum.}%
+}
+
+
+%%above Magnificat antiphon where this is done in Liber antiphonarius (Or Vaticana Vesperale)
+\NewDocumentCommand{\admagnificat}{}{%
+\smalltitle{Ad Magnificat, Antiphona.}%
+}
+
+%% originally used apparently for typesetting portions of the Common of the BVM
+\newcommand{\espacetitre}{\vspace{-0.5cm}}
+\newcommand{\espaceps}{\vspace{-3mm}} %% ps =psaume
+\newcommand{\espacecap}{\vspace{-3mm}} %% cap is capitulum
+\newcommand{\espace}{\vspace{2mm}}
+
+%% for litanies and other things like antiphon O Doctor Optime
+
+\makeatletter  
+\newcounter{score}
+\newcounter{tabstop}[score]
+\newcommand{\grealign}{%
+	\@bsphack%
+	\ifgre@boxing\else%
+		\kern\gre@dimen@begindifference%
+		\stepcounter{tabstop}%
+		\expandafter\zsavepos{stop-\thescore-\thetabstop}%
+		\kern-\gre@dimen@begindifference%
+	\fi%
+	\@esphack%
+}
+
+\newcommand{\setstops}{%
+  \gdef\nstabbing@stops{%
+    \hspace*{-\oddsidemargin}\hspace{-1in}%
+    \hspace*{\zposx{stop-\thescore-1} sp}\=%
+  }%
+  \count@=\@ne
+  \loop\ifnum\count@<\value{tabstop}%
+    \begingroup\edef\x{\endgroup
+      \noexpand\g@addto@macro\noexpand\nstabbing@stops{%
+        \noexpand\hspace{-\noexpand\zposx{stop-\thescore-\the\count@} sp}%
+        \noexpand\hspace{\noexpand\zposx{stop-\thescore-\the\numexpr\count@+1} sp}\noexpand\=%
+      }%
+    }\x
+    \advance\count@\@ne
+  \repeat
+  \nstabbing@stops\kill
+}
+\makeatother
+
+\newenvironment{nstabbing}
+  {\setlength{\topsep}{0pt}%
+   \setlength{\partopsep}{0pt}%
+   \tabbing%
+   \setstops}
+  {\endtabbing\stepcounter{score}}
+
+%%FOOTNOTES%%%
+
+\MakePerPage{footnote}%%from perpage package \MakePerPage{footnote}
+
+%%PHANTOM SECTION MANIPULATION%%
+\providecommand\phantomsection{} %% should make hyperref work properly %%needed with addcontentsline, not with section etc alone (needed if running hyperref)
+
+\setcounter{tocdepth}{2} %% probably should hide subsections from TOC of most documents
+
+%%%SUBFILES%%%
+\usepackage{xr} %%to allow cross-references between documents%%%
+  \usepackage{subfiles}
+  
+  %% When we start a new subfile (new chapter), 
+%% we start on a new page (with blank filling on the previous page) and create a corresponding label.
+
+\newcommand{\customsubfile}[1]{\newpage\label{#1}\thispagestyle{empty}\subfile{#1}}
+
+
