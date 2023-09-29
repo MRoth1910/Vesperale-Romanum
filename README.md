@@ -69,10 +69,10 @@ Finally, Georg Duffner and Octavio Pardo designed the font used for the body, an
 - Correct italics of psalm tex files (See this [issue](https://github.com/Nocturnale-Romanum/nocturnale-romanum/issues/17#issue-1714660808).) 
 - Transcribe versicles of feasts where the solemn tone is given and create gabc file.
 - Build psalter, common tones, proper of time, commons of saints, the proper of saints, and benediction. This means also means copy, insert, and correct collects, chapters, and versicles.
-- Finish table of moveable feasts and perpetual Roman calendar (and insert it into the main PDF)
+- Finish [table of moveable feasts and perpetual Roman calendar](https://github.com/MRoth1910/Kalendarium) (and insert it into the main PDF)
 - Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
 - Proofread completed book(s).
-- Along the way: we need someone who is a real LaTeX expert to help, particularly with the table of moveable feasts (which has different requirements than the main project and is quite complex), sectioning commands, widows/orphans (in the proper of saints epecially, the date, the feast name, and the rank plus the text cannot be separated over two pages);
+- Along the way: we need someone who is a real LaTeX expert to help, particularly with the Katable of moveable feasts (which has different requirements than the main project and is quite complex), sectioning commands, widows/orphans (in the proper of saints epecially, the date, the feast name, and the rank plus the text cannot be separated over two pages);
   - someone to design a cover;
   - someone familiar with Latin to proofread rubrics (mostly taken from the Vaticana, but occasionally emended from the LA) and to help expand abbreviations if this is deemed necessary;
   - someone familiar specifically with syllable divisions in the preconciliar Latin breviary/missal and chant books (should the collects follow the chant or should they follow the missal? Desclée carefully avoids this problem for the most part.)
