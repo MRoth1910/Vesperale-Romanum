@@ -1,0 +1,94 @@
+% !TEX TS-program = LuaLaTeX+se
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_commune_apostolorum}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\chapter[Commune Sanctorum.]{COMMUNE SANCTORUM.}
+
+\thispagestyle{empty}
+
+\indent\indent %%LaTeX default after sectioning commands is no indentation. Babel Latin doesn't modify this (it should). Need \indent\indent to work.
+\rubrique{In singulis Festis Sanctorum ritus Duplicis I aut II classis, ornnia sumuntur de respectivo Communi ut infra, præter ea quæ habentur propria. In Festis autem Sanctorum ritus Duplicis majoris (præter Festa S. Joannis Baptistæ et SS. Apostolorum), aut Duplicis minoris, seu Semiduplicis, seu Simplicis, sequentia tunturn sumuntur de Communi, nisi habeantur propria: nempe Capitula, Hymni ad Vesperas, \vv Antiphona ad Magniflcat et Oratio. Antiphonæ vero cum Psalmis ad Vesperas, si non assignentur propria, sumuntur de Feria currente ut in Psalterio. Completorium dicitur ut in Psalterio de Feria currente.}
+
+\smalltitle{In Vigiliis Apostolorum.}
+
+\rubrique{Officium fit de Feria, excepta Oratione, quæ in propriis locis notatur.}
+
+\newpage
+
+\section[Commune Apostolorum.]{COMMUNE APOSTOLORUM ET EVANGELISTARUM EXTRA TEMPUS PASCHALI.}\header{commune apostolorum.}
+
+\thispagestyle{empty}
+
+\subsection{in i. vesperis.}
+%\espacetitre
+ \smalltitle{I Antiphona 8. c.}
+\initialscore{an_hoc_est_praeceptum_meum_solesmes_1961.gabc}
+\psalmus{109}{109_8c}{109_8}
+
+\gscore[2. Ant.]{1. g}{an_majorem_caritatem_solesmes_1961} %%why is line 4 so badly spaced
+\psalmus{110}{110_1g}{110_1g}
+
+\gscore[3. Ant.]{1. a3}{an_vos_amici_mei_estis_solesmes_1961} 
+\psalmus{111}{111_1a3}{111_1a3}
+
+\gscore[4. Ant.]{1. f}{an_beati_pacifici_solesmes_1961}
+\psalmus{112}{112_1f}{112_1f}
+
+\gscore[5. Ant.]{1. g}{an_in_patientia_vestra_solesmes_1961}
+\psalmus{116}{116_1g}{116_1g}
+
+\smalltitle{Capitulum.}
+\scripture{Ephes. 2, 19–20.}
+
+\lettrine{F}{r}atres: Jam non estis hóspites et ádvenæ:~† sed estis cives sanctórum et doméstici Dei: superædificáti super fundaméntum Apostolórum et Prophetárum,~* ipso summo angulári lápide Christo Jesu. \rr Deo grátias.
+
+\smalltitle{Hymnus.}
+\gscore[]{4.}{hy_exsultet_orbis_gaudiis_solesmes_1961}\label{exsultet_orbis}\phantomsection
+
+\smalltitle{Alter Tonus.}
+\gscore[]{1.}{hy_exsultet_orbis_gaudiis_alt_ton_solesmes_1961}
+
+ \vv In omnem terram exívit sonus eórum.
+ 
+ \rr Et in fines orbis terræ verba eórum.
+
+\smalltitle{Ad Magnificat, Antiphona.}
+\gscore[]{1. f}{an_tradent_enim_vos_solesmes_1961}
+
+\rubrique{Oratio propria.}
+
+\subsection{in ii. vesperis.}
+
+\gscore[1. Ant.]{8. G}{an_juravit_dominus_solesmes_1961}
+\psalmus{109}{109_8G}{109_8}
+
+\gscore[2. Ant.]{8. c}{an_collocet_eum_dominus_solesmes_1961}
+\psalmus{110}{110_8c}{110_8c}
+
+\gscore[3. Ant.]{7. a}{an_dirupisti_domine_solesmes_1961}
+\psalmus{115}{115_7a}{115_7a}
+
+\gscore[4. Ant.]{8. c}{an_euntes_ibant_solesmes_1961}
+\psalmus{125}{125_8c}{125_8c}
+
+\gscore[5. Ant.]{7. c2}{an_confortatus_est_solesmes_1961}
+\psalmus{138}{138_7c2}{138_7c2}
+
+\rubrique{Capitulum et Hymnus ut in I Vesperis, \normaltext{\pageref{exsultet_orbis}.}}
+
+ \vv Annuntiavérunt ópera Dei.
+ 
+ \rr Et facta ejus intellexérunt.
+
+\smalltitle{Ad Magnificat, Antiphona.}
+\gscore[]{1. g2}{an_estote_fortes_in_bello_solesmes_1961}
+
+\end{document}

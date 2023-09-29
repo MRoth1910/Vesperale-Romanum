@@ -1,0 +1,111 @@
+% !TEX TS-program = LuaLaTeX+se
+
+\documentclass[11pt]{book}
+\input{commonheaders.tex} %%in the original local version this is \input{../commonheaders.tex}
+\externaldocument[M-]{\subfix{vesperale_romanum}}
+
+\begin{document}
+%% order TBD.
+
+\customsubfile{vr_01_prolegomena} %%these probably WILL be 01
+
+\customsubfile{vr_NN_toni_communes} %%watch for hfull boxes in ALT, e.g. in collect examples
+
+\customsubfile{vr_NN_canticum_bmv}
+
+\customsubfile{vr_NN_tempus_post_epiphaniam}
+\customsubfile{vr_NN_dom_post_pentecosten}
+
+%%\customsubfile{vr_NN_psalterium}
+%% commemorationes sanctorum %% to adjust
+%% common commemorations %% to adjust but otherwise done (can be considered redundant though) %% the psalter + commemorations (of saints and suffrages) are middle of book
+
+\customsubfile{vr_NN_commune_apostolorum}  %%first common. TBD if it is proper, then common, or common, then proper
+\customsubfile{vr_NN_commune_bmv} %% last common %% need to ensure spacing at antiphon Sancta Maria
+
+\customsubfile{vr_NN_bmv_in_sabbato}
+
+%\customsubfile{vr_NN_appendix}
+
+%%\customsubfile{vr_NN_prop_gallia} if feeling ambitious
+%% antique hymns (texts only? melodies as in AR 1911 and therefore LU/LA…_
+
+\customsubfile{vr_NN_1960} %%(tbd if Anthony and Lawrence go here for "O Doctor Optime")
+
+\customsubfile{vr_NN_variationes} %% Rubrical changes
+
+%%NN to be replaced with 01, 02… like Matthias does with Nocturnale
+
+%% \chapter needs to be able to take optional argument which it SHOULD by default %%what needs to be \chapter, \section etc isn't clear in my own head (as of Sept 2023)
+
+%% Chapter title needs to be at top of page (this should be fixed now in the commonheaders file as of 14/06/23)
+
+%% need to decide on default indention (i.e. none) after sectioning commands or use \indent\indent
+
+%% Need multiple (sub-)section styles AND we need some (most!) (sub-)sections to not be in TOC at all
+%% need to decide on handling dates in body of antiphonal as well as style for Double II class (bigger title case or bigger all-caps) and other feasts/days
+%% bigtitle works for Sabbato, Dominica, Feria II etc. but maybe that's not appropriate!
+%% the question is how to appropriately use LaTeX sectioning commands while respecting divisions of an antiphonal and having appropriate headings
+%% can't forget that the pageref is often the page after the incipit (bad!)
+%%babel always has -ct division (should we keep this for readings/chapter and collect or no? to manually edit or no? ditto pt and similar combinations)
+
+%%section title can never begin at bottom of page, but we don't always want empty style (big feasts, new "chapter" only)
+%% can never split day (e.g. Feria VI post…)/date, rank, octave from feast title
+
+%%if compiling with consecutive page numbers in subfile pdf, then following must be before \begin{document} of each subfile; use \customsubfile 
+%%
+%%\ifcsname preamble@file\endcsname
+%%  \setcounter{page}{\getpagerefnumber{M-feria_2}}
+%%\fi
+
+%% ALT with descenders (normally p and y) particularly in italics causes issues on second pass. 1st pass is perfect. but default tends to make the score too big. Will need to carefully scrutinize lines in certain scores lest the pages be too stretched.
+
+%%we do not want beginnings of psalm verse to stretch (this always happens with "Sicut"
+
+%% watch ALT for spacing issues with score stretch
+
+%\customsubfile{vr_02_kalendarii} %%probably WILL be 02
+%\customsubfile{vr_NN_tempus_adventus}
+%\customsubfile{vr_NN_tempus_nativitatis} %% do I need a separate file for Epiphany?
+%\customsubfile{vr_NN_tempus_post_epiphaniam}
+%\customsubfile{vr_NN_tempus_quadragesimae}
+%\customsubfile{vr_NN_tempus_passionis}
+%\customsubfile{vr_NN_tempus_paschale}
+%\customsubfile{vr_NN_sab_post_pentecosten}
+%\customsubfile{vr_NN_dom_post_pentecosten}
+%\customsubfile{vr_NN_commune_apostolorum} %%done!
+%\customsubfile{vr_NN_commune_martyrum}
+%\customsubfile{vr_NN_commune_confessoris} %%pontiff AND non-pontiff would be easiest due to doctors
+%\customsubfile{vr_NN_commune_mulierum} %% virgin AND not a virgin
+%\customsubfile{vr_NN_commune_dedicationis}
+%%\customsubfile{vr_NN_commune_bmv} %% done!
+%%%sabbato %%done!
+%%%parvum
+%\customsubfile{vr_NN_officium_defunctorum}
+%\customsubfile{vr_NN_januarii}
+%\customsubfile{vr_NN_februarii}
+%\customsubfile{vr_NN_martii}
+%\customsubfile{vr_NN_aprilis}
+%\customsubfile{vr_NN_maii}
+%\customsubfile{vr_NN_junii}
+%\customsubfile{vr_NN_julii}
+%\customsubfile{vr_NN_augusti}
+%\customsubfile{vr_NN_septembris}
+%\customsubfile{vr_NN_octobris}
+%\customsubfile{vr_NN_novembris}
+%\customsubfile{vr_NN_decembris}
+
+%%\newpage
+%%\addcontentsline{toc}{chapter}{Indices}
+%%\cprintindex{I}{Index Invitatoriorum}
+%%\cprintindex{H}{Index Hymnorum}
+%%\cprintindex{A}{Index Antiphonarum}
+%%\cprintindex{R}{Index Responsorium} %%% See NR commonheaders file
+%%\cprintindex{P}{Index Psalmorum}
+%%\cprintindex{T}{Index Tonorum communorum}
+%%\cprintindex{F}{Index Festorum}
+%%\renewcommand\contentsname{Index Generalis}
+%%\tableofcontents
+%%\thispagestyle{empty}
+
+\end{document}

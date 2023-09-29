@@ -1,0 +1,111 @@
+% !TEX TS-program = LuaLaTeX+se
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_commune_bmv}}
+\fi
+
+\begin{document}
+
+%\chapter{IN FESTIS BEATÆ MARIÆ VIRGINIS.}\header{in festis b.m.v.}
+
+%\chapter[Commune B.M.V.]{IN FESTIS BEATÆ MARIÆ VIRGINIS.}\header{in festis b.m.v.} %% Need to redefine chapter to allow for optional argument to be used in TOC
+
+%\thispagestyle{empty}
+
+\section[Commune B.M.V.]{IN FESTIS BEATÆ MARIÆ VIRGINIS.}\header{in festis b.m.v.}\label{Festis_BVM}\phantomsection
+\thispagestyle{empty}
+
+\subsection{in i. vesperis.}
+%\espacetitre
+ \smalltitle{I Antiphona 3. a.}
+\initialscore{an_dum_esset_rex_solesmes_1961}
+\psalmus{109}{109_3a}{109_3a}
+%\espacetitre %no magic numbers
+
+\gscore[2. Ant.]{4. A*}{an_laeva_ejus_solesmes_1961}
+\psalmus{112}{112_4a_alt_star}{112_4a}
+%\espacetitre
+
+\gscore[3. Ant.]{3. b}{an_nigra_sum_solesmes_1961} %% this is annoyingly stretched
+\psalmus{121}{121_3b}{121_3b}
+
+%\espacetitre
+
+\gscore[4. Ant.]{8. G}{an_jam_hiems_transiit_solesmes_1961}
+\psalmus{126}{126_8G}{126_8G}
+
+\gscore[5. Ant.]{4. A*}{an_speciosa_facta_es_solesmes_1961}
+\psalmus{147}{147_4a}{147_4a}
+
+\smalltitle{Capitulum.}
+\textes{Capitulum_BMV}
+%\espace
+
+%\rubrique{Prima Stropha sequentis Hymni dicitur flexis genibus.}
+%\textes{AMS_rubrique}
+ %% needed if rubric isn't in ALT of gabc 
+%%not in antiphonale but needed…
+
+\smalltitle{Hymnus.}
+\gscore[]{1.}{hy_ave_maris_stella_mode_1_LA1949}
+
+\smalltitle{Alter Tonus.}
+\gscore[]{4.}{hy_ave_maris_stella_mode_4}
+
+\smalltitle{Alter Tonus.}
+\gscore[]{7.}{hy_ave_maris_stella_mode_7}
+
+%\espace
+\textes{Versiculus_BMV}
+
+\smalltitle{Ad Magnificat, Antiphona.}
+\gscore[]{4. E}{an_sancta_maria_solesmes_1961}
+%%The minipage not allowing breaks causes problems: the score will be stretched to fill the page.
+
+\newpage
+\begin{minipage}[t]{3.8in}%
+{\fontsize{9}{11}\selectfont{In Festo B.M.V. de M. Carmelo.}} \gresetinitiallines{0} \gabcsnippet{(c4) † tu(g)am(g) so(g)lé(gh)mnem(g') com(g)me(g)mo(gf)ra(g)ti(ghg)ó(e.)nem.(e.) (::)}%
+
+{\fontsize{9}{11}\selectfont{In Festo Ss. Nominis B.M.V.}} \gresetinitiallines{0} \gabcsnippet{(c4) † tu(g)i(g) san(g')cti(f) Nó(gh)mi(g)nis(g') com(g)me(g)mo(gf)ra(g)ti(ghg)ó(e.)nem.(e.) (::)}% 
+\end{minipage}%
+
+%\espace
+
+%
+\begin{minipage}[t]{3.8in}% évitez des nombres arbitraires…
+
+{\fontsize{9}{11}\selectfont{In Festo B.M.V. Auxil. Christ.}} \gresetinitiallines{0} \gabcsnippet{(c4) † qui(cd)cúm(fe)que(fg) tu(g)um(g) san(gh)ctum(g') im(g)pló(gf)rant(g) au(ghg)xí(e)li(e)um.(e.) (:) Al(g)le(gf)lú(e.){ia}.(e.) (::)}%
+
+{\fontsize{9}{11}\selectfont{In Festo Patrocinii B.M.V.}} \gabcsnippet{(c4) †  tu(g)um(g) san(gh)ctum(g) Pa(gf)tro(ghg)cí(e)ni(e)um.(e.) (::)}%
+\end{minipage}%
+
+\smalltitle{Oratio.}\label{concede_bmv}
+\textes{Oratio_BMV}
+
+\rubrique{¶ Ad Completorium, Hymnus ut notatur in Psalterio pro Festis B.M.V.} %%will need to replace that eventually with the right page reference.
+
+%\smallskip
+%\greannotation{1.}
+%
+%\gscore{Benedicamus_Domino/Benedicamus_domino_BVM}
+%\espaceps
+%{\fontsize{9}{11}\selectfont{In Officium de B.M.V. in Sabbato.}}
+%%\vspace{-8pt}
+%\greannotation{1.}
+%
+%\gscore{Benedicamus_Domino/Benedicamus_domino_BMV_in_sabbato}
+%\newpage %% to remove as soon as I get a chance. (fixing spacing for headings will also affect this.)
+%\subtitulum{In ii. Vesperis.} %% this is broken at the moment.
+\subsection{in ii. vesperis.}
+%\espacetitre
+
+\rubrique{Omnia ut in primis Vesperis, præter sequentia.}
+
+\textes{Versiculus_BMV}
+
+\smalltitle{Ad Magnificat, Antiphona.}
+\gscore[]{8. G}{an_beatam_me_dicent_comm_bmv_solesmes_1961}
+
+\end{document}
