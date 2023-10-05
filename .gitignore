@@ -1,0 +1,13 @@
+*.ind
+*.ilg
+*.idx
+*.log
+*.gtex
+*.glog
+*.aux
+*.synctex.gz
+*.out
+*.toc
+*.gaux
+*.synctex(busy)
+psalmi/unused/*
