@@ -1,0 +1,648 @@
+% !TEX TS-program = LuaLaTeX+se
+\documentclass[11pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[french, ecclesiasticlatin.usej, english]{babel}
+\usepackage{fontspec}
+\usepackage{zi4}
+\usepackage{enumitem}
+\usepackage[compact]{titlesec}
+\usepackage{needspace}
+\usepackage{hyperref}
+\geometry{
+inner=20mm,
+outer=20mm,
+top=20mm,
+bottom=20mm,
+headsep=3mm,
+}
+
+%\newlength{\alphabet}
+%\geometry{textwidth=2.5\alphabet,hmarginratio={2:3}}
+%\settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+%%% Font %%%
+\setmainfont{EB Garamond}[UprightFont=EB Garamond Regular,
+ItalicFont= EB Garamond Italic,
+BoldFont= EB Garamond Bold,
+Ligatures=Rare,
+Numbers=Proportional,
+Numbers=OldStyle] 
+
+\setmonofont{inconsolata}
+
+\AtBeginDocument{\setlength{\parindent}{1em}} %% should set 1em to EB Garamond not Computer Modern.
+
+\setlist[itemize]{itemsep=0pt}
+
+\titleformat{\section}[display]{\filcenter\LARGE}{}{}{}
+\setcounter{secnumdepth}{0}
+\titlespacing{\section}{0pt}{*0}{*0}
+
+\NewDocumentCommand{\smalltitle}{m}{
+\needspace{5\baselineskip}%  %% very small if there are neumes above the staff, including flats in mode 2, e.g. O Doctor optime
+\vspace{\baselineskip}%
+ {\centering #1\par}%
+ }
+ 
+ 
+ \NewDocumentCommand{\bigtitle}{m}{
+\needspace{5\baselineskip}
+\vspace{\baselineskip}
+ {\centering{\large#1}\par}
+}
+
+\begin{document}
+ \section{Proofreading: ``Errors'' to fix in gabc or tex fiiles for Psalms}
+ 
+ {\centering Version 0.1, \today\par}
+ 
+\begin{itemize}
+ \item
+The breviary has different punctuation than the antiphonale, whose punctuation is more sparse and therefore better for singing, since punctuation is by and large ignored in the chanting of the psalms. So the extra commas and such need to be removed. This document should be used to do that work of correction and to proofread.
+ 
+ \item
+ The position of the flex in some psalms changed between the publication of the 1934 editions of the \textit{Liber Usualis,} both the 800 with French rubrics and the 780 with Latin ones as well as the corresponding 801, with English rubrics, which are somewhat ubiquitous among those singing from used editions, and the file available as a scan from the \textsc{cmaa}. This will need to be rectified in both the gabc file and in the tex file.
+ 
+ \item
+ 
+ Make sure that the flex is correct. \verb|87-5.gabc| (renamed to \verb|87_5.gabc|) as downloaded had the flex on Ti, \verb|g| in gabc, but it needs to be on \verb|f|. Modes 1, 4, 6, and 7 have a flex on a major second; modes 2, 3, 5, and 8 have a flex on a minor third to avoid a minor second.
+
+ \item
+ As mentioned in the overall style guide, \textit{Flex} needs to become \textit{Flexa} (the colon is preserved) and the appropriate number of forward slashes added for spaces, lest the word run into the previous one. 
+
+ \item
+ Again, \texttt{ctrl+F} is your friend! It might be worth creating a macro just for spacing (to replace \verb|\hspace| in particular…) TBD. The non-semantic version could be used for the most finicky cases that require a bigger value for some reason.
+
+ \item
+ This isn't an error, but a choice: for psalms sung with tone 4 A* or 8 G*, the convention today is to sing the alternate ending on each verse; this is not given as an EUOUAE ending for antiphons, and Solesmes did not encourage the practice (doing it only at the doxology). We should add the additional note to form the punctum (always in the form \texttt{fg..} or whatever the notes are — the dots must both follow the last note of the podatus).
+
+ \item
+ The alternate \textit{tonus peregrinus} (with the extra \textit{podatus}) and tone 6 (identical to mode 1 until the mediant) will be in the \textit{toni communes.}
+ 
+  \item
+ Punctuation goes inside of braces so \verb|\textbf{nunc},| (\textbf{nunc},) or \verb|\textit{nunc},| (\textit{nunc},) is now\\ \verb|\textbf{nunc,}| (\textbf{nunc,}) or \verb|\textit{nunc,}| (\textit{nunc,}).
+ 
+ \item
+\verb|babel| offers a thin space between a word and a following colon. This looks nice (and is the Swiss usage). We will follow this, so please do not insert spaces in the psalm files.
+ 
+ \end{itemize}
+\begin{itemize}
+\item Tones 1 D2 and 4E must remain separate, due to the pointing needed for dactyls, and 3 a and 3 b must remain in one file and tones 3 a2 and 3g in another.
+  \item All psalms will require insertion of doxology (\textit{Glória Patri}). (\textit{Requiem ætérnam} for the office of the dead, nothing for the Triduum). It needs to be written out for ease, just like in the Liber Usualis. (I suspect that I inadvertently unchecked ``Include Glória Patri'' when using Ben Bloomfield's website, but reorganizing the files is, at this point, a waste of time.)
+ \item Each ``verse'' needs to be numbered (assuming that we continue to number psalms!) according to the \textit{Liber Usualis,} edition to be specified.
+ \item \texttt{\textbf{Sanc}to} needs to become \texttt{\textbf{San}cto}; idem for italic.
+ \item
+ if ``ló'' is italicized, then it will need to be kerned (with \verb|\hspace| due to the macro). A good starting point for this persnickety combo is 0.03em. (in doxology of tones 1, 3 a2/g, 6, 8; others are either bolded or ``u'' is also italicized)
+  \item \verb|\hspace{0.03em}| after ``a'' of ``Patri'' in mode 4
+  \item italicized \hspace{0.03em}\textit{J} probably needs to be adjusted ( \verb|\hspace{0.03em}| was used, in fact, in this text).
+  \item
+  Add kerning (\verb|\hspace|) for Gloria Patri of tone 8 (in ``Spíritui'' and in ''sæculórum'') to account for italics.
+   \item  \verb|\hspace{0.03em}| in mode 1 doxology before ``l'' of ``sæculórum''
+   \item  \verb|\hspace{0.03em}| if ``tui'' is italicized (e.g. modes 1, 3 a2/g/g2, 6 doxology)
+   \item
+   Syllabification follows the Liber Usualis in case of doubt.
+   \begin{itemize}
+   \item
+  The following letter combinations need to be followed: -ct, -st (including all perfect verbs which end in -sti), -ps, o-mn, Red- and -pt (as in Red-em-ptor), either by changing braces if formatting is applied or adding a possible line break. There are other words which might result in a different syllabification following the \verb|babel| hyphenation engine for medieval Latin which we use
+\end{itemize}
+\end{itemize}
+\section{Psalms of Vespers and Compline, 1911 Roman psalter, with corrections}
+
+NB: Some psalms list syllabification corrections and others do not. This inclusion is good, on the one hand, and regrettable on the other. Not all psalms have syllables needing correction, and it is also tone-dependent unless a line is very long and will likely break.
+
+ Psalm 4:
+  \begin{itemize}
+  \item   Remove commas after ``tui''
+    \item Remove commas around ``Dómine''
+    \end{itemize}
+
+ Psalm 6:
+  \begin{itemize}
+  \item remove comma after ``Dómine'' in gabc file 
+  \item  remove comma before ``Dómine'' in tex file (occurs twice in 2nd verse, before and after mediant, then in v 4, )
+  \item
+   remove comma before ``Dómine''  (v. 3)
+   \item
+   remove comma after ``me'' and ``omnes''
+  \item
+ remove comma after ``Erubéscant''
+    \end{itemize}
+
+ Psalm 7.1:
+  \begin{itemize}
+  \item remove comma after ``Dómine'' in gabc file 
+  \item  remove comma after ``meus'' in gabc file 
+  \item  remove comma after ``Dómine'' in tex file  \item
+\item   remove comma before and after ``Dómine''
+   \item
+   remove comma after ``exsúrge'',  after ``meus'' 
+   \item   remove comma before and after ``Dómine''
+   \item
+   \textbf{Add} comma after ``renes''
+    \end{itemize}
+
+ Psalm 7.2:
+  \begin{itemize}
+  \item Jus-tum to Ju-stum and rec-tos to re-ctos in gabc
+  \item  remove comma after ``fortis''
+  \item
+  ``s'' of ``injustitiam'' needs to be moved inside braces if split
+    \end{itemize}
+
+Psalm 11:
+  \begin{itemize}
+  \item remove comma after ``fac'' in gabc file 
+  \item  Sanc-tus to San-ctus in gabc
+\item ``exsúrgam'' followed by colon (not comma)
+\item
+sep-tuplum to se-ptuplum (this one is actually strange, on etymological grounds)
+\item
+Remove punctuation and then \textbf{add} comma before mediant of ``Tu Dómine servábis nos et custódies nos''
+    \end{itemize}
+
+Psalm 12:
+  \begin{itemize}
+  \item removes both commas in gabc
+  \item  remove comma before and after ``Dómine''
+    \end{itemize}
+
+Psalm 15:
+  \begin{itemize}
+  \item remove comma after ``me'' in gabc file
+  \item  remove comma after ``meæ'' and ``es''
+    \end{itemize}
+
+Psalm 33.1:
+  \begin{itemize}
+  \item om-ni to o-mni in gabc
+  \item idípsum needs to be id-í-psum
+    \item
+  Remove comma after ``vir''
+  \item
+  Remove comma after ``Dóminum''
+  \item
+  sanc-t to san-ct
+  \item
+  om-n to o-mn
+    \end{itemize}
+
+Psalm 33.2:
+  \begin{itemize}
+    \item
+  Remove comma after ``iis''
+  \item
+  jus-tórum to ju-storum
+  \item  \verb|ju\-stus| and \verb|o\-mnes|
+    \end{itemize}
+
+Psalm 60:
+  \begin{itemize}
+  \item remove comma before and after ``Deus'' in gabc file
+  \item  remove comma after ``tu'' and after ``meus''
+    \end{itemize}
+
+Psalm 69:
+  \begin{itemize}
+  \item
+  Pss. 69 and 70 may have different punctuation at Matins (Tenebrae) than in psalter, but we are going with weekly psalter.
+  \item
+  no comma after ``Deus''
+  \item
+  fes-ti-na to fe-sti-na
+  \item no comma after ``retrorsum
+  \item  no comma after ``meus''
+    \end{itemize}
+
+Psalm 70.1:
+  \begin{itemize}
+  \item Combined at Matins, two psalms in psalter
+  \item  no commas around ``Domine'' and jus-ti-ti-a becomes ju-sti-ti-a in gabc
+    \end{itemize}
+
+Psalm 70.2:
+  \begin{itemize}
+  \item Remove comma after ``Confundantur'' and ``pudore'' (in gabc file or in tex file accordingly)
+  \item  
+    \end{itemize}
+
+
+Psalm 76.1:
+  \begin{itemize}
+  \item 
+  \item  
+    \end{itemize}
+
+Psalm 76.2:
+  \begin{itemize}
+  \item sanc-to to san-cto and nos-ter to no-ster in gabc
+  \item  remove comma after ``Deus'' in gabc
+  \item \textbf{add} comma after ``filios tuos''
+    \end{itemize}
+
+ Psalm 85:
+  \begin{itemize}
+  \item remove comma around ``Domine'', after ``tuam'',  after ``inops'' in gabc
+  \item  remove comma before ``Domine'' (before mediant) and both around remove comma before ``Domine'' (after)
+  \item
+   remove comma around ``Domine''
+     \item
+   remove comma around ``Domine''
+     \item  remove comma before ``venient''
+      \item  remove comma after ``tu''
+        \item
+   remove comma around ``Domine''
+     \item
+   remove comma around ``Domine''; replace period with colon at end of verse (æternum)
+           \item
+   remove comma around ``Domine'', add comma after ``Deus''
+    \item  remove comma after ``me''
+       \item  remove comma around ``Domine'', remove comma after ``me''
+       \end{itemize}
+
+ Psalm 87:
+  \begin{itemize}
+  \item Remove all commas, noc-te to no-cte in gabc file.
+  \item
+ Remove comma after ''tenebrósis''
+  \item  indu-xis-ti to indu-xi-sti
+  \item Remove commas around ``Dómine''
+    \item Remove commas around ``Dómine''
+      \item Remove commas around ``Dómine''
+    \end{itemize}
+
+ Psalm 90:
+  \begin{itemize}
+    \item  Remove comma after ``tu''
+  \item Remove commas around ``Dómine''
+    \end{itemize}
+
+ Psalm 102.1:
+  \begin{itemize}
+  \item Remove commas EXCEPT after ``sunt'', om-ni-a to o-mni-a, sanc-to san-cto in gabc
+   \item Remove commas around ``ánima mea''
+    \item Remove commas around ``Miserátor''
+  \item  nos-tras to no-stras
+    \end{itemize}
+
+ Psalm 102.2:
+  \begin{itemize}
+  \item ip-se to i-pse, nos-trum to no-strum in gabc
+  \item  sub-sis-tet to sub-si-stet
+  \item
+ Remove commas around  ``Benedícite Dómino'' (in three verses)
+\item
+ Remove commas around ``ánima mea''
+    \end{itemize}
+
+ 
+Psalm 109:
+\begin{itemize}
+\item Remove colon at end of every gabc file.
+\item æ for œ
+\end{itemize}
+ 
+ Psalm 110:
+\begin{itemize}
+\item Remove comma around ``Dómine'' and ``justórum''  in the gabc file.
+\item
+ \texttt{s-t} needs to be  \texttt{st} in the gabc file.
+\item Remove comma after ``véritas''.
+\item Remove comma after ``Sanctum''.
+\end{itemize}
+
+ Psalm 111:
+\begin{itemize}
+\item
+Remove comma after ``vir'' in gabc file.
+\item Remove comma after ``Glória''
+\item \texttt{c-t} and \texttt{s-t} need to be brought together in the same syllable (\verb|\-| needs to go after the vowel if it may potentially go onto a new line).
+\end{itemize}
+
+ Psalm 112:
+  \begin{itemize}
+\item Remove commas before and after ``púeri'' in gabc file.
+\item Remove commas before ``Deus noster''.
+ \end{itemize}
+ 
+ Psalm 113:
+  \begin{itemize}
+   \item Remove \texttt{ë} and replace with \texttt{e}.
+    \item ``pt'' must be in the same syllable in the gabc file.
+    \item
+    : to . in gabc
+       \item  Remove comma before and after after ``mare''
+       \item
+       Comma after ``Montes''
+  \item Remove comma before ``Dómine'' but not the one after!
+    \item
+  Remove comma after ``tua''
+  \item
+  Remove comma after ``argentum''
+  \item
+  est, to est.
+\item Remove \texttt{ë} and replace with \texttt{e}.
+\item Remove comma after ``Dóminum' (v. 19 in LU).
+   \item
+ Remove comma after ``ómnibus''.
+   \item
+ Remove comma after ``te''.
+ \end{itemize}
+ 
+  Psalm 114:
+  \begin{itemize}
+  \item as of Oct 13, 2023, no changes needed.
+    \end{itemize}
+ 
+ Psalm 115:
+ \begin{itemize}
+ \item Remove comma after ``Crédidi'' in gabc file. (The comma is present in the LU's psalter, but not where the psalm is given by tone.)
+ \item
+ ``p-t'' needs to be ``pt'' in gabc file.
+    \item  Remove comma after ``omnibus''.
+ \item
+ ``conspéctu'' is prone to splitting; \verb|\-| is probably needed after ``é''.
+   \item
+ Remove colon after ``ejus'' at the end of the verse (not at the mediant!).
+  \item
+ Remove comma after ``Dómine''.
+ \item
+ Remove comma after ``tui''.
+ \end{itemize}
+ 
+    Psalm 116:
+  \begin{itemize}
+ \item Remove commas after ``Dóminum'' and ``eum'' in the gabc file.
+ \item
+ ``om-nes'' becomes  ``o-mnes''
+ \item
+ colon becomes period.
+\end{itemize}
+
+ Psalm 119:
+  \begin{itemize}
+  \item none, based on the psalter
+%  \item  
+    \end{itemize}
+
+ Psalm 120:
+  \begin{itemize}
+  \item Remove commas after ``Ecce''
+  \item  Remove commas after ``tuum''
+  \item
+  insert some space between ``us'' and ``que'' if the latter is italicized.
+    \end{itemize}
+
+   Psalm 121:
+  \begin{itemize}
+    \item Remove comma after ``his'' in gabc file.
+        \item di-cta in gabc when applicable (e.g. 4A)
+        \item
+        remove ``ë'' in ``Israel''
+    \item colon becomes period after ``te''
+    \item Remove comma after first ``meos'' (not at the mediant!)
+      \end{itemize}
+      
+       Psalm 122:
+  \begin{itemize}
+  \item colon after ''suórum''
+  \item  Remove comma after ``Dóminum''
+    \item  Remove comma before ``Dómine''
+    \end{itemize}
+
+Psalm 123:
+  \begin{itemize}
+  \item \textbf{Add} comma after ``'Dóminus'' at the mediant.
+  \item  Remove comma after ``nos''
+    \end{itemize}
+
+Psalm 124:
+  \begin{itemize}
+  \item Remove commas before and after ``Dómine''
+    \end{itemize}
+      
+               Psalm 125:
+  \begin{itemize}
+   \item
+ ``p-t'' needs to be ``pt'' in gabc file.
+     \item
+    ``c-t'' becomes ``ct'' 
+    \item
+    period at end of
+    verse in gabc file.
+  \item Remove commas before and after ``Dómine''
+    \end{itemize}
+      
+         Psalm 126:
+  \begin{itemize}
+  \item ``so-mnum''
+  \item
+  ``hæréditas''
+  \item  Remove comma after ``vir''
+    \item ``i'' should be its own syllable in ``ipsis''
+  
+    \end{itemize}
+ 
+   Psalm 127:
+  \begin{itemize}
+  \item Remove comma after ``omnes'' in gabc file.
+  \item
+  comma after ``abúndans''
+   \item
+  comma after ``olivárum''
+    \item Remove comma after ``homo''
+ \item Remove \texttt{ë} and replace with \texttt{e}.
+ 
+  \end{itemize}
+  
+  Psalm 128:
+  \begin{itemize}
+  \item Remove \texttt{ë} and replace with \texttt{e} in gabc file.
+  \item \textbf{Add} comma after ``evellátur''
+    \item
+  comma after ``metit''
+    \end{itemize}
+ 
+  Psalm 129:
+  \begin{itemize}
+  \item  \texttt{c-t} in ``noctem'' needs to be placed in the same syllable.
+    \item Remove comma after ``te''
+  \item Remove \texttt{ë} and replace with \texttt{e}.
+    \item Make sure that ``réd'' is in the same syllable of ``rédimet'' and in ``redémptio'' (and that ``pt'' is together) respectively.
+   \item in this case, ``s-t'' belong in different syllables of ``sustinébit''.
+    \item \verb|\hspace{0.03em}| after ``a'' of ``Patri'' when this is in mode 4. (in Liber Usualis, at least, this is the only mode; tbd if this is the case in the full \textit{Vesperale}).
+ 
+  \end{itemize}
+  
+  Psalm 130:
+  \begin{itemize}
+  \item 
+No changes.
+    \end{itemize}
+  
+      Psalm 131:
+  \begin{itemize}
+  \item Remove comma before and after ``Dómine'' in gabc file.
+  \item
+ change to o-mni  in gabc file.
+  \item   Remove comma after ``loco''
+  \item
+  Remove comma after ``Dómine''
+    \item
+  Remove comma after ``David''
+  \item
+ \verb|\-| in ``fructu''
+ \item insert comma after ``meum''
+ \item insert comma after ''sǽculum'' at mediant
+    \end{itemize}
+
+Psalm 132:
+  \begin{itemize}
+  \item 
+no changes
+    \end{itemize}
+
+ Psalm 133:
+  \begin{itemize}
+  \item 
+``om'' to ``o-m'' in gabc file.
+    \end{itemize}
+
+Psalm 135.1:
+  \begin{itemize}
+  \item Remove comma after ``Dómino'' in gabc file.
+    \end{itemize}
+
+Psalm 135.2:
+  \begin{itemize}
+  \item Remove comma after ``Pharaónem''
+  \item  Remove comma after ``Sehon''
+   \item Remove comma after ``Og''
+   \item ''Hæreditátem''
+     \item Remove comma after ``Israel''
+     \item
+     ``no-stri'', ``o-mni''
+    \end{itemize}
+
+Psalm 136:
+  \begin{itemize}
+  \item colon after ``cantiónum''
+    \item  Remove comma after ``tui''
+  \item  colon after ``Jerúsalem''
+  \item
+  Remove comma after ``beatus''
+    \end{itemize}
+
+      Psalm 137:
+  \begin{itemize}
+  \item Remove comma before and after ``Dómine'' in gabc file
+  \item  Remove comma after ``tua''
+    \end{itemize}
+
+      Psalm 138: split into I. and II. in the psalter
+  \begin{itemize}
+    \item Remove comma before and after ``Dómine'' , after ``me'' and ``meam'' in gabc file
+    \item
+    ``c-t'' becomes ``ct'' in gabc file
+       \item
+    ``s-t'' becomes ``st'' in gabc file (x 3!!)
+    \item
+    Remove comma after ``meam''
+  \item Remove comma before and after ``Dómine'' 
+  \item  Remove comma after ``novíssima''
+  \item
+  colon after ``maris''
+  \item
+   ``om-nes'' becomes  ``o-mnes''
+  \item Remove comma after ``tui''
+  \item
+  
+  Remove commas before and after ``Deus''
+  \item Remove comma after ``me''
+   \item Remove comma after ``te''
+  
+    \end{itemize}
+
+Psalm 139:
+  \begin{itemize}
+  \item Remove comma before and after ``Dómine'' in gabc file
+  \item  Remove comma before and after ``Dómine'' 
+  \item  Remove comma after repeated``Dómine'' 
+ \item colon after ``belli''
+  \item Remove comma before and after ``Dómine'' 
+    \end{itemize}
+
+Psalm 140:
+  \begin{itemize}
+  \item  Remove comma after ``Dómine'' in gabc file
+  \item  Remove comma after ``Pone''
+ \item
+ Remove comma after ``te''
+    \end{itemize}
+
+Psalm 141:
+  \begin{itemize}
+  \item Remove comma after ``hac''
+  \item  Remove comma after ``déxteram''
+    \item  Remove comma after ``te''
+
+    \end{itemize}
+
+      Psalm 143.1:
+  \begin{itemize}
+  \item Remove comma after ``Dóminus'' in gabc file
+  \item  Remove comma after ``mea'' ''meus''
+    \item  Remove comma after ''meus''
+    \item
+    \textbf{add} comma after ``homo''
+      \item  Remove comma after ``Dómine'' 
+    \end{itemize}
+
+ Psalm 143.2:
+  \begin{itemize}
+  \item Remove comma after ``Deus'' in gabc file
+    \item  no commas around ``servum tuum''
+      \item Remove comma after ``filii'' 
+   \item Remove comma after ``pópulum'' and ``pópulus'' 
+    \end{itemize}
+
+      Psalm 144.1:
+  \begin{itemize}
+    \item Remove comma after ``te''  and ``saeculum'' in gabc file 
+  \item   Remove comma after``saeculum''
+    \item Remove comma after ``Dóminus'' 
+    \end{itemize}
+
+ Psalm 144.2:
+  \begin{itemize}
+  \item Remove comma around ``Domine''
+  \item  
+    \end{itemize}
+
+ Psalm 144.3:
+  \begin{itemize}
+  \item om-nibus to o-mnibus (twice),  ``c-t'' becomes ``ct'' in gabc file in gabc
+     \item in this case, ``s-p'' belong in different syllables of ``disperdet''.
+  \item  Remove comma after``saeculum''
+    \end{itemize}
+
+  
+    Psalm 147:
+  \begin{itemize}
+      \item Remove all commas in gabc file.
+          \item Remove comma after ``justítias''.
+    \item Remove \texttt{ë} and replace with \texttt{e}.
+    \item in this case, ``s-t'' belong in different syllables of ``sustinébit''.
+    \item but ``s-t'' need to be in the same syllable of ``manifestávit''.
+  
+    \end{itemize}
+    
+    Nunc dimittis:
+    
+      \begin{itemize}
+  \item Remove comma before and after ``Dómine'' in gabc file.
+  
+  \end{itemize}
+  
+  \section{Version history}
+0.1: Psalter per annum finished. Psalms typeset and checked. Oct. 13, 2023. 
+\end{document}
+
