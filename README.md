@@ -83,6 +83,6 @@ Finally, Georg Duffner and Octavio Pardo designed the font used for the body, an
 
 EB Garamond is the body font (used for anything except the chant scores, for which the fonts are contained in the `gregoriotex` package that comes with a standard TeX distribution or is installed separately).
 
-The fonts are subject to revision since the original designer has returned; the initials font in particular is being completed, but this will take time. If and when 
+The fonts are subject to revision since the original designer has returned; the initials font in particular is being completed, but this will take time. If and when this changes, the new fonts will be added and an announcement made.
 
 
