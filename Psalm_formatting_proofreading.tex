@@ -53,7 +53,7 @@ Numbers=OldStyle]
 \begin{document}
  \section{Proofreading: ``Errors'' to fix in gabc or tex fiiles for Psalms}
  
- {\centering Version 0.1, \today\par}
+ {\centering Version 0.2, \today\par}
  
 \begin{itemize}
  \item
@@ -91,12 +91,13 @@ The breviary has different punctuation than the antiphonale, whose punctuation i
  \item Each ``verse'' needs to be numbered (assuming that we continue to number psalms!) according to the \textit{Liber Usualis,} edition to be specified.
  \item \texttt{\textbf{Sanc}to} needs to become \texttt{\textbf{San}cto}; idem for italic.
  \item
- if ``ló'' is italicized, then it will need to be kerned (with \verb|\hspace| due to the macro). A good starting point for this persnickety combo is 0.03em. (in doxology of tones 1, 3 a2/g, 6, 8; others are either bolded or ``u'' is also italicized)
+ if ``ló'' is italicized, then it will need to be kerned (with \verb|\hspace|). A good starting point for this persnickety combo is 0.03em. (in doxology of tones 1, 3 a2/g, 6, 8; others are either bolded or ``u'' is also italicized)
   \item \verb|\hspace{0.03em}| after ``a'' of ``Patri'' in mode 4
   \item italicized \hspace{0.03em}\textit{J} probably needs to be adjusted ( \verb|\hspace{0.03em}| was used, in fact, in this text).
   \item
   Add kerning (\verb|\hspace|) for Gloria Patri of tone 8 (in ``Spíritui'' and in ''sæculórum'') to account for italics.
-   \item  \verb|\hspace{0.03em}| in mode 1 doxology before ``l'' of ``sæculórum''
+   \item  \verb|\hspace{0.03em}| in mode 1 doxology before ``l'' of ``sæculórum'' (in fact virtually every form if -cu or -la, ló, etc. are italicized needs adjusting…)
+   \item a, e, u, i, æ, œ (rare!) are usually going to require adjustment (after the letter) when italics are involved.
    \item  \verb|\hspace{0.03em}| if ``tui'' is italicized (e.g. modes 1, 3 a2/g/g2, 6 doxology)
    \item
    Syllabification follows the Liber Usualis in case of doubt.
@@ -643,6 +644,7 @@ Psalm 141:
   \end{itemize}
   
   \section{Version history}
-0.1: Psalter per annum finished. Psalms typeset and checked. Oct. 13, 2023. 
+0.1: Psalter per annum finished. Psalms typeset and checked. Oct. 13, 2023.
+0.2: Added some common troublesome letters requiring kerning. Oct. 16, 2023. 
 \end{document}
 
