@@ -1,0 +1,376 @@
+% !TEX TS-program = LuaLaTeX+se
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_tempus_adventus}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\thispagestyle{empty}
+
+%%header and sectioning commands to be determined
+
+%% Putting the chapter before the hymn makes sense for Sab ante Dom I because it's the very first thing… for now as of Oct 6, 2023, chapter has \pageref back to Sat evening
+
+\bigtitle{Sabbato ante Dominicam I Adventus.}
+
+\rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato.}
+%%%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
+
+\capitulum
+
+\scripture{Rom. 13, 11.}
+
+\lettrine{F}{r}atres: Hora est jam nos de somno súrgere:~† nunc enim própior est nostra salus,~* quam cum credídimus.
+
+\rr Deo grátias.
+
+\rubrique{Sic semper respondetur in fine omnium Capitulorum.}
+
+\smalltitle{Hymnus. 4.}\label{creator_alme} 
+%%this format Hymnus. Mode no. follows LA.
+
+\initialscore{hy_creator_alme_siderum_solesmes_1961} 
+%%command originally took an optional argument, but the initial is now too high to accomodate greannotation.
+
+\textes{versiculus_in_Adventu}
+
+%%Solesmes uses Ad Magnificat, Antiphona. for Sat/Sunday.
+
+\gscore[Ad Magnif.]{Ant. 1. f}{an_ecce_nomen_domini_venit_solesmes_1961}
+
+\rubrique{Oratio ut infra ad Vesperas Dominicæ, \normaltext{\pageref{or_dom_1_adv}.}}
+
+\rubrique{Suffragium de Omnibus Sanctis non fit per totum Adventum.}
+
+\rubrique{In Adventum non fit de Festo nisi fuerit Duplex vel Semiduplex. Duplex I classis, si occurat in Dominica I Adventus, transfertur: si in aliis Dominicis fit de eo cum commemoratione Dominicae. Duplex vero II classis occurens in Dominica quacumque Adventus transfertur juxta Rubricas.}
+
+\rubrique{De quocumque alio Duplici vel Semiduplici occurente in Dominica fit tantum commemoratio in utrisque Vesperis. De Simplici fit tantum commmemoratio etiam in Feriis.}
+
+\smalltitle{Tonus Hymni ad Completorium.}
+
+\gscore[]{2.}{hy_te_lucis_ante_terminum_in_adventu_solesmes_1961}
+
+\rubrique{Hic tonus servandus est ad Completorium per totum Adventum usque ad Vigiliam Nativitatis exclusive, etiam in Festis occurrentibus; præterquam in Festo Immac. Concept. B.M.V., et per ejus Octavam, in quibus sumitur tonus solitus de B.M.V., excepta Dominica infra Octavam vel in die Octava occurrente.}
+
+\bigtitle{Dominica I Adventus.}
+
+ \gscore[1. Ant.]{8. G}{an_in_illa_die_solesmes_1961}  %%%should EUOUAE be printed or no?
+ \psalmus{109}{109_8G}{109_8G}
+ 
+  %%%remember that ALMOST all of the .tex files for psalms are identical and the latter can be replaced. The parallel file name is for consistency. mode 3 and 4 have 2 files each.
+
+ \gscore[2. Ant.]{8. G*}{an_jucundare_filia_solesmes_1961}
+ \psalmus{110}{110_8Gstar}{110_8Gstar} 
+ %%%remember that _8G.tex and _8Gstar.tex are identical and the latter can be replaced. The parallel file name is for consistency.
+
+  \gscore[3. Ant.]{5. a}{an_ecce_dominus_veniet_solesmes_1961}
+  \psalmus{111}{111_5a}{111_5a}
+
+   \gscore[4. Ant.]{7. c}{an_omnes_sitientes_solesmes_1961}
+  \psalmus{112}{112_7c}{112_7c} 
+  %%this is the same as in the psalter per annum. A pageref might be best here in the full book.
+ 
+    \gscore[5. Ant.]{4. A*}{an_ecce_veniet_propheta_solesmes_1961}
+    \psalmus{113}{113_4_alt_Astar}{113_4_alt_Astar}
+ %%remember that 4_alt.tex and 4_alt_Astar.tex will be identical. The latter can be replaced. The parallel file name is for consistency.
+
+\rubrique{Capitulum et Hymnus de Sabbato.} %%LA says "I Vespers, but we want to say of Sabbato, not of I Vespers which is a novelty. This text is what the Vaticana says.
+
+\textes{versiculus_in_Adventu}
+
+%%Solesmes uses Ad Magnificat, Antiphona. for Sat/Sunday.
+
+\gscore[Ad Magnif.]{Ant. 8. G}{an_ne_timeas_solesmes_1961}
+
+\oratio \label{or_dom_1_adv}
+
+\lettrine{E}{x}cita, quǽsumus Dómine, poténtiam tuam, et veni:~† ut ab imminéntibus peccatórum nostrórum perículis, te mereámur protegénte éripi,~* te liberánte salvári. Qui vivis et regnas cum Deo Patre in unitáte Spíritus Sancti Deus:~* per ómnia sǽcula sæculórum.
+
+℟. Amen.
+
+\rubrique{Hymnus et \vv hujus Dominicæ dicuntur in aliis Dominicis et in Feriis Adventus.} %%from Vaticana
+
+\bigtitle{Feria II.}
+
+\rubrique{Antiphonæ et Psalmi de Psalterio.} %%pageref
+
+\capitulum
+
+\scripture{Gen. 49, 10.}
+
+Non auferétur sceptrum de Juda, et dux de fémore ejus,~† donec véniat qui mitténdus est:~* et ipse erit exspectátio géntium.
+
+\rubrique{Hymnus \normaltext{Creátor alme sidérum, \pageref{creator_alme}.}} %%maybe this needs \textes too.
+
+\textes{versiculus_in_Adventu}
+
+\gscore[Ad Magnif.]{Ant. 1. a3}{an_leva_jerusalem_solesmes}
+
+\rubrique{Deinde dicitur \normaltext{Kýrie eléison,} cum Precibus, ut in Psalterio.} %%pageref to psalter
+
+\rubrique{Oratio \normaltext{Excita, quǽsumus} de Dominica præcedenti, \normaltext{\pageref{or_dom_1_adv}.}}
+
+\rubrique{Capitulum prædictum dicitur in feriali Officio usque ad Vigiliam Nativitatis Domini exclusive.}
+
+\bigtitle{Feria III.}
+
+\gscore[Ad Magnif.]{Ant. 4. A}{an_quaerite_dominum_solesmes}
+
+\bigtitle{Feria IV.}
+
+\gscore[Ad Magnif.]{Ant. 8. C}{an_veniet_fortior_me_solesmes}
+
+\bigtitle{Feria V.}
+
+\gscore[Ad Magnif.]{Ant. 4. A*}{an_exspectabo_dominum_solesmes_1961}
+
+\bigtitle{Feria VI.}
+
+\gscore[Ad Magnif.]{Ant. 4. c}{an_ex_aegypto_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam II Adventus.}
+
+\rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato. }
+%%%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
+
+\capitulum \label{cap_dom_2_adv}
+
+\scripture{Rom. 15, 4.}
+
+\lettrine{F}{r}atres: Quæcúmque scripta sunt, ad nostram doctrínam scripta sunt:~† ut per patiéntiam, et consolatiónem Scripturárum~* spem habeámus.
+
+\rubrique{Hymnus \normaltext{Creátor alme sidérum, \pageref{creator_alme}.}}
+
+\textes{versiculus_in_Adventu}
+
+\gscore[Ad Magnif.]{Ant. 7. a}{an_veni_domine_visitare_nos_solesmes_1961}
+
+\rubrique{Dominica Adventus qui occurrit infra Octavam Immac. Concept. B.M.V. Hymni cantantur in tono Adventus, cum doxologia Dominicæ.}
+
+\rubrique{Oratio ut infra ad Vesperas Dominicæ, \normaltext{\pageref{or_dom_2_adv}.}}
+
+\bigtitle{Dominica II Adventus.}
+
+ \gscore[1. Ant.]{1. g}{an_ecce_in_nubibus_solesmes_1961}  %%%should EUOUAE be printed or no?
+\label{109_1g} \psalmus{109}{109_1g}{109_1g}
+
+ \gscore[2. Ant.]{7. d}{an_urbs_fortitudinis_solesmes_1961}
+ \psalmus{110}{110_7d}{110_7d}
+
+  \gscore[3. Ant.]{7. a}{an_ecce_apparebit_solesmes_1961}
+  \psalmus{111}{111_7a}{111_7a}
+
+   \gscore[4. Ant.]{1. f}{an_montes_et_colles_solesmes_1961}
+ \label{112_1f} \psalmus{112}{112_1f}{112_1f}
+ 
+    \gscore[5. Ant.]{3. a}{an_ecce_dominus_noster_ut_illuminet_solesmes_1961}
+    \psalmus{113}{113_3a}{113_3a}
+
+\rubrique{Capitulum \normaltext{Fratres: Quæcúmque, \pageref{cap_dom_2_adv}.}}
+
+\gscore[Ad Magnif.]{8. G*}{an_tu_es_qui_venturus_es_an_alium_solesmes_1961}
+
+\oratio \label{or_dom_2_adv}
+
+\lettrine{E}{x}cita Dómine corda nostra ad præparándas Unigéniti tui vias:~† ut per ejus advéntum,~* purificátis tibi méntibus servíre mereámur.
+Qui tecum vivit et regnat. 
+
+\bigtitle{Feria II.}
+
+\gscore[Ad Magnif.]{Ant. 4. A*}{an_ecce_rex_veniet_solesmes}
+
+\bigtitle{Feria III.}
+
+\gscore[Ad Magnif.]{Ant. 5. a}{an_vox_clamantis_in_deserto_solesmes_1961}
+
+\bigtitle{Feria IV.}
+
+\gscore[Ad Magnif.]{Ant. 4. c}{an_sion_renovaberis_solesmes_1961}
+
+\bigtitle{Feria V.}
+
+\gscore[Ad Magnif.]{Ant. 4. A*}{an_qui_post_me_venit_solesmes_1961}
+
+\bigtitle{Feria VI.}
+
+\gscore[Ad Magnif.]{Ant. 7. a}{an_cantate_domino_canticum_solesmes}
+
+\bigtitle{Sabbato ante Dominicam III Adventus.}
+
+\rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato.}
+%%%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
+
+\capitulum \label{cap_dom_3_adv}
+
+\scripture{Phil. 4, 4 – 5.}
+
+\lettrine{F}{r}atres: Gaudéte in Dómino semper: íterum dico, gaudéte.~† Modéstia vestra nota sit ómnibus homínibus: Dóminus enim prope est.
+
+\rubrique{Hymnus \normaltext{Creátor alme sidérum, \pageref{creator_alme}.}}
+
+\textes{versiculus_in_Adventu}
+
+\gscore[Ad Magnif.]{Ant. 1. f}{an_ante_me_non_est_solesmes}
+
+\rubrique{Oratio ut infra ad Vesperas Dominicæ, \normaltext{\pageref{or_dom_3_adv}.}}
+
+\bigtitle{Dominica III Adventus.}
+
+ \gscore[1. Ant.]{1. a}{an_veniet_dominus_et_non_solesmes_1961}  %%%should EUOUAE be printed or no?
+ \psalmus{109}{109_1a}{109_1a}
+
+ \gscore[2. Ant.]{7. b}{an_jerusalem_gaude_solesmes_1961}
+ \psalmus{110}{110_7b}{110_7b} 
+
+  \gscore[3. Ant.]{8. G}{an_dabo_in_sion_solesmes_1961}
+  \psalmus{111}{111_8G}{111_8G}
+
+   \gscore[4. Ant.]{5. a}{an_montes_et_omnes_solesmes_1961}
+  \psalmus{112}{112_5a}{112_5a}
+ 
+    \gscore[5. Ant.]{2. D}{an_juste_et_pie_solesmes_1961}
+\label{113_2}
+\psalmus{113}{113_2}{113_2}
+
+\rubrique{Capitulum \normaltext{Fratres: Gaudéte, \pageref{cap_dom_3_adv}.}}
+
+\rubrique{Hymnus \normaltext{Creátor alme sidérum, \pageref{creator_alme}. \vv Roráte cæli.}}
+
+\gscore[Ad Magnif.]{Ant. 8. G}{an_beata_es_maria_solesmes}
+
+\oratio \label{or_dom_3_adv}
+
+\lettrine{A}{u}rem tuam quǽsumus Dómine, précibus nostris accómmoda:~† et mentis nostræ ténebras~* grátia tuæ visitatiónis illústra. Qui vivis et regnas cum Deo Patre.
+
+\rubrique{Antiphona \normaltext{Beáta es} prætermittitur, si hodie ejus loco ponenda sit una
+ex Antiphonis majoribus, ut infra: quibus semper cedunt Antiphonæ propriæ aliis diebus ad Magnificat assignatæ.}
+
+\rubrique{Sequentes Antiphonæ majores ad Magnificat inchoantur die 17 Decembris, et singulæ ante et post Magnificat integræ sicut in Duplicibus dicuntur per ordinem usque ad diem ante Vigiliam Nativitatis. Si vero Festum fuerit, dicuntur post Orationem Festi, pro commemoratione Adventus.}
+
+\bigtitle{Die 17.}
+
+\gscore[]{2. D}{an_o_sapientia_solesmes_1961}
+
+\rubrique{Cant. \normaltext{Magníficat} in tono solemni, \pageref{Mag_2_sol}.} %%pageref to that section since it's an exception to the rules
+
+\rubrique{Pro Commemoratione:}
+
+\textes{versiculus_in_Adventu}
+
+\bigtitle{Die 18.}
+
+\gscore[]{2. D}{an_o_adonai_solesmes_1961}
+
+\bigtitle{Die 19.}
+
+\gscore[]{2. D}{an_o_radix_jesse_solesmes_1961}
+
+\bigtitle{Die 20.}
+
+\gscore[]{2. D}{an_o_clavis_david_solesmes_1961}
+
+\bigtitle{Die 21.}
+
+\gscore[]{2. D}{an_o_oriens_solesmes_1961}
+
+\bigtitle{Die 22.}
+
+\gscore[]{2. D}{an_o_rex_gentium_solesmes_1961}
+
+\bigtitle{Die 23.}
+
+\gscore[]{2. D}{an_o_emmanuel_solesmes_1961}
+
+\bigtitle{Feria II (post Dominicam III Adventus.)}
+
+\textes{versiculus_in_Adventu}
+
+\gscore[Ad Magnif.]{Ant. 8. G}{an_beatam_me_dicent_solesmes_1961} %% -ones with dotted puncta is 1961 Liber. They didn't fix antiphonale, but this is closer to how it's usually sung, so this is what will be used.
+
+\textes{nisi_dicenda_ant_o}
+
+\rubrique{Oratio \normaltext{Aurem tuam, \pageref{or_dom_3_adv}.}}
+
+\bigtitle{Feria III.}
+
+\gscore[Ad Magnif.]{Ant. 8. G}{an_elevare_elevare_solesmes_1961}
+
+\textes{nisi_dicenda_ant_o}
+
+\bigtitle{Feria IV Quatuor Temporum.}
+
+\gscore[Ad Magnif.]{Ant. 8. C}{an_ecce_ancilla_domini_solesmes_1961}
+
+\textes{nisi_dicenda_ant_o}
+
+\bigtitle{Feria V.}
+
+\gscore[Ad Magnif.]{Ant. 5. a}{an_laetamini_cum_jerusalem_solesmes}
+
+\textes{nisi_dicenda_ant_o}
+
+\bigtitle{Feria VI Quatuor Temporum.}
+
+\gscore[Ad Magnif.]{Ant. 1. f}{an_hoc_est_testimonium_solesmes_1961}
+
+\textes{nisi_dicenda_ant_o}
+
+\bigtitle{Sabbato Quatuor Temporum}
+
+\rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato.}
+%%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
+
+\capitulum \label{cap_dom_4_adv}
+
+\scripture{1 Cor. 4, 1 – 2.}
+
+\lettrine{F}{r}atres: Sic nos exístimet homo ut minístros Christi,~† et dispensatóres mysteriórum Dei.~* Hic jam quǽritur inter dispensatóres, ut fidélis quis inveniátur.
+
+\rubrique{Hymnus \normaltext{Creátor alme sidérum, \pageref{creator_alme}.}}
+
+\textes{versiculus_in_Adventu}
+
+\rubrique{Ad Magnificat, dicitur Antiphona \normaltext{O.}}
+
+\rubrique{Oratio ut infra ad Vesperas Dominicæ, \normaltext{\pageref{or_dom_4_adv}.}}
+
+\bigtitle{Dominica IV Adventus.}
+
+ \gscore[1. Ant.]{1. g}{an_canite_tuba_solesmes_1961}  %%%should EUOUAE be printed or no?
+\rubrique{Ps. \normaltext{Dixit Dóminus, \pageref{109_1g}.}}
+%\psalmus{109}{109_8G}{109_8G}
+
+ \gscore[2. Ant.]{1. f}{an_ecce_veniet_desideratus_solesmes_1961}
+ \psalmus{110}{110_1f}{110_1f} 
+
+  \gscore[3. Ant.]{1. g}{an_erunt_prava_solesmes_1961}
+  \psalmus{111}{111_1g}{111_1g}
+
+   \gscore[4. Ant.]{1. f}{an_dominus_veniet_solesmes_1961}
+\rubrique{Ps. \normaltext{Laudáte púeri, \pageref{112_1f}.}}
+%  \psalmus{112}{112_1f}{112_1f}
+ 
+    \gscore[5. Ant.]{2. D}{an_omnipotens_sermo_solesmes_1961}
+\rubrique{Ps. \normaltext{In éxitu Israel, \pageref{113_2}.}}
+%\psalmus{113}{113_2}{113_2}
+
+\rubrique{Capitulum \normaltext{Fratres: Sic nos exístimet, \pageref{cap_dom_4_adv}.}}
+
+\rubrique{Hymnus \normaltext{Creátor alme sidérum, \pageref{creator_alme}. \vv Roráte cæli.}}
+
+\rubrique{Ad Magnificat, dicitur Antiphona \normaltext{O.}}
+
+\oratio \label{or_dom_4_adv}
+
+\lettrine{E}{x}cita, quǽsumus Dómine, poténtiam tuam, et veni: et magna nobis virtúte succúrre:~† ut per auxílium grátiæ tuæ, quod nostra peccáta præpédiunt,~* indulgéntia tuæ propitiatiónis accéleret. Qui vivis et regnas.
+
+\bigtitle{In Feriis infra Hebdomadam IV Adventus.}
+
+\rubrique{Ad Magnificat, dicuntur Antiphonæ \normaltext{O.}}
+
+\end{document}
