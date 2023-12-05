@@ -7,7 +7,7 @@
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
 
 \usepackage{fontspec}
-\usepackage[ecclesiasticlatin.usej]{babel}
+\usepackage[ecclesiasticlatin.usej,activeacute]{babel} %%added activeacute as an option for convenience especially for Kyrie
      \babelprovide[hyphenrules=latin]{ecclesiasticlatin}
           \usepackage{xspace}
 %     \usepackage{multicol}
@@ -258,7 +258,7 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 }%
 }
 
-%% rouge but in italic (this is technically not correct).
+%% rouge but in italic (this is technically not correct but is contemporary practice of Le Barroux).
 \NewDocumentCommand{\rougeit}{m}{%
 \textcolor{gregoriocolor}%
 {\fontsize{8}{10}%
@@ -274,22 +274,35 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 %}
 
 %%macro to space punctuation with ecclesiasticlatin language from babel.
-\NewDocumentCommand{\espaceponctuation}{}{\hspace{0.10em}} %%this value seems more balanced with this font than the definition provided in the ecclesiasticlatin documentation.
+\NewDocumentCommand{\espaceponctuation}{}{\hspace{0.10em}}  %%probably not needed if we use commas and not colons for Scriptural citations
 
+%%this value seems more balanced with this font than the definition provided in the ecclesiasticlatin documentation.
+
+%typesets a horizontal rule like on the page with the prayers before and after the office.
+%%If you're using color at all in your document, you might want to either force \myrule to use black or make it customizable. (from u/Independent-Comb-257 on Reddit)
+%%thickness started at 0.4pt%%
 \NewDocumentCommand{\myrule}{}{%
     \par%
     {%
         \centering%
-        \rule{0.3\textwidth}{0.4pt}%
+       \textcolor{black}{\rule{0.3\textwidth}{0.6pt}}%
         \par%
-    }% typesets a horizontal rule like on the page with the prayers before and after the office.
-}  %%If you're using color at all in your document, you might want to either force \myrule to use black or make it cusotmizable. (from u/Independent-Comb-257)
+    }%  
+}  
 
-\NewDocumentCommand{\textrule}{}{%
+
+
+%%typesets a horizontal rule like on the page with the prayers before and after the office.
+%%thickness started at 0.4pt
+
+\NewDocumentCommand{\biggerrule}{}{%
     \par%
-\noindent%
-\rule{\textwidth}{0.6pt}%
-} %%typesets rule width of text: thickness can be modified (and so can rule if textwidth changes); thickness started at 0.4pt
+    {%
+        \centering%
+        \textcolor{black}{\rule{0.75\textwidth}{0.6pt}}%
+        \par%
+    }%
+    }
 
 %% macro to format psalm text
 
@@ -329,16 +342,16 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
     
     %% Command de Matthias Bry modifié, prints psalm incipit score with the text
     \NewDocumentCommand{\psalmus}{mmm}{
-	\needspace{4\baselineskip}
-	\smalltitle{Psalmus #1.}
-	\smallscore[n]{#2}
-	\pstexte{#3}
+	\needspace{4\baselineskip}%
+	\smalltitle{Psalmus #1.}%            %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
+	\smallscore[n]{#2}%
+	\pstexte{#3}%
 }
 
 %% sd=semiduplex. especially for Dominica ad Vesperas in the Psalterium (the only example which comes to mind, in fact!)
  \NewDocumentCommand{\sdpsalmus}{mm}{
 	\needspace{4\baselineskip}%
-		\smalltitle{Psalmus #1.}%
+		\smalltitle{Psalmus #1.}%  needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
 	\pstexte{#2}%
 }
 
@@ -394,28 +407,36 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 %this command still needs work
 \NewDocumentCommand{\header}{m}{\setheaders{{\scshape\addfontfeature{LetterSpace=5.0}#1}}{{\scshape\addfontfeature{LetterSpace=5.0} #1}}}
 
-\NewDocumentCommand{\smalltitle}{m}{
+\NewDocumentCommand{\smalltitle}{m}{%
 \needspace{5\baselineskip}%  %% very small if there are neumes above the staff, including flats in mode 2, e.g. O Doctor optime
 \vspace{\baselineskip}%
  {\centering #1\par}%
  }
  
- \NewDocumentCommand{\bigtitle}{m}{
-\needspace{5\baselineskip}
-\vspace{\baselineskip}
- {\centering{\Large#1}\par}
-}
+ \NewDocumentCommand{\bigtitle}{m}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\Large#1}\par}%
+ }
+
+ %% bigtitle as written adds too much space below
  
-%  \NewDocumentCommand{\date}{m}{%
+ %%formatting date on major feasts of sanctoral cycle or moveable feasts that follow Easter where this is listed in antiphonal.
+
+%  \NewDocumentCommand{\biglitdate}{m}{%
 %\needspace{5\baselineskip}  %% very small if there are neumes above the staff, including flats in mode 2, e.g. O Doctor optime
 %\vspace{\baselineskip}
-% {\centering{\large #1}}\par} %%formatting date on major feasts of sanctoral cycle or moveable feasts that follow Easter where this is listed in antiphonal.
-%}
+% {\centering{\large #1}}\par} %}
+
+%%formatting date ordinarily above names of minor feasts
+\NewDocumentCommand{\litdate}{m}{%
+\smalltitle{Die #1.}%
+}
  
  \NewDocumentCommand{\rank}{m}{%
-\needspace{5\baselineskip}
-\vspace{\baselineskip}
- {\centering{\textit{\large #1}}\par}
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\textit{\large #1}}\par}%
 }
 
 %%for feasts where the third verse (third part of 1st verse in modern terms) is changed (Mutatur tertius vers.)
@@ -462,8 +483,12 @@ Pater noster, Ave María, \textit{et} Credo.%
 \smalltitle{Capitulum.}%
 }
 
+%%above Hymn if listed this way in the antiphonal (Hymnus)
+\NewDocumentCommand{\hymnus}{}{%
+\smalltitle{Hymnus.}%
+}
 
-%%above Magnificat antiphon where this is done in Liber antiphonarius (Or Vaticana Vesperale)
+%%above Magnificat antiphon where this is done in Liber antiphonarius (Or Vaticana Vesperale) (Sundays to be determined)
 \NewDocumentCommand{\admagnificat}{}{%
 \smalltitle{Ad Magnificat, Antiphona.}%
 }
