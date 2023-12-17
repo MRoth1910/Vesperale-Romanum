@@ -159,6 +159,9 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 {%
 #1}%
 }}
+
+%%for smallcaps
+
 \NewDocumentCommand\scspace{m}{\textsc{{{\addfontfeature{LetterSpace=5.0}{#1}}}}}
 
 %% macro to print Alleluia for versicles.
@@ -413,13 +416,13 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
  {\centering #1\par}%
  }
  
+  %% bigtitle as written adds too much space below (or rather the combination of needspace is too large with following  text)
+ 
  \NewDocumentCommand{\bigtitle}{m}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
  {\centering{\Large#1}\par}%
  }
-
- %% bigtitle as written adds too much space below
  
  %%formatting date on major feasts of sanctoral cycle or moveable feasts that follow Easter where this is listed in antiphonal.
 
@@ -432,8 +435,26 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 \NewDocumentCommand{\litdate}{m}{%
 \smalltitle{Die #1.}%
 }
- 
- \NewDocumentCommand{\rank}{m}{%
+
+%%formatting for Sunday feasts : inter, post… name is for consistenc
+\NewDocumentCommand{\dominicadate}{m}{%
+\smalltitle{Dominica #1.}%
+}
+
+%%for most important feasts (as of 16 dec 2023 leaving section alone as is, but it's similar styling)
+\NewDocumentCommand{\festum}{m}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\LARGE%
+ {\MakeUppercase{%
+ {\capspace{#1}}
+ }%
+ }%
+\par}%
+ }%
+ }
+
+\NewDocumentCommand{\rank}{m}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
  {\centering{\textit{\large #1}}\par}%
@@ -446,11 +467,20 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 }%
 }
 
-%%for Scriptural references of the chapter.
-\NewDocumentCommand{\scripture}{m}{%
-{\raggedleft{\textit{#1}%
-}%
-\par}%
+%%to replace original idea of subsection; will need work on the spacing (the needspace and vspace both might be too big
+%%leaving subsection as is for now (16 dec 2023), for reference and in case I used it and didn't remember it
+%% argument here is i or ii; will need another command if the vespers are identical.
+ \NewDocumentCommand{\invesperis}{m}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\LARGE%
+ {\scspace{in #1 vesperis.}%
+ }%
+ }\par}%
+}
+
+\NewDocumentCommand{\primaantiphona}{m}{%
+\smalltitle{I Antiphona. #1}%
 }
 
 %%for vel where this occurs between texts or chants
@@ -473,14 +503,16 @@ Pater noster et Ave María. ℣. Deus in adjutórium.%
 Pater noster, Ave María, \textit{et} Credo.%
 }
 
-%%above collect (Oratio)
-\NewDocumentCommand{\oratio}{}{%
-\smalltitle{Oratio.}%
-}
-
 %%above chapter (Capitulum)
 \NewDocumentCommand{\capitulum}{}{%
 \smalltitle{Capitulum.}%
+}
+
+%%for Scriptural references of the chapter.
+\NewDocumentCommand{\scripture}{m}{%
+{\raggedleft{\textit{#1}%
+}%
+\par}%
 }
 
 %%above Hymn if listed this way in the antiphonal (Hymnus)
@@ -488,10 +520,22 @@ Pater noster, Ave María, \textit{et} Credo.%
 \smalltitle{Hymnus.}%
 }
 
+%%above Te lucis
+
+\NewDocumentCommand{\hymnusadcompletorium}{}{%
+\smalltitle{Tonus Hymni ad Completorium.}%
+}
+
 %%above Magnificat antiphon where this is done in Liber antiphonarius (Or Vaticana Vesperale) (Sundays to be determined)
 \NewDocumentCommand{\admagnificat}{}{%
 \smalltitle{Ad Magnificat, Antiphona.}%
 }
+
+%%above collect (Oratio)
+\NewDocumentCommand{\oratio}{}{%
+\smalltitle{Oratio.}%
+}
+
 
 %% originally used apparently for typesetting portions of the Common of the BVM
 \newcommand{\espacetitre}{\vspace{-0.5cm}}
