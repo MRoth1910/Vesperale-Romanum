@@ -417,6 +417,8 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
  }
  
   %% bigtitle as written adds too much space below (or rather the combination of needspace is too large with following  text)
+  
+  %% possibile to have something that is a macro which takes away a fixed amount? and then I can change the definition later (though as of 17 dec 2023), cf. the screenshot from the Praglia code
  
  \NewDocumentCommand{\bigtitle}{m}{%
 \needspace{5\baselineskip}%
@@ -518,6 +520,10 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%above Hymn if listed this way in the antiphonal (Hymnus)
 \NewDocumentCommand{\hymnus}{}{%
 \smalltitle{Hymnus.}%
+}
+
+\NewDocumentCommand{\hymnusmode}{m}{%
+\smalltitle{Hymnus. #1}%
 }
 
 %%above Te lucis

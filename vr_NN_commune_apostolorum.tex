@@ -23,13 +23,18 @@
 
 \newpage
 
+%%this DOES need to be a section title (or chapter, whatever) in the end as it needs a TOC entry as such; the commons are MUCH shorter than the divisions per annum
+
 \section[Commune Apostolorum.]{COMMUNE APOSTOLORUM ET EVANGELISTARUM EXTRA TEMPUS PASCHALI.}\header{commune apostolorum.}
 
 \thispagestyle{empty}
 
-\subsection{in i. vesperis.}
+%\subsection{in i. vesperis.}
+
+%% subsection is closer to the section title just fwiw
+\invesperis{i}
 %\espacetitre
- \smalltitle{I Antiphona 8. c.}
+ \primaantiphona{8. c.}
 \initialscore{an_hoc_est_praeceptum_meum_solesmes_1961.gabc}
 \psalmus{109}{109_8c}{109_8}
 
@@ -45,27 +50,29 @@
 \gscore[5. Ant.]{1. g}{an_in_patientia_vestra_solesmes_1961}
 \psalmus{116}{116_1g}{116_1g}
 
-\smalltitle{Capitulum.}
+\capitulum
 \scripture{Ephes. 2, 19–20.}
 
 \lettrine{F}{r}atres: Jam non estis hóspites et ádvenæ:~† sed estis cives sanctórum et doméstici Dei: superædificáti super fundaméntum Apostolórum et Prophetárum,~* ipso summo angulári lápide Christo Jesu. \rr Deo grátias.
 
-\smalltitle{Hymnus.}
+\hymnus
 \gscore[]{4.}{hy_exsultet_orbis_gaudiis_solesmes_1961}\label{exsultet_orbis}\phantomsection
 
-\smalltitle{Alter Tonus.}
+\smalltitle{Alter Tonus.} %%this appears so infrequently that it probably doesn't justify a macro
 \gscore[]{1.}{hy_exsultet_orbis_gaudiis_alt_ton_solesmes_1961}
 
  \vv In omnem terram exívit sonus eórum.
  
  \rr Et in fines orbis terræ verba eórum.
 
-\smalltitle{Ad Magnificat, Antiphona.}
+\admagnificat
 \gscore[]{1. f}{an_tradent_enim_vos_solesmes_1961}
 
 \rubrique{Oratio propria.}
 
-\subsection{in ii. vesperis.}
+%\subsection{in ii. vesperis.}
+
+\invesperis{ii}
 
 \gscore[1. Ant.]{8. G}{an_juravit_dominus_solesmes_1961}
 \psalmus{109}{109_8G}{109_8}
@@ -88,7 +95,7 @@
  
  \rr Et facta ejus intellexérunt.
 
-\smalltitle{Ad Magnificat, Antiphona.}
+\admagnificat
 \gscore[]{1. g2}{an_estote_fortes_in_bello_solesmes_1961}
 
 \end{document}

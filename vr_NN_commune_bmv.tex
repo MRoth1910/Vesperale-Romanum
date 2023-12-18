@@ -17,9 +17,12 @@
 \section[Commune B.M.V.]{IN FESTIS BEATÆ MARIÆ VIRGINIS.}\header{in festis b.m.v.}\label{Festis_BVM}\phantomsection
 \thispagestyle{empty}
 
-\subsection{in i. vesperis.}
+%\subsection{in i. vesperis.}
 %\espacetitre
- \smalltitle{I Antiphona 3. a.}
+
+\invesperis{i}
+
+ \primaantiphona{3. a.}
 \initialscore{an_dum_esset_rex_solesmes_1961}
 \psalmus{109}{109_3a}{109_3a}
 %\espacetitre %no magic numbers
@@ -39,7 +42,7 @@
 \gscore[5. Ant.]{4. A*}{an_speciosa_facta_es_solesmes_1961}
 \psalmus{147}{147_4a}{147_4a}
 
-\smalltitle{Capitulum.}
+\capitulum
 \textes{Capitulum_BMV}
 %\espace
 
@@ -48,7 +51,7 @@
  %% needed if rubric isn't in ALT of gabc 
 %%not in antiphonale but needed…
 
-\smalltitle{Hymnus.}
+\hymnus
 \gscore[]{1.}{hy_ave_maris_stella_mode_1_LA1949}
 
 \smalltitle{Alter Tonus.}
@@ -60,7 +63,7 @@
 %\espace
 \textes{versiculus_bmv}
 
-\smalltitle{Ad Magnificat, Antiphona.}
+\admagnificat
 \gscore[]{4. E}{an_sancta_maria_solesmes_1961}
 %%The minipage not allowing breaks causes problems: the score will be stretched to fill the page.
 
@@ -81,7 +84,7 @@
 {\fontsize{9}{11}\selectfont{In Festo Patrocinii B.M.V.}} \gabcsnippet{(c4) †  tu(g)um(g) san(gh)ctum(g) Pa(gf)tro(ghg)cí(e)ni(e)um.(e.) (::)}%
 \end{minipage}%
 
-\smalltitle{Oratio.}\label{concede_bmv}
+\oratio \label{concede_bmv}
 \textes{Oratio_BMV}
 
 \rubrique{¶ Ad Completorium, Hymnus ut notatur in Psalterio pro Festis B.M.V.} %%will need to replace that eventually with the right page reference.
@@ -98,14 +101,17 @@
 %\gscore{Benedicamus_Domino/Benedicamus_domino_BMV_in_sabbato}
 %\newpage %% to remove as soon as I get a chance. (fixing spacing for headings will also affect this.)
 %\subtitulum{In ii. Vesperis.} %% this is broken at the moment.
-\subsection{in ii. vesperis.}
+
+%\subsection{in ii. vesperis.}
 %\espacetitre
+
+\invesperis{ii}
 
 \rubrique{Omnia ut in primis Vesperis, præter sequentia.}
 
 \textes{versiculus_bmv}
 
-\smalltitle{Ad Magnificat, Antiphona.}
+\admagnificat 
 \gscore[]{8. G}{an_beatam_me_dicent_comm_bmv_solesmes_1961}
 
 \end{document}
