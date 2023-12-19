@@ -53,7 +53,7 @@ Numbers=OldStyle]
 \begin{document}
  \section{Proofreading: ``Errors'' to fix in gabc or tex fiiles for Psalms}
  
- {\centering Version 0.2, \today\par}
+ {\centering Version 0.3, \today\par}
  
 \begin{itemize}
  \item
@@ -104,6 +104,7 @@ The breviary has different punctuation than the antiphonale, whose punctuation i
    \begin{itemize}
    \item
   The following letter combinations need to be followed: -ct, -st (including all perfect verbs which end in -sti), -ps, o-mn, Red- and -pt (as in Red-em-ptor), either by changing braces if formatting is applied or adding a possible line break. There are other words which might result in a different syllabification following the \verb|babel| hyphenation engine for medieval Latin which we use
+  \item However, e.g. in ps 147, some etymological reasons require different hyphenations.
 \end{itemize}
 \end{itemize}
 \section{Psalms of Vespers and Compline, 1911 Roman psalter, with corrections}
@@ -395,10 +396,10 @@ Remove comma after ``vir'' in gabc file.
    Psalm 121:
   \begin{itemize}
     \item Remove comma after ``his'' in gabc file.
-        \item di-cta in gabc when applicable (e.g. 4A)
+        \item di-cta in gabc (it will so often have formatting applied to one or the other syllables that it's better to be safe than sorry)
         \item
         remove ``ë'' in ``Israel''
-    \item colon becomes period after ``te''
+    \item colon becomes period after first ``te'' at the end of the line
     \item Remove comma after first ``meos'' (not at the mediant!)
       \end{itemize}
       
@@ -645,6 +646,9 @@ Psalm 141:
   
   \section{Version history}
 0.1: Psalter per annum finished. Psalms typeset and checked. Oct. 13, 2023.
+
 0.2: Added some common troublesome letters requiring kerning. Oct. 16, 2023. 
+
+0.3 Made comments for ps. 121 clearer and added a note about hyphenation differences due to etymology.
 \end{document}
 
