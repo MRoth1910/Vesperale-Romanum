@@ -1,27 +1,31 @@
 % !TEX TS-program = LuaLaTeX+se
 
 \documentclass[11pt]{book}
-\input{commonheaders.tex} %%in the original local version this is \input{../commonheaders.tex}
+\input{commonheaders.tex}
 \externaldocument[M-]{\subfix{vesperale_romanum}}
 
 \begin{document}
 %% order TBD.
-%%%Github version%%%
+%%%%%%Github version%%%
 \customsubfile{vr_01_prolegomena} %%these probably WILL be 01
 
 \customsubfile{vr_NN_toni_communes} %%watch for hfull boxes in ALT, e.g. in collect examples
 
 \customsubfile{vr_NN_canticum_bmv}
 \customsubfile{vr_NN_tempus_adventus}
+\customsubfile{vr_NN_in_nativitate_usque_5_jan}
+\customsubfile{vr_NN_octavae_epiphaniae}
 \customsubfile{vr_NN_tempus_post_epiphaniam}
 \customsubfile{vr_NN_tempus_septuagesimae}
 \customsubfile{vr_NN_tempus_quadragesimae}
 \customsubfile{vr_NN_tempus_passionis}
+\customsubfile{vr_NN_sab_post_pentecosten}
 \customsubfile{vr_NN_dom_post_pentecosten}
 
 %%\customsubfile{vr_NN_psalterium}
 %% commemorationes sanctorum %% to adjust
-%% common commemorations %% to adjust but otherwise done (can be considered redundant though) %% the psalter + commemorations (of saints and suffrages) are middle of book
+%% common commemorations %% to adjust but otherwise done (can be considered redundant though) 
+%% the psalter + commemorations (of saints and suffrages) are middle of book
 
 \customsubfile{vr_NN_commune_apostolorum}  %%first common. TBD if it is proper, then common, or common, then proper
 \customsubfile{vr_NN_commune_bmv} %% last common %% need to ensure spacing at antiphon Sancta Maria
@@ -33,9 +37,9 @@
 %%\customsubfile{vr_NN_prop_gallia} if feeling ambitious
 %% antique hymns (texts only? melodies as in AR 1911 and therefore LU/LA…_
 
-\customsubfile{vr_NN_1960} %%(tbd if Anthony and Lawrence go here for "O Doctor Optime")
+\customsubfile{vr_NN_pius_xii} %%(tbd if Anthony and Lawrence go here for "O Doctor Optime")
 
-\customsubfile{vr_NN_variationes} %% Rubrical changes
+\customsubfile{vr_NN_variationes} %% Rubrical changes up to 1960
 
 %%NN to be replaced with 01, 02… like Matthias does with Nocturnale
 
@@ -55,6 +59,10 @@
 %%section title can never begin at bottom of page, but we don't always want empty style (big feasts, new "chapter" only)
 %% can never split day (e.g. Feria VI post…)/date, rank, octave from feast title
 
+%%can never split IN I (II) VESPERIS or similar, but they can be split from rubrics
+
+%% need to account for psalm repetition as well as tex files (the endings mostly don't matter but are helpful when looking at the code; star files can eventually be untracked and deleted, but Magnificat files in modes 3 and 4 must remain separate 
+
 %%if compiling with consecutive page numbers in subfile pdf, then following must be before \begin{document} of each subfile; use \customsubfile 
 %%
 %%\ifcsname preamble@file\endcsname
@@ -64,26 +72,39 @@
 %% ALT with descenders (normally p and y) particularly in italics causes issues on second pass. 1st pass is perfect. but default tends to make the score too big. Will need to carefully scrutinize lines in certain scores lest the pages be too stretched.
 
 %%we do not want beginnings of psalm verse to stretch (this always happens with "Sicut"
-%%Update Dec 4, 2023: this is because of the spacing defaults with periods. Sometimes, it becomes a sentence space.
+%%Update Dec 4, 2023: this is because of the spacing defaults with periods. Sometimes, it becomes a sentence space. %%Update Dec 21 2023: frenchspacing plus more advanced LaTeX *may* resolve this, because even frenchspacing still leaves big spaces and doesn't treat the same characters the same way every time
+
+%%This needs to be fixed with macro definitions to
 
 %% watch ALT for spacing issues with score stretch
 
-%\customsubfile{vr_02_kalendarii} %%probably WILL be 02
-%\customsubfile{vr_NN_tempus_adventus}
-%\customsubfile{vr_NN_tempus_nativitatis} 
+%%\lettrine[depth=1] should probably be used consistently with Q (collects starting "Quaesumus")
+
+%%there should be period after Scripture verse
+
+%% 1960 will need Vespers for Holy Saturday and rubrics blahblahblah for Thursday and Friday
+
+%%if it can't be fixed, every label needs \phantomsection
+
+
+
+%\customsubfile{vr_02_kalendarii} %%probably WILL be 02 %%needs fixing with code from Kalendarium repository
+%\customsubfile{vr_NN_tempus_adventus} %%done
+%\customsubfile{vr_NN_tempus_nativitatis}%%done renamed
+%\customsubfile{vr_NN_tempus_epiphaniae} %%done but renamed
 %\customsubfile{vr_NN_tempus_post_epiphaniam}
-%\customsubfile{vr_NN_tempus_quadragesimae}
-%\customsubfile{vr_NN_tempus_passionis}
+%\customsubfile{vr_NN_tempus_quadragesimae}%%done
+%\customsubfile{vr_NN_tempus_passionis}%%done
 %\customsubfile{vr_NN_tempus_paschale}
-%\customsubfile{vr_NN_sab_post_pentecosten}
-%\customsubfile{vr_NN_dom_post_pentecosten}
+%\customsubfile{vr_NN_sab_post_pentecosten}%%done!
+%\customsubfile{vr_NN_dom_post_pentecosten}%%done!
 %\customsubfile{vr_NN_commune_apostolorum} %%done!
 %\customsubfile{vr_NN_commune_martyrum}
 %\customsubfile{vr_NN_commune_confessoris} %%pontiff AND non-pontiff would be easiest due to doctors
 %\customsubfile{vr_NN_commune_mulierum} %% virgin AND not a virgin
 %\customsubfile{vr_NN_commune_dedicationis}
 %%\customsubfile{vr_NN_commune_bmv} %% done!
-%%%sabbato %%done!
+%%%sabbato  %%done!
 %%%parvum
 %\customsubfile{vr_NN_officium_defunctorum}
 %\customsubfile{vr_NN_januarii}

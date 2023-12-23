@@ -1,0 +1,507 @@
+% !TEX TS-program = LuaLaTeX+se
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_in_nativitate_usque_5_jan}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\thispagestyle{empty}
+
+%%need to fix sectioning and heading commands later for Vesperale
+
+\section{IN NATIVITATE DOMINI.}
+
+ %% to change in common headers \section command has center environment, this adds space (which we want) but too much
+ 
+ %% screenshot of Praglia code uses section here, but I'm not sure that we want that for feasts like Circumcision, Epiphany, etc.
+
+\rank{Duplex I Classis cum Octava privilegiata III ordinis.}
+
+%%\rank leads to a lot of space underneath — or use of \smalltitle (including inside another macro) or \invesperis — leaves a lot of space so in some cases like Xmas this is OK as it's always on a newpage but for most feasts we won't want this
+
+%\subsection{in i vesperis.}  %%%we should rewrite this as macros and just not have subsections like this
+
+\invesperis{i}
+
+%%this needs a macro
+%\smalltitle{I Antiphona 8. G.}
+
+\primaantiphona{8. G.}
+
+\initialscore{an_rex_pacificus_solesmes_1961}
+\label{109_8g} \psalmus{109}{109_8G}{109_8G}
+
+\gscore[2. Ant.]{7. a}{an_magnificatus_est_solesmes_1961}
+\label{110_7a}\psalmus{110}{110_7a}{110_7a} 
+
+\gscore[3. Ant.]{8. G}{an_completi_sunt_solesmes_1961}
+\psalmus{111}{111_8G}{111_8G}
+
+\gscore[4. Ant.]{8. G}{an_scitote_quia_prope_solesmes_1961}
+\psalmus{112}{112_8G}{112_8G}
+
+\gscore[5. Ant.]{1. g}{an_levate_capita_vestra_solesmes_1961}
+\psalmus{116}{116_1g}{116_1g}
+
+\capitulum \label{cap_24_dec}
+
+\scripture{Tit. 3, 4 – 5.}
+
+\lettrine{A}{p}páruit benígnitas et humánitas Salvatóris nostri Dei:~† non ex opéribus justítiæ, quæ fécimus nos,~* sed secúndum suam misericórdiam salvos nos fecit.
+
+\label{jesu_redemptor_omnium_nativitatis} \hymnus
+\gscore[]{1.}{hy_jesu_redemptor_omnium_nativitatis_solesmes_1961} 
+
+%%Hymn cap J hangs very low! but this is not the case for the Holy Name (same word too).
+
+\rubrique{Sic terminantur omnes Hymni ejusdem metri usque ad Epiphaniam.}
+
+\smallscore{versiculus_i_vesperis_nativitatis_domini}
+
+\admagnificat
+\gscore[]{8. G}{an_cum_ortus_fuerit_solesmes_1961}
+
+\oratio \label{or_natitivatis_dom}
+
+\textes{or_natitivatis_dom}
+
+\hymnusadcompletorium
+
+\gscore[]{8.}{hy_te_lucis_ante_terminum_in_nativitate_domini_solesmes_1961}
+
+\rubrique{Hic tonus (vel ad libitum tonus Hymni Vesperarum) servandus est ad Completorium usque ad Epiphaniarn, etiam in Festis occurentibus.}
+
+%\subsection{in ii vesperis.} %%%we should rewrite this as macros and just not have subsections like this
+
+\invesperis{ii}
+
+\smalltitle{I Antiphona 1. g.} \label{2_vesperas_dec_25}
+
+\initialscore{an_tecum_principium_solesmes_1961}
+\psalmus{109}{109_1g}{109_1g}
+
+\gscore[2. Ant.]{7. a}{an_redemptionem_misit_solesmes_1961} %%should EUOUAE be there if the psalm isn't but it's only 1 psalm referenced elsewhere?
+\rubrique{Ps. \normaltext{Confitébor, \pageref{110_7a}.}}
+%\psalmus{110}{110_7a}{110_7a} 
+
+\gscore[3. Ant.]{7. b}{an_exortum_est_nativitate_solesmes_1961}
+\psalmus{111}{111_7b}{111_7b}
+
+\gscore[4. Ant.]{4. A*}{an_apud_dominum_misericordia_solesmes_1961}
+\psalmus{129}{129_4_alt_A_star}{129_4_alt_A}
+ %%did not originally add the _star when working on Sacred Heart…
+
+\gscore[5. Ant.]{8. G}{an_de_fructu_ventris_tui_solesmes_1961}
+\psalmus{131}{131_8G}{131_8G}
+
+\label{cap_2_vesperis_nativitatis_dom} \capitulum
+
+\scripture{Heb. 1, 1 – 2.}
+
+\lettrine{M}{u}ltifáriam multísque modis olim Deus loquens pátribus in prophétis:~† novíssime diébus istis locútus est nobis in Fílio, quem constítuit hærédem universórum,~* per quem fecit et sǽcula.
+
+\rubrique{Hymnus \normaltext{Jesu redémptor ómnium,} ut in I Vesperis, \normaltext{\pageref{jesu_redemptor_omnium_nativitatis}.}}
+
+\smallscore{versiculus_ii_vesperis_nativitatis_domini}
+
+\rubrique{Sic cantatur tantum in die festi: alias servatur tonus communis.}
+
+\admagnificat \label{hodie_christus_natus_est}
+\gscore[]{1. g2}{an_hodie_christus_natus_est_solesmes_1961}
+
+\oratio
+
+%\textes{or_natitivatis_dom}
+
+\lettrine{C}{o}ncéde, quǽsumus, omnípotens Deus:~* ut nos Unigéniti tui nova per carnem Natívitas líberet; quos sub peccáti jugo vetústa sérvitus tenet.
+Per eúmdem Dóminum.
+
+\rubrique{Deinde pro S. Stephano}
+
+\gscore[Ant.]{8. C}{an_stephanus_autem_solesmes_1961}
+
+%%These verses probably all need to be macros or tex files inserted with \input
+
+\vv Glória et honóre coronásti eum Dómine.
+
+\rr Et constituísti eum super ópera mánuum tuárum.
+
+\oratio \label{oratio_s_stephani_dec_26}
+
+\lettrine{D}{a} nobis, quǽsumus Dómine, imitári quod cólimus, ut discámus et inimícos dilígere:~† quia ejus natalícia celebrámus,~* qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum: Qui tecum vivit et regnat in unitáte.
+
+\litdate{26 Decembris} \label{dec_26}
+
+\bigtitle{S. Stephani Protomartyris.} %% bigtitle as written adds too much space below
+
+\rank{Duplex II cl. cum Octava simplici.}
+
+\rubrique{Antiphona \normaltext{Tecum princípium} cum reliquis Antiphonis et Psalmis de Nativitate, ut supra, \normaltext{\pageref{2_vesperas_dec_25}.} Et dicuntur etiam in aliis Festis infra hanc Octavam occurrentibus.}
+
+\capitulum
+
+\scripture{Act. 6, 8.}
+
+\lettrine{S}{t}éphanus autem plenus grátia et fortitúdine,~* faciébat prodígia et signa magna in pópulo.
+
+\label{deus_tuorum_militum_nat} \hymnus
+
+\gscore[]{1.}{hy_deus_tuorum_militum_st_stephen_solesmes_1961}
+
+\admagnificat
+
+\gscore[]{8. G}{an_sepelierunt_stephanum_solesmes}
+
+\litdate{27 Decembris} \label{dec_27}
+
+\bigtitle{S. Joannis Apostoli et Evangelistæ.}
+
+\rank{Duplex II cl. cum Octava simplici.}
+
+\hymnus
+
+\gscore[]{1.}{hy_exsultet_orbis_gaudiis_st_john_solesmes_1961}
+
+\litdate{28 Decembris} \label{dec_28}
+
+\bigtitle{In Festo Sanctorum Innocentium.}
+
+\rank{Duplex II cl. cum Octava simplici.}
+
+\hymnus
+
+\gscore[]{1.}{hy_salvete_flores_martyrum_solesmes_1961}
+
+\bigtitle{Dominica infra Octavam Nativitatis.}
+
+%%pss and antiphons are semidoubled from II Vespers of Xmas.
+
+%\smalltitle{\scspace{in i vesperis.}} %%this formatting should be hidden, but we should also make it a little bigger, I think.
+
+\invesperis{i}
+
+\capitulum \label{cap_quanto_tempore}
+
+\scripture{Gal. 4, 1 – 2.}
+
+\lettrine[depth=1]{Q}{u}anto témpore hæres párvulus est, nihil differt a servo, cum sit dóminus ómnium:~† sed sub tutóribus et actóribus est,~* usque ad præfínitum tempus a patre.
+
+\rubrique{Hymnus \normaltext{Jesu redémptor ómnium, \pageref{jesu_redemptor_omnium_nativitatis}.}}
+
+%%this needs macro or something lest it be copied and pasted a million times
+
+\vv Verbum caro factum est, allelúia. 
+
+\rr Et habitávit in nobis, allelúia.
+
+\admagnificat
+\gscore[]{8. G}{an_dum_medium_silentium_solesmes_1961}
+
+\oratio %%%this can be a separate file too
+
+\label{oratio_dom_infra_oct_nat}
+
+\lettrine{O}{m}nípotens sempitérne Deus, dírige actus nostros in beneplácito tuo:~† ut in nómine dilécti Fílii tui~* mereámur bonis opéribus abundáre:
+Qui tecum vivit et regnat in unitáte.
+
+\rubrique{Commemoratio Octavæ Nativitatis. Ant. \normaltext{Hódie, \pageref{hodie_christus_natus_est}, ℣. Notum fecit,} Oratio \normaltext{Concéde.}}
+
+%\smalltitle{\scspace{in ii vesperis.}}
+
+\invesperis{ii}
+
+\rubrique{Antiphonæ et Psalmi de Nativitate, \normaltext{\pageref{2_vesperas_dec_25}.}}
+
+\rubrique{Capitulum \normaltext{Fratres: Quanto tempóre} ut in I Vesperis.}
+
+\rubrique{Hymnus \normaltext{Jesu redémptor ómnium, \pageref{jesu_redemptor_omnium_nativitatis}.}}
+
+\vv Verbum caro factum est, allelúia.
+
+\rr Et habitávit in nobis, allelúia.
+
+\admagnificat \label{puer_jesus}
+\gscore[]{6. F}{an_puer_jesus_solesmes_solesmes_1961}
+
+\rubrique{Oratio \normaltext{Omnípotens sempitérne} ut supra.}
+
+\rubrique{Fit commemoratio Octavæ Nativitatis. Ant. \normaltext{Hódie, \pageref{hodie_christus_natus_est}, ℣. Notum fecit,} Oratio \normaltext{Concéde.}}
+
+\litdate{29 Decembris} \label{dec_29}
+
+\bigtitle{S. Thomæ Episcopi, Martyris.} %% bigtitle as written adds too much space below
+
+\rank{Duplex.}
+
+\rubrique{Antiphonæ et Psalmi de Nativitate, \normaltext{\pageref{2_vesperas_dec_25}.} Reliqua de Communi unius Martyris. Hymnus \normaltext{Deus tuórum mílitum} ut supra \normaltext{\pageref{deus_tuorum_militum_nat}.}}
+
+\oratio
+
+\lettrine{D}{e}us, pro cujus Ecclésia gloriósus Póntifex Thomas gládiis impiórum occúbuit:~† præsta, quǽsumus; ut omnes qui ejus implórant auxílium,~* petitiónis suæ salutárem consequántur efféctum. Per Dóminum.
+
+\rubrique{Deinde fit commemoratio Octavæ Nativitatis. Ant. \normaltext{Hódie, \pageref{hodie_christus_natus_est}, ℣. Notum fecit,} Oratio \normaltext{Concéde.}}
+
+\litdate{30 Decembris} \label{dec_30}
+
+\bigtitle{De VI diei infra Oct. Nativitatis.} 
+
+\rank{Semiduplex.}
+
+\rubrique{Antiphone et Psalmi de Nativitate, \normaltext{\pageref{2_vesperas_dec_25},} et Antiphonæ duplicantur; a Capitulo fit de S. Silvestro. Deinde fit commemoratio præced. diei Octavæ Nativitatis. Ant. \normaltext{Hódie, \pageref{hodie_christus_natus_est}, ℣. Notum fecit,} Oratio \normaltext{Concéde.}}
+
+\litdate{31 Decembris} \label{dec_31}
+
+\bigtitle{S. Silvestri I Papæ et Confessoris.} 
+
+\rank{Duplex.}
+
+Vesperas \rubrique{dicuntur de Circumcisione Domini sine nulla commemoratione.}
+
+\biggerrule
+
+\newpage
+
+\thispagestyle{empty}
+
+\litdate{1 Januarii}
+
+\festum{In Circumcisione Domini et Octava Nativitatis.} \label{i_vesperis_circumcisionis}
+
+\rank{Duplex II classis.}
+
+\primaantiphona{6. F.}
+
+\initialscore{an_o_admirabile_commercium_solesmes_1961}
+
+%%episema on "lar" is quite low, could be adjusted…
+
+\psalmus{109}{109_6_alt}{109_6_alt}
+
+\gscore[2. Ant.]{3. a2}{an_quando_natus_es_solesmes_1961}
+
+%% 3a2 spacing is weird because 3 sits so high on baseline
+
+\psalmus{112}{112_3a2}{112_3a2}
+
+\gscore[3. Ant.]{4. E}{an_rubum_quem_solesmes_1961}
+
+\psalmus{121}{121_4E}{121_4E}
+
+\gscore[4. Ant.]{1. f}{an_germinavit_radix_solesmes_1961}
+
+\psalmus{126}{126_1f}{126_1f}
+
+\gscore[5. Ant.]{2. D}{an_ecce_maria_genuit_solesmes_1961}
+
+%%this antiphon is only listed once in the LA, LU, and AM1934, on Gregobase at least.
+
+\psalmus{147}{147_2}{147_2}
+%hard hyphen needed in sustinebit; LaTeX seems to get confused when a macro like hspace comes before \textit or bf
+
+%% commonheaders code should allow for + in fifth antiphon to display as †
+
+\capitulum
+
+\scripture{Tit. 2, 11–12.}
+
+\lettrine{A}{p}páruit grátia Dei Salvatóris nostri ómnibus homínibus,~† erúdiens nos, ut abnegántes impietátem et sæculária desidéria,~* sóbrie, et juste, et pie vivámus in hoc sǽculo.
+
+\rubrique{Hymnus \normaltext{Jesu redémptor ómnium, \pageref{jesu_redemptor_omnium_nativitatis}.}}
+
+\vv Verbum caro factum est, allelúia.
+
+\rr Et habitávit in nobis, allelúia.
+
+\admagnificat
+
+\gscore[]{8. G}{an_propter_nimiam_solesmes_1961}
+
+\oratio
+
+\lettrine{D}{e}us, qui salútis ætérnæ, beátæ Maríæ virginitáte fecúnda, humáno géneri prǽmia præstitísti:~† tríbue, quǽsumus; ut ipsam pro nobis intercédere sentiámus,~* per quam merúimus auctórem vitæ suscípere, Dóminum nostrum Jesum Christum Fílium tuum.
+Qui tecum vivit et regnat in unitáte.
+
+\invesperis{ii}
+
+\rubrique{Omnia ut in primis Vesperis.}
+
+\vv Notum fecit Dóminus, allelúia.
+
+\rr Salutáre suum, allelúia.
+
+\admagnificat
+
+\gscore[]{2. a}{an_magnum_haereditatis_solesmes_1961}
+
+\rubrique{Oratio \normaltext{Deus, qui salútis} ut supra.}
+
+\rubrique{Et non fit commem. sequentis.}
+
+\rubrique{Officium Dominicae quæ vel a die 1 ad 6 Januarii occurri, vel die 7 a superveniente Dominica infra Octavam Epiphaniæ impeditur, fit in Vigilia ipsius Epiphaniæ, ut infra suo loco dicitur: ipsa vero die Dominica fit Officium Sanctissimi Nominis Jesu, ut infra, nisi venerlt in vel die 1 in 6 aut 7 Januarii, quo in casu de Sanctissimo Nomine Jesu fit 2 Januarii cum commemoratione Octavæ S. Stephani, juxta Rubricas. Sicubi tamen in Dominica quæ die in 2, 3, et 4 occurat celebretur Festum quod Sanctissimo Nomini Jesu, præferri debeat et non sit Domini, in eo, dummodo nulla facienda sit commemoratio de ipso Domino, fit  commemor. Dominicæ in utrisque Vesp. per Antiphona, Versus et Orationem de Dominica infra Octavam Nativitatis : et 
+de Sanctissimo Nomine Jesu, in casu, fit pariter Officium diei 2 Januarii, vel sequenti, juxta Rubricas.}
+
+\dominicadate{inter Circumcisionem et Epiphaniam}
+
+\bigtitle{Sanctissimi Nominis Jesu.}
+
+\rank{Duplex II classis.}
+
+\rubrique{Quando hoc festum die 2 Januarii celebratur, in II Vesperis præcedentis nil fit de Sanctissimo Nomine.}
+
+\invesperis{i}
+
+\primaantiphona{8. G.}
+
+\initialscore{an_omnis_qui_invocaverit_solesmes_1961}
+
+\rubrique{Ps. \normaltext{Dixit Dóminus, \pageref{109_8g}.}}
+
+\gscore[2. Ant.]{5. a}{an_sanctum_et_terribile_solesmes_1961}
+
+\psalmus{110}{110_5a}{110_5a}
+
+\gscore[3. Ant.]{3. a2}{an_ego_autem_in_domino_solesmes_1961}
+
+\psalmus{111}{111_3a2}{111_3a2}
+
+\gscore[4. Ant.]{4. E}{an_a_solis_ortu_solesmes_1961}
+
+\psalmus{112}{112_4E}{112_4E}
+%%add \label{112_4E}, then add \pageref{112_4E} for Holy Family.
+
+\gscore[5. Ant.]{8. c}{an_sacrificabo_hostiam_solesmes_1961}
+
+\psalmus{115}{115_8c}{115_8c}
+
+\capitulum
+
+\scripture{Phil. 2, 8 – 10.}
+
+%%this text probably needs to be in its own file!
+
+\lettrine{F}{r}atres: Christus humiliávit semetípsum, factus obédiens usque ad mortem, mortem autem crucis.~† Propter quod et Deus exaltávit illum, et donávit illi nomen, quod est super omne nomen,~* ut in nómine Jesu omne genu flectátur.
+
+\hymnus
+
+%%changed pœnitentibus to pæ-
+\gscore[]{1.}{hy_jesu_dulcis_memoria_solesmes_1957}
+
+\vv Sit nomen Dómini benedíctum, allelúia.
+
+\rr Ex hoc nunc et usque in sǽculum, allelúia.
+
+\admagnificat
+
+\gscore[]{8. G}{an_fecit_mihi_magna_solesmes_1961}
+
+\oratio
+
+\lettrine{D}{e}us, qui unigénitum Fílium tuum constituísti humáni géneris Salvatórem, et Jesum vocári jussísti:~† concéde propítius; ut cujus sanctum nomen venerámur in terris,~* ejus quoque aspéctu perfruámur in cælis. Per eúmdem Dóminum.
+
+\invesperis{ii}
+
+\rubrique{Quando hoc Festum celebratur die 5 Januarii, Vesperæ dicuntur de sequenti Festo Epiphaniæ cum commemoratione præcedentis.}
+
+\rubrique{Omnia ut in I Vesperis, præter sequentia.}
+
+\admagnificat
+
+\gscore[]{1. g}{an_vocabis_nomen_ejus_solesmes_1961}
+
+\litdate{2 Januarii} %%There are ordinarily no 2 Vespers since the octave day was changed from duplex to simplex in 1911.
+
+\bigtitle{In Octava S. Stephani Protomartyr.}
+
+\rank{Simplex.}
+
+%\rubrique{Antiphonæ et Psalmi ad omnes Horas dicuntur de Feria occurenti, ut in Psalterio : reliqua ut in die Festi,\normaltext{ \pageref{dec_26},} præter orationem sequentem.}
+%
+%
+%%From Liber Usualis, at Holy Name
+
+%% \rubrique{Si dies Octava S. Stephani alicubi esset ritus duplicis majoris, die 2 Januarii, de ea fieret commemoratio ut sequitur:}
+
+%%%% \oratio
+%
+%% \lettrine{O}{m}nípotens sempitérne Deus, qui primítias Mártyrum in beáti Levítæ Stéphani sánguine dedicásti:~† tríbue, quǽsumus; ut pro nobis intercéssor exsístat,~* qui pro suis étiam persecutóribus exorávit Dóminum nostrum Jesum Christum Fílium tuum: Qui tecum vivit et regnat in unitáte.
+
+\indent \rubrique{Vesperæ de sequenti.}  %%the indentation doesn't always work properly with the rubrique even if it's NOT right after a sectioning command
+
+%%should add \usepackage{indentfirst} and remove individual calls of \indent
+
+\indent \rubrique{Antiphonæ et Psalmi dicuntur de Feria occurenti, ut in Psalterio : reliqua ut in die Festi, \normaltext{\pageref{dec_27}.}}
+
+%%these three things can never break (at least not the first two)
+
+\litdate{3 Januarii}
+
+\bigtitle{In Octava S. Joannis Ap. et Ev.}
+
+\rank{Simplex.}
+
+\rubrique{Vesperæ de sequenti.}
+
+\rubrique{Antiphonæ et Psalmi dicuntur de Feria occurenti, ut in Psalterio : reliqua ut in die Festi, \normaltext{\pageref{dec_28}.}}
+
+\litdate{4 Januarii} 
+
+\bigtitle{In Octava SS. Innocentium Martyr.}
+
+\rank{Simplex.}
+
+\rubrique{Vesperæ de sequenti. Commemoratio S. Telesphori Papæ et Martyr.}
+
+\litdate{5 Januarii}
+
+\bigtitle{In Vigiliæ Epiphaniæ Domini.}
+
+\rank{II cl. Semiduplex.}
+
+In I Vesperis \rubrique{Antiphonæ et Psalmis ut in I Vesperis Circumcisionis Domini, \normaltext{\pageref{i_vesperis_circumcisionis}.}}
+
+\rubrique{Capitulum \normaltext{Fratres: Quanto tempóre, \pageref{cap_quanto_tempore}.}}
+
+\rubrique{Hymnus \normaltext{Jesu redémptor ómnium, \pageref{jesu_redemptor_omnium_nativitatis}.}}
+
+%% macro or input or something since it gets repeated
+
+\vv Notum fecit Dóminus, allelúia.
+
+\rr Salutáre suum, allelúia.
+
+\rubrique{Ad Magnificat, Antiphona \normaltext{Puer Jesus \pageref{puer_jesus}.}}
+
+\rubrique{Oratio \normaltext{Omnípotens sempitérne, \pageref{oratio_dom_infra_oct_nat}.}}
+
+%\admagnificat
+%\gscore[]{6. F}{an_puer_jesus_solesmes_solesmes_1961}
+
+%\oratio %%%this can be a separate file too.
+%
+%\lettrine{O}{m}nípotens sempitérne Deus, dírige actus nostros in beneplácito tuo:~† ut in nómine dilécti Fílii tui~* mereámur bonis opéribus abundáre:
+%Qui tecum vivit et regnat in unitáte.
+
+%%St Telesphorus will need pageref after we build Commemorations of the saints and insert into project directory
+
+\rubrique{Deinde commem. S. Telesphori, Papæ, Martyris. Ant. \normaltext{Iste sanctus ℣. Glória et honóre.}}
+
+%\vv Glória et honóre coronásti eum Dómine.
+%
+%\rr Et constituísti eum super ópera mánuum tuárum.
+
+\oratio
+
+%% Pre-1939 prayer; also, a good example of how prayer should be inserted with input but then takes an argument instead of copying and pasting the whole thing each time.
+
+\lettrine{D}{e}us, qui nos beáti Telésphorum Mártyris tui atque Pontíficis ánnua solemnitáte lætíficas:~† concéde propítius; ut, cujus natalícia cólimus,~* de ejúsdem étiam protectióne gaudeámus. Per Dóminum.
+
+\rubrique{Ad Completorium dicuntur Psalmi Dominicæ. Non dicuntur Preces.}
+
+\rubrique{Vesperæ de Epiphania, sine nulla commemoratione.}
+
+\end{document}
