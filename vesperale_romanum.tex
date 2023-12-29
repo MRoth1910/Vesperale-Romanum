@@ -54,7 +54,7 @@
 %% Need multiple (sub-)section styles AND we need some (most!) (sub-)sections to not be in TOC at all
 %% need to decide on handling dates in body of antiphonal as well as style for Double II class (bigger title case or bigger all-caps) and other feasts/days
 %% bigtitle works for Sabbato, Dominica, Feria II etc. but maybe that's not appropriate!
-%% the question is how to appropriately use LaTeX sectioning commands while respecting divisions of an antiphonal and having appropriate headings
+%% the question is how to appropriately use LaTeX sectioning commands and header (titlesec and fancyhdr packages, probably) while respecting divisions of an antiphonal and having appropriate headings
 %% can't forget that the pageref is often the page after the incipit (bad!)
 %%babel always has -ct division (should we keep this for readings/chapter and collect or no? to manually edit or no? ditto pt and similar combinations)
 
@@ -78,8 +78,6 @@
 
 %%This needs to be fixed with macro definitions to
 
-%% watch ALT for spacing issues with score stretch
-
 %%\lettrine[depth=1] should probably be used consistently with Q (collects starting "Quaesumus")
 
 %%there should be period after Scripture verse
@@ -88,16 +86,18 @@
 
 %%if it can't be fixed, every label needs \phantomsection
 
+%%need to check offset of asterisk in antiphons; the (default) new barspacing algorithm works, but e.g. Sicut novellae of Corpus Christi has the asterisk to the far right of the quarter bar, when in this case it should be aligned neatly
 
 
 %\customsubfile{vr_02_kalendarii} %%probably WILL be 02 %%needs fixing with code from Kalendarium repository
-%\customsubfile{vr_NN_tempus_adventus} %%done!
-%\customsubfile{vr_NN_tempus_nativitatis}%%done! renamed
-%\customsubfile{vr_NN_tempus_epiphaniae} %%done!  renamed
+%\customsubfile{vr_NN_tempus_adventus} %%done
+%\customsubfile{vr_NN_tempus_nativitatis}%%done renamed
+%\customsubfile{vr_NN_tempus_epiphaniae} %%done but renamed
 %\customsubfile{vr_NN_tempus_post_epiphaniam}
 %\customsubfile{vr_NN_tempus_quadragesimae}%%done
-%\customsubfile{vr_NN_tempus_passionis}%%done!
-%\customsubfile{vr_NN_tempus_paschale}%%done!
+%\customsubfile{vr_NN_tempus_passionis}%%done
+%\customsubfile{vr_NN_tempus_paschale}%%done
+%%added separate file for feasts from Trinity until Sacred Heart
 %\customsubfile{vr_NN_sab_post_pentecosten}%%done!
 %\customsubfile{vr_NN_dom_post_pentecosten}%%done!
 %\customsubfile{vr_NN_commune_apostolorum} %%done!
