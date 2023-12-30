@@ -22,7 +22,7 @@ We wish to facilitate chanting, and the direction of chanters by choirmasters, b
 
 In the Liber Usualis, the most common book, the singer is forced to turn delicate pages in order to find most of the psalms, and the book is very unbalanced, particularly for Sunday Vespers. If one wishes to avoid this, then the choirmaster must create his own edition or rely on others, but this is an enormous task when singing Vespers on a regular basis.
 
-The Magnificat will be given in full with all of the tones necessary, as in the Liber Usualis; the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones. (Dactyls when the canticle is sung to tone 4E test even the best chanters.) 
+The Magnificat will be given in full with all of the tones necessary, as in the Liber Usualis; the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones. (When the canticle is sung to tone 4E, the dactyls test even the best chanters.) 
 
 The common tones will also be reproduced, along with the chants needed for benediction, and a supplement for the 1960 office, as well as the latter changes of Pope Pius XII (e.g. May 31, August 22) will be included (this is a secondary task to actually typesetting the book). If possible, the proper for France will be typeset as well (but again as a secondary task).
 
@@ -39,7 +39,7 @@ The verse numbers going from 1 to n are kept from the form of the Liber Usualis 
 
 Some commentary on style seems necessary, because the sources do not agree entirely.
 
-There are differences in punctuation between the breviary and the chant books. The Liber Antiphonarius and the Vesperale Romanum largely agree except for some placements of the dagger (`†`) and the asterisk (`*`) in the orations (usually, a dagger is absent in the Vaticana but absent in the LA, such as for many of the Lenten prayers). We will follow the chant books, and where they differ, one or the other is to be followed according to best judgement; it is more important to get the punctuation right.
+There are differences in punctuation between the breviary and the chant books. The Liber Antiphonarius and the Vesperale Romanum largely agree except for some placements of the dagger (`†`) and the asterisk (`*`) in the orations (usually, a dagger is present in the Vaticana but absent in the LA, such as for many of the Lenten prayers). We will follow the chant books, and where they differ, one or the other is to be followed according to best judgement; it is more important to get the punctuation right.
 
 The versicle punctuation also comes from the chant books. Ensuring that chanters sing fluently and smoothly requires removing commas.
 
