@@ -526,6 +526,16 @@ Pater noster, Ave María, \textit{et} Credo.%
 \smalltitle{Hymnus. #1}%
 }
 
+%%for 2nd tone of hymn
+\NewDocumentCommand{\altertonus}{}{%
+\smalltitle{Alter Tonus.}%
+}
+
+%%for 2nd tone of hymn where Alius is employed %%optional argument is in particular for Iste Confessor tones of which there are 4 per common of confessors (bishop and not a bishop)
+\NewDocumentCommand{\aliustonus}{O{}}{%
+\smalltitle{Alius Tonus. #1}%
+}
+
 %%above Te lucis
 
 \NewDocumentCommand{\hymnusadcompletorium}{}{%
