@@ -84,6 +84,40 @@ headsep=3mm,
   \gresetinitiallines{1}
 }
 
+%%using the new bar-spacing algorithm by default optimizes spacing. Occasionally asterisks or other signs float too far in one direction or the other.
+
+%%Left default is 0.3cm, right default 0.15cm
+
+\NewDocumentCommand{\zerobaroffsettextleft}{}%
+{%
+\grechangedim{maxbaroffsettextleft}%
+{0cm}%
+{scalable}%
+}
+
+\NewDocumentCommand{\zerobaroffsettextright}{}%
+{%
+\grechangedim{maxbaroffsettextleft}%
+{0cm}%
+{scalable}%
+}
+
+%%%the default for left bar offset is 0.3cm. Right is 0.15cm. This needs to be applied after a score where the bar offset is modified.
+
+\NewDocumentCommand{\resetbaroffsettextleft}{}%
+{%
+\grechangedim{maxbaroffsettextleft}%
+{0.3cm}%
+{scalable}%
+}
+
+\NewDocumentCommand{\resetbaroffsettextright}{}%
+{%
+\grechangedim{maxbaroffsettextleft}%
+{0.15cm}%
+{scalable}%
+}
+
  \NewDocumentCommand{\MagAnnotation}{}{%
  \grechangedim{annotationseparation}{-0.01cm}{fixed}%
  } %% pour les antiennes où le chiffre convient mieux aux miniscules (parfois 1, 2, 4, 7…) ; il n'est pas nécessaire pour 6 ou 8.
@@ -550,6 +584,11 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%above collect (Oratio)
 \NewDocumentCommand{\oratio}{}{%
 \smalltitle{Oratio.}%
+}
+
+%%for use in the commons
+\NewDocumentCommand{\aliaoratio}{}{%
+\smalltitle{\textit{Alia Oratio.}}%
 }
 
 %%for Fridays where Vespers is of Our Lady on Saturday, unless the next day is a feast of IX Lessons.
