@@ -15,7 +15,7 @@
 %\footnotelayout{m} %% this allows merged footnote if text is in parallel columns (mostly translations)
 \usepackage[savepos]{zref}
 \usepackage{fancyhdr}
-\usepackage{needspace} %%pour réserver de l'espace en bas de page ; ça évite des séparations entre les titres et la partition ou le texte qui les suivent.
+\usepackage{needspace} %%pour réserver de l'espace en bas de page ; ça évite des séparations entre les titres et la partition ou le texte qui les suivent. %%mais  ça génère des problèmes lorsque il faut 2 ou 3 titres l'un après l'autre (date ou jour, nom d'une fête, rang liturgique, office célébré… 
 \usepackage[compact]{titlesec}
 \usepackage{xcolor}
 %\usepackage{xstring}
@@ -38,6 +38,7 @@ top=12mm,
 bottom=15mm,
 headsep=3mm,
 } %%borrowed from MB, based on the Solesmes books; binding offset TBD. He has inner=15mm instead.
+%%will need serious revision
 
 %% General scale of all graphical elements. Also borrowed from MB
 %% Values different from 1 are largely untested.
@@ -45,10 +46,10 @@ headsep=3mm,
 \newcommand{\customscale}{1}
 
 
-\AtBeginDocument{\setlength{\parindent}{1em}} %%  default is 20 pt
+\AtBeginDocument{\setlength{\parindent}{1em}} %%  default is 20 pt, this reduces indent from that of Computer Modern to the font's
 
 \sloppy %% to allow larger spaces which avoid overfull hbox (MB: %% We want to allow large inter-words space 
-%% to avoid overfull boxes in two-columns rubrics.
+%% to avoid overfull boxes in two-columns rubrics.)
 
 %%%%%%%%%%%%%%% GREGORIO CONFIG %%%%%%%%%%%%%%%
 
@@ -58,9 +59,10 @@ headsep=3mm,
 \def\GreStar{*}
 \def\GreDagger{†}
 
-%% should prevent flat turning custos into a clef, as Solesmes  uses an altered custos in only one chant per Élie Roux.
+%% should prevent flat turning custos into a clef, as Solesmes uses an altered custos in only one chant per Élie Roux.
 \gresetcustosalteration{invisible}
 
+%% any chant using gregorioscore in some way will need alteration to account for indexing chant name, psalms etc.
 
   \NewDocumentCommand{\initialscore}{O{}m}{%
     \grechangedim{initialraise}{0.5cm}{scalable}%
@@ -113,10 +115,11 @@ headsep=3mm,
 
 \NewDocumentCommand{\resetbaroffsettextright}{}%
 {%
-\grechangedim{maxbaroffsettextleft}%
+\grechangedim{maxbaroffsettextright}%
 {0.15cm}%
 {scalable}%
 }
+
 
  \NewDocumentCommand{\MagAnnotation}{}{%
  \grechangedim{annotationseparation}{-0.01cm}{fixed}%
@@ -131,13 +134,14 @@ headsep=3mm,
 \NewDocumentCommand{\altitshape}{}{\grechangestyle{abovelinestext}{\itshape\fontsize{8}{10}\selectfont}} 
 
 
-%% fine-tuning of space between the staff and the text above lines (used for Magnificats; needs to be rethought (again, should 2 and 3 be raised or not?) and worked into \smallscore
-\newcommand{\altraise}{-0.2cm} %% default is -0.1cm %% needs to be fine-tuned for \rubrique command with EB Garamond font. -0.4mm is MB value, previously 1.4mm
+%% fine-tuning of space between the staff and the text above lines (used for Magnificats; needs to be rethought  and worked into \smallscore
+\newcommand{\altraise}{-0.4mm} %% default is -0.1cm %% needs to be fine-tuned for \rubrique command with EB Garamond font. -0.4mm is MB value, previously 1.4mm and -0.2cm  (this value works best for Magnificat but it does not work with common tones)
 \grechangedim{abovelinestextraise}{\altraise}{scalable}
 
 \newcommand{\altheight}{0.5cm} %% default is 0.3cm and value must be bigger than text height; this should fix the problem. but needs further investigation. currently 6mm in MB command
 \grechangedim{abovelinestextheight}{\altheight}{scalable} %% this is a very finicky command.
 
+%% Essentially what happens is that there is either not enough space above (Magnificat, crashing into words above) or below (common tones, crashing into staff)
 
 %% fine-tuning of space between the staff and the lyrics
 
@@ -328,7 +332,6 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 }  
 
 
-
 %%typesets a horizontal rule like on the page with the prayers before and after the office.
 %%thickness started at 0.4pt
 
@@ -472,10 +475,16 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 \smalltitle{Die #1.}%
 }
 
-%%formatting for Sunday feasts : inter, post… name is for consistenc
+%%formatting for Sunday feasts : inter, post… name is for consistency
 \NewDocumentCommand{\dominicadate}{m}{%
 \smalltitle{Dominica #1.}%
 }
+
+%%formatting for feasts that fall on a weekday fixed to some other thing, like Corpus Christi, Sacred Heart, BVM in Passiontide, and the new feasts found in the appendix (Feria Roman numeral in Latin: inter, post… name is for consistency
+\NewDocumentCommand{\feriadate}{m}{%
+\smalltitle{Feria #1.}%
+}
+
 
 %%for most important feasts (as of 16 dec 2023 leaving section alone as is, but it's similar styling)
 \NewDocumentCommand{\festum}{m}{%
@@ -597,6 +606,7 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 %% originally used apparently for typesetting portions of the Common of the BVM
+%%need to revise them to place with sectioning commands, certain custom title commands
 \newcommand{\espacetitre}{\vspace{-0.5cm}}
 \newcommand{\espaceps}{\vspace{-3mm}} %% ps =psaume
 \newcommand{\espacecap}{\vspace{-3mm}} %% cap is capitulum
