@@ -10,6 +10,9 @@
 *.toc
 *.gaux
 *.synctex(busy)
+*.fls
+*.fdb_latexmk
+*.gsnippet
 psalmi/unused/*
 psaumes/112_5a.tex
 .DS_Store
