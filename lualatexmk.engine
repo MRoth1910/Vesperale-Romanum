@@ -1,0 +1,29 @@
+#!/bin/zsh
+
+# create a zsh argument list from $2
+xargarray=( ${(z)2} )
+for ((i=1; i <= $#xargarray; i++ )); do xargarray[$i]=${(Q)xargarray[$i]}; done;
+
+# for TeXShop 4.66+ only
+export TSBIN="$HOME/Library/TeXShop/bin/tslatexmk"
+
+#export LTMKBIN="$HOME/Library/TeXShop/bin/tslatexmk"
+whereisit="`which latexmk`"
+if [ "${whereisit}" != "latexmk not found" ] ; then
+export LTMKBIN="`dirname ${whereisit}`"
+else
+echo "sorry latexmk not found: using internal default"
+export LTMKBIN="${HOME}/Library/TeXShop/bin/tslatexmk"
+fi 
+
+export LTMKEDIT="$HOME/Library/TeXShop/bin"
+# make sure latexmkrcedit exists in bin
+if [ ! -e "${LTMKEDIT}/latexmkrcedit" ] ; then
+	cp "${TSBIN}/latexmkrcDONTedit" "${LTMKEDIT}/latexmkrcedit"
+fi
+# Use local rc file platexmkrc if it exists. p = project. zsh version
+export localrc=""
+if [ -e ./platexmkrc ] ; then
+	export localrc=( -r ./platexmkrc )
+fi
+"${LTMKBIN}"/latexmk -pdf -r "${LTMKEDIT}/latexmkrcedit" ${xargarray} -r "${TSBIN}/lualatexmkrc" ${localrc} "$1"
