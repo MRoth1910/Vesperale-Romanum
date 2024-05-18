@@ -9,7 +9,7 @@
 \usepackage{fontspec}
 \usepackage[ecclesiasticlatin.usej,activeacute]{babel} %%added activeacute as an option for convenience especially for Kyrie
      \babelprovide[hyphenrules=latin]{ecclesiasticlatin}
-          \usepackage{xspace}
+\usepackage{xspace}%% better to use {} after certain macros (or even within definitions) 
 %     \usepackage{multicol}
 %\usepackage{paracol}
 %\footnotelayout{m} %% this allows merged footnote if text is in parallel columns (mostly translations)
@@ -19,7 +19,7 @@
 \usepackage[compact]{titlesec}
 \usepackage{xcolor}
 %\usepackage{xstring}
-\usepackage{enumitem} %% nécessaire pour les textes des psaumes.
+\usepackage{enumitem}%% psalm textes are in list format modified via this package
 %\usepackage{expl3}
 \usepackage{etoolbox}
 \usepackage{lettrine}
@@ -41,7 +41,7 @@ headsep=3mm,
 %%will need serious revision
 
 %% General scale of all graphical elements. Also borrowed from MB
-%% Values different from 1 are largely untested.
+%% Values different from 1 are largely untested per MB
 %% Used in those commands (e.g. everything FontSpec) that use a scale parameter.
 \newcommand{\customscale}{1}
 
@@ -120,11 +120,10 @@ headsep=3mm,
 {scalable}%
 }
 
-
- \NewDocumentCommand{\MagAnnotation}{}{%
- \grechangedim{annotationseparation}{-0.01cm}{fixed}%
- } %% pour les antiennes où le chiffre convient mieux aux miniscules (parfois 1, 2, 4, 7…) ; il n'est pas nécessaire pour 6 ou 8.
-%\gresetheadercapture{annotation}{greannotation}{string}
+% \NewDocumentCommand{\MagAnnotation}{}{%
+% \grechangedim{annotationseparation}{-0.01cm}{fixed}%
+% } %% pour les antiennes où le chiffre convient mieux aux miniscules (parfois 1, 2, 4, 7…) ; il n'est pas nécessaire pour 6 ou 8.
+%%\gresetheadercapture{annotation}{greannotation}{string}
 
 %% A-bove L-ines T-ext shall be italicized and in a smaller font
 \grechangestyle{abovelinestext}{\itshape\fontsize{8}{10}\selectfont}
@@ -160,7 +159,8 @@ headsep=3mm,
 %\grechangedim{maxbaroffsettextright}{0.5mm}{scalable}
 
 
-%% allows printing of glyphs from Gregorio score font  as text (available glyphs are listed in the Gregorio documentation).
+%% allows printing of glyphs from Gregorio score font as text (available glyphs are listed in the Gregorio documentation).
+%% above all needed for the indications before certain Magnificat tones
 \makeatletter
 \def\gretextglyph#1{{\gre@font@music\csname GreCP#1\endcsname}}
 \makeatother
@@ -171,19 +171,21 @@ ItalicFont= EB Garamond Italic,
 BoldFont= EB Garamond Bold,
 Ligatures=Rare,
 Numbers=Proportional,
-Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/adjusted if this font is abandoned.
+Numbers=OldStyle]
+
+%% all \kern numbers are based on this and should be removed/adjusted if this font is abandoned.
+%% as of 5.17.2024 \kern, although more semantic, is being replaced systematically with \hspace to better respect LaTeX format
+
 \newfontfamily\symbolfont{liturgy}
   %% text must be written {\symbolfont{+}} or called via a command but may conflict as + is † in gabc. Cross should be \small or even \footnotesize. Font also supports V & R for verse/response, but EB Garamond contains appropriate matching glyphs.
 
-%StylisticSet=6 is long Q.
-
+%StylisticSet=6 is long Q. Abandoned but always possible to use again
 
 %%%Roman numerals for the year %% https://tex.stackexchange.com/questions/185548/the-year-in-roman-and-the-month-in-text
 
 \makeatletter
 \newcommand{\YEAR}{\@Roman{\the\year}}
 \makeatother
-
 
 %%% TYPOGRAPHICAL AND SYMBOL COMMANDS  %%%%
 
@@ -299,7 +301,7 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 }%
 }
 
-%% rouge but in italic (this is technically not correct but is contemporary practice of Le Barroux).
+%% rouge but in italic (this is technically not correct but is contemporary practice of Le Barroux). Here for completeness.
 \NewDocumentCommand{\rougeit}{m}{%
 \textcolor{gregoriocolor}%
 {\fontsize{8}{10}%
@@ -313,9 +315,6 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 %\newcommand{\checklettrine}{%
 %  \ifnum\prevgraf<2 \vspace{\baselineskip}\fi
 %}
-
-%%macro to space punctuation with ecclesiasticlatin language from babel.
-\NewDocumentCommand{\espaceponctuation}{}{\hspace{0.10em}}  %%probably not needed if we use commas and not colons for Scriptural citations
 
 %%this value seems more balanced with this font than the definition provided in the ecclesiasticlatin documentation.
 
@@ -331,7 +330,6 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
     }%  
 }  
 
-
 %%typesets a horizontal rule like on the page with the prayers before and after the office.
 %%thickness started at 0.4pt
 
@@ -344,50 +342,60 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
     }%
     }
 
-%% macro to format psalm text
+%% macro to format psalm text. Revised May 17, 2024 to use `enumerate` rather than inserting numbers in .tex file while usng `itemize` and to specify start value via `enumitem` package so this can be used for Magnificats which have 2 chant verses, therefore starting text at 3.
+%% 
+%% these values reflect Liber Usualis but do not appear as if typed on a typewriter. Single words (particularly monosyllables) may need adjustment.
 
-\NewDocumentCommand{\pstexte}{ m }{%
+\NewDocumentCommand{\pstexte}{m}{%
     \smallskip%
     \noindent%
-    \begin{itemize}[%
-    		label=\null, %
-			leftmargin=0pt, %
-			itemindent=0mm, %
-			labelsep=0pt, %
-			labelwidth=0pt, %
+    \begin{enumerate}[%
+			label=\arabic*.,%
+%			align=left,%
+			leftmargin=10pt, %
+			itemindent=15pt, %
+			labelsep=3pt, %
+			labelwidth=0pt,
 			rightmargin=0pt, %
 			parsep=0pt, %
 			topsep=0pt, %
-			itemsep=0pt]%
-    \input{psaumes/#1}
-    \end{itemize}}
+			itemsep=0pt,%
+			start=2]
+       \input{psaumes/#1}
+    \end{enumerate}}
     
-%        \NewDocumentCommand{\pstexte}{ m }{%
-%    \smallskip%
-%    \noindent%%
-%   \begin{multicols}{2}
-%    \begin{itemize}[%
-%    		label=\null, %
-%			leftmargin=0pt, %
-%			itemindent=3mm, %
-%			labelsep=0pt, %
-%			labelwidth=0pt, %
-%			rightmargin=0pt, %
-%			parsep=0pt, %
-%			topsep=0pt, %
-%			itemsep=0pt]%
-%    \input{psaumes/#1}
-%    \end{itemize}
-%    \end{multicols}} %% modified from original in order to allow 2 column psalms
+    %%same as above but for the printing of the Magnificat since it always has 2 chant verses. (As of 5.17.2024) it seems more reasonable to do this unless there is an even better say sso ass to avoid 4 arguments per invocation of \psalmus, siince that 3rd argument will just about always be {2}.
+    \NewDocumentCommand{\magnificattexte}{m}{%
+    \smallskip%
+    \noindent%
+    \begin{enumerate}[%
+			label=\arabic*.,%
+%			align=left,%
+			leftmargin=10pt, %
+			itemindent=15pt, %
+			labelsep=3pt, %
+			labelwidth=0pt,
+			rightmargin=0pt, %
+			parsep=0pt, %
+			topsep=0pt, %
+			itemsep=0pt,%
+			start=3]
+       \input{psaumes/#1}
+    \end{enumerate}}
     
-    %% Command de Matthias Bry modifié, prints psalm incipit score with the text
-    \NewDocumentCommand{\psalmus}{mmm}{
+     %% Command de Matthias Bry modifié, prints psalm incipit score with the text
+     %% #1 is psalm number (so an integer from 1 to 150
+%% #2 is the gabc file somethng like #1_7a.gabc — if there is a way to append a variable mode and ending to #1, then that'd be cool
+%% #3 is the psalm file name described above (and which is confusingly a different argument number when the command is nested): something like 109_7.tex
+
+        \NewDocumentCommand{\psalmus}{mmm}{
 	\needspace{4\baselineskip}%
 	\smalltitle{Psalmus #1.}%            %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
 	\smallscore[n]{#2}%
-	\pstexte{#3}%
-}
-
+	\pstexte{#3}}
+    
+    %%r5.17.2024: removed obsolete, never-really-used version for multicolumn formatting inappropriate on such a small sheet
+    
 %% sd=semiduplex. especially for Dominica ad Vesperas in the Psalterium (the only example which comes to mind, in fact!)
  \NewDocumentCommand{\sdpsalmus}{mm}{
 	\needspace{4\baselineskip}%
@@ -395,16 +403,45 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 	\pstexte{#2}%
 }
 
+%%identical to \pstexte EXCEPT we need to sometimes start the canticle on 3 such as for Compline of the Paschal Vigil
+\NewDocumentCommand{\cantiquetexte}{mm}{%
+    \smallskip%
+    \noindent%
+    \begin{enumerate}[%
+			label=\arabic*.,%
+%			align=left,%
+			leftmargin=10pt, %
+			itemindent=15pt, %
+			labelsep=3pt, %
+			labelwidth=0pt,
+			rightmargin=0pt, %
+			parsep=0pt, %
+			topsep=0pt, %
+			itemsep=0pt,%
+			start=#1]
+       \input{psaumes/#2}
+    \end{enumerate}}
+
     %% Command de Matthias Bry modifié, prints canticle incipit score with the text and scriptural reference
-    \NewDocumentCommand{\canticum}{mmmm}{%
+    
+%%    \vspace{-\baselineskip} essentially removes the spacing from \smalltitle but enough versus too much space or widows/orphans is hard (as of 5.17.2024)
+
+  %% #1 is Canticle name in Latin, e.g. (and most often) Canticum Simeonis.
+%% #2 is the Scriptural citation from the Vulgate as given in the antiphonal/Solesmes editions.
+%% #3 is the gabc file somethng like #1_7a.gabc — if there is a way to append a variable mode and ending to #1, then that'd be cool
+%% #4 is the verse at which the list (verses wth \item) starts on  (pretty much always 2 or 3)
+%% #5 is the psalm file name described above (and which is confusingly a different argument number when the command is nested): something like 109_7.tex
+    \NewDocumentCommand{\canticum}{mmmmm}{%
 	\needspace{4\baselineskip}%
 	\smalltitle{Canticum #1.}%
+	\vspace{-\baselineskip}%
 	\smalltitle{\textit{#2.}}%
 	\smallscore[n]{#3}%
-	\pstexte{#4}%
+	\cantiquetexte{#4}%
+	{#5}%
 }
 
-% Could use \grecommentary{#2} but this sits too low on Nunc Dimittis
+% Could use, before \smallscore \grecommentary taking an argument instead but this sits too low on Nunc Dimittis
     
  %% macro to print any additional text (Capitiulum, oratio, rubrics)
  \NewDocumentCommand{\textes}{ m }{%
@@ -428,6 +465,8 @@ Numbers=OldStyle] %% all \kern numbers are based on this and should be removed/a
 	\renewcommand{\leftmark}{{\sc#1}}
 }
 \setheaders{}{}
+
+%%note as of 5.17.2024: we need to learn how to get fancyhdr or titlesec or both to work in the fulll book
 
 
  %% TITLE COMMANDS %%%% had been dead in NR version of the same, but Matthias says this isn't a good idea.
@@ -585,7 +624,7 @@ Pater noster, Ave María, \textit{et} Credo.%
 \smalltitle{Tonus Hymni ad Completorium.}%
 }
 
-%%above Magnificat antiphon where this is done in Liber antiphonarius (Or Vaticana Vesperale) (Sundays to be determined)
+%%above Magnificat antiphon where this is done in Liber antiphonarius (Or Vaticana Vesperale) (Sundays to be determined because there are so many of them; Liber Usualis and ferial format may be best)
 \NewDocumentCommand{\admagnificat}{}{%
 \smalltitle{Ad Magnificat, Antiphona.}%
 }
@@ -609,13 +648,6 @@ Pater noster, Ave María, \textit{et} Credo.%
 \NewDocumentCommand{\bvmsabbato}{}{%
 \rubrique{Ad Vesperas, nisi occurrat Festum IX Lectionum, a Capitulo fit de Sancta Maria in Sabbato.}%
 }
-
-%% originally used apparently for typesetting portions of the Common of the BVM
-%%need to revise them to place with sectioning commands, certain custom title commands
-\newcommand{\espacetitre}{\vspace{-0.5cm}}
-\newcommand{\espaceps}{\vspace{-3mm}} %% ps =psaume
-\newcommand{\espacecap}{\vspace{-3mm}} %% cap is capitulum
-\newcommand{\espace}{\vspace{2mm}}
 
 %% for litanies and other things like antiphon O Doctor Optime
 
@@ -661,7 +693,8 @@ Pater noster, Ave María, \textit{et} Credo.%
 
 %%FOOTNOTES%%%
 
-\MakePerPage{footnote}%%from perpage package \MakePerPage{footnote}
+%%from perpage package \MakePerPage{footnote} as footnotes are just per page as it says
+\MakePerPage{footnote}
 
 %%PHANTOM SECTION MANIPULATION%%
 \providecommand\phantomsection{} %% should make hyperref work properly %%needed with addcontentsline, not with section etc alone (needed if running hyperref)
