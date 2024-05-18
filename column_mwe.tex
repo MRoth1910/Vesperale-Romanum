@@ -1,0 +1,68 @@
+% !TEX TS-program = LuaLaTeX+se 
+%% to run Gregorio
+
+\documentclass[12pt]{article}
+\usepackage{paracol}
+\usepackage[autocompile]{gregoriotex}%%a solution needs to be compatible with running Gregorio to make the chant scores.
+\usepackage{lettrine}
+\usepackage[english,ecclesiasticlatin.usej]{babel}
+     \babelprovide[hyphenrules=latin]{ecclesiasticlatin}
+     \usepackage{needspace}
+     
+     \NewDocumentCommand{\smalltitle}{m}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering #1\par}%
+}
+
+ \setlength{\columnsep}{3pc}
+\setlength\columnseprule{0.4pt}
+
+\begin{document}
+
+ \begin{paracol}{2}
+        Lætámini in Dómino et exultáte justi.
+
+ Et gloriámini ómnes récti córde.
+           \switchcolumn
+    \noindent    Be glad in the Lord, and rejoice, ye just.
+         
+\noindent   And glory, all ye right of heart.
+    \end{paracol}
+
+\smalltitle{Collect.}
+   \begin{paracol}{2}
+   Orémus.
+   
+\lettrine{B}{e}atórum Mártyrum tuórum Proti et Hyacínthi nos, Dómine, fóveat pretiósa conféssio: et pia júgiter intercéssio tueátur.
+\switchcolumn
+\begin{otherlanguage}{english}
+\noindent Let us pray. O Lord, we beseech thee, that the feast of thy blessed Martyrs and Bishops Protus and Hyacinth may keep us, and their worshipful prayers commend us.
+\end{otherlanguage}
+    \end{paracol}
+    
+      \begin{paracol}{2}
+   Justum dedúxit Dóminus per vias rectas.
+
+ Et osténdi illi regnum Dei.
+           \switchcolumn
+ \noindent           The Lord guided the just in right paths.
+                  
+\noindent  And showed him the kingdom of God.
+    \end{paracol}
+
+\smalltitle{Collect.}
+   \begin{paracol}{2}
+   Orémus.
+   
+\lettrine{A}{d}ésto, Dómine, supplicatiónibus nostris, quas in beáti Nicolái Confessóris tui solemnitáte deférimus: ut, qui nostræ justítiæ fidúciam non habémus, ejus qui tibi plácuit, précibus adjuvémur.
+Per Dóminum.
+\switchcolumn
+\begin{otherlanguage}{english}
+\noindent Let us pray. O Lord, mercifully hear the supplications, which we offer unto thee on this solemn feast day of thy blessed Confessor, Nicholas, and forasmuch as we put no trust in our own righteousness, grant that we may be helpen by his prayers who walked with thee. Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.  Amen.
+\end{otherlanguage}
+    \end{paracol}
+
+
+
+\end{document}
