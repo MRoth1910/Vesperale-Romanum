@@ -364,7 +364,9 @@ Numbers=OldStyle]
        \input{psaumes/#1}
     \end{enumerate}}
     
-    %%same as above but for the printing of the Magnificat since it always has 2 chant verses. (As of 5.17.2024) it seems more reasonable to do this unless there is an even better say sso ass to avoid 4 arguments per invocation of \psalmus, siince that 3rd argument will just about always be {2}.
+      %%same as above but for the printing of the Magnificat since it always has 2 chant verses. (As of 5.17.2024) it seems more reasonable to do this unless there is an even better way to do so  to avoid 4 arguments per invocation of \psalmus, siince that 3rd argument will just about always be {2}.
+    
+%%  the problem is that this repeats a bunch in the Magnificat section and that the Nunc Dimittis sometimes begins on 3.
     \NewDocumentCommand{\magnificattexte}{m}{%
     \smallskip%
     \noindent%
