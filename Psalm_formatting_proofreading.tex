@@ -53,27 +53,31 @@ Numbers=OldStyle]
 \begin{document}
  \section{Proofreading: ``Errors'' to fix in gabc or tex fiiles for Psalms}
  
- {\centering Version 0.4, \today\par}
+ {\centering Version 0.5, \today\par}
  
 \begin{itemize}
  \item
-The breviary has different punctuation than the antiphonale, whose punctuation is more sparse and therefore better for singing, since punctuation is by and large ignored in the chanting of the psalms. So the extra commas and such need to be removed. This document should be used to do that work of correction and to proofread.
+ This document should be used to do necessary corrections and therefore proofreading. Why do we need to correct the psalm texts?
+ 
+The breviary has different punctuation than the antiphonale, whose punctuation is more sparse and therefore better for singing, as punctuation is by and large ignored in the chanting of the psalms. (This is particularly noticeable in the singing as historically taught by the abbeys of Solesmes, Fontgombault, and so on, and by their associates.) So the extra commas and such need to be removed and some punctuation marks changed.
  
  \item
- The position of the flex in some psalms changed between the publication of the 1934 editions of the \textit{Liber Usualis,} both the 800 with French rubrics and the 780 with Latin ones as well as the corresponding 801, with English rubrics, which are somewhat ubiquitous among those singing from used editions, and the file available as a scan from the \textsc{cmaa}. This will need to be rectified in both the gabc file and in the tex file.
+ The position of the flex in some psalms changed between the publication of the 1934 editions of the \textit{Liber Usualis,} both the 800 with French rubrics and the 780 with Latin ones as well as the corresponding 801, with English rubrics, which are somewhat ubiquitous among those singing from used editions, and the file available as a scan from the \textsc{cmaa}. This will possibly need to be rectified in both the gabc file and in the tex file.
  
  \item
  
  Make sure that the flex is correct. \verb|87-5.gabc| (renamed to \verb|87_5.gabc|) as downloaded had the flex on Ti, \verb|g| in gabc, but it needs to be on \verb|f|. Modes 1, 4, 6, and 7 have a flex on a major second; modes 2, 3, 5, and 8 have a flex on a minor third to avoid a minor second.
 
  \item
- As mentioned in the overall style guide, \textit{Flex} needs to become \textit{Flexa} (the colon is preserved) and the appropriate number of forward slashes added for spaces, lest the word run into the previous one. 
+ As mentioned in the overall style guide, \textit{Flex} needs to become \textit{Flexa}. This is still followed by a colon, and we add the appropriate number of forward slashes added for spaces, lest the word run into the previous one. 
 
  \item
- Again, \texttt{ctrl+F} is your friend! It might be worth creating a macro just for spacing (to replace \verb|\hspace| in particular…) TBD. The non-semantic version could be used for the most finicky cases that require a bigger value for some reason.
+\texttt{ctrl+F} is your friend! It might be worth creating a macro just for spacing (to replace \verb|\hspace| in particular…) TBD. The non-semantic version could be used for the most finicky cases that require a bigger value for some reason.
 
  \item
- This isn't an error, but a choice: for psalms sung with tone 4 A* or 8 G*, the convention today is to sing the alternate ending on each verse; this is not given as an EUOUAE ending for antiphons, and Solesmes did not encourage the practice (doing it only at the doxology). We should add the additional note to form the punctum (always in the form \texttt{fg..} or whatever the notes are — the dots must both follow the last note of the podatus).
+For psalms sung with tone 4 A* or 8 G*, the convention today is to sing the alternate ending on each verse; this is not given as an EUOUAE ending for antiphons in any edition, and Solesmes did not encourage the practice (doing it only at the doxology, e.g. in Dom Suñol's book). We should add the additional note to form the punctum (always in the form \texttt{fg..} or whatever the notes are — the dots must both follow the last note of the podatus).
+
+This is therefore a deliberate choice in deviating from the historcal examples of printed books.
 
  \item
  The alternate \textit{tonus peregrinus} (with the extra \textit{podatus}) and tone 6 (identical to mode 1 until the mediant) will be in the \textit{toni communes.}
@@ -82,18 +86,20 @@ The breviary has different punctuation than the antiphonale, whose punctuation i
  Punctuation goes inside of braces so \verb|\textbf{nunc},| (\textbf{nunc},) or \verb|\textit{nunc},| (\textit{nunc},) is now\\ \verb|\textbf{nunc,}| (\textbf{nunc,}) or \verb|\textit{nunc,}| (\textit{nunc,}).
  
  \item
-\verb|babel| offers a thin space between a word and a following colon. This looks nice (and is the Swiss usage). We will follow this, so please do not insert spaces in the psalm files.
+\verb|babel| offers a thin space between a word and a following colon. This looks nice (it happens to be the Swiss usage). We will follow this, so please do not insert spaces in the psalm files.
  
  \end{itemize}
 \begin{itemize}
 \item Tones 1 D2 and 4E must remain separate, due to the pointing needed for dactyls, and 3 a and 3 b must remain in one file and tones 3 a2 and 3g in another.
   \item All psalms will require insertion of doxology (\textit{Glória Patri}). (\textit{Requiem ætérnam} for the office of the dead, nothing for the Triduum). It needs to be written out for ease, just like in the Liber Usualis. (I suspect that I inadvertently unchecked ``Include Glória Patri'' when using Ben Bloomfield's website, but reorganizing the files is, at this point, a waste of time.)
  \item Each ``verse'' needs to be numbered (assuming that we continue to number psalms!) according to the \textit{Liber Usualis,} edition to be specified.
+ 
+ Update as of May 18, 2024: Numbers have been removed from the psalm file. There is no reason to not let the environments and packages for numbered lists (namely the \verb|enumerate| environment and the \verb|enumitem| package) do their thing, and in fact, the problem of spacing after periods was exacerbated by manually inserting numbers (which is also a waste of time).
  \item \texttt{\textbf{Sanc}to} needs to become \texttt{\textbf{San}cto}; idem for italic.
- \item
+ \item \emph{The following are examples of things to look for, but the list of clashing characters to kern manually is probably non-exhaustive…}
  if ``ló'' is italicized, then it will need to be kerned (with \verb|\hspace|). A good starting point for this persnickety combo is 0.03em. (in doxology of tones 1, 3 a2/g, 6, 8; others are either bolded or ``u'' is also italicized)
   \item \verb|\hspace{0.03em}| after ``a'' of ``Patri'' in mode 4
-  \item italicized \hspace{0.03em}\textit{J} probably needs to be adjusted ( \verb|\hspace{0.03em}| was used, in fact, in this text).
+  \item italicized \hspace{0.03em}\textit{J} usually needs to be adjusted ( \verb|\hspace{0.03em}| was used, in fact, in this text).
   \item
   Add kerning (\verb|\hspace|) for Gloria Patri of tone 8 (in ``Spíritui'' and in ''sæculórum'') to account for italics.
    \item  \verb|\hspace{0.03em}| in mode 1 doxology before ``l'' of ``sæculórum'' (in fact virtually every form if -cu or -la, ló, etc. are italicized needs adjusting…)
@@ -180,7 +186,7 @@ Psalm 33.1:
     \item
   Remove comma after ``vir''
   \item
-  Remove comma after ``Dóminum''
+  Remove comma after ``Timéte Dóminum''
   \item
   sanc-t to san-ct
   \item
@@ -651,5 +657,13 @@ Psalm 141:
 
 0.3 Made comments for ps. 121 clearer and added a note about hyphenation differences due to etymology.
 0.4 Remembered that the Nunc dimittis does indeed have a Hebrew word which is never a Latin dipthong but is sometimes printed as if it could be…
+
+0.5 Clarified which comma is removed in ps 33.1 at Wednesday Compline. 
+
+Made changes to account for switch to \verb|enumerate| environment.
+
+Added remarks about the (non-) meaning of punctuation in chanting psalms and the star endings in modes 4 and 8.
+
+Clarified that kerning list is not exhaustive and will be changed as proofreading happens more seriously/thoroughly.
 \end{document}
 
