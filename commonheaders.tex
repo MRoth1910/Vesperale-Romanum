@@ -590,6 +590,18 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 %%above chapter (Capitulum)
+%%should indent by 1 em or a quad and then preserve space at end of line without needing to resort to table
+%%imitation,sort of, of Liber antiphonarius style; AM1934 indentation is bigger
+%%argument is Scriptural reference
+\NewDocumentCommand{\capitulum}{m}{%
+{\quad Capitulum.%
+\hfill \textit{#1}%
+\hspace*{1em}%
+\par%
+}%
+}
+
+%%%original commands
 \NewDocumentCommand{\capitulum}{}{%
 \smalltitle{Capitulum.}%
 }
