@@ -51,13 +51,13 @@ Numbers=OldStyle]
 }
 
 \begin{document}
-\section{General Proofreading and Stylistic Considerations, Version 0.2. \today}
+\section{General Proofreading and Stylistic Considerations, Version 0.3. \today}
 
 The typographical standards are peculiar, due to the typesetting system required and other factors (namely, the sources of the chant and individual preferences), so some documentation should be given.
 
 Modern typesetting of chant is inconsistent with ligatures. Dom Pothier did use ``æ'' and ``st'' or ``ct'' in books which he edited and had printed before his departure from Solesmes and before the monks stopped printing themselves. The Vatican edition, at least in the 1913 Vesperale Romanum, uses ``æ'', but the Solesmes antiphonal does not, nor does the Liber Usualis.
 
-However, part of this project's aim is taking full advantage of computer typography, and the ease of using OpenType font features in Lua\LaTeX. The ligatures for ``st'' or ``ct'' can be set, and are, via \verb|fontspec|. Because \verb|babel| (or at least its Latin extension) is prone to not working, it seems best to type directly (say, option + \verb|'| on macOS to get ``æ'') or switching to a Unicode keyboard (needed for ``ǽ'') or copying and pasting. This also seems important, since it insists on the ability of Lua\LaTeX to support Unicode (provided that the chosen typeface supports it — and EB Garamond supports almost all Catholic typographical needs but the Maltese cross, actually a cross pattée, which isn't needed in an antiphonal, with the exception of ``œ'' with an acute accent, which is very rarely needed). By the way, another reason for using the ligatures is to ensure some consistency with the way that the chant is supposed to be sung according to the Vaticana and the classical Solesmes method
+However, part of this project's aim is taking full advantage of computer typography, and the ease of using OpenType font features in Lua\LaTeX. The ligatures for ``st'' or ``ct'' can be set, and are, via \verb|fontspec|. Because \verb|babel| (or at least its Latin extension) is prone to not working, it seems best to type directly (say, option + \verb|'| on macOS to get ``æ'') or switching to a Unicode keyboard (needed for ``ǽ'') or copying and pasting. This also seems important, since it insists on the ability of Lua\LaTeX to support Unicode (provided that the chosen typeface supports it — and EB Garamond supports almost all Catholic typographical needs but the Maltese cross, actually a cross pattée, which isn't needed in an antiphonal, with the exception of ``œ'' with an acute accent, which is very rarely needed). By the way, another reason for using the ligatures is to ensure some consistency with the way that the chant is supposed to be sung according to the Vaticana and the classical Solesmes method.
 
 Gregorio also provides its own shortcuts, particularly for the ℣ and ℟, but using those of the text font works too, and that is the approach taken. The slashed-A is more difficult to create, so it has been avoided although if someone wants to provide code based on the Gregorio documentation, that is certainly welcome.
 
@@ -97,7 +97,8 @@ Roman numerals, following the monastic antiphonal, will not be followed by perio
 \item
 To follow on the above, Scripture verses as numbers will be used instead of chapter divisions of the Vulgate by letter (the 1934 Antiphonale monasticum already does this). They will be taken from DivinumOfficium.
 \item
-For now ``Capitulum'' is written on one line, the Scriptural source on another line, but if someone wants to make it so that the two can be on one line (like in the antiphonal), please, contribute!
+(Fixed) For now ``Capitulum'' is written on one line, the Scriptural source on another line, but if someone wants to make it so that the two can be on one line (like in the antiphonal), please, contribute! \emph{as of May 2024} there is a solution which should allow for elegant indentation and placement of elements on the same line.
+
 \item
 \verb|lettrine| provides a nice way to use drop capitals for chapters and orations. Letters like ``Q'' and sometimes ``R'' will require some adjustment via package options, but it's otherwise straightforward.
 \item
@@ -115,5 +116,7 @@ Version History:
 0.1: First full draft. Oct. 13, 2023.
 
 0.2: Revisions made to make the sentences clearer and to note possibilities for future changes to the LaTeX macros.
+
+0.3 Note of Capitulum code revision
 
 \end{document}
