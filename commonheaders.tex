@@ -353,10 +353,11 @@ Numbers=OldStyle]
         \par%
     }%
     }
-
-%% macro to format psalm text. Revised May 17, 2024 to use `enumerate` rather than inserting numbers in .tex file while usng `itemize` and to specify start value via `enumitem` package so this can be used for Magnificats which have 2 chant verses, therefore starting text at 3.
+    
+%% macro to format psalm text. Revised May 17, 2024 to use `enumerate` rather than inserting numbers in .tex file while usng `itemize` and to specify start value via `enumitem` package. 
 %% 
 %% these values reflect Liber Usualis but do not appear as if typed on a typewriter. Single words (particularly monosyllables) may need adjustment.
+%%leftmargin=* and itemindent=* appear to be the way to a hanging indent like the modern antiphonal (but that looks like crap)
 
 \NewDocumentCommand{\pstexte}{m}{%
     \smallskip%
