@@ -479,11 +479,15 @@ Numbers=OldStyle]
 \titleformat{\section}[display]{\huge\filcenter\sc\addfontfeature{LetterSpace=5.0}}{}{}{} %%
 \titleformat{\subsection}[display]{\LARGE\filcenter\sc\addfontfeature{LetterSpace=5.0}}{}{}{} %%originally \large, then \Large
 \setcounter{secnumdepth}{0}
-\titlespacing*{\chapter}{0pt}{-50pt}{40pt} %%this should reduce spacing before chapter title https://tex.stackexchange.com/questions/63390/how-to-decrease-spacing-before-chapter-title
+\titlespacing*{\chapter}{0pt}{-25pt}{20pt} %%this should reduce spacing before chapter title while putting it flush with the top of the text area
+%% see https://tex.stackexchange.com/questions/63390/how-to-decrease-spacing-before-chapter-title
+%%\titlespacing*{\chapter}{0pt}{-50pt}{40pt}  %%this puts chapter title in HEADER which we do not want
 \titlespacing{\section}{0pt}{*0}{*0}
 
 %%need section titleformat more appropriate for weekdays of psalter and minor feasts 
 % See https://tex.stackexchange.com/questions/623797/multiple-section-styles-in-same-document.
+
+\addto\captionsecclesiasticlatin{\renewcommand\contentsname{\centerline{INDEX GENERALIS.}}}
 
 %this command still needs work
 \NewDocumentCommand{\header}{m}{\setheaders{{\scshape\addfontfeature{LetterSpace=5.0}#1}}{{\scshape\addfontfeature{LetterSpace=5.0} #1}}}
