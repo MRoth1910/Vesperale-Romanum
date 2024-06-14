@@ -51,7 +51,7 @@ Numbers=OldStyle]
 }
 
 \begin{document}
-\section{General Proofreading and Stylistic Considerations, Version 0.3. \today}
+\section{General Proofreading and Stylistic Considerations, Version 0.4. \today}
 
 The typographical standards are peculiar, due to the typesetting system required and other factors (namely, the sources of the chant and individual preferences), so some documentation should be given.
 
@@ -91,13 +91,17 @@ The sources are to be followed, so the colon alone is used for dialogue (no guil
 \subsection{Other Considerations}
 \begin{itemize}
 \item
+For chant itself: the Si rules are those of Solesmes plus a clarification based on their traditional typography: the note is flat until the word ends, until a natural sign is printed, a bar appears (very rare in the evening offices), or a line ends (also rare); the note is also flat when printed for the entire chant. We leave off the feature to print a flat at a custos as it is only used once and it causes problems on second passes.
+\item
+Adjustments to italicized syllables in psalms need to be made carefully.
+\item
 All titles will end with a period. If one is not present at the end of something such as ``I Antiphona 8. G'', it should be added (there is a little inconsistency here in the sources).
 \item
 Roman numerals, following the monastic antiphonal, will not be followed by periods; the book looks more modern this way.
 \item
 To follow on the above, Scripture verses as numbers will be used instead of chapter divisions of the Vulgate by letter (the 1934 Antiphonale monasticum already does this). They will be taken from DivinumOfficium.
 \item
-(Fixed) For now ``Capitulum'' is written on one line, the Scriptural source on another line, but if someone wants to make it so that the two can be on one line (like in the antiphonal), please, contribute! \emph{as of May 2024} there is a solution which should allow for elegant indentation and placement of elements on the same line.
+(Fixed) For now ``Capitulum'' is written on one line, the Scriptural source on another line, but if someone wants to make it so that the two can be on one line (like in the antiphonal), please, contribute! \emph{as of May 2024} there is a solution which should allow for elegant indentation and placement of elements on the same line. ``Lectio brevis'' at Compline gets the same treatment.
 
 \item
 \verb|lettrine| provides a nice way to use drop capitals for chapters and orations. Letters like ``Q'' and sometimes ``R'' will require some adjustment via package options, but it's otherwise straightforward.
@@ -118,5 +122,7 @@ Version History:
 0.2: Revisions made to make the sentences clearer and to note possibilities for future changes to the LaTeX macros.
 
 0.3 Note of Capitulum code revision
+
+0.4 Note lectio brevis revision; rules for Si flat; need to correct italics in psalm verses (gabc).
 
 \end{document}
