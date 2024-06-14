@@ -3,6 +3,18 @@
 %% much is based on the work of Matthias Bry (hereafter Matthias or MB) for the Nocturnale Romanum project. https://github.com/Nocturnale-Romanum/nocturnale-romanum
 %% for personal reasons, the commands are a mix of French and English names. Feel free to choose one or the other if you make use of them. This file is subject to change.
 
+%%%%%%%%%%%%%%% INDICES %%%%%%%%%%%%%%%
+
+\usepackage{imakeidx}
+
+\indexsetup{level=\section*,toclevel=section,noclearpage,othercode=\footnotesize\thispagestyle{empty}}
+\makeindex[name=H,title=Index Hymnorum, columns=2,columnseprule]
+\makeindex[name=A,title=Index Antiphonarum, columns=2,columnseprule]
+%%\makeindex[name=R,title=Index Responsoriorum, columns=2,columnseprule]
+\makeindex[name=P,title=Index Psalmorum, columns=2,columnseprule]
+\makeindex[name=T,title=Toni Communes, columns=2,columnseprule]
+\makeindex[name=F,title=Index Festorum, columns=2,columnseprule]
+
 %% This is the format of the recent Solesmes books.
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
 
@@ -726,6 +738,14 @@ Pater noster, Ave María, \textit{et} Credo.%
 \providecommand\phantomsection{} %% should make hyperref work properly %%needed with addcontentsline, not with section etc alone (needed if running hyperref)
 
 \setcounter{tocdepth}{2} %% probably should hide subsections from TOC of most documents
+
+%% command to wrap printindex and set the headers for indices (from MB)
+\newcommand{\cprintindex}[2]{
+	\setheaders{Indices}{#2}
+	\pagestyle{fancy}
+	\thispagestyle{empty}
+	\printindex[#1]
+}
 
 %%%SUBFILES%%%
 \usepackage{xr} %%to allow cross-references between documents%%%
