@@ -570,6 +570,13 @@ Numbers=OldStyle]
 }%
 }
 
+%% The needspace package inserts white space that we don't want!
+%%especially for Sab/Dom PP which has sentence-case text below main title of page
+\NewDocumentCommand{\subtitle}{m}{%
+ {\centering{\Large #1}\par%
+ }%
+ }
+
 %%to replace original idea of subsection; will need work on the spacing (the needspace and vspace both might be too big
 %%leaving subsection as is for now (16 dec 2023), for reference and in case I used it and didn't remember it
 %% argument here is i or ii; will need another command if the vespers are identical.
