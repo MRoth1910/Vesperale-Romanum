@@ -528,10 +528,24 @@ Numbers=OldStyle]
 %\vspace{\baselineskip}
 % {\centering{\large #1}}\par} %}
 
-%%formatting date ordinarily above names of minor feasts
+%%formatting date of feasts where this listed at top of page
 \NewDocumentCommand{\litdate}{m}{%
 \smalltitle{Die #1.}%
 }
+
+%for most/ordinary feasts of Sanctorale 
+%%"as long as text isn't long enough to over-print number according to David Carlisle
+\NewDocumentCommand{\datefeast}{mm}{%
+  \par
+  \noindent
+  \makebox[0pt][l]{#1.}%
+  \makebox[\textwidth]{\Large #2.}%
+  }
+  
+%%  alternatively
+%%  \NewDocumentCommand\datefeast{mm}{%
+%%\noindent #1.\hfill{}{\Large#2.}\hfill{}%
+%%}
 
 %%formatting for Sunday feasts : inter, post… name is for consistency
 \NewDocumentCommand{\dominicadate}{m}{%
@@ -688,6 +702,11 @@ Pater noster, Ave María, \textit{et} Credo.%
 \NewDocumentCommand{\omniapraeter}{}{%
 {\rubrique{\rubrique{Omnia ut in I Vesperis, præter sequentia.}}%
 }%
+}
+
+%%for commemoration of following at II Vespers of major feasts.
+\NewDocumentCommand{\caphymn}{}{%
+\rubrique{Capitulum et Hymnus ut in I Vesperis.}%
 }
 
 %%for commemoration of following at II Vespers of major feasts.
