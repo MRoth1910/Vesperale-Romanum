@@ -639,6 +639,18 @@ Pater noster, Ave María, \textit{et} Credo.%
 }%
 }
 
+%%for use in commons
+%%#1 is Pro… e.g. Pro Virgine Martyre.
+%%#2 is Scriptural citation Prov. 31, 10 – 11.
+\NewDocumentCommand{\specialcapitulum}{mm}{%
+{\enspace #1%
+\hfill Capitulum.%
+\hfill \textit{#2}
+\hspace*{1em}%
+\par%
+}%
+}
+
 %%%original commands
 %\NewDocumentCommand{\capitulum}{}{%
 %\smalltitle{Capitulum.}%
