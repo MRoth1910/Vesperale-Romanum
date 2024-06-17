@@ -632,7 +632,8 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%imitation,sort of, of Liber antiphonarius style; AM1934 indentation is bigger
 %%argument is Scriptural reference
 \NewDocumentCommand{\capitulum}{m}{%
-{\quad Capitulum.%
+{\needspace{5\baselineskip}%
+\quad Capitulum.%
 \hfill \textit{#1}%
 \hspace*{1em}%
 \par%
@@ -643,7 +644,8 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%#1 is Pro… e.g. Pro Virgine Martyre.
 %%#2 is Scriptural citation Prov. 31, 10 – 11.
 \NewDocumentCommand{\specialcapitulum}{mm}{%
-{\enspace #1%
+{\needspace{5\baselineskip}%
+\quad #1%
 \hfill Capitulum.%
 \hfill \textit{#2}
 \hspace*{1em}%
