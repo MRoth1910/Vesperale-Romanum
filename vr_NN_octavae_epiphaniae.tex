@@ -1,5 +1,4 @@
-% !TEX TS-program = lualatexmk
-% !TEX parameter =  --shell-escape
+% !TEX TS-program = LuaLaTeX+se
 
 \documentclass[vesperale_romanum.tex]{subfiles}
 
@@ -15,10 +14,14 @@
 
 \begin{document}
 
-\thispagestyle{empty}
+%\thispagestyle{empty}
 
-\festum{In Epiphania Domini.}
-%\header{in epiphania domini.}
+%\addcontentsline{toc}{section}{Ab Epiphianiam ad Septuagesimam.} \phantomsection
+%
+%\festum{In Epiphania Domini.}
+
+ \section[Ab Epiphianiam ad Septuagesimam.]{IN EPIPHANIA DOMINI.}\header{in epiphania domini.}\header{in epiphania domini.}
+%%could also be section with optional argument
 
 \rank{Duplex I classis cum Octava privilegiata II ordinis.}
 
@@ -84,8 +87,10 @@
 
 \psalmus{113}{113_7c2}{113_7}
 
-%%psalm 113 could ultimately go to psalter of paschal time to avoid reprinting it
-%%or ps 116 could be printed alone (since it's much shorter)
+%%ps 116 could be printed alone  above(since it's much shorter)
+
+\capitulum{Isaiæ 60, 1.}
+\lettrine{S}{u}rge, illumináre Jerúsalem, quia venit lumen tuum,~* et glória Dómini super te orta est.
 
 \hymnusmode{3.}
 
@@ -171,9 +176,7 @@ tum si ob occursum diei Octavæ ipsum in diem Sabbati vel in proximiorem anteced
 
 \psalmus{147}{147_1f}{147_1}
 
-\capitulum
-
-\scripture{Luc. 2, 51.}
+\capitulum{Luc. 2, 51.}
 
 \lettrine{D}{e}scéndit Jesus cum María et Joseph, et venit Názareth,~* et erat súbditus illis.
 
@@ -322,6 +325,8 @@ Per Dóminum.
 
 \rubrique{Vesperæ de sequenti die Octava.}
 
+\newpage
+
 \bigtitle{In Octava Epiphaniæ.}
 
 \rank{Duplex majus.}
@@ -347,7 +352,7 @@ Octava Epiphaniæ juxta rubricas.}
 \biggerrule
 
 %%for now, rule to break page and start on new page
-%%to be fixed when full book is finished
+%%to be fixed when full book is finished keeping in mind how custom subfile commands work
 
 
 \end{document}
