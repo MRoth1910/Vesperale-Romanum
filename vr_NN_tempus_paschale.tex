@@ -1,22 +1,24 @@
 % !TEX TS-program = lualatexmk
 % !TEX parameter =  --shell-escape
-
 \documentclass[vesperale_romanum.tex]{subfiles}
 
 \ifcsname preamble@file\endcsname
-  \setcounter{page}{\getpagerefnumber{M-vr_NN_tempus_pascale}}
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_tempus_paschale}}
 \fi
 
 %%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
 
 \begin{document}
 
- \thispagestyle{empty}
+%\phantomsection
+
+% \addcontentsline{toc}{section}{A Dom. Resurrectionis ad Trinitatem.}
           
-        %% need to include Compline with a pageref to psalter in addition to the other days of the octave
-        % \section[Dominica Resurrectionis.]{DOMINICA RESURRECTIONIS.}
- \festum{Dominica Resurrectionis.}
+%\festum{Dominica Resurrectionis.}
+
+\section[A Dom. Resurrectionis ad Trinitatem.]{DOMINICA RESURRECTONIS.}
 % \header{dominica resurrectionis.}
+
  \rank{Duplex I classis cum Octava privilegiata I ordinis.}
  
 \primaantiphona{8. G.}
@@ -64,9 +66,10 @@ Per eúmdem Dóminum nostrum.
 
 \rubrique{Dicto \normaltext{Jube Domne, Fratres: Sóbrii estóte, ℣. Adjutórium nostrum, Pater noster}
 et facta Confessione et Absolutione, post \normaltext{℣. Convérte nos, ℣. Deus in adjutórium, Glória Patri, Allelúia,} dicuntur Psalmi de Dominica cum Antiphona \normaltext{Allelúia}
-prout notatur in Ordinario pro Tempore Paschali.}    
+prout notatur in Ordinario pro Tempore Paschali.}
 
-\canticum{Simeonis}{Luc. 2, 29 – 32}{Nunc_dimittis_oct_paschae.gabc}{Nunc_dimittis_oct_paschae}
+%%cannot have cantiicum simeonis split
+\canticum{Simeonis}{Luc. 2, 29 – 32}{Nunc_dimittis_oct_paschae}{3}{Nunc_dimittis_oct_paschae}
 
 \bigtitle{Feria Secunda.}
 
@@ -121,13 +124,11 @@ Per Dóminum nostrum.
 
 \gscore[Ant.]{6. F}{an_alleluia_sat_pt_at_vespers_solesmes_1961}
 
-%** is reference to psalter that needs to get a pageref.
+\rubrique{Ps. \normaltext{Benedíctus Dóminus} cum reliquis ut in Psalterio, \normaltext{\pageref{M-sab_ad_vesp_tp}.}}
 
-\rubrique{Ps. \normaltext{Benedíctus Dóminus} cum reliquis ut in Psalterio, **.}
 
-\capitulum \label{cap_dom_in_albis}
-
-\scripture{1 Joan. 5, 4.}
+\label{cap_dom_in_albis}
+\capitulum{1 Joan. 5, 4.}
 
 \lettrine{C}{a}ríssimi: Omne quod natum est ex Deo, vincit mundum:~† et hæc est victória, quæ vincit mundum,~* fides nostra.
 
@@ -166,10 +167,7 @@ Per Dóminum nostrum.
 
 %%styled as in TC because otherwise the gabc has to change.
 
-%%** = replace with pageref
-
-Completorium \rubrique{dicitur ut in Psalterio cum Psalmi Sabbati et Antiphona \normaltext{Allelúia, **,} Hymnus \normaltext{Te lucis} in tono paschali, **.
-Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext{Allelúia.}}
+Completorium \rubrique{dicitur ut in Psalterio cum Psalmi Sabbati et Antiphona \normaltext{Allelúia, \pageref{M-alleluia_tp_ad_compl_incipit},} Hymnus \normaltext{Te lucis} in tono paschali, \normaltext{\pageref{M-te_lucis_tp}.} Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext{Allelúia.}}
 
 \rubrique{Sic dicitur usque ad Dominicam Ss. Trinitatis exclusive: et quando non fit Duplex aut Commemoratio Duplicis, nec infra Octavam, dicuntur Preces ut in Psalterio.}
 
@@ -204,9 +202,7 @@ Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext
 
 \rubrique{Psalmi Feriæ sub una Antiphona \normaltext{Allelúia.}}
 
-\capitulum
-
-\scripture{Rom. 6, 9 – 10.}
+\capitulum{Rom. 6, 9 – 10.}
 
 \lettrine{C}{h}ristus resúrgens ex mórtuis jam non móritur, mors illi ultra non dominábitur.~† Quod enim mórtuus est peccáto, mórtuus est semel:~* quod autem vivit, vivit Deo.
 
@@ -238,13 +234,10 @@ Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext
 
 \bigtitle{Sabbato.}
 
-%%** to be replaced with pageref to psalter.
+\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis \normaltext{\pageref{M-sab_ad_vesp_tp}.}}
 
-\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis, **.}
-
-\capitulum \label{cap_dom_2_post_pascha}
-
-\scripture{1 Petri 2, 21 – 22.}
+ \label{cap_dom_2_post_pascha}
+\capitulum{1 Petri 2, 21 – 22.}
 
 \lettrine{C}{a}ríssimi: Christus passus est pro nobis,~† vobis relínquens exémplum ut sequámini vestígia eius.~* Qui peccátum non fecit, nec invéntus est dolus in ore ejus.
 
@@ -290,11 +283,11 @@ Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext
 
 \bigtitle{Sabbato.}
 
-\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis, **.}
+\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis \normaltext{\pageref{M-sab_ad_vesp_tp}.}}
 
-\capitulum \label{cap_dom_3_post_pascha}
+ \label{cap_dom_3_post_pascha}
+\capitulum{1 Petri 2, 11.}
 
-\scripture{1 Petri 2, 11.}
 \lettrine{C}{a}ríssimi: Obsecro vos tamquam ádvenas et peregrínos,~† abstinére vos a carnálibus desidériis,~* quæ mílitant advérsus ánimam.
 
 \textes{ad_regias_vv_rr}
@@ -339,11 +332,11 @@ Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext
 
 \bigtitle{Sabbato.}
 
-\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis, **.}
+\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis \normaltext{\pageref{M-sab_ad_vesp_tp}.}}
 
-\capitulum \label{cap_dom_4_post_pascha}
+ \label{cap_dom_4_post_pascha}
+\capitulum {Jac. 1, 17.}
 
-\scripture{Jac. 1, 17.}
 \lettrine{C}{a}ríssimi: Omne datum óptimum, et omne donum perféctum desúrsum est, descéndens a Patre lúminum,~† apud quem non est transmutátio,~* nec vicissitúdinis obumbrátio.
 
 \textes{ad_regias_vv_rr}
@@ -388,11 +381,12 @@ Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext
 
 \bigtitle{Sabbato.}
 
-\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis, **.}
+\rubrique{Ant. \normaltext{Allelúia.} Ps. \normaltext{Benedíctus Dóminus,} cum reliquis \normaltext{\pageref{M-sab_ad_vesp_tp}.}}
 
-\capitulum \label{cap_dom_5_post_pascha}
 
-\scripture{Jac. 1, 22 – 24.}
+ \label{cap_dom_5_post_pascha}
+\capitulum{Jac. 1, 22 – 24.}
+
 \lettrine{C}{a}ríssimi: Estóte factóres verbi, et non auditóres tantum: falléntes vosmetípsos.~† Quia si quis audítor est verbi, et non factor: hic comparábitur viro consideránti vultum nativitátis suæ in spéculo:~* considerávit enim se, et ábiit, et statim oblítus est qualis fúerit.
 
 \textes{ad_regias_vv_rr}
@@ -415,7 +409,7 @@ Non dicuntur Preces. Et in fine ant. \normaltext{Salva nos,} additur \normaltext
 
 \bigtitle{Feria Secunda in Rogationibus.}
 
-Vesperæ, \rubrique{nisi occurat Festum IX Lectionum, dicuntur de Psalterio cum Oratione Dominicæ præcedentis. Si vero sequatur Festum Simplex, a Capituluo fit de eo cum Commem. Cruce tantum.,t}
+Vesperæ, \rubrique{nisi occurat Festum IX Lectionum, dicuntur de Psalterio cum Oratione Dominicæ præcedentis. Si vero sequatur Festum Simplex, a Capituluo fit de eo cum Commem. Cruce tantum.}
 
 \gscore[Ad Magnif.]{Ant. 8. G*}{an_ipse_enim_pater_solesmes}
 
@@ -437,7 +431,6 @@ Vesperæ, \rubrique{nisi occurat Festum IX Lectionum, dicuntur de Psalterio cum 
 \festum{In Ascensionis Domini.}
  \rank{Duplex I classis cum Octava privilegiata III ordinis.}
  
-% \subsection{in i vesperis.}
 \invesperis{i}
  \label{i_vesperis_asc}
  \smalltitle{I Antiphona 7. a.}
@@ -448,7 +441,7 @@ Vesperæ, \rubrique{nisi occurat Festum IX Lectionum, dicuntur de Psalterio cum 
   \psalmus{110}{110_8Gstar}{110_8}
  
  \gscore[3. Ant.]{4. A*}{an_elevatis_manibus_solesmes_1961}
-  \psalmus{111}{111_4_alt_Astar}{111_4A_Astar}
+  \psalmus{111}{111_4A_A_star}{111_4A_A_star}
  
   \gscore[4. Ant.]{8. G*}{an_exaltate_regem_solesmes_1961}
    \psalmus{112}{112_8Gstar}{112_8}
@@ -456,8 +449,7 @@ Vesperæ, \rubrique{nisi occurat Festum IX Lectionum, dicuntur de Psalterio cum 
    \gscore[5. Ant.]{8. G}{an_videntibus_illis_solesmes_1961}
     \psalmus{116}{116_8G}{116_8}
     
-   \capitulum
-    \scripture{Act. 1, 1 – 2.}
+   \capitulum{Act. 1, 1 – 2.}
 
 \lettrine{P}{r}imum quidem sermónem feci de ómnibus, o Theóphile,~† quæ cœpit Jesus fácere et docére usque in diem, qua præcípiens Apóstolis per Spíritum San\-ctum, quos elégit,~* assúmptus est.
     
@@ -498,8 +490,8 @@ Vesperæ, \rubrique{nisi occurat Festum IX Lectionum, dicuntur de Psalterio cum 
 
 \rubrique{Antiphonæ et Psalmi ut in I Vesperis Festi, \normaltext{\pageref{i_vesperis_asc}.}}
 
-\capitulum \label{cap_dom_infra_oct_asc}
-\scripture{I Petr. 4, 7 – 8.}
+\label{cap_dom_infra_oct_asc}
+\capitulum{I Petr. 4, 7 – 8.}
 
 \lettrine{C}{a}ríssimi: Estóte prudéntes, et vigiláte in oratiónibus.~† Ante ómnia autem mútuam in vobismetípsis caritátem contínuam habéntes:~* quia cáritas óperit multitúdinem peccatórum.
 
@@ -561,7 +553,7 @@ In Octava Ascensionis. \rubrique{Duplex majus. Omnia sicut in die. In II Vesperi
  
 % %%In Festo Pentecostes according to Vaticana
 % 
-\invesperis{i.} \label{1_vesperis_pentecostes}
+\invesperis{i} \label{1_vesperis_pentecostes}
 
 \rubrique{Antiphonæ et psalmi ut in II Vesperis, sed loco ultimi Ps. \normaltext{Laudáte Dóminum,} ut infra.}
 
@@ -569,9 +561,8 @@ In Octava Ascensionis. \rubrique{Duplex majus. Omnia sicut in die. In II Vesperi
 
 %%same as on Epiphany. if we can get cross-references right, we can print it once (or not…)
 
-\capitulum \label{cap_dom_pent}
-
-\scripture{Act. 2, 1 – 2.}
+\label{cap_dom_pent}
+\capitulum{Act. 2, 1 – 2.}
 
 \lettrine{C}{u}m compleréntur dies Pentecóstes, erant omnes discípuli páriter in eódem loco:~† et factus est repénte de cælo sonus, tamquam adveniéntis spíritus veheméntis,~* et replévit totam domum, ubi erant sedéntes.
 
@@ -590,7 +581,7 @@ In Octava Ascensionis. \rubrique{Duplex majus. Omnia sicut in die. In II Vesperi
 
 \rubrique{Sic cantantur et terminatur Hymni per totam Octavam.}
 
-\invesperis{ii.} \label{2_vesperis_pentecostes}
+\invesperis{ii} \label{2_vesperis_pentecostes}
 
 \rubrique{Antiphonæ ut infra. Psalmi de Dominica, qui dicuntur quotidie per Octavam.}
 
@@ -693,5 +684,7 @@ Per Dóminum…in unitáte ejúsdem Spíritus.
 \oratio
 
 \lettrine{D}{a}, quǽsumus Ecclésiæ tuæ miséricors Deus:~† ut Sancto Spíritu congregáta,* hostíli nullátenus incursióne turbétur. Per Dóminum…in unitáte ejúsdem Spíritus.
+
+\biggerrule
          
 \end{document}
