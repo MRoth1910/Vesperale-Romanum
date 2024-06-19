@@ -1,0 +1,169 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_sab_post_pentecosten}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+%\thispagestyle{empty}
+
+%%possiibly could used starred version and then addcontentsline for a subsection but hyperref doesn't like this
+
+\phantomsection
+\section*{ANTIPHONÆ DICENDÆ IN SABBATIS}\header{sabbatis post pentecosten.}
+\addcontentsline{toc}{subsection}{Sabbatis post Pentecosten.}
+
+\subtitle{post Pentecosten usque ad Adventum.}
+
+%%change to starred version and the macro may introduce a small amount of extra white space.
+
+%{\centering{\Large{post Pentecosten usque ad Adventum.} %%ideally this would be made semantic as a macro and therefore made reusable. The needspace package inserts white space that we don't want!
+
+%%the second part is in all caps post Pent. etc. in LA1949
+
+\bigtitle{Sabbato ante Dom. IV post Pentecosten.}
+
+\gscore[Ad Magnif.]{8. G}{an_praevaluit_david_solesmes_1961}
+
+\bigtitle{Sabbato ante Dom. V post Pentecosten.}
+
+\gscore[Ad Magnif.]{1. D}{an_montes_gelboe_solesmes_1961}
+
+%%Gelboë must retain its diacritic; this is in the LA1949.
+
+\bigtitle{Sabbato ante Dom. VI post Pentecosten.}
+
+\gscore[Ad Magnif.]{1. f}{an_obsecro_domine_aufer_solesmes_1961}
+
+\bigtitle{Sabbato ante Dom. VII post Pentecosten.}
+
+\gscore[Ad Magnif.]{8. G}{an_unxerunt_salomonem_solesmes_1961}
+
+\rubrique{Nisi ponenda sit Antiphona pro Dominica I Augusti: quia tunc, omissis Antiphonis de Libris Regum, ponuntur de Libris Salomonis; quod etiam servatur in sequentibus Hebdomadis.}
+
+\bigtitle{Sabbato ante Dom. VIII post Pentecosten.}
+
+\gscore[Ad Magnif.]{7. a}{an_exaudisti_domine_solesmes_1961}
+
+\bigtitle{Sabbato ante Dom. IX post Pentecosten.}
+
+\gscore[Ad Magnif.]{8. G}{an_dum_tolleret_dominus_solesmes_1961}
+
+%%LA 1949 has ël for Israël, but the Vatican edition does not, and it's hyphenated. It's not necessary, so it is omitted (Gregobase score omits it too)
+
+\bigtitle{Sabbato ante Dom. X post Pentecosten.}
+
+\gscore[Ad Magnif.]{6. F}{an_fecit_joas_solesmes_1961}
+
+\bigtitle{Sabbato ante Dom. XI post Pentecosten.}
+
+\gscore[Ad Magnif.]{5. a}{an_obsecro_domine_memento_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam I Augusti.}
+
+\rubrique{Ea autem dicitur I Dominica mensis, qua, est in Kalendi, vel proximior Kalendis illius mensi: ita ut si Kalendæ fuerint II, III et IV. Feria, tunc I Dominica mensis, in qua Iiber Scripturæ inchoandus ponitur, est ea quæ præcedit Kalendas. Sin autem V et VI Feria, vel Sabbato, est ea quæ sequitur. Et in Sabbato præcedenti ad Magnificat ponatur Antiphona illius historiæ, omissa alia quæ forte occurreret.}
+
+\gscore[Ad Magnif.]{7. a}{an_sapientia_aedificavit_excidit_solesmes_1961}
+
+\rubrique{Oratio quæ contingit in ordine aliarum Dominicarum, ut infra.}
+
+\bigtitle{Sabbato ante Dominicam II Augusti.}
+
+\gscore[Ad Magnif.]{8. G}{an_ego_in_altissimis_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam III Augusti.}
+
+\gscore[Ad Magnif.]{8. G}{an_omnis_sapientia_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam IV Augusti.}
+
+\gscore[Ad Magnif.]{8. G}{an_sapientia_clamitat_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam V Augusti.}
+
+\rubrique{Nisi hæc fuerit propinquior Kalendis Septembris: quia tunc ista cum sua Hebdomada omittitur; et ponitur Antiphona pro I Dominica Septembris, ut infra.}
+
+\gscore[Ad Magnif.]{6. F}{an_observa_fili_solesmes_1961}
+
+\bigtitle{Sabbato proximo Kalendis Septembris.}
+
+\gscore[Ad Magnif.]{1. f}{an_cum_audisset_job_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam II Septembris.}
+
+\gscore[Ad Magnif.]{1. g}{an_in_omnibus_his_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam III Septembris.}
+
+\gscore[Ad Magnif.]{4. E}{an_ne_reminiscaris_mea_solesmes_1961}
+
+\bigtitle{Feria IV Quatuor Temporum Septembris.}
+
+%%** will be page reference to psalter
+\rubrique{Ad Vesperas, si fit de Feria, dicuntur Preces feriales, \normaltext{\pageref{M-preces},} cum
+Oratione Dominicæ præcedentis.}
+
+\bigtitle{Feria VI Quatuor Temporum Septembris.}
+
+%%** will be page reference to psalter
+\rubrique{In Vesperis, nisi fiat de Festo IX Lectionum, dicuntur Preces feriales, \normaltext{\pageref{M-preces},}  et Oratio Dominicæ præcedentis.}
+
+\bigtitle{Sabbato ante Dominicam IV Septembris.}
+
+\gscore[Ad Magnif.]{3. g}{an_adonai_domine_deus_solesmes}
+
+\bigtitle{Sabbato ante Dominicam V Septembris.}
+
+\gscore[Ad Magnif.]{1. D2}{an_domine_rex_omipotens_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam I Octobris.}
+
+\gscore[Ad Magnif.]{8. G}{an_adaperiat_dominus_cor_vestrum_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam II Octobris.}
+
+\gscore[Ad Magnif.]{8. G}{an_refulsit_sol_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam III Octobris.}
+
+\gscore[Ad Magnif.]{1. D}{an_lugebat_autem_judam_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam IV Octobris.}
+
+\gscore[Ad Magnif.]{1. f}{an_exaudiat_dominus_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam V Octobris.}
+
+\rubrique{Nisi sit dimittenda, quia hæc proximior sit Kalendis Novembris.}
+
+\gscore[Ad Magnif.]{1. f}{an_tua_est_potentia_solesmes}
+
+\bigtitle{Sabbato ante Dominicam I Novembris.}
+
+\gscore[Ad Magnif.]{1. a}{an_vidi_dominum_sedentem_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam II Novembris.}
+
+\gscore[Ad Magnif.]{1. g}{an_aspice_domine_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam III Novembris.}
+
+\rubrique{Si November habeat tantum quatuor Dominicas, tunc Sabbato ante Dominicam II ad Magnificat dicetur Antiphona \normaltext{Muro tuo,} ut infra et duobus sequentibus Sabbatis dicentur antiphonæ positæ etiam infra in Sabbatis ante Dominicam IV et V.}
+
+\gscore[Ad Magnif.]{1. g}{an_muro_tuo_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam IV Novembris.}
+
+\gscore[Ad Magnif.]{1. D2}{an_qui_caelorum_solesmes_1961}
+
+\bigtitle{Sabbato ante Dominicam V Novembris.}
+
+\gscore[Ad Magnif.]{1. D2}{an_super_muros_tuos_solesmes_1961}
+
+\end{document}
