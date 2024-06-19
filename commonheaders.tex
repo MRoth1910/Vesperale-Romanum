@@ -729,9 +729,15 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 \NewDocumentCommand{\ivesperisrubrique}{}{%
-{\rubrique{Antiphonæ, Psalmi, Capit. et Hymnus ut in I Vesperis.}%
+{\rubrique{Antiphonæ, Psalmi, Capit.\@ et Hymnus ut in I Vesperis.}%
 }%
 }
+
+\NewDocumentCommand{\sedlocoultimi}{mm}{%
+{\rubrique{Antiphonæ, Psalmi, Capit.\@ et Hymnus ut in #1 Vesperis, sed loco ultimi Ps.\@ \normaltext{#2,} ut infra.}%
+}%
+} 
+
 
 %%for commemoration of following at II Vespers of major feasts.
 \NewDocumentCommand{\caphymn}{}{%
@@ -740,18 +746,17 @@ Pater noster, Ave María, \textit{et} Credo.%
 
 %%for commemoration of following at II Vespers of major feasts.
 \NewDocumentCommand{\commemoration}{}{%
-\rubrique{Et fit comm. sequentis.}%
-}
-
-%%for Vespers of the following day beginning at the chapter (doubles that concur with each other)
-\NewDocumentCommand{\capitdeseq}{}{%
-\rubrique{Vesp. de capit. de seq., comm. præced.}%
+\rubrique{Et fit comm.\@ sequentis.}%
 }
 
 %%commemoration of the Lenten feria
 \NewDocumentCommand{\quadcommferiae}{}{%
-\rubrique{In Quadrag. commem. feriæ.}%
+\rubrique{In Quadrag.\@ commem. feriæ.}%
 }
+
+%%for Vespers of the following day beginning at the chapter (doubles that concur with each other)
+\NewDocumentCommand{\capitdeseq}{}{%
+\rubrique{Vesp. de capit.\@ de seq., comm.\@ præced.}%
 
 %%for Fridays where Vespers is of Our Lady on Saturday, unless the next day is a feast of IX Lessons.
 \NewDocumentCommand{\bvmsabbato}{}{%
