@@ -1,5 +1,5 @@
-% !TEX TS-program = LuaLaTeX+se
-
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
 \documentclass[vesperale_romanum.tex]{subfiles}
 
 \ifcsname preamble@file\endcsname
@@ -10,20 +10,30 @@
 
 \begin{document}
 
-\thispagestyle{empty}
+%\thispagestyle{empty} %%%redundant thanks to code for MB
 
 %%header and sectioning commands to be determined
 
 %% Putting the chapter before the hymn makes sense for Sab ante Dom I because it's the very first thing… for now as of Oct 6, 2023, chapter has \pageref back to Sat evening
+\cleardoublepage
+
+\phantomsection
+\chapter*{PROPRIUM TEMPORE.}
+\addcontentsline{toc}{chapter}{Proprium Tempore.}
+
+%%it looks like this randomly-placed anchor works correctly so we don't have problems in Lent etc.
+
+\phantomsection
+\addcontentsline{toc}{section}{A Sabbato ante Dom. I Adventus ad Nativitatem Domini.}
+
+%\addcontentsline{toc}{section}{A Dom. I Adventus ad Nativitatem Domini.}
 
 \bigtitle{Sabbato ante Dominicam I Adventus.}
 
 \rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato.}
 %%%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
 
-\capitulum
-
-\scripture{Rom. 13, 11.}
+\capitulum{Rom. 13, 11.}
 
 \lettrine{F}{r}atres: Hora est jam nos de somno súrgere:~† nunc enim própior est nostra salus,~* quam cum credídimus.
 
@@ -76,7 +86,7 @@
   %%this is the same as in the psalter per annum. A pageref might be best here in the full book.
  
     \gscore[5. Ant.]{4. A*}{an_ecce_veniet_propheta_solesmes_1961}
-    \psalmus{113}{113_4_alt_Astar}{113_4A_Astar}
+    \psalmus{113}{113_4A_A_star}{113_4A_A_star}
  %%remember that 4_alt.tex and 4_alt_Astar.tex will be identical. The latter can be replaced. The parallel file name is for consistency.
 
 \rubrique{Capitulum et Hymnus de Sabbato.} %%LA says "I Vespers, but we want to say of Sabbato, not of I Vespers which is a novelty. This text is what the Vaticana says.
@@ -121,7 +131,7 @@
 
 \bigtitle{Feria IV.}
 
-\gscore[Ad Magnif.]{Ant. 8. C}{an_veniet_fortior_me_solesmes}
+\gscore[Ad Magnif.]{Ant. 8. c}{an_veniet_fortior_me_solesmes}
 
 \bigtitle{Feria V.}
 
@@ -136,9 +146,8 @@
 \rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato. }
 %%%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
 
-\capitulum \label{cap_dom_2_adv}
-
-\scripture{Rom. 15, 4.}
+\label{cap_dom_2_adv}
+\capitulum{Rom. 15, 4.}
 
 \lettrine{F}{r}atres: Quæcúmque scripta sunt, ad nostram doctrínam scripta sunt:~† ut per patiéntiam, et consolatiónem Scripturárum~* spem habeámus.
 
@@ -205,9 +214,8 @@ Qui tecum vivit et regnat.
 \rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato.}
 %%%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
 
-\capitulum \label{cap_dom_3_adv}
-
-\scripture{Phil. 4, 4 – 5.}
+\label{cap_dom_3_adv}
+\capitulum{Phil. 4, 4 – 5.}
 
 \lettrine{F}{r}atres: Gaudéte in Dómino semper: íterum dico, gaudéte.~† Modéstia vestra nota sit ómnibus homínibus: Dóminus enim prope est.
 
@@ -325,9 +333,8 @@ ex Antiphonis majoribus, ut infra: quibus semper cedunt Antiphonæ propriæ alii
 \rubrique{Antiphonæ de Vesperis Dominicæ sequentis. Psalmi de Sabbato.}
 %%will need pageref to psalms in the psalter for this. repeating the antiphons is insane!
 
-\capitulum \label{cap_dom_4_adv}
-
-\scripture{1 Cor. 4, 1 – 2.}
+\label{cap_dom_4_adv}
+\capitulum{1 Cor. 4, 1 – 2.}
 
 \lettrine{F}{r}atres: Sic nos exístimet homo ut minístros Christi,~† et dispensatóres mysteriórum Dei.~* Hic jam quǽritur inter dispensatóres, ut fidélis quis inveniátur.
 

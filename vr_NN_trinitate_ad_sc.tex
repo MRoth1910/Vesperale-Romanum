@@ -1,9 +1,10 @@
-% !TEX TS-program = LuaLaTeX+se
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
 
 \documentclass[vesperale_romanum.tex]{subfiles}
 
 \ifcsname preamble@file\endcsname
-  \setcounter{page}{\getpagerefnumber{M-vv_NN_trinitate_ad_sc}}
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_trinitate_ad_sc}}
 \fi
 
 %%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
@@ -14,11 +15,18 @@
 
 \begin{document}
 
-\thispagestyle{empty}
+%\thispagestyle{empty}
 
-\dominicadate{I Post Pentecosten}
+%\phantomsection
+%
+%\addcontentsline{toc}{section}{A Trinitate ad Adventum.}
+%
+%\dominicadate{I Post Pentecosten}
+%
+%\festum{In Festo Sanctissimæ Trinitatis.}
 
-\festum{In Festo Sanctissimæ Trinitatis.}
+\section[A Trinitate ad Adventum.]{IN FESTO SANCTISSIMÆ TRINITATIS.}
+%\header{in festo ss. trrinitatis.}
 
 \invesperis{i} \label{1_vesperis_trinitatis}
 
@@ -159,9 +167,7 @@
 \gscore[5. Ant.]{5. a}{an_qui_pacem_ponit_solesmes_1961}
 \label{147_5} \psalmus{147}{147_5}{147_5}
 
-\capitulum
-
-\scripture{1 Cor. 11, 23 – 24.}
+\capitulum{1 Cor. 11, 23 – 24.}
 
 \lettrine{F}{r}atres: Ego enim accépi a Dómino quod et trádidi vobis,~† quóniam Dóminus Jesus, in qua nocte tradebátur, accépit panem, et grátias agens fregit, et dixit: Accípite et manducáte: hoc est corpus meum, quod pro vobis tradétur:~* hoc fácite in meam commemoratiónem.
 
@@ -195,9 +201,8 @@
 
 \rubrique{Antiphonæ et Psalmi ut in I Vesperis Festi, \normaltext{\pageref{1_vesperis_cc}.}}
 
-\capitulum \label{cap_dom_infra_oct_cc}
-
-\scripture{1 Joan. 3, 13 – 14.}
+\label{cap_dom_infra_oct_cc}
+\capitulum{1 Joan. 3, 13 – 14.}
 
 \lettrine{C}{a}ríssimi: Nolíte mirári, si odit vos mundus.~† Nos scimus quóniam transláti sumus de morte ad vitam,~* quóniam dilígimus fratres.
 
@@ -258,7 +263,9 @@ Feria Quarta. \rubrique{Ad Vesperas, omnia ut in I Vesperis Festi, \normaltext{\
 \invesperis{i}  \label{i_vesperis_sc}
 
 \primaantiphona{1. g.}
+\zerobaroffsettextleft
  \initialscore{an_suavi_jugo_solesmes_1961} %% watch in case initial remains low after a couple runs
+ \resetbaroffsettextleft
 \psalmus{109}{109_1g}{109_1}
  
  \gscore[2. Ant.]{2. D}{an_misericors_et_miserator_solesmes_1961}
@@ -276,11 +283,10 @@ Feria Quarta. \rubrique{Ad Vesperas, omnia ut in I Vesperis Festi, \normaltext{\
   \psalmus{115}{115_8c}{115_8}
    
     \gscore[5. Ant.]{4. A*}{an_apud_dominum_propitiatio_solesmes_1961}
-    \psalmus{129}{129_4_alt_A_star}{129_4A_Astar}
+    \psalmus{129}{129_4A_A_star}{129_4A_A_star}
     
-\capitulum \label{cap_sc}\phantomsection
-
-\scripture{Eph. 3, 8 – 9.}
+    \label{cap_sc}\phantomsection
+\capitulum{Eph. 3, 8 – 9.}
 
 \lettrine{F}{r}ratres: Mihi ómnium sanctórum mínimo data est grátia hæc,~† in géntibus evangelizáre investigábiles divítias Christi:~* et illumináre omnes, quæ sit dispensátio sacraménti abscónditi a sǽculis in Deo.
 
@@ -352,9 +358,8 @@ Feria Quarta. \rubrique{Ad Vesperas, omnia ut in I Vesperis Festi, \normaltext{\
 %\header{sabbato infra octavam ss. cordis jesu.}
 
 \rubrique{Antiphonæ et Psalmi ut in I Vesperis Festi, \normaltext{\pageref{i_vesperis_sc}.}}
-
-\capitulum \label{cap_dom_infra_oct_sc}
-\scripture{1 Petri 5, 6 – 7.}
+\label{cap_dom_infra_oct_sc}
+\capitulum{1 Petri 5, 6 – 7.}
 
 \lettrine{C}{a}ríssimi: Humiliámini sub poténti manu Dei, ut vos exáltet in témpore visitatiónis;~† omnem sollicitúdinem vestram proiciéntes in eum,~* quóniam ipsi cura est de vobis.
 
