@@ -29,6 +29,7 @@ is between the consonants in other cases.
 	- *om-nis*, *prop-ter*, *ag-men*, *scrip-si*, *tec-tum*, *pos-se*, *il-le*,
 	  *dex-ter*, *At-las*, *Les-bos*
 NB: sol-le-mni-tas is incorrect according to this rule. also unclear why it is scrip-si and not scri-psi (etymology?)
+babel latin as of TeXLive 2021 sets hyphenation point as -pt
 
 3. If three or more consonants occur between two vowels, the hypenation point
 is before the last but two consonant [l + 2, so count two back] if the group ends in *sch*, *scr*, *spl*,
@@ -97,7 +98,7 @@ by a soft vowel.
 	- *quan-tope-re* (not *quant-opere* or *quanto-pere*)
 	- *pos-tea* (not *post-ea*)
 	- *sol-lers* (not *soll-ers*)
-	- *sep-ten-nis* (*sept-ennis*) (NB this word does occur in material needed for a vesperale and every division has difficulties, correctness aaside)
+	- *sep-ten-nis* (*sept-ennis*)
 	- *quin-quen-nium* (not *quinqu-ennium*)
 	- *di-sce-do* (not *dis-cedo*), *tran-sci-do* (not *trans-cido*)
 
