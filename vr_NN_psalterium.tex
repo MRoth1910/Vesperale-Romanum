@@ -1,0 +1,940 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_psalterium}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\phantomsection
+ \label{psalterium}
+\addcontentsline{toc}{chapter}{Ordinarium Officii de Tempore et Psalterium per Hebdomadam dispositum.}
+
+%%Vaticana starts like this!
+ 
+\section[Dominica ad Vesperas.]{DOMINICA AD VESPERAS.}\header{dominica ad vesperas.}
+\phantomsection \label{dom_ad_vesperas}
+\smalltitle{\pateravedeus} %%this and ranks need to come down or be adjusted…
+
+\smalltitle{Antiphona 7. c2.}
+\initialscore{dixit_dominus} 
+
+%%because of the limitations of ALT the Celebrans and Cantores instructions from the LU are omitted
+
+\footnotetext[1]{\textes{rubrique_pss_antiphonae}}
+
+%\footnote{\textes{rubrique_pss_antiphonae}}
+
+\sdpsalmus{109}{109_7}
+
+\smallscore{an_dixit_dominus_domino_solesmes_1961} 
+
+%%smallscore seems like it'll save space and reminds people using 1954 or earlier what is semidouble or not.
+%%needed because you cannot call greannotation without an initial.
+
+\gscore[2. Ant.]{3. b}{magna_opera}
+
+\psalmus{110}{110_3b}{110_3a_b}
+
+\smallscore{an_magna_opera_domini_solesmes_1961}
+
+\gscore[3. Ant.]{4. g}{qui_timet_dominum}
+
+\psalmus{111}{111_4g}{111_4g}
+
+\smallscore{an_qui_timet_dominum_solesmes_1961}
+
+\gscore[4. Ant.]{7. c}{sit_nomen_domini}
+
+\psalmus{112}{112_7c}{112_7}
+
+\smallscore{an_sit_nomen_domini_in_solesmes_1961}
+
+\gscore[5. Ant.]{T. pereg.}{deus_autem_noster}
+
+\psalmus{113}{113_per}{113_per}
+
+\smallscore{an_deus_autem_noster_solesmes_1961}
+
+\capitulum{2 Cor. 1, 3 – 4.}
+
+\textes{capitulum_per_annum}
+\label{hy_dom_pa}
+
+%%something is wrong with the hymn here
+\hymnus
+\gscore[]{8.}{hy_Lucis_Creator_optime_solesmes_1961}
+
+\textes{doxologia_bmv_rubrique} %%this is glued to previous score, but we want the opposite behavior
+\smallscore{hy_Lucis_Creator_BMV}
+
+\smalltitle{2. Alius Tonus ad libitum.}
+\gscore[]{8.}{hy_Lucis_Creator_optime_2_ad_lib_solesmes_1961}
+
+\vel
+\smallscore{hy_Lucis_Creator_optime_2_ad_lib_BMV}
+
+\smalltitle{3. Alius Tonus.}
+\gscore[]{1.}{hy_Lucis_Creator_optime_mode_1_solesmes_1961}
+
+\vel
+\smallscore{hy_Lucis_Creator_optime_mode_1_BMV}
+
+\textes{versiculus_per_annum}
+
+\textes{magnificat} %%need to fix lettrine. Solutions assume that it's followed by a 2nd lettrine (and/or are very complicated)
+
+\smalltitle{De Omnibus Sanctis.} %% rubrics for the common commemorations are not present in the middle of book, only in the Psalterium (if this is in middle, repetition is redundant.)
+\label{suffragium}
+\gscore[Ant.]{2.}{an_beata_dei_genitrix_virgo_solesmes_1961}
+
+\textes{suffragium} %%Friday form inserted via this insertion.
+
+\smalltitle{De Cruce.}
+
+\gscore[Ant.]{6.}{an_crucifixus_solesmes_1961}
+
+\textes{de_cruce}
+
+\textes{in_finem_ad_vesp} %% white space between collect and Dominus. tbd.
+
+%%need to decide on placement of Dominus det nobis etc.
+
+\thispagestyle{empty}
+
+\section[Dominica ad Completorium.]{DOMINICA AD COMPLETORIUM.}\header{dominica ad completorium.}
+
+\phantomsection \label{dominica_ad_completorium}
+
+%%need some sort of title and probably \section or addtocline
+
+%% should use ALT for rubric but the p is a problem aas of 05/06/23
+\rubrique{Lector incipit:}
+%\vspace{-1\baselineskip} %%doesn't work properly even with latexmk
+\smallscore{ad_compl_Jube_Domne}
+
+\smallscore{ad_compl_Noctem_quietam}
+
+\lectiobrevis{1 Petri 5, 8 – 9.}
+ %% using Petri because that's what is in the book, in this one case.
+%\vspace{-1\baselineskip}
+
+\gscore[]{}{ad_compl_Lectio_Brevis}
+
+\smallscore{ad_compl_adjutorium}
+
+\rubrique{\normaltext{Pater noster} dicitur totum secreto.}
+
+\rubrique{Deinde Hebdomadarius facit Confessionem, quæ tota dicitur cum ℣\vvrub seq. voce re\-cta et paulisper depressa.}
+
+\lettrine{C}{o}nfíteor Deo omnipoténti, beátæ Maríæ semper Vírgini, beáto Michaéli Archángelo, beáto Joánni Ba\-ptí\-stæ, sanctis Apó\-stolis Petro et Paulo, omnibus San\-ctis, et vobis fratres, quia peccávi nimis, cogitatióne, verbo et opere: mea culpa, mea culpa, mea máxima culpa. Ideo precor beátam Maríam semper Vírginem, beátum Michaélem Archángelum, beátum Joánnem Ba\-ptí\-stam, sanctos Apó\-stolos Petrum et Paulum, omnes Sanctos, et vos fratres, orare pro me ad Dóminum Deum no\-strum.
+
+\rubrique{Chorus respondet:}
+
+\lettrine{M}{i}sereátur tui omnípotens Deus, et dimíssis peccátis tuis, perdúcat ad vitam ætérnam. \rr Amen.
+
+\rubrique{Deinde repetit Confessionem: et ubi dicitur \normaltext{vobis fratres,} et \normaltext{vos fratres,} dicatur \normaltext{tibi pater,} et \normaltext{et te pater.}}
+
+\rubrique{Facta Confessione a Choro, Hebdomadarius dicit:}
+
+\lettrine{M}{i}sereátur vestri omnípotens Deus, et dimíssis peccátis vestris, perdúcat ad vitam ætérnam. \rr Amen.
+
+\lettrine{I}{n}dulgéntiam, absolutiónem, et remissiónem peccatórum nostrórum tribuat nobis omnípotens et miséricors Dóminus.  \rr Amen.
+
+\rubrique{In Choro Monialum semel tantum ac simul ab omnibus dicitur: \normaltext{Confíteor Deo… Petro et Paulo, et omnibus Sanctis, quia… et omnes Sanctos, orare pro me…} Deinde: \normaltext{Misereátur nostri omnípotens Deus, et dimíssis peccátis nostris, perdúcat ad vitam ætérnam.} Postea: \normaltext{Indulgéntiam, absolutiónem,} etc. ut supra.}
+
+\smallscore{ad_compl_Converte_nos_Deus}
+
+\rubrique{\vvrub \normaltext{Deus in adjutórium,} etc.}
+
+\gscore[Ant.]{8. G}{miserere_mihi}
+\label{alleluia_tp_ad_compl_incipit}
+\gscore[T. Pasch.]{Ant. 8. G}{ad_compl_alleluia_incipit}
+
+\psalmus{4}{4_8G}{4_8}
+
+\psalmus{90}{90_8G}{90_8}
+
+\psalmus{133}{133_8G}{133_8}
+
+\gscore[]{Ant.}{an_miserere_mihi_solesmes_1961}
+\label{alleluia_tp_ad_compl}
+\gscore[T. Pasch.]{Ant.}{an_alleluia_tp_ad_compl_solesmes_1961}
+\phantomsection\label{te_lucis}
+\smalltitle{Hymnus.}
+
+\rubrique{Tonus Hymni sequentis variatur secundum Tempora aut Festa, ut notatur propriis locis. Toni autem soliti per Annum, pro Feriis, Dominicis et Festis (exceptis Festis B.M.V. et illis pro quibus tonus proprius assignatur, ac eorum Octavas), sunt sequentes.}
+
+\smalltitle{1. In Feriis et Festis Simplicibus per Annum.}
+\gscore[]{8.}{hy_te_lucis_ante_terminum_in_fer_et_fest_simpl_solesmes}
+
+\smalltitle{2. In Dominicis et minoribus Festis per Annum.}
+\gscore[]{8.}{hy_te_lucis_ante_terminum_dom_solesmes_1961}
+
+%%need to adjust page because it shouldn't fill page like that!! too much space between title and hymn, spacebeneathtext also looks too big
+
+%%raggedbottom is default but Gregorio doesn't play well and vice-versa
+
+\smalltitle{3. In majoribus Festis per Annum.}
+\gscore[]{4.}{hy_te_lucis_ante_terminum_in_solemnitatibus_solesmes_1961}
+
+\label{te_lucis_tp}
+\smalltitle{Tempore Paschali in Officio de Tempore et de Sanctis.}
+
+\rubrique{Tempore Paschali, id est, a Completorio ante Dominicam in Albis usque ad Ascensionem exclusive, tam in Dominicis quam in Feriis et etiam in Festis occurrentibus (nisi fiat de Beata Maria V.), Hymnus præcedens sic cantatur et concluditur:}
+\gscore[]{8.}{hy_te_lucis_ante_terminum_in_tempore_paschali_solesmes_1961}
+
+%%  (::) 2 is format for verses since current page size causes number to remain on previous line.
+
+\smalltitle{In Festis et Octavis B. Mariae Virginis.}
+
+\rubrique{In Festis B. Mariae Virginis, ac infra eorum Octavas, etiam Tempore Paschali,  Hymnus præductus canendus et concludendus est modo sequenti:}
+
+%%spacebeneathtext is a mess. WHAT is LaTeX doing here
+%%will need to be checked and rechecked as drafts move along
+
+\grechangenextscorelinedim{3,4,5}{spacebeneathtext}{0.2cm}{scalable}
+%\grechangenextscorelinedim{4,5}{spacebeneathtext}{0.1cm}{scalable}
+
+\gscore[]{2.}{hy_te_lucis_ante_terminum_bmv_solesmes_1961}
+
+\capitulum{Jer. 14, 9.}
+
+\lettrine{T}{u} autem in nobis es Dómine,~† et nomen san\-ctum tuum invocátum est super nos:~* ne derelínquas nos, Dómine Deus no\-ster. \rr Deo grátias.
+
+\smalltitle{Per Annum, Responsorium breve.}
+
+\gscore[]{6.}{rb_in_manus_tuas_solesmes_1961}
+\smallscore{ad_compl_vr_pa}
+
+\smalltitle{Tempore Adventus, Responsorium breve.}
+
+\gscore[]{4.}{rb_in_manus_tuas_in_adventu_solesmes_1961}
+\smallscore{ad_compl_vr_adventus}
+
+Tempore Paschali \rubrique{id est a Completorio Sabbati ante Dominicam in Albis inclusive, usque ad Sabbatum post Festum Pentecostes exclusive:}
+
+\smalltitle{Responsorium breve.}
+
+\gscore[]{6.}{rb_in_manus_tuas_tp_solesmes}
+\smallscore{ad_compl_vr_tp}
+
+\gscore[Ant.]{3. a}{ad_compl_salva_nos_incipit} %%this cannot be on the page before unless it is a left page.
+\canticum{Simeonis}{Luc. 2, 29 – 32}{Nunc_dimittis_3a}{2}{Nunc_dimittis_3a}
+
+\gscore[]{Ant.}{an_salva_nos_domine_solesmes_1961.gabc}
+
+\rubrique{¶ In quolibet Officio Semiduplici aut Simplici, et iin Feriis tam per Annum communibus quam Temporis Paschalis, post repetitam ad \normaltext{Nunc dimittis} Antiphonam, dicuntur sequentes Preces, nisi in Vespeis facta fuerit commemoratio alicujus Duplicis vel Octavæ. Semper autem dicuntur, et flexis quidem genibus, in Feriis in quibus ad Vesperas dictæ sunt Preces feriales.}
+
+\lettrine{K}{yrie} eléison. Christe eléison. Kýrie eléison.
+
+\quad Pater noster, \rubrique{secreto usque ad} \vv Et ne nos indúcas in tentatiónem.
+
+\rr Sed líbera nos a malo. 
+
+Credo in Deum, \rubrique{secreto usque ad}
+
+\vv Carnis resurrectiónem. \rr Vitam ætéram. Amen.
+
+\vv Benedíctus es Dómine Deus patrum nostrórum.
+
+\rr Et laudábilis et gloriósus in sǽcula.
+
+\vv Benedicámus Patrem et Fílium cum San\-cto Spíritu.
+
+\rr Laudémus et superexaltémus eum in sǽcula.
+
+\vv Benedíctus es Dómine in firmaménto cæli.
+
+\rr Et laudábilis et gloriósus et superexaltátus in sǽcula.
+
+\vv Benedícat et custódiat nos omnípotens et misericors Dóminus.
+
+\rr Amen.
+
+\vv Dignáre Dómine no\-cte ista. \rr Sine peccáto nos custodíre.
+
+\vv Miserére nostri Domine. \rr Miserére nostri.
+
+\vv Fiat misericórdia tua Dómine super nos. 
+
+\rr Quemadmodum speravimus in te.
+
+\vv Dómine exáudi oratiónem meam. \rr Et clamor meus ad te véniat.
+
+\myrule
+
+\vv Dóminus vobíscum. \rr Et cum spíritu tuo.
+
+\smalltitle{Oratio.}
+
+Orémus.
+\lettrine{V}{i}sita, quǽsumus Dómine, habitatiónem istam, et omnes insídias inimíci ab ea longe repélle:~† Angéli tui san\-cti hábitent in ea, qui nos in pace custódiant;~* et benedí\-ctio tua sit super nos semper. Per Dóminum nostrum Jesum Christum Fílium tuum:~† qui tecum vivit et regnat in unitáte Spíritus San\-cti Deus,~* per ómnia sǽcula sæculórum. \rr Amen.
+
+\vv Dóminus vobíscum. \rr Et cum spíritu tuo.
+
+\vv Benedicámus Dómino. \rr Deo grátias.
+
+\rubrique{Benedictio.}
+
+Benedícat et custódiat nos omnípotens et miséricors Dóminus, Pater, et Fílius, et Spíritus San\-ctus.
+
+\rr Amen.
+
+\rubrique{Et non dicitur \normaltext{Fidélium ánimæ,} sed immediate dicitur una ex infrascriptis Antiphonis B. Mariæ Virginis pro tempore.}
+%%addtocline section
+\rubrique{¶ A Vesperis Sabbati ante Dominicam I Adventus usque ad secundas Vesperas Purificationis inclusive:}
+\gscore[]{Ant. 5.}{an_alma_redemptoris_solesmes_1961}
+
+\rubrique{In Adventu:}
+
+\vv Angelus Dómini nuntiávit Maríæ.
+
+\rr Et concépit de Spíritu Sancto.
+%% should Oratio be here raggedright or aligned \hfill text \hspace*{1em} like capitulum
+
+Orémus.
+\lettrine{G}{r}átiam tuam, quǽsumus, Dómine, méntibus nostris infúnde:~† ut qui, Angelo nuntiánte, Christi Fílii tui incarnatiónem cognóvimus,~* per passiónem ejus et crucem, ad resurrectiónis glóriam perducámur. Per eumdem Christum Dóminum nóstrum.  \rr~Amen.
+
+\rubrique{A primis Vesperis Nativitatis Domini et deinceps:}
+
+\vv Post partum Virgo invioláta permansísti.
+
+\rr Dei Génitrix intercéde pro nobis.
+
+Orémus.
+\lettrine{D}{eus}, qui salútis ætérnæ, beátæ Maríæ virginitáte fœcúnda, humáno géneri prǽmia præstitísti:~† tríbue, quǽsumus; ut ipsam pro nobis intercédere sentiámus,~* per quam merúimus auctórem vitæ suscípere, Dóminum nóstrum Jesum Christum Fílium tuum. \rr~ Amen.
+
+\rubrique{¶ Post Purifcationem, id est, a Completorio diei 2 Februarii, etiam quando transferatur Festum Purificationis B.M.V., usque ad Completorium Feriis IV Majoris Hebdomadæ inclusive:}
+\gscore[]{Ant. 6.}{an_ave_regina_caelorum_solesmes_1961}
+
+\vv Dignáre me laudáre te Virgo sacráta.
+
+\rr Da mihi virtútem contra hostes tuos.
+
+Orémus.
+
+\lettrine{C}{o}ncéde, miséricors Deus, fragilitáti nostræ præsídium:~† ut qui sanctæ Dei Genetrícis memóriam ágimus,* intercessiónis ejus auxílio a nostris iniquitátibus resurgámus. Per eumdem Christum Dóminum nostrum.  \rr Amen.
+
+\rubrique{¶ A Completorio Sabbati Sancti usque ad Nonam Sabbati infra Octavam Pentecostes inclusive:}
+\gscore[]{Ant. 6.}{an_regina_caeli_solesmes}
+
+\vv Gaude et lætáre Virgo María, allelúia.
+
+\rr Quia surréxit Dóminus vere, allelúia.
+
+Orémus.
+
+\lettrine{D}{eus}, qui per resurrectiónem Fílii tui Dómini nostri Jesu Christi mundum lætificáre dignátus es:~† præsta, quǽsumus; ut, per ejus Genetrícem Vírginem Maríam~* perpétuæ capiámus gáudia vitæ. Per eumdem Christum Dóminum nóstrum.  \rr~Amen.
+
+\rubrique{¶ A primis Vesperis Festi Ss. Trinitatis usque ad Nonam Sabbati ante Adventurn inclusive.}
+%%spacebeneathtext needs adjusting
+\gscore[]{Ant. 1.}{an_salve_regina_solesmes}
+
+\vv Ora pro nobis sancta Dei Génitrix.
+
+\rr Ut digni efficiámur promissiónibus Christi.
+
+Orémus.
+
+\lettrine{O}{m}nípotens sempitérne Deus, qui gloriósæ Vírginis Matris Maríæ corpus et ánimam, ut dignum Fílii tui habitáculum éffici mererétur, Spíritu Sancto cooperánte, præparásti:~† da, ut, cuius commemoratióne lætámur,~* eius pia intercessióne, ab instántibus malis et a morte perpétua liberémur. Per eumdem Christum Dóminum nostrum. \rr~Amen.
+
+\vv Divínum auxílium máneat semper nobíscum. \rr Amen.
+
+\rubrique{Deinde dicitur secreto \normaltext{Pater noster, Ave María, et Credo.}}
+
+\rubrique{Antiphonæ prædictæ dicuntur etiam in fine Laudum, quando discedendum est a choro; sed si immediate subsequatur Prima, vel alia Hora, dicuntur in fine ultimæ Horæ, ita ut dicantur semper, quando, terminata aliqua Hora, discedendum est a choro; et tunc post \rrrub \normaltext{Fidélium animæ} et \normaltext{Pater noster,} secreto, dicitur: \vvrub \normaltext{Dóminus det nobis suam pacem. \rr Et vitam ætérnam. Amen.}}
+
+\rubrique{Deintde una ex prædictis Antiphonis, et in fine \vvrub \normaltext{Divínum auxílium.}}
+
+%%addtocline section
+\smalltitle{In cantu simplici.}
+
+\gscore[]{5.}{an_alma_redemptoris_simple_solesmes}
+
+\gscore[]{6.}{an_ave_regina_caelorum_simple_tone_solesmes}
+
+\gscore[]{6.}{an_regina_caeli_simple_tone_solesmes}
+
+\gscore[]{5.}{an_salve_regina_simple_tone_solesmes}
+
+\section[Feria II ad Vesperas.]{FERIA II AD VESPERAS.}\header{feria ii ad vesperas.}
+
+\textes{Duplex_rubrique}
+
+\gscore[1. Ant.]{1. g 2}{an_inclinavit_dominus_solesmes_1961}
+\label{114_1g2}
+\psalmus{114}{114_1g2}{114_1g2}
+
+\gscore[2. Ant.]{3. g}{an_vota_mea_solesmes_1961}
+\psalmus{115}{115_3g}{115_3g}
+
+\gscore[3. Ant.]{7. b}{an_clamavi_solesmes_1961}
+\psalmus{119}{119_7b}{119_7b}
+
+\gscore[4. Ant.]{1. f}{an_auxilium_meum_solesmes_1961}
+\psalmus{120}{120_1f}{120_1}
+
+\gscore[5. Ant.]{4. g}{an_laetatus_sum_solesmes_1961}
+\psalmus{121}{121_4g}{121_4g}
+
+\textes{fer_2_rubrique}
+
+\capitulum{2 Cor. 1, 3 – 4.}
+\textes{capitulum_per_annum}
+
+\hymnus
+
+\gscore[]{1.}{hy_immense_caeli_conditor_solesmes_1961}
+
+\textes{versiculus_per_annum}
+
+\admagnificat
+
+\gscore[]{8. G}{an_magnificat_incipit}
+
+\textes{Magnificat_rubrique}
+
+\gscore[]{Ant.}{an_magnificat_anima_solesmes_1961}
+
+\textes{Rubrique_Oratio}
+
+\textes{Preces_feriales} %% to include here… at some point people need to learn how to pray the office and to use a book.
+
+\section[— — Ad Complet.]{FERIA II AD COMPLETORIUM.}\header{feria ii ad complet.} 
+%\label{feria_2_ad_compl}
+
+\rubrique{Omnia dicuntur ut supra in Dominica, \normaltext{\pageref{dominica_ad_completorium},} exceptis his quæ sequuntur.}
+
+\rubrique{Psalmi ad Completorium per singulas Ferias positi dicuntur sernper cum respectiva Antiphona in Officio tum de Ternpore tum de Sanctis, quando juxta Rubricas sumendi sunt Psalmi de Feria.}
+
+\gscore[Ant.]{8. G}{salvum_me_fac}
+\label{ps_6_ad_compl_fer_2}
+\psalmus{6}{6_8G}{6_8G}
+
+\psalmus{7.\textsc{i}}{7_1_8G}{7_1_8G}
+
+\psalmus{7.{\addfontfeature{LetterSpace=3.0}\textsc{ii}}}{7_2_8G}{7_2_8G} %%ef-fecit looks bad with italic f next to bold f; LaTeX format breaks kerning
+
+\smallscore{an_salvum_me_fac_solesmes_1961}
+
+\rubrique{Reliqua ut supra in Dominica, \normaltext{\pageref{te_lucis}.}}
+
+\section[Feria III.]{FERIA III AD VESPERAS.}\header{feria iii ad vesperas.}
+
+\gscore[1. Ant.]{8. G}{an_qui_habitas_solesmes_1961}
+\phantomsection \label{122_8G}
+\psalmus{122}{122_8G}{122_8G}
+
+\gscore[2. Ant.]{1. g 2}{an_adjutorium_nostrum_solesmes_1961}
+\psalmus{123}{123_1g2}{123_1g2}
+
+\gscore[3. Ant.]{1. f}{an_in_circuitu_solesmes_1961}
+\psalmus{124}{124_1f}{124_1f}
+
+\gscore[4. Ant.]{7. a}{an_magnificavit_dominus_solesmes_1961}
+\psalmus{125}{125_7a}{125_7a}
+
+\gscore[5. Ant.]{5. a}{an_dominus_aedificet_solesmes_1961}
+\psalmus{126}{126_5}{126_5}
+
+\capitulum{2 Cor. 1, 3 – 4.}
+\textes{capitulum_per_annum}
+
+\hymnus
+
+\gscore[]{1.}{hy_telluris_alme_conditor_solesmes_1961}
+
+\textes{versiculus_per_annum}
+
+\admagnificat
+
+\gscore[]{5. a}{an_exsultavit_spiritus_solesmes_1961}
+
+\textes{preces_rubrique}
+
+\section[— — Ad Complet.]{FERIA III AD COMPLETORIUM.}\header{feria iii ad complet.} 
+%\label{feria_3_ad_compl}
+
+\gscore[Ant.]{8. G}{tu_domine}
+\label{ps_11_ad_compl_fer_3}
+\psalmus{11}{11_8G}{11_8G}
+
+\psalmus{12}{12_8G}{12_8G}
+
+\psalmus{15}{15_8G}{15_8G}
+
+\smallscore{an_tu_domine_solesmes_1961}
+
+\section[Feria IV.]{FERIA IV AD VESPERAS.}\header{feria iv ad vesperas.} %% for TOC
+
+\gscore[1. Ant.]{2. D}{an_beati_omnes_solesmes_1961}
+\phantomsection \label{127_2}
+\psalmus{127}{127_2}{127_2}
+
+\gscore[2. Ant.]{8. G}{an_confundantur_omnes_solesmes_1961}
+\psalmus{128}{128_8G}{128_8G}
+
+\gscore[3. Ant.]{8. c}{an_de_profundis_solesmes_1961}
+\psalmus{129}{129_8c}{129_8c}
+
+\gscore[4. Ant.]{1. g 2}{an_domine_non_est_exaltatum_solesmes_1961}
+\psalmus{130}{130_1g2}{130_1g2}
+
+\gscore[5. Ant.]{3. g}{an_elegit_dominus_solesmes_1961}
+\psalmus{131}{131_3g}{131_3g}
+
+\capitulum{2 Cor. 1, 3 – 4.}
+\textes{capitulum_per_annum}
+
+\hymnus
+
+\gscore[]{1.}{hy_caeli_deus_sanctissime_solesmes_1961}
+
+\textes{versiculus_per_annum}
+
+\admagnificat
+
+\gscore[]{8. G*}{an_respexit_dominus_solesmes_1961}
+
+\textes{preces_rubrique}
+
+\section[— — Ad Complet.]{FERIA IV AD COMPLETORIUM.}\header{feria iv ad complet.} 
+%\label{feria_4_ad_compl}
+
+\gscore[Ant.]{3. a}{immittet_angelus}
+
+\psalmus{33.\textsc{i}}{33_1_3a}{33_1_3a}
+
+\psalmus{33.\textsc{ii}}{33_2_3a}{33_2_3a}
+
+\psalmus{60}{60_3a}{60_3a}
+
+\smallscore{an_immittet_angelus_solesmes_1961}
+
+\section[Feria V.]{FERIA V AD VESPERAS.}\header{feria v ad vesperas.} 
+
+\gscore[1. Ant.]{1. a}{an_ecce_quam_bonum_solesmes_1961}
+\phantomsection \label{132_1a}
+\psalmus{132}{132_1a}{132_1a} %%the a-t italic pairing is bad. need to think about this
+
+\gscore[2. Ant.]{3. g 2}{an_confitemini_domino_quoniam_solesmes_1961}
+\psalmus{135.\textsc{i}}{135_1_3g2}{135_1_3g2} %%need to redo the psalm numbering here
+
+\gscore[3. Ant.]{3. g 2}{an_confitemini_domino_quia_solesmes_1961}
+\psalmus{135.{\addfontfeature{LetterSpace=3.0}\textsc{ii}}}{135_2_3g2}{135_2_3g2} %%%need to revisit spacing between i and c in "misericordia" sometimes it's too close, sometimes not
+
+\gscore[4. Ant.]{3. a}{an_adhaereat_lingua_solesmes_1961}
+\psalmus{136}{136_3a}{136_3a}
+
+\gscore[5. Ant.]{5. a}{an_confitebor_nomini_solesmes_1961}
+\psalmus{137}{137_5a}{137_5a}
+
+\capitulum{2 Cor. 1, 3 – 4.}
+\textes{capitulum_per_annum}
+
+\hymnus
+
+\gscore[]{1.}{hy_magnae_deus_potentiae_solesmes_1961}
+
+\textes{versiculus_per_annum}
+
+\admagnificat
+
+\gscore[]{7. c}{an_fecit_deus_potentiam_solesmes_1961}
+
+\textes{preces_rubrique}
+
+\section[— — Ad Complet.]{FERIA V AD COMPLETORIUM.}\header{feria v ad complet.} 
+%\label{feria_6_ad_compl}
+
+\gscore[Ant.]{8. G}{adjutor_meus}
+
+\psalmus{69}{69_8G}{69_8G} %% psalm tex files originally taken from Tenebrae 8c files and subsequently modified (punctuation removed, kerning now fixed)
+
+%e-st italic not great
+
+\psalmus{70.\textsc{i}}{70_1_8G}{70_1_8G} %%duplicated file and removed parts where it's split in half.
+
+\psalmus{70.\textsc{ii}}{70_2_8G}{70_2_8G}
+
+\smallscore{an_adjutor_meus_solesmes_1961}
+
+\section[Feria VI.]{FERIA VI AD VESPERAS.}\header{feria vi ad vesperas.}\label{feria_vi_ad_vesperas} 
+\gscore[1. Ant.]{3. g 2}{an_domine_probasti_solesmes_1961}
+\label{138_1_3g2}
+\psalmus{138.\textsc{i}}{138_1_3g2}{138_1_3g2}
+
+\gscore[2. Ant.]{6. F}{an_mirabilia_opera_tua_solesmes_1961}
+\psalmus{138.{\addfontfeature{LetterSpace=3.0}\textsc{ii}}}{138_2_6_alt}{138_2_6_alt}
+
+\gscore[3. Ant.]{4. E}{an_ne_derelinquas_me_solesmes_1961}
+\psalmus{139}{139_4E}{139_4E}
+
+\gscore[4. Ant.]{8. c}{an_domine_clamavi_solesmes_1961}
+\psalmus{140}{140_8c}{140_8c}
+
+\gscore[5. Ant.]{3. a}{an_educ_de_custodia_solesmes_1961}
+\psalmus{141}{141_3a}{141_3a}
+
+\capitulum{2 Cor. 1, 3 – 4.}
+\textes{capitulum_per_annum}
+
+\smalltitle{Hymnus.}
+
+\gscore[]{1.}{hy_hominis_superne_conditor_solesmes_1961}
+
+\textes{versiculus_per_annum}
+
+\smalltitle{Ad Magnifcat, Antiphona.}
+
+\gscore[]{1. f}{an_deposuit_dominus_solesmes_1961}
+
+\textes{preces_rubrique}
+
+\section[— — Ad Complet.]{FERIA VI AD COMPLETORIUM.}\header{feria vi ad complet.} 
+%\label{feria_6_ad_compl}
+
+%% full psalm incipit needed for 1960 compatibility
+%% incipit of antiphon and psalm are identical, but not psalm text 
+
+\gscore[Ant.]{7. c}{voce_mea}
+
+%\sdpsalmus{76.\textsc{i}}{109_7}
+
+\psalmus{76.\textsc{i}}{76_1_7c}{76_1_7c} 
+
+\psalmus{76.\textsc{ii}}{76_2_7c}{76_2_7c}
+
+\psalmus{85}{85_7c}{85_7c} 
+
+\smallscore{an_voce_mea_solesmes_1961}
+
+\section[Sabbato Ad Vesperas.]{SABBATO AD VESPERAS.}\header{sabbato ad vesperas.} 
+\label{sabbato_ad_vesperas}
+
+\rubrique{Antiphonæ cum sequentibus Psalmis per Annum ac Tempore Paschali assignatæ, semper in Sabbato dicuntur pro I Vesperis Dominicæ, quando agendum est Officium de ipsa Dominica sicut in Psalterio.}
+
+\rubrique{In Sabbatis Adventus, quando dicenda sunt I Vesperæ Dominicæ sequentis, dicuntur cum Psalmis Sabbati Antiphonæ hujus Dominicæ.}
+
+\gscore[1. Ant.]{6. F}{benedictus_dominus}
+
+%%because of the limitations of ALT the Celebrans and Cantores instructions from the LU are omitted
+\phantomsection
+
+\label{ps_143_1_sab}
+%
+%% full psalm incipit needed for 1960 compatibility and for Saturdays of Paschal TIme…
+%% incipit is NOT the first words of the psalm
+\sdpsalmus{143.\textsc{i}}{143_1_6_alt}
+
+\smallscore{an_benedictus_dominus_solesmes_1961}
+
+\gscore[2. Ant.]{8. c}{beatus_populus}
+
+\psalmus{143.\textsc{ii}}{143_2_8c}{143_2_8}
+
+\smallscore{an_beatus_populus_solesmes_1961}
+
+\gscore[3. Ant.]{1. a3}{magnus_dominus}
+\psalmus{144.\textsc{i}}{144_1_1a3}{144_1_1}
+
+\smallscore{an_magnus_dominus_solesmes_1961}
+
+\gscore[4. Ant.]{8. G}{suavis_dominus}
+\psalmus{142.\textsc{ii}}{144_2_8G}{144_2_8G}
+
+\smallscore{an_suavis_dominus_solesmes_1961} 
+
+\label{ps_144_3_sab}
+\gscore[5. Ant.]{4. g}{fidelis_dominus}
+
+%%because of the limitations of ALT the Celebrans and Cantores instructions from the LU are omitted
+
+%% full psalm incipit needed for 1960 compatibility
+%% incipit is NOT the first words of the psalm
+
+\sdpsalmus{144.\textsc{iii}}{144_3_4g}
+
+\smallscore{an_fidelis_dominus_solesmes_1961} 
+
+%%why is the first verse given in full in the antiphonal (both versions) and in the Liber, which also gives the semidoubled introduction?)
+
+\capitulum{Rom. 11, 33.}
+
+\textes{capitulum_sab_pa}
+
+%\scripture{Rom. 11, 33.}
+%
+%\lettrine{O}{} Altitúdo divitiárum sapiéntiæ et sciéntiæ Dei:~† quam incomprehensibília sunt judícia ejus,~* et investigábiles viæ ejus!
+
+%%books have altitúdo with a lowercase a.
+\label{hy_sab_pa} \phantomsection
+\hymnus
+
+\gscore[]{8.}{hy_jam_sol_recedit_igneus_solesmes_1961}
+
+%%J sits really too low (sometimes, it's not clear what happens after multiple passes)
+
+\textes{versiculus_sab_pa}
+
+\smalltitle{Ad Magnificat.}
+
+%%copying the form of the antiphonal here
+
+\rubrique{Antiphona ut in Proprio de Tempore, præterquam in Sabbatis ante Dominicam II et reliquas Dominicas post Epiphaniam, in quibus dicitur sequens:}
+
+\gscore[Ant.]{7. a}{an_suscepit_deus_solesmes_1961}
+
+\rubrique{Et dicitur Oratio sequentis Dominicæ.}
+
+\section[— — Ad Complet.]{SABBATO AD COMPLETORIUM.}\header{sabbato ad complet.} 
+%\label{sabbato_ad_compl}
+
+\gscore[Ant.]{5. a}{intret_oratio_mea}
+
+\psalmus{87}{87_5a}{87_5a}
+%
+\psalmus{102.\textsc{i}}{102_1_5a}{102_1_5a} 
+%
+\psalmus{102.\textsc{ii}}{102_2_5a}{102_2_5a}
+
+\smallscore{an_intret_oratio_mea_solesmes_1961}
+
+ \thispagestyle{empty}
+ 
+ %%maybe addcontentsline with phantomsection is better
+% \chapter[Psalmi Tempore Paschali.]{PSALMI TEMPORE PASCHALI.}
+
+%%section can never be last thing on a page FFS, what is wrong with LaTeX
+
+\section[Dominica ad Vesperas T.P.]{DOMINICA AD VESPERAS \\ TEMPORE PASCHALI.}\header{dominica ad vesperas t.p.}
+%\label{dominica_ad_vesperas_t_p}
+\smalltitle{\pateravedeus} %%this and ranks need to come down or be adjusted…
+
+\gscore[Ant.]{7. c2}{alleluia_sun_tp_vespers}
+
+\rubrique{Sub qua sola dicuntur omnes Psalmi.}
+
+\psalmus{109}{109_7c2}{109_7}
+
+\psalmus{110}{110_7c2}{110_7}
+
+\psalmus{111}{111_7c2}{111_7}
+
+\psalmus{112}{112_7c2}{112_7}
+
+\psalmus{113}{113_7c2}{113_7}
+
+\smallscore{an_alleluia_sun_tp_vespers_solesmes_1961}
+
+\rubrique{Ad Completorium, ut in Dominicis per annum, \normaltext{\pageref{dominica_ad_completorium}.}}
+
+\section[Feria II.]{FERIA II.}\header{feria ii ad vesperas t.p.}
+
+\textes{Duplex_rubrique}
+
+\gscore[Ant.]{1. g 2}{an_alleluia_monday_tp_vespers_solesmes_1961.gabc}
+%\psalmus{114}{114_1g2}{114_1g2}
+
+\rubrique{Ps. \normaltext{Diléxi, \pageref{114_1g2}.}}
+
+\psalmus{115}{115_1g2}{115_1}
+
+\psalmus{119}{119_1g2}{119_1g2}
+
+%% tex file is the same one used for the ordinary psalter, but reprinted due to the different ending
+\psalmus{120}{120_1g2}{120_1}
+
+\psalmus{121}{121_1g2}{121_1g2}
+
+\rubrique{Capitulum, Hymnus et ℣. habentur propria, ut in Feria II primo in hoc Tempore occurrente indicantur.}
+%% need a Latinist to proofread especially these new rubrics
+
+\section[Feria III.]{FERIA III.}\header{feria iii ad vesperas t.p.}
+
+\gscore[Ant.]{8. G}{an_alleluia_tuesday_tp_vespers_solesmes_1961}
+
+\rubrique{Ps. \normaltext{Ad te levávi, \pageref{122_8G}.}}
+%\psalmus{122}{122_8G}{122_8G}
+
+\psalmus{123}{123_8G}{123_8G}
+
+\psalmus{124}{124_8G}{124_8G}
+
+\psalmus{125}{125_8G}{125_8G}
+
+\psalmus{126}{126_8G}{126_8}
+
+\section[Feria IV.]{FERIA IV.}\header{feria iv ad vesperas t.p.} %% for TOC
+
+\gscore[Ant.]{2. D}{an_alleluia_wednesday_tp_vespers_solesmes_1961}
+%\psalmus{127}{127_2}{127_2}
+\rubrique{Ps. \normaltext{Beáti omnes, \pageref{127_2}.}}
+
+\psalmus{128}{128_2}{128_2}
+
+\psalmus{129}{129_2}{129_2}
+
+\psalmus{130}{130_2}{130_2}
+
+\psalmus{131}{131_2}{131_2}
+
+%%may wish to fix sæ-culórum kerning in GP
+\section[Feria V.]{FERIA V.}\header{feria v ad vesperas t.p.} 
+
+\gscore[Ant.]{1. a}{an_alleluia_thursday_tp_vespers_solesmes_1961}
+%\psalmus{132}{132_1a}{132_1a} %%the a-t pairing is bad. need to think about this
+
+\rubrique{Ps. \normaltext{Ecce quam bonum, \pageref{132_1a}.}}
+
+\psalmus{135.\textsc{i}}{135_1_1a}{135_1_1a} %%need to redo the psalm numbering here
+
+\psalmus{135.{\addfontfeature{LetterSpace=3.0}\textsc{ii}}}{135_2_1a}{135_2_1a} %%%need to revisit spacing between i and c in "misericordia" sometimes it's too close, sometimes not
+
+%%too much white
+
+\psalmus{136}{136_1a}{136_1a}
+
+\psalmus{137}{137_1a}{137_1a}
+
+\section[Feria VI.]{FERIA VI.}\header{feria vi ad vesperas t.p.}
+
+\gscore[Ant.]{3. g 2}{an_alleluia_friday_tp_vespers_solesmes_1961}
+
+\rubrique{Ps. \normaltext{Dómine probásti me, \pageref{138_1_3g2}.}}
+
+%\psalmus{138.\textsc{i}}{138_1_3g2}{138_1_3g2}
+
+\psalmus{138.{\addfontfeature{LetterSpace=3.0}\textsc{ii}}}{138_2_3g2}{138_2_3g2}
+
+\psalmus{139}{139_3g2}{139_3g2}
+
+\psalmus{140}{140_3g2}{140_3g2}
+
+\psalmus{141}{141_3g2}{141_3g2}
+
+\label{sab_ad_vesp_tp} \phantomsection
+\section[Sabbato.]{SABBATO.}\header{sabbato ad vesperas t.p.} 
+
+\gscore[Ant.]{6. F}{alleluia_sat_vespers_solesmes}
+
+%\pageref{ps_143_1_sab}
+%
+%% full psalm incipit needed for 1960 compatibility and for Saturdays of Paschal TIme…
+%% incipit per annum is NOT the first words of the psalm
+\psalmus{143.\textsc{i}}{143_1_6_alt}{143_1_6_alt}
+
+\psalmus{143.\textsc{ii}}{143_2_6_alt}{143_2_6_alt}
+
+\psalmus{144.\textsc{i}}{144_1_6_alt}{144_1_6_alt}
+
+\psalmus{142.\textsc{ii}}{144_2_6_alt}{144_2_6_alt}
+
+\psalmus{144.\textsc{iii}}{144_3_6_alt}{144_3_6_alt}
+
+\smallscore{an_alleluia_saturday_tp_vespers_solesmes_1961}
+
+%%why is the first verse given in full in the antiphonal (both versions) and in the Liber, which also gives the semidoubled introduction?)
+
+%%alternatively addcontentsline
+
+%%\chapter[Psalmi ad Completorium Tempore Paschali.]{PSALMI AD COMPLETORIUM TEMPORE PASCHALI.}\header{psalmi ad completorium t.p.}
+
+\section[Psalmi ad Completorium Tempore Paschali.]{PSALMI AD COMPLETORIUM TEMPORE PASCHALI.}\header{psalmi ad completorium t.p.}
+
+\rubrique{In feriæ et in Festi quandi Psalmi sunt feriales, omnia dicuntur ut supra in Dominica, \normaltext{\pageref{dominica_ad_completorium},} exceptis psalmis, quæ dicuntur ut in die per annum, \normaltext{\pageref{ps_6_ad_compl_fer_2}} etc., præter in Feria IV et in Feria VI atque in Sabbato, ut infra.}
+
+\bigtitle{Feria IV.}
+
+\psalmus{33.\textsc{i}}{33_1_8G}{33_1_8G}
+
+%% ps. 33.2, v. 9 has bad stretch due to underfull hbox
+
+\psalmus{33.\textsc{ii}}{33_2_8G}{33_2_8G}
+
+\psalmus{60}{60_8G}{60_8G}
+
+\bigtitle{Feria VI.}
+%%5in-ten: n-t are very close
+\psalmus{76.\textsc{i}}{76_1_8G}{76_1_8G} 
+
+\psalmus{76.\textsc{ii}}{76_2_8G}{76_2_8G} %%used medspace to bump cognoscentur a line
+
+\psalmus{85}{85_8G}{85_8G} 
+
+\bigtitle{Sabbato.}
+
+\psalmus{87}{87_8G}{87_8G}
+%
+\psalmus{102.\textsc{i}}{102_1_8G}{102_1_8G} 
+%
+\psalmus{102.\textsc{ii}}{102_2_8G}{102_2_8G}
+
+%%alternatively addcontentsline
+
+%%header switches too early, on odd page
+
+\section[Psalmi in Sabbatis Adventus ad Vesperas.]{PSALMI IN SABBATIS ADVENTUS AD VESPERAS.}\header{psalmi in sabbatis adventus ad vesp.}
+
+\rubrique{Dicuntur cum Psalmis Sabbatis Antiphonæ hujus Dominicæ.}
+
+\bigtitle{Sabbato ante Dominicam I Adventus.}
+
+\psalmus{143.\textsc{i}}{143_1_8G}{143_1_8G}
+
+\psalmus{143.\textsc{ii}}{143_2_8Gstar}{143_2_8}
+
+\psalmus{144.\textsc{i}}{144_1_5}{144_1_5}
+
+\psalmus{144.\textsc{ii}}{144_2_7c}{144_2_7c}
+
+\psalmus{144.\textsc{iii}}{144_3_4_A_Astar}{144_3_4_A_Astar}
+
+\bigtitle{Sabbato ante Dominicam II Adventus.}
+
+\psalmus{143.\textsc{i}}{143_1_1g}{143_1_1}
+
+\psalmus{143.\textsc{ii}}{143_2_7d}{143_2_7}
+
+\psalmus{144.\textsc{i}}{144_1_7a}{144_1_7a}
+
+\label{144_2_1f}
+\psalmus{144.\textsc{ii}}{144_2_1f}{144_2_1f}
+
+%%v 7 stretches quite a bit
+\psalmus{144.\textsc{iii}}{144_3_3a}{144_3_3a}
+
+\bigtitle{Sabbato ante Dominicam III Adventus.}
+
+\psalmus{143.\textsc{i}}{143_1_1a}{143_1_1}
+
+\psalmus{143.\textsc{ii}}{143_2_7b}{143_2_7}
+
+\psalmus{144.\textsc{i}}{144_1_8G}{144_1_8G}
+
+\psalmus{144.\textsc{ii}}{144_2_5}{144_2_5}
+
+\label{144_3_2}
+
+\psalmus{144.\textsc{iii}}{144_3_2}{144_3_2}
+
+\bigtitle{Sabbato ante Dominicam IV Adventus.}
+
+\psalmus{143.\textsc{i}}{143_1_1g}{143_1_1}
+
+\psalmus{143.\textsc{ii}}{143_2_1f}{143_2_1f}
+
+\psalmus{144.\textsc{i}}{144_1_1g}{144_1_1}
+
+\rubrique{Ps. \normaltext{Miserátor, \pageref{144_2_1f}.}}
+%\psalmus{144.\textsc{ii}}{144_2_1f}{144_2_1f}
+
+\rubrique{Ps. \normaltext{Fidélis, \pageref{144_3_2}.}}
+
+\end{document}
