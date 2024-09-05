@@ -603,6 +603,23 @@ Numbers=OldStyle]
  {\centering{\textit{\large Semiduplex.}}\par}%
 }
 
+\NewDocumentCommand{\duplexmtv}{}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+{\centering{\textit{\large Duplex.} {\normalfont{(m.t.v.)}%
+ \par}%
+}%
+}%
+}
+
+\NewDocumentCommand{\semiduplexmtv}{}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+{\centering{\textit{\large Semiduplex.} {\normalfont{(m.t.v.)}%
+ \par}%
+}%
+}%
+}
 
 \NewDocumentCommand{\simplex}{}{%
 \needspace{5\baselineskip}%
@@ -742,6 +759,7 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 %%for use in collects etc. %%\@ would lead to too narrow of a space (see LU)
+%%needs to be followed by {}
 \NewDocumentCommand{\nomen}{}{%
 \textit{N.}%
 }
