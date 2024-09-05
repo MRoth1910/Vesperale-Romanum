@@ -5,15 +5,15 @@
 
 %%%%%%%%%%%%%%% INDICES %%%%%%%%%%%%%%%
 
-\usepackage{imakeidx}
-
-\indexsetup{level=\section*,toclevel=section,noclearpage,othercode=\footnotesize\thispagestyle{empty}}
-\makeindex[name=H,title=Index Hymnorum, columns=2,columnseprule]
-\makeindex[name=A,title=Index Antiphonarum, columns=2,columnseprule]
-%%\makeindex[name=R,title=Index Responsoriorum, columns=2,columnseprule]
-\makeindex[name=P,title=Index Psalmorum, columns=2,columnseprule]
-\makeindex[name=T,title=Toni Communes, columns=2,columnseprule]
-\makeindex[name=F,title=Index Festorum, columns=2,columnseprule]
+%%\usepackage{imakeidx}
+%%
+%%\indexsetup{level=\section*,toclevel=section,noclearpage,othercode=\footnotesize\thispagestyle{empty}}
+%%\makeindex[name=H,title=Index Hymnorum, columns=2,columnseprule]
+%%\makeindex[name=A,title=Index Antiphonarum, columns=2,columnseprule]
+%%%%\makeindex[name=R,title=Index Responsoriorum, columns=2,columnseprule]
+%%\makeindex[name=P,title=Index Psalmorum, columns=2,columnseprule]
+%%\makeindex[name=T,title=Toni Communes, columns=2,columnseprule]
+%%\makeindex[name=F,title=Index Festorum, columns=2,columnseprule]
 
 %% This is the format of the recent Solesmes books.
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
@@ -219,16 +219,16 @@ Numbers=OldStyle]
 %% macro to print Alleluia for versicles.
 \NewDocumentCommand{\tpalleluia}{}{(\textit{T.P.} Allelúia.)}
 
-\newcommand{\specialcharhsep}{3mm} % space after invoking R/ or V/ or A/ outside rubrics from Matthias with value of 3mm
-%%will leave in, but this value is quite big!
+\newcommand{\specialcharhsep}{3pt} % space after invoking R/ or V/ or A/ outside rubrics from Matthias with value of 3mm
+%%3mm – note unit— is value from MB; changed to pt
 
 %\newcommand{\vv}{\textcolor{gregoriocolor}{\fontspec[Scale=\customscale]{Charis SIL}℣.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}} %% format from MB
 
-%\newcommand{\vv}{{\normalfont ℣.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}}
-%\newcommand{\rr}{{\normalfont ℟.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}}
+\newcommand{\vv}{{\normalfont ℣.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}}
+\newcommand{\rr}{{\normalfont ℟.\nolinebreak[4]\hspace{\specialcharhsep}\nolinebreak[4]}}
 
-\newcommand{\vv}{{\normalfont ℣.~}} %%at the beginning of a line so it shouldn't ever split from the rest but space is needed for macro to work
-\newcommand{\rr}{{\normalfont ℟.~}}
+%\newcommand{\vv}{{\normalfont ℣.~}} %%at the beginning of a line so it shouldn't ever split from the rest but space is needed for macro to work
+%\newcommand{\rr}{{\normalfont ℟.~}}
 
 %\newcommand{\cc}{{\fontspec[Scale=\customscale]{FreeSerif}\symbol{"2720}~}}%from Matthias
 
@@ -259,6 +259,7 @@ Numbers=OldStyle]
 \gresetspecial{cross}{\cc}
 
 %% Same special characters, for use in rubrics (no added space will keep symbol together with incipit)
+%% no scale included
 
 \newcommand{\vvrub}{{\normalfont ℣.~}}
 \newcommand{\rrrub}{{\normalfont ℟.~}}
@@ -353,12 +354,11 @@ Numbers=OldStyle]
         \par%
     }%
     }
-    
+
 %% macro to format psalm text. Revised May 17, 2024 to use `enumerate` rather than inserting numbers in .tex file while usng `itemize` and to specify start value via `enumitem` package. 
 %% 
 %% these values reflect Liber Usualis but do not appear as if typed on a typewriter. Single words (particularly monosyllables) may need adjustment.
 %%leftmargin=* and itemindent=* appear to be the way to a hanging indent like the modern antiphonal (but that looks like crap)
-
 \NewDocumentCommand{\pstexte}{m}{%
     \smallskip%
     \noindent%
@@ -377,7 +377,7 @@ Numbers=OldStyle]
        \input{psaumes/#1}
     \end{enumerate}}
     
-      %%same as above but for the printing of the Magnificat since it always has 2 chant verses. (As of 5.17.2024) it seems more reasonable to do this unless there is an even better way to do so  to avoid 4 arguments per invocation of \psalmus, siince that 3rd argument will just about always be {2}.
+    %%same as above but for the printing of the Magnificat since it always has 2 chant verses. (As of 5.17.2024) it seems more reasonable to do this unless there is an even better way to do so  to avoid 4 arguments per invocation of \psalmus, siince that 3rd argument will just about always be {2}.
     
 %%  the problem is that this repeats a bunch in the Magnificat section and that the Nunc Dimittis sometimes begins on 3.
     \NewDocumentCommand{\magnificattexte}{m}{%
@@ -487,6 +487,7 @@ Numbers=OldStyle]
  %% TITLE COMMANDS %%%% had been dead in NR version of the same, but Matthias says this isn't a good idea.
  %%need to figure out multiple section headers AND a chapter header so that everything fits…
  
+%%these are defined with \sc but we want full caps for the first two in particular. Also, Missing number, treated as 0 occurs when section titleformat is copied… 
  
  \titleformat{\chapter}[display]{\Huge\filcenter\sc\addfontfeature{LetterSpace=5.0}}{}{0pt}{} %%
 \titleformat{\section}[display]{\huge\filcenter\sc\addfontfeature{LetterSpace=5.0}}{}{}{} %%
@@ -528,6 +529,7 @@ Numbers=OldStyle]
 %\vspace{\baselineskip}
 % {\centering{\large #1}}\par} %}
 
+
 %%formatting date of feasts where this listed at top of page
 \NewDocumentCommand{\litdate}{m}{%
 \smalltitle{Die #1.}%
@@ -546,6 +548,7 @@ Numbers=OldStyle]
 %%  \NewDocumentCommand\datefeast{mm}{%
 %%\noindent #1.\hfill{}{\Large#2.}\hfill{}%
 %%}
+
 
 %%formatting for Sunday feasts : inter, post… name is for consistency
 \NewDocumentCommand{\dominicadate}{m}{%
@@ -571,11 +574,42 @@ Numbers=OldStyle]
  }%
  }
 
+%%for ranks of feast; easiest to use rank for duplex 1 or 2 classis because the number changes, the octaves change.
+
+%%probably need to reduce vspace used
+
 \NewDocumentCommand{\rank}{m}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
  {\centering{\textit{\large #1}}\par}%
 }
+
+\NewDocumentCommand{\duplexmajus}{}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\textit{\large Duplex majus.}}\par}%
+}
+
+%%is Duplex even specified.as it's the default?
+\NewDocumentCommand{\duplex}{}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\textit{\large Duplex.}}\par}%
+}
+
+\NewDocumentCommand{\semiduplex}{}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\textit{\large Semiduplex.}}\par}%
+}
+
+
+\NewDocumentCommand{\simplex}{}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\textit{\large Simplex.}}\par}%
+}
+
 
 %%for feasts where the third verse (third part of 1st verse in modern terms) is changed (Mutatur tertius vers.)
 
@@ -645,6 +679,7 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%#1 is Pro… e.g. Pro Virgine Martyre.
 %%#2 is Scriptural citation Prov. 31, 10 – 11.
 %%one problem is that hfill doesnt really CENTER it
+
 \NewDocumentCommand{\specialcapitulum}{mm}{%
 {\needspace{5\baselineskip}%
 \vspace{\baselineskip}%
@@ -656,11 +691,6 @@ Pater noster, Ave María, \textit{et} Credo.%
 }%
 }
 
-%%%original commands
-%\NewDocumentCommand{\capitulum}{}{%
-%\smalltitle{Capitulum.}%
-%}
-
 \NewDocumentCommand{\lectiobrevis}{m}{%
 {\quad Lectio brevis.%
 \hfill \textit{#1}%
@@ -669,7 +699,12 @@ Pater noster, Ave María, \textit{et} Credo.%
 }%
 }
 
-%%for Scriptural references, originally  of the chapter but now primarily Magnificat in psalter.
+%%%original commands
+%\NewDocumentCommand{\capitulum}{}{%
+%\smalltitle{Capitulum.}%
+%}
+
+%%for Scriptural references, originally of the chapter but now primarily Magnificat in psalter
 \NewDocumentCommand{\scripture}{m}{%
 {\raggedleft{\textit{#1}%
 }%
@@ -706,6 +741,11 @@ Pater noster, Ave María, \textit{et} Credo.%
 \smalltitle{Ad Magnificat, Antiphona.}%
 }
 
+%%for use in collects etc. %%\@ would lead to too narrow of a space (see LU)
+\NewDocumentCommand{\nomen}{}{%
+\textit{N.}%
+}
+
 %%above collect (Oratio)
 \NewDocumentCommand{\oratio}{}{%
 \smalltitle{Oratio.}%
@@ -720,7 +760,6 @@ Pater noster, Ave María, \textit{et} Credo.%
 \NewDocumentCommand{\specialoratio}{m}{%
 \smalltitle{#1 \textit{Oratio.}}%
 }
-
 
 %%%these are used before II Vespers
 \NewDocumentCommand{\omniapraeter}{}{%
@@ -738,7 +777,6 @@ Pater noster, Ave María, \textit{et} Credo.%
 }%
 } 
 
-
 %%for commemoration of following at II Vespers of major feasts.
 \NewDocumentCommand{\caphymn}{}{%
 \rubrique{Capitulum et Hymnus ut in I Vesperis.}%
@@ -749,19 +787,44 @@ Pater noster, Ave María, \textit{et} Credo.%
 \rubrique{Et fit comm.\@ sequentis.}%
 }
 
+%%for Vespers of the following where the commemoration of the previous day is still made
+%%fixed latin sequentis to sequenti Sept 4 2024
+\NewDocumentCommand{\vespsequentiscomm}{}{%
+\rubrique{Vesp.\@ de sequenti, comm.\@ præced.}%
+}
+
 %%commemoration of the Lenten feria
 \NewDocumentCommand{\quadcommferiae}{}{%
 \rubrique{In Quadrag.\@ commem. feriæ.}%
 }
 
 %%for Vespers of the following day beginning at the chapter (doubles that concur with each other)
+%%changed 4 Sept 2024 from de to a because while de is probably OK Latin, I see a more often in the books.
 \NewDocumentCommand{\capitdeseq}{}{%
-\rubrique{Vesp. de capit.\@ de seq., comm.\@ præced.}%
+\rubrique{Vesp. a capit.\@ de seq., comm.\@ præced.}%
+}
 
 %%for Fridays where Vespers is of Our Lady on Saturday, unless the next day is a feast of IX Lessons.
 \NewDocumentCommand{\bvmsabbato}{}{%
 \rubrique{Ad Vesperas, nisi occurrat Festum IX Lectionum, a Capitulo fit de Sancta Maria in Sabbato.}%
 }
+
+%%%%%%%SPACING%%
+
+%\NewDocumentCommand{\baselineskipvspace}{m}{%
+%\vspace{#1\baselineskip}%
+%}
+
+%%does this count as a magic number?
+
+\NewDocumentCommand{\baselineskipvspace}{m}{%
+\vspace{1\baselineskip}%
+}
+
+\NewDocumentCommand{\negativebaselineskipvspace}{m}{%
+\vspace{-1\baselineskip}%
+}
+
 
 %% for litanies and other things like antiphon O Doctor Optime
 
@@ -815,19 +878,19 @@ Pater noster, Ave María, \textit{et} Credo.%
 
 \setcounter{tocdepth}{2} %% probably should hide subsections from TOC of most documents
 
-%% command to wrap printindex and set the headers for indices (from MB)
-\newcommand{\cprintindex}[2]{
-	\setheaders{Indices}{#2}
-	\pagestyle{fancy}
-	\thispagestyle{empty}
-	\printindex[#1]
-}
+%%%% command to wrap printindex and set the headers for indices
+%%\newcommand{\cprintindex}[2]{
+%%	\setheaders{Indices}{#2}
+%%	\pagestyle{fancy}
+%%	\thispagestyle{empty}
+%%	\printindex[#1]
+%%}
 
 %%%SUBFILES%%%
 \usepackage{xr} %%to allow cross-references between documents%%%
   \usepackage{subfiles}
   
-  %% When we start a new subfile (new chapter or section), 
+  %% When we start a new subfile (new chapter or section) , 
 %% we start on a new page (with blank filling on the previous page) and create a corresponding label.
 
 \newcommand{\customsubfile}[1]{\newpage\label{#1}\thispagestyle{empty}\subfile{#1}}
