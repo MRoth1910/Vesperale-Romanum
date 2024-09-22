@@ -71,6 +71,9 @@ headsep=3mm,
 \def\GreStar{*}
 \def\GreDagger{†}
 
+%%prints asterisk instead of star normally inserted by <v>\greheightstar</v>
+ \gredefsymbol{greheightstar}{EB Garamond}{asterisk}
+
 %% should prevent flat turning custos into a clef, as Solesmes uses an altered custos in only one chant per Élie Roux.
 \gresetcustosalteration{invisible}
 
@@ -544,6 +547,17 @@ Numbers=OldStyle]
   \makebox[\textwidth]{\Large #2.}%
   }
   
+  %%for feasts such as Imposition of Stigmata of St Francis on Sept 17.
+  %%first two arguments as above
+  %%break line as needed and the remaining text is the 3rd argument
+   \NewDocumentCommand{\longdatefeast}{mmm}{%
+  \par
+  \noindent
+  \makebox[0pt][l]{#1.}%
+  \makebox[\textwidth]{\Large #2}%
+\hfill\makebox[\textwidth]{\large #3.}%
+  }
+  
 %%  alternatively
 %%  \NewDocumentCommand\datefeast{mm}{%
 %%\noindent #1.\hfill{}{\Large#2.}\hfill{}%
@@ -791,13 +805,13 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 \NewDocumentCommand{\sedlocoultimi}{mm}{%
-{\rubrique{Antiphonæ, Psalmi, Capit.\@ et Hymnus ut in #1 Vesperis, sed loco ultimi Ps.\@ \normaltext{#2,} ut infra.}%
+{\rubrique{Antiphonæ et Psalmi ut in #1 Vesperis, sed loco ultimi Ps.\@ \normaltext{#2,} ut infra.}%
 }%
 } 
 
-%%for commemoration of following at II Vespers of major feasts.
-\NewDocumentCommand{\caphymn}{}{%
-\rubrique{Capitulum et Hymnus ut in I Vesperis.}%
+%%for referring to chapter and hymn placed at I or II Vespers (where II has different parts)
+\NewDocumentCommand{\caphymn}{m}{%
+\rubrique{Capitulum et Hymnus ut in #1 Vesperis.}%
 }
 
 %%for commemoration of following at II Vespers of major feasts.
