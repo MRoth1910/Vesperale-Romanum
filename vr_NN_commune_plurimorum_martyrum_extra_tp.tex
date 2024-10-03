@@ -1,0 +1,97 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_commune_plurimorum_martyrum_extra_tp}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\section[Commune Plurimorum Martyrum extra Temp. Paschale]{COMMUNE PLURIMORUM MARTYRUM}
+
+{\centering{\Large{extra Tempus Paschale.}\par}} %%ideally this would be made semantic as a macro and therefore made reusable. The needspace package inserts white space that we don't want!
+
+%%sentence case is what Vaticana has, but Solesmes has small caps
+%% NO period at end of title in this case
+
+\invesperis{i}
+
+\initialscore{an_omnes_sancti_solesmes_1961}
+\psalmus{109}{109_8G}{109_8}
+
+\gscore[2. Ant.]{8. G}{an_cum_palma_ad_regna_solesmes_1961}
+\psalmus{110}{110_8G}{110_8}
+
+\gscore[3. Ant.]{1. f}{an_corpora_sanctorum_solesmes_1961}
+\psalmus{111}{111_1f}{111_1}
+
+\gscore[4. Ant.]{T. per.}{an_martyres_domini_solesmes_1961}
+\psalmus{112}{112_per}{112_per}
+
+\gscore[5. Ant.]{8. c}{an_martyrum_chorus_solesmes_1961}
+\psalmus{116}{116_8c}{116_8}
+
+\capitulum{Sap. 3, 1 – 3.} %%Sirach
+
+\lettrine{J}{u}stórum ánimæ in manu Dei sunt, et non tanget illos torméntum mortis.~† Visi sunt óculis insipiéntium mori:~* illi autem sunt in pace.
+%
+\hymnusmode{2.}
+
+\initialscore{hy_sanctorum_meritis_solesmes_1961}
+
+\altertonus
+
+\gscore[]{3.}{hy_sanctorum_meritis_alter_tonus_solesmes_1961}
+
+\vv Lætámini in Dómino, et exsultáte justi.
+
+\rr Et gloriámini omnes recti corde.
+%
+\admagnificat
+%
+\gscore[]{8. G}{an_istorum_est_enim_solesmes_1961}
+%
+\specialoratio{Pro Pluribus Martyribus Pontificibus.}
+
+\lettrine{B}{e}atórum Mártyrum paritérque Pontíficum \nomen{} et \nomen{} nos, quǽsumus Dómine, fest tueántur:~* et eórum comméndet orátio veneránda. Per Dóminum.
+
+\specialoratio{Si non fuerint Pontifices.}
+
+\lettrine{D}{e}us, qui nos concédis sanctórum Mártyrum túorum \nomen{} et \nomen{} natalítia cólere:~† da nobis in ætérna beatúdine,~* de eórum sociétate gaudére. Per Dóminum.
+
+\aliaoratio
+
+\lettrine{D}{e}us, qui nos ánnua sanctórum Mártyrum túorum \nomen{} et \nomen{} solemnitáte lætíficas:~† concéde propítius; ut quorum gaudémus méritis,~* accendámur exémplis. Per Dóminum.
+%
+\invesperis{ii}
+
+\gscore[1. Ant.]{2. D}{an_isti_sunt_sancti_solesmes_1961}
+\psalmus{109}{109_2}{109_2}
+
+\gscore[2. Ant.]{2. D}{an_sancti_per_fidem_solesmes_1961}
+\psalmus{110}{110_2}{110_2}
+
+\gscore[3. Ant.]{8. G}{an_sanctorum_velut_aquilae_solesmes_1961}
+\psalmus{111}{111_8G}{111_8}
+
+\gscore[4. Ant.]{7. a}{an_absterget_deus_solesmes_1961}
+\psalmus{112}{112_7a}{112_7}
+
+\gscore[5. Ant.]{8. G}{an_in_caelestibus_regnis_solesmes_1961}
+\psalmus{115}{115_8G}{115_8}
+
+\caphymn{i}
+
+\vv Exsultábunt Sancti in glória.
+
+\rr Lætabúntur in cubílibus suis.
+
+\admagnificat
+
+\gscore[]{6. F}{an_gaudent_in_caelis_solesmes_1961}
+
+\end{document}
