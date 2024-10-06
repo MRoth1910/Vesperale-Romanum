@@ -33,14 +33,15 @@
 %% the psalter + commemorations (of saints and suffrages) are middle of book
 \customsubfile{vr_NN_commune_apostolorum}  %%first common. TBD if it is proper, then common, or common, then proper
 \customsubfile{vr_NN_commune_unius_martyris}
+\customsubfile{vr_NN_commune_apostolo_evang_martyrum_tp}
 \customsubfile{vr_NN_commune_plurimorum_martyrum_extra_tp}
 \customsubfile{vr_NN_commune_confessoris_pontificis} %%doctors' names are a problem as is Iste confessor (sometimes)
 \customsubfile{vr_NN_commune_confessoris_non_pontificis}
-\customsubfile{vr_NN_commune_virginum} %%J in hymn is problem
+\customsubfile{vr_NN_commune_virginum} %%J in hymn is problem (fixed as of Oct 2024)
 \customsubfile{vr_NN_commune_non_virginum}
 \customsubfile{vr_NN_commune_dedicationis}
 \customsubfile{vr_NN_commune_bmv} %% last common %% need to ensure spacing at antiphon Sancta Maria
-%%should we include rubrics like "hic genuflectitur" at AMS?
+%%should we include rubrics like "hic genuflectitur" at AMS? NO, people need to learn them
 \customsubfile{vr_NN_bmv_in_sabbato}
 %\customsubfile{vr_NN_appendix}
 %%\customsubfile{vr_NN_prop_gallia} if feeling ambitious
@@ -96,8 +97,9 @@
 %%every label seems to need \phantomsection. Unclear why code won't supply it
 
 %%need to check offset of asterisk in antiphons; the (default) new barspacing algorithm works, but e.g. Sicut novellae of Corpus Christi has the asterisk to the far right of the quarter bar, when in this case it should be aligned neatly
+%%too far to tthe left in certain mode 1 antiphons
 
-%% verse numbers of hymn always need to go on next line… this is a bad limitaation of Gregorio
+%% verse numbers of hymn always need to go on next line… this is a bad limitation of Gregorio
 
 %%probably should remove all labels that only go from I or II Vespers to the same EXCEPT for page numbers (so in other words, chapter and hymn don't get label and  pageref, but psalms do, because otherrwise it could be another feast, common, etc.)
 %%this makes life easier and cuts down on number of labels substantially
@@ -123,11 +125,10 @@
 %\customsubfile{vr_NN_dom_post_pentecosten}%%done!
 %\customsubfile{vr_NN_commune_apostolorum} %%done!
 %\customsubfile{vr_NN_commune_unius_martyris}%%done
-%\customsubfile{vr_NN_commune_martyrum}
-%\customsubfile{vr_NN_commune_ap_ev_martyrum_tp}
+%\customsubfile{vr_NN_commune_martyrum}done!
 %\customsubfile{vr_NN_commune_confessoris} %%pontiff AND non-pontiff would be easiest  due to doctors (done, need to keep an eye on doctors' names) DONE (2 files)
 %\customsubfile{vr_NN_commune_virginis} DONE but watch J in hymn
-%\customsubfile{vr_NN_commune_non_virginis}
+%\customsubfile{vr_NN_commune_non_virginis}done!
 %\customsubfile{vr_NN_commune_dedicationis} done!
 %%\customsubfile{vr_NN_commune_bmv} %% done!
 %%%sabbato  %%done!
