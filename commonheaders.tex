@@ -598,6 +598,14 @@ Numbers=OldStyle]
  {\centering{\textit{\large #1}}\par}%
 }
 
+%%looks like xparse formatting changed so o just has No Default Value whereas O{} is that OR you can insert something in braces!
+%%answer thanks to David Carlisle
+\NewDocumentCommand{\duplexclassis}{mo}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering\textit{\large Duplex #1 classis\IfValueT{#2}{ #2}.}\par}%
+}
+
 \NewDocumentCommand{\duplexmajus}{}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
@@ -615,6 +623,12 @@ Numbers=OldStyle]
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
  {\centering{\textit{\large Semiduplex.}}\par}%
+}
+
+\NewDocumentCommand{\simplex}{}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering{\textit{\large Simplex.}}\par}%
 }
 
 \NewDocumentCommand{\duplexmtv}{}{%
@@ -635,23 +649,7 @@ Numbers=OldStyle]
 }%
 }
 
-\NewDocumentCommand{\simplex}{}{%
-\needspace{5\baselineskip}%
-\vspace{\baselineskip}%
- {\centering{\textit{\large Simplex.}}\par}%
-}
-
-
-\NewDocumentCommand{\semiduplexmtv}{}{%
-\needspace{5\baselineskip}%
-\vspace{\baselineskip}%
-{\centering{\textit{\large Semiduplex.} {\normalfont{(m.t.v.)}%
- \par}%
-}%
-}%
-}
-
-\NewDocumentCommand{\simpllexmtv}{}{%
+\NewDocumentCommand{\simplexmtv}{}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
 {\centering{\textit{\large Simplex.} {\normalfont{(m.t.v.)}%
@@ -659,7 +657,6 @@ Numbers=OldStyle]
 }%
 }%
 }
-
 
 %%for feasts where the third verse (third part of 1st verse in modern terms) is changed (Mutatur tertius vers.)
 
@@ -711,36 +708,6 @@ Pater noster et Ave María. ℣. Deus in adjutórium.%
 Pater noster, Ave María, \textit{et} Credo.%
 }
 
-%%above chapter (Capitulum)
-%%should indent by 1 em or a quad and then preserve space at end of line without needing to resort to table
-%%imitation,sort of, of Liber antiphonarius style; AM1934 indentation is bigger
-%%argument is Scriptural reference
-\NewDocumentCommand{\capitulum}{m}{%
-{\needspace{5\baselineskip}%
-\vspace{\baselineskip}%
-\quad Capitulum.%
-\hfill \textit{#1}%
-\hspace*{1em}%
-\par%
-}%
-}
-
-%%for use in commons
-%%#1 is Pro… e.g. Pro Virgine Martyre.
-%%#2 is Scriptural citation Prov. 31, 10 – 11.
-%%one problem is that hfill doesnt really CENTER it
-
-\NewDocumentCommand{\specialcapitulum}{mm}{%
-{\needspace{5\baselineskip}%
-\vspace{\baselineskip}%
-\quad #1%
-\hfill Capitulum.%
-\hfill \textit{#2}
-\hspace*{1em}%
-\par%
-}%
-}
-
 \NewDocumentCommand{\lectiobrevis}{m}{%
 {\quad Lectio brevis.%
 \hfill \textit{#1}%
@@ -761,6 +728,37 @@ Pater noster, Ave María, \textit{et} Credo.%
 \par}%
 }
 
+%%above chapter (Capitulum)
+%%should indent by 1 em or a quad and then preserve space at end of line without needing to resort to table
+%%imitation,sort of, of Liber antiphonarius style; AM1934 indentation is bigger
+%%argument is Scriptural reference
+\NewDocumentCommand{\capitulum}{m}{%
+{\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+\quad Capitulum.%
+\hfill \textit{#1.}%
+\hspace*{1em}%
+\par%
+}%
+}
+
+%%for use in commons
+%%#1 is Pro… e.g. Pro Virgine Martyre.
+%%#2 is Scriptural citation Prov. 31, 10 – 11.
+%%one problem is that hfill doesnt really CENTER it
+
+\NewDocumentCommand{\specialcapitulum}{mm}{%
+{\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+\quad #1%
+\hfill Capitulum.%
+\hfill \textit{#2.}
+\hspace*{1em}%
+\par%
+}%
+}
+
+
 %%above Hymn if listed this way in the antiphonal (Hymnus)
 \NewDocumentCommand{\hymnus}{}{%
 \smalltitle{Hymnus.}%
@@ -770,7 +768,6 @@ Pater noster, Ave María, \textit{et} Credo.%
 \NewDocumentCommand{\hymnusspecial}{mO{}}{%
 \smalltitle{#1, Hymnus. #2}%
 }
-
 
 %%for proper of saints where the hymn is proper
 \NewDocumentCommand{\hymnusbothvespers}{}{%
@@ -792,6 +789,13 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 %%above Te lucis
+
+%%for, e.g. St Michael (not present in LA but preesnt in LU), St John Cantius. Hymn uses what would be ALT but we wish to avoid this feature. Unlike Ave Maris Stella rubric,
+%% which is never in LA, this is, at least once, so we include it.
+
+\NewDocumentCommand{\sequensconclusio}{}{%
+\rubrique{Sequens conclusio numquam mutatur.}%
+}
 
 \NewDocumentCommand{\hymnusadcompletorium}{}{%
 \smalltitle{Tonus Hymni ad Completorium.}%
@@ -849,6 +853,11 @@ Pater noster, Ave María, \textit{et} Credo.%
 \rubrique{Et fit comm.\@ sequentis.}%
 }
 
+%%for Vespers of the following
+\NewDocumentCommand{\vespsequenti}{}{%
+\rubrique{Vesp.\@ de sequenti.}%
+}
+
 %%for Vespers of the following at II Vespers
 \NewDocumentCommand{\commsequentis}{}{%
 \rubrique{In II Vesperis, comm.\@ sequentis.}%
@@ -860,15 +869,16 @@ Pater noster, Ave María, \textit{et} Credo.%
 \rubrique{Vesp.\@ de sequenti, comm.\@ præced.}%
 }
 
-%%commemoration of the Lenten feria
-\NewDocumentCommand{\quadcommferiae}{}{%
-\rubrique{In Quadrag.\@ commem. feriæ.}%
-}
-
 %%for Vespers of the following day beginning at the chapter (doubles that concur with each other)
 %%changed 4 Sept 2024 from de to a because while de is probably OK Latin, I see a more often in the books.
 \NewDocumentCommand{\capitdeseq}{}{%
 \rubrique{Vesp. a capit.\@ de seq., comm.\@ præced.}%
+}
+
+
+%%commemoration of the Lenten feria
+\NewDocumentCommand{\quadcommferiae}{}{%
+\rubrique{In Quadrag.\@ commem. feriæ.}%
 }
 
 %%for Fridays where Vespers is of Our Lady on Saturday, unless the next day is a feast of IX Lessons.
