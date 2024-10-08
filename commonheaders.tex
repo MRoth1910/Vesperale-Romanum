@@ -606,6 +606,7 @@ Numbers=OldStyle]
  {\centering\textit{\large Duplex #1 classis\IfValueT{#2}{ #2}.}\par}%
 }
 
+
 \NewDocumentCommand{\duplexmajus}{}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
@@ -631,37 +632,38 @@ Numbers=OldStyle]
  {\centering{\textit{\large Simplex.}}\par}%
 }
 
+%%for feasts where the third verse (third part of 1st verse in modern terms) is changed (Mutatur tertius vers.)
+
+\NewDocumentCommand{\mtv}{}{%
+{\normalfont{(m.t.v.)}%
+}%
+}
+
+%%e.g. St Joachim, D2C
+\NewDocumentCommand{\duplexclassismtv}{mo}{%
+\needspace{5\baselineskip}%
+\vspace{\baselineskip}%
+ {\centering\textit{\large Duplex #1 classis.} \mtv \par}%
+}
+
 \NewDocumentCommand{\duplexmtv}{}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
-{\centering{\textit{\large Duplex.} {\normalfont{(m.t.v.)}%
- \par}%
-}%
+{\centering{\textit{\large Duplex.} \mtv \par}%
 }%
 }
 
 \NewDocumentCommand{\semiduplexmtv}{}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
-{\centering{\textit{\large Semiduplex.} {\normalfont{(m.t.v.)}%
- \par}%
-}%
+{\centering{\textit{\large Semiduplex.} \mtv \par}%
 }%
 }
 
 \NewDocumentCommand{\simplexmtv}{}{%
 \needspace{5\baselineskip}%
 \vspace{\baselineskip}%
-{\centering{\textit{\large Simplex.} {\normalfont{(m.t.v.)}%
- \par}%
-}%
-}%
-}
-
-%%for feasts where the third verse (third part of 1st verse in modern terms) is changed (Mutatur tertius vers.)
-
-\NewDocumentCommand{\mtv}{}{%
-{\normalfont{(m.t.v.)}%
+{\centering{\textit{\large Simplex.} \mtv \par}%
 }%
 }
 
@@ -853,6 +855,10 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%for referring to chapter and hymn placed at I or II Vespers (where II has different parts)
 \NewDocumentCommand{\caphymn}{m}{%
 \rubrique{Capitulum et Hymnus ut in #1 Vesperis.}%
+}
+
+\NewDocumentCommand{\hymnusut}{m}{%
+\rubrique{Hymnus ut in #1 Vesperis.}%
 }
 
 %%for commemoration of following at II Vespers of major feasts.
