@@ -39,7 +39,6 @@
 \usepackage{hyperref}
 \usepackage{refcount}
 
-
 %%%%%%%%%%%%%%% HYPHENATION AND TYPOGRAPHICAL CONVENTIONS %%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%% GEOMETRY %%%%%%%%%%%%%%%
@@ -458,6 +457,15 @@ Numbers=OldStyle]
 	\cantiquetexte{#4}%
 	{#5}%
 }
+
+
+%%in particular for canticle at OPBMV
+  \NewDocumentCommand{\canticumspecial}{mmm}{
+	\needspace{4\baselineskip}%
+	\smalltitle{#1.}%            %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
+	\smallscore[n]{#2}%
+	\cantiquetexte{#3}%
+	}
 
 % Could use, before \smallscore \grecommentary taking an argument instead but this sits too low on Nunc Dimittis
     
@@ -897,6 +905,17 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%for Fridays where Vespers is of Our Lady on Saturday, unless the next day is a feast of IX Lessons.
 \NewDocumentCommand{\bvmsabbato}{}{%
 \rubrique{Ad Vesperas, nisi occurrat Festum IX Lectionum, a Capitulo fit de Sancta Maria in Sabbato.}%
+}
+
+%%for feasts of the BVM
+\NewDocumentCommand{\infestisbmv}{}{%
+\rubrique{Antiphonæ, Psalmi et Capitulum ut in festis B.M.V., \normaltext{\pageref{vr_NN_commune_bmv}.}%
+}%
+}
+
+\NewDocumentCommand{\amsrubrique}{}{%
+\rubrique{Hymnus \normaltext{Ave Maris Stella, \pageref{hy_ave_maris_stella_mode_1_LA1949}.}%
+}%
 }
 
 %%%%%%%SPACING%%
