@@ -11,7 +11,8 @@
 
 %\thispagestyle{empty}
 
-\section[In Festis Beatæ Mariæ Virginis.]{IN FESTIS BEATÆ MARIÆ VIRGINIS.}\header{in festis b.m.v.}\label{Festis_BVM}\phantomsection
+\section[In Festis Beatæ Mariæ Virginis.]{IN FESTIS BEATÆ MARIÆ VIRGINIS.}\header{in festis b.m.v.}
+\label{Festis_BVM}\phantomsection
 \thispagestyle{empty}
 
 %\subsection{in i. vesperis.}
@@ -40,6 +41,8 @@
 \psalmus{147}{147_4A_A_star}{147_4A_A_star}
 
 \capitulum{Eccli. 24, 14.}
+\label{Capitulum_BMV}
+\phantomsection
 \textes{Capitulum_BMV}
 %\espace
 
@@ -47,8 +50,10 @@
 %\textes{AMS_rubrique}
  %% needed if rubric isn't in ALT of gabc 
 %%not in antiphonale but needed…
-
+%%maybe all caps inicipit suffices
 \hymnus
+\label{hy_ave_maris_stella_mode_1_LA1949}
+\phantomsection
 \gscore[]{1.}{hy_ave_maris_stella_mode_1_LA1949}
 
 \smalltitle{Alter Tonus.}
@@ -61,6 +66,8 @@
 \textes{versiculus_bmv}
 
 \admagnificat
+\label{an_sancta_maria_solesmes_1961}
+\phantomsection
 \gscore[]{4. E}{an_sancta_maria_solesmes_1961}
 %%The minipage not allowing breaks causes problems: the score will be stretched to fill the page.
 
@@ -84,7 +91,7 @@
 {\fontsize{9}{11}\selectfont{In Festo Patrocinii B.M.V.}} \gabcsnippet{(c4) †  tu(g)um(g) san(gh)ctum(g) Pa(gf)tro(ghg)cí(e)ni(e)um.(e.) (::)}%
 \end{minipage}%
 
-\oratio \label{concede_bmv}
+\oratio \label{concede_bmv} \phantomsection
 \textes{Oratio_BMV}
 
 \rubrique{¶ Ad Completorium, Hymnus ut notatur in Psalterio pro Festis B.M.V.} %%will need to replace that eventually with the right page reference.
@@ -112,6 +119,8 @@
 \textes{versiculus_bmv}
 
 \admagnificat 
+\label{an_beatam_me_dicent_comm_bmv_solesmes_1961}
+\phantomsection
 \gscore[]{8. G}{an_beatam_me_dicent_comm_bmv_solesmes_1961}
 
 \end{document}

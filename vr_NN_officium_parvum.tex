@@ -1,0 +1,237 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_officium_parvum}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\section[Officium Parvum Beatæ Mariæ Virginis.]{OFFICIUM PARVUM BEATÆ MARIÆ VIRGINIS.}\header{officium parvum b.m.v.}
+
+\bigtitle{Ad Vesperas extra Adventum.}
+
+Ave María, \rubrique{secreto, quæ dicitur semper in principio omnium Horarum Beatæ Mariæ Virginis.}
+
+℣. Deus in adjutórium.
+
+%%\vv Deus in adjutórium.
+%% command for beginning of psalter has v. but rest of book uses \vv
+
+
+\infestisbmv
+
+\rubrique{Sed antiphonæ non duplicantur ad horas Beatæ Mariæ Virginis.}
+
+%%based on breviary rubric
+%%needed because it's actually obscure.
+
+%% \primaantiphona{3. a.}
+%%\initialscore{an_dum_esset_rex_opbmv_solesmes_1961}
+%%\psalmus{109}{109_3a}{109_3a_b}
+%%
+%%\gscore[2. Ant.]{4. A*}{an_laeva_ejus_opbmv_solesmes_1961}
+%%\psalmus{112}{112_4A_A_star}{112_4A_A_star}
+%%
+%%\gscore[3. Ant.]{3. b}{an_nigra_sum_opbmv_solesmes_1961} %% this is annoyingly stretched
+%%\psalmus{121}{121_3b}{121_3a_b}
+%%
+%%\gscore[4. Ant.]{8. G}{an_jam_hiems_transiit_opbmv_solesmes_1961}
+%%\psalmus{126}{126_8G}{126_8}
+%%
+%%\gscore[5. Ant.]{4. A*}{an_speciosa_facta_es_opbmv_solesmes_1961}
+%%\psalmus{147}{147_4A_A_star}{147_4A_A_star}
+%%
+%%\capitulum{Eccli. 24, 14}
+%%
+%%\textes{Capitulum_BMV}
+
+\rubrique{Hymnus \normaltext{Ave Maris Stella, \pageref{M-hy_ave_maris_stella_in_sab_solesmes_1960}.}}
+
+%%\hymnus
+%%\gscore[]{1.}{hy_ave_maris_stella_in_sab_solesmes_1960}
+
+\vv Diffúsa est grátia in lábiis tuis. 
+
+\rr Proptérea bendíxit te Deus in ætérnum.
+
+\rubrique{Ad Magnificat, antiphona \normaltext{Beáta Mater, \pageref{an_beata_mater_in_sabbato_solesmes_1961}.}}
+
+%\admagnificat
+
+%%\gscore[]{2. D}{an_beata_mater_in_sabbato_opbmv_solesmes_1961}
+
+Kýrie eléison. Christe eléison. Kýrie eléison.
+
+\vv Dóminus vobíscum. \rr Et cum spíritu tuo.
+
+%%for Parvum, both Vaticana and Solesmes  have Per Christum, not full conclusion. but DO has Per Dom. like in breviary. Other prayers 
+%%are Per DNJC so we stick with that.
+
+\rubrique{Oratio \normaltext{Concéde, \pageref{M-oratio_bmv}.}}
+%%\oratio
+%%\textes{Oratio_BMV}
+
+\rubrique{Sequens Commemoratio pro Sanctis fit tantum ad Vesperas
+in Officio B.M.V, præterquam in Adventum, cujus loco tunc alia
+dicitur ut infra, \normaltext{\pageref{an_ecce_dominus_veniet_opbmv_solesmes_1961}.}}
+
+\gscore[Ant.]{7.}{an_sancti_dei_omnes_opbmv_solesmes_1960}
+
+\vv Lætámini in Dómino et exultáte justi.
+
+\rr Et gloriámini ómnes récti córde.
+
+\oratio
+
+\lettrine{P}{r}ótege Dómine pópulum tuum,~* et Apostolórum tuórum Petri
+et Pauli, et aliórum Apostolórum patrocínio confiténdem,
+perpétua defensióne consérva.
+
+ \lettrine{O}{m}nes Sancti tui, quǽsumus Dómine, nos ubíque ádjuvent:
+ut dum eórum mérita recólimus, patrocínia sentiámus;~* et
+pacem tuam nostris concéde tempóribus, et ab Ecclésia tua cun\-ctam repelle nequítiam:~** iter, actus, et voluntates nostras, et
+ómnium famulórum tuórum, in salútis tuæ prosperitáte dispóne; *
+benefactóribus nostris sempitérna bona retríbue, et ómnibus fidélibus defúnctis réquiem ætérnam concéde. Per Dóminum nostrum
+Jesum Christum Filium tuum.
+
+\bigtitle{Ad Completorium.}
+
+Ave María. ℣. Convérte nos. ℣. Deus in adjutórium.
+
+\label{psalmi_ad_completorium_opbmv}\phantomsection
+\psalmus{128}{128_in_dir_romanus}{128_in_dir_romanus}
+
+\psalmus{129}{129_in_dir_romanus}{129_in_dir_romanus}
+
+\psalmus{130}{130_in_dir_romanus}{130_in_dir_romanus}
+
+\hymnus
+
+\grechangenextscorelinedim{1}{spacebeneathtext}{0.1cm}{scalable}
+\gscore[]{2.}{hy_memento_rerum_conditor_opbmv_solesmes}
+
+\capitulum{Eccli. 24, 24}
+
+\lettrine{E}{g}o mater pulchræ dilectiónis,~† et timóris, et agnitiónis,~* et sanctæ spei.
+
+%%otherwise cap touches slash V!
+
+\vspace{1\baselineskip}
+
+\vv Ora pro nobis sancta Dei Génitrix.
+
+\rr Ut digni efficiámur promissiónibus Christi.
+
+\gscore[Ant.]{7. a}{an_sub_tuum_praesidium_opbmv_incipit}
+%\gscore[Ant.]{7. a}{an_sub_tuum_praesidium_opbmv_solesmes}
+
+\canticumspecial{Nunc dimittis}{Nunc_dimittis_7a}{3}{Nunc_dimittis_7a}
+
+\gscore[Ant.]{7. a}{an_sub_tuum_praesidium_opbmv_solesmes}
+
+%\gscore[]{}{an_sub_tuum_praesidium_opbmv_solesmes}
+
+Kýrie eléison. Christe eléison. Kýrie eléison.
+
+\vv Dóminus vobíscum. \rr Et cum spíritu tuo.
+
+\oratio
+
+\lettrine{B}{e}átæ et gloriósæ semper Vírginis Maríæ, quǽsumus Dómine, intercéssio gloriósa nos prótegat,~* et ad vitam perdúcat ætérnam.
+Per Dóminum nostrum.
+
+\bigtitle{Ad Vesperas in Adventum.}
+
+%%\gscore[1. Ant.]{8. G*}{an_missus_est_gabriel_opbmv_solesmes_1961}
+%%\psalmus{109}{109_8Gstar}{109_8}
+%%
+%%\gscore[2. Ant.]{1. g}{an_ave_maria_alleluia_opbmv_solesmes_1961}
+%%\psalmus{112}{112_1g}{112_1}
+%%
+%%\gscore[3. Ant.]{8. G}{an_ne_timeas_alleluia_opbmv_solesmes_1961}
+%%\psalmus{121}{121_8G}{121_8}
+%%
+%%\gscore[4. Ant.]{1. f}{an_dabit_ei_dominus_opbmv_solesmes_1961}
+%%\psalmus{126}{126_1f}{126_1}
+%%
+%%\gscore[5. Ant.]{8. c}{an_ecce_ancilla_domini_opbmv_solesmes_1961}
+%%\psalmus{147}{147_8c}{147_8}
+
+\capitulum{Isaiæ 11, 1 – 2.}
+
+\lettrine{E}{g}redietur virga de radice Jesse,~† et flos de radice ejus ascendet.~* Et requiescet super eum spiritus Domini.
+
+\rubrique{Hymnus \normaltext{Ave Maris Stella, \pageref{M-hy_ave_maris_stella_in_sab_solesmes_1960}.}}
+
+%\rubrique{Hymnus \normaltext{Ave Maris Stella,} ut ad Vesperas extra Adventum.}
+
+\vv Diffúsa est grátia in lábiis tuis. 
+
+\rr Proptérea bendíxit te Deus in ætérnum.
+
+\admagnificat
+
+\gscore[]{8. G}{an_spiritus_sanctus_opbmv_solesmes_1961}
+
+Kýrie eléison, \textit{etc.} Dóminus vobíscum.
+
+\oratio
+
+\textes{oratio_25_mar}
+
+%%copying in part LA1949 heading to avoid confusion.
+\smalltitle{Pro Sanctis ad Vesperas tantum.}
+\label{an_ecce_dominus_veniet_opbmv_solesmes_1961}\phantomsection
+\gscore[Ant.]{5.}{an_ecce_dominus_veniet_opbmv_solesmes_1961}
+
+\vv Ecce apparébit Dóminus super nubem cándidam.
+
+\rr Et cum eo Sanctórum míllia.
+
+\oratio
+\lettrine{C}{o}nsciéntias nostras, quǽsumus Dómine, visitándo purífica:~* ut véniens Jesus Christus Fílius tuus Dóminus noster cum ómnibus Sanctis, parátam sibi in nobis invéniat mansiónem.
+Qui tecum vivit et regnat.
+
+\bigtitle{Ad Completorium.}
+
+\rubrique{Psalmi et Hymnus ut supra extra Adventum,\normaltext{\pageref{psalmi_ad_completorium_opbmv}.}}
+
+\textes{capitulum_25_martii}
+
+\vv Angelus Dómini nuntiávit Maríæ.
+
+\rr Et concépit de Spíritu Sancto.
+
+\rubrique{Ad Nunc dimittis, antiphona \normaltext{Spíritus Sanctus,} ut ad Vesperas.}
+
+\canticumspecial{Nunc dimittis}{Nunc_dimittis_8G}{3}{Nunc_dimittis_8G}
+
+\rubrique{\normaltext{Kýrie eléison} et reliqua cum Oratione \normaltext{Deus, qui de beátæ}
+(cum conclusione integra), ut supra.}
+
+\bigtitle{Post Nativitatem usque ad Purificat.\@ inclusive.}
+
+\rubrique{Officium B.\@ Mariæ dicitur ut extra Adventum, exceptis his quæ
+sequuntur.}
+
+Ad Vesperas. \rubrique{Antiphonæ \normaltext{O admirábile commércium,} ut in Circumcisione, \normaltext{\pageref{M-i_vesperis_circumcisionis}
+.} Reliqua ut ante Adventum præter ad Magnificat, et ad Nunc Dimittis, Antiphona \normaltext{Magnum hæreditátis, \pageref{M-an_magnum_haereditatis_solesmes_1961}.} Oratio \normaltext{Deus, qui salútis ætérnæ, \pageref{M-or_jan_1}.}}
+
+\canticumspecial{Nunc dimittis}{Nunc_dimittis_2}{3}{Nunc_dimittis_2}
+
+\bigtitle{Tempore Paschali.}
+
+%\pageref to Jan 1 office
+\rubrique{Officium B.\@ Mariæ dicitur ut extra Adventum, sed ad Magnificat et ad Nunc dimittis, dicitur Ant. \normaltext{Régina cæli, \pageref{an_regina_caeli_off_bmv_in_sab_TP_solesmes_1960}.}}
+
+\canticumspecial{Nunc dimittis}{Nunc_dimittis_1D2}{3}{Nunc_dimittis_1D2}
+
+\rubrique{Antiphonis autem, ℣℣., ℟℟. non additur in fine \normaltext{Allelúia.
+}}
+
+\end{document}
