@@ -10,6 +10,7 @@
 
 \begin{document}
 
+%%we need to figure out blank pages here
 
 \begin{titlepage}
  \begin{center}
@@ -33,9 +34,27 @@
  {\centering{\capspace{\YEAR}\par}}
 \end{titlepage}
 
+\shipout\null
+\shipout\null
+
+\frontmatter
+
+\thispagestyle{empty}
+\section*{Prœmium.}
+\addcontentsline{toc}{section}{Prœmium.}
+\phantomsection
+
+\input{vr_preface_english.tex}
+
 %%I believe this should be blank and the other stuff begins on the right page (and with lowercase roman numerals?)
 
 %%we need to consider any other prefatory materials…
+
+\newpage
+
+\section*{Decreta S.R.C.}
+\addcontentsline{toc}{section}{Decreta S.R.C.}
+\phantomsection
 
 \thispagestyle{empty}
 Decreta, quibus non derogatur per typicam Antiphonalis Romani editionem, hic addere in gratiam Le\-ctoris Editoribus visum est.
@@ -90,5 +109,7 @@ Et Sacra eadem Congregatio, audita specialis Commissionis pro cantu liturgico gr
 {\hfill† Petrus La Fontaine, Patriarcha ele\-ctus Venetiarum, \textit{Secretarius.}}
 
 (Acta Apost. Sedis, 1915, fasc. 9, p. 237).
+
+\mainmatter
 
 \end{document}
