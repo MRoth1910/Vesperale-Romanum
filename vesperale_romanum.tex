@@ -2,12 +2,13 @@
 % !TEX parameter =  --shell-escape
 
 \documentclass[11pt]{book}
-\input{commonheaders.tex}
+\input{../commonheaders.tex}
 \externaldocument[M-]{\subfix{vesperale_romanum}}
 
 \begin{document}
 %% order TBD.
-%%%%%%Github version%%%
+%%%local version%%%
+
 %%section titles need to be on new page which should happen if we restrict section to start of new subfile only BUT subsection* and sectiion* need same treatment
 %%do we want to use section* or special festum command?
 \customsubfile{vr_01_prolegomena} %%these probably WILL be 01
@@ -175,6 +176,5 @@
 %\customsubfile{vr_NN_festa_octobris}
 %\customsubfile{vr_NN_festa_novembris}
 %\customsubfile{vr_NN_festa_decembris}
-
 
 \end{document}
