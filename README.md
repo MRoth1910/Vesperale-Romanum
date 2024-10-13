@@ -66,7 +66,11 @@ We wish to thank Matthias Bry for his help with LaTeX, Gregorio, and Github, and
 
 Olivier Berten set up and maintains Gregobase, for which Andrew Hinkley transcribed the Liber Usualis and the Liber Antiphonarius. Jacques Perrière fixes things such as syllabification, spacing, and the placement of rhythmic signs; they walked so that we can run.
 
-The [Gregorio mailing list](https://groups.google.com/g/gregorio-users) and [project](http://gregorio-project.github.io/index.html) allow for high-quality typesetting, so our thanks goes out to developers, including the font designers, skilled users, and others invested in singing and producing books of Gregorian chant
+The [Gregorio mailing list](https://groups.google.com/g/gregorio-users) and [project](http://gregorio-project.github.io/index.html) allow for high-quality typesetting, so our thanks goes out to developers, including the font designers, skilled users, and others invested in singing and producing books of Gregorian chant.
+
+Gregory DiPippo contributes rubrical assistance and above all corrects the Latin of newly-composed or heavily-edited rubrics.
+
+The schola cantorum with which I sing serves as my testing environment.
 
 We also thank those who inspired us to chant in the first place and our teachers, especially for those who are in the lineage of Dom André Mocquereau and Dom Joseph Gajard, the masters themselves, for we would have no need of a new book without them, and it is Dom Mocquereau in particular who directed the publication of the Solesmes editions as we know them, in whose footsteps Dom Gajard continued after the death of his confrère.
 
@@ -82,15 +86,15 @@ Finally, Georg Duffner and Octavio Pardo designed the font used for the body, an
 
 - Collect all chants from Gregobase of the psalter, the proper of time, the commons of saints, and the proper of saints as well as the appendix for benediction.
 - Index these pieces as well as the psalms (the index of psalms will be complicated due to the pointing and partial repetition so to minimize page turns but to not use up valuable space)
-  - Remove `--` in file name and replace with `_` (to allow for easier copying/pasting in some LaTeX editors such as in TeXShop).
-- Proofread (add EUOUAE to Magnificat endings, comment off EUOUAE to psalm endings — psalms will need this only when the psalm is not printed below an antiphon), remove space before commas, change `ae` or `oe` `æ` and `œ` respectively as well as `aé` to `ǽ` (U+01fd) (but not, for now `œ` with an acute accent)
+  - Remove `--` in file name and replace with `_` (to allow for easier copying/pasting in some LaTeX editors such as in TeXShop) and remove `ant.`, `...`, and `(` or `)`.
+- Proofread (add EUOUAE to Magnificat endings, comment off EUOUAE to psalm endings — psalms will need this only when the psalm is not printed below an antiphon), remove space before commas, change `ae` or `oe` `æ` and `œ` respectively as well as `aé` to `ǽ` (U+01fd) ~(but not, for now `œ` with an acute accent)~ (as of October 2024, this is fiex, and we can use TeX to make an accented `œ`!)
 - Correct italics of psalm tex files (See this [issue](https://github.com/Nocturnale-Romanum/nocturnale-romanum/issues/17#issue-1714660808).) 
-- Transcribe versicles of feasts where the solemn tone is given and create gabc file.
-- Build psalter, common tones, proper of time, commons of saints, the proper of saints, and benediction. This means also means copy, insert, and correct (based on Solesmes/Vaticana) collects, chapters, and versicles.
+- Transcribe versicles of feasts where the solemn tone is given and create gabc file (now possible with manual intervention required with the Psalm Tone Tool as of October 2024)
+- Build psalter (draft done as of summer 2024, except for page breaks), common tones, proper of time (draft, except for headers and page breaks done as of summer 2024), commons of saints, the proper of saints, proper of France, 1955/60 (done as of Oct 2024) and benediction. This means also means copy, insert, and correct (based on Solesmes/Vaticana) collects, chapters, and versicles.
 - Finish [table of moveable feasts and perpetual Roman calendar](https://github.com/MRoth1910/Kalendarium) (and insert it into the main PDF)
 - Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
 - Proofread completed book(s).
-- Along the way: we need someone who is a real LaTeX expert to help, particularly with the table of moveable feasts (which has different requirements than the main project and is quite complex), sectioning commands, widows/orphans (in the proper of saints epecially, the date, the feast name, and the rank plus the text cannot be separated over two pages), spacing of elements on pages (e.g. scores should not stretch too much, and we shouldn't have too much white space between a title and a following score)
+- Along the way: we need someone who is a real LaTeX expert to help, particularly with the table of moveable feasts (which has different requirements than the main project and is quite complex), sectioning commands, widows/orphans (in the proper of saints epecially, ~the date, the feast name, and the rank~ (thank you David Carlisle and TeXSE) plus the text cannot be separated over two pages), spacing of elements on pages (e.g. scores should not stretch too much, and we shouldn't have too much white space between a title and a following score)
   - someone to design a cover (that is, someone who knows how to use software to do it correctly, taking into account the spine etc.)
   - a skilled Latinist to proofread rubrics (mostly taken from the Vaticana, but occasionally emended from the LA) and to help expand abbreviations if this is deemed necessary;
   - an expert (cleric or monk, probably) familiar with syllable divisions in the preconciliar Latin breviary/missal and chant books (should the collects follow the chant or should they follow the missal? Desclée carefully avoids this problem for the most part.)
