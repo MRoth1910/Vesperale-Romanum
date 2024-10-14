@@ -19,12 +19,14 @@
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
 
 \usepackage{fontspec}
-\usepackage[ecclesiasticlatin.usej,activeacute]{babel} %%added activeacute as an option for convenience especially for Kyrie
+\usepackage[english,french,ecclesiasticlatin.usej,activeacute]{babel} %%added activeacute as an option for convenience especially for Kyrie
      \babelprovide[hyphenrules=latin]{ecclesiasticlatin}
 \usepackage{xspace}%% better to use {} after certain macros (or even within definitions) 
 %     \usepackage{multicol}
 %\usepackage{paracol}
 %\footnotelayout{m} %% this allows merged footnote if text is in parallel columns (mostly translations)
+\usepackage{emptypage} %% The emptypage package prevents page numbers and
+% headings from appearing on empty pages.
 \usepackage[savepos]{zref}
 \usepackage{fancyhdr}
 \usepackage{needspace} %%pour réserver de l'espace en bas de page ; ça évite des séparations entre les titres et la partition ou le texte qui les suivent. %%mais  ça génère des problèmes lorsque il faut 2 ou 3 titres l'un après l'autre (date ou jour, nom d'une fête, rang liturgique, office célébré… 
@@ -994,6 +996,16 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%	\thispagestyle{empty}
 %%	\printindex[#1]
 %%}
+
+%%preface
+
+\NewDocumentEnvironment{enpars}{}
+  {\begin{otherlanguage*}{english}}
+  {\par\end{otherlanguage*}}
+  
+  \NewDocumentEnvironment{frpars}{}
+  {\begin{otherlanguage*}{french}}
+  {\par\end{otherlanguage*}}
 
 %%%SUBFILES%%%
 \usepackage{xr} %%to allow cross-references between documents%%%
