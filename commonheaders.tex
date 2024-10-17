@@ -32,6 +32,8 @@
 \usepackage{needspace} %%pour réserver de l'espace en bas de page ; ça évite des séparations entre les titres et la partition ou le texte qui les suivent. %%mais  ça génère des problèmes lorsque il faut 2 ou 3 titres l'un après l'autre (date ou jour, nom d'une fête, rang liturgique, office célébré… 
 \usepackage[compact]{titlesec}
 \usepackage{xcolor}
+\usepackage{multicol}
+
 %\usepackage{xstring}
 \usepackage{enumitem}%% psalm textes are in list format modified via this package
 %\usepackage{expl3}
@@ -916,7 +918,7 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 \NewDocumentCommand{\amsrubrique}{}{%
-\rubrique{Hymnus \normaltext{Ave Maris Stella, \pageref{hy_ave_maris_stella_mode_1_LA1949}.}%
+\rubrique{Hymnus \normaltext{Ave Maris Stella, \pageref{M-hy_ave_maris_stella_mode_1_LA1949}.}%
 }%
 }
 
@@ -998,6 +1000,14 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%}
 
 %%preface
+      \setlength{\columnsep}{3pc}
+%\setlength{\columnsep}{10pt}
+\setlength\columnseprule{0.3pt}
+
+%%for hymni antiqui
+\NewDocumentEnvironment{hymnusmulticol}{}
+ {\begin{multicols}{2}}
+    {\end{multicols}}
 
 \NewDocumentEnvironment{enpars}{}
   {\begin{otherlanguage*}{english}}
@@ -1006,7 +1016,12 @@ Pater noster, Ave María, \textit{et} Credo.%
   \NewDocumentEnvironment{frpars}{}
   {\begin{otherlanguage*}{french}}
   {\par\end{otherlanguage*}}
-
+  
+  \NewDocumentCommand{\hymnusantiquusrubrique}{m}{%
+  \rubrique{Ad Completorium, tonus ut in Antiphonario, \normaltext{\pageref{#1}.}%
+  }%
+  }
+  
 %%%SUBFILES%%%
 \usepackage{xr} %%to allow cross-references between documents%%%
   \usepackage{subfiles}
