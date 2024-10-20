@@ -32,6 +32,8 @@
 %% commemorationes sanctorum %% to adjust
 %% common commemorations %% to adjust but otherwise done (can be considered redundant though) 
 %% the psalter + commemorations (of saints and suffrages) are middle of book
+%%books start with Saint Andrew and end before the vigil
+\customsubfile{vr_NN_festa_decembris}
 \customsubfile{vr_NN_festa_januarii}
 \customsubfile{vr_NN_festa_februarii}
 \customsubfile{vr_NN_festa_martii}
@@ -43,9 +45,7 @@
 \customsubfile{vr_NN_festa_septembris}
 \customsubfile{vr_NN_festa_octobris}
 \customsubfile{vr_NN_festa_novembris}
-\customsubfile{vr_NN_festa_decembris}
-\customsubfile{vr_NN_commune_apostolorum}  %%first common. TBD if it is proper, then common, or common, then proper
-\customsubfile{vr_NN_commune_unius_martyris}
+\customsubfile{vr_NN_commune_apostolorum} \customsubfile{vr_NN_commune_unius_martyris}
 \customsubfile{vr_NN_commune_apostolo_evang_martyrum_tp}
 \customsubfile{vr_NN_commune_plurimorum_martyrum_extra_tp}
 \customsubfile{vr_NN_commune_confessoris_pontificis} %%doctors' names are a problem as is Iste confessor (sometimes) (Names working as of Oct 8 2024!!
@@ -53,29 +53,25 @@
 \customsubfile{vr_NN_commune_virginum} %%J in hymn is problem (fixed as of Oct 2024)
 \customsubfile{vr_NN_commune_non_virginum}
 \customsubfile{vr_NN_commune_dedicationis}
-\customsubfile{vr_NN_commune_bmv} %% last common %% need to ensure spacing at antiphon Sancta Maria
-%%should we include rubrics like "hic genuflectitur" at AMS? NO, people need to learn them
+\customsubfile{vr_NN_commune_bmv} %% % need to ensure spacing at antiphon Sancta Maria
 \customsubfile{vr_NN_bmv_in_sabbato}
 \customsubfile{vr_NN_officium_parvum}
 \customsubfile{vr_NN_officium_defunctorum}
-%\customsubfile{vr_NN_appendix}
+\customsubfile{vr_NN_varia}
 %%\customsubfile{vr_NN_prop_gallia} if feeling ambitious
-%% antique hymns (texts only? melodies as in AR 1911 and therefore LU/LA…_
-
-\customsubfile{vr_NN_pius_12_1960} %%(tbd if Anthony and Lawrence go here for "O Doctor Optime")
-
+\customsubfile{vr_NN_hymni_antiqui} 
+\customsubfile{vr_NN_pius_12_1960}
 \customsubfile{vr_NN_variationes} %% Rubrical changes up to 1960
-
 %%\newpage
 %%\phantomsection isn't included by MB
 %%\addcontentsline{toc}{chapter}{Indices}
 %%\cprintindex{H}{Index Hymnorum}
 %%\cprintindex{A}{Index Antiphonarum}
-%%\cprintindex{R}{Index Responsorium} %%% See NR commonheaders file %% need for office of the dead
+%%\cprintindex{R}{Index Responsorium} %%% See NR commonheaders file %% DO NOT need for office of the dead, because VR 1913 has no mattins!
 %%\cprintindex{P}{Index Psalmorum}
 %%\cprintindex{T}{Index Tonorum communorum}
 %%\cprintindex{F}{Index Festorum}
-%%need index of anything else (LA1984 has Benediction)
+%%need index of anything else (LA1949 has Benediction)
 
 \tableofcontents
 \thispagestyle{empty}
@@ -119,18 +115,14 @@
 
 %%\lettrine[depth=1] should probably be used consistently with Q (collects starting "Quaesumus")
 
-%%there should be period after Scripture verse
-
-%% 1960 will need Vespers for Holy Saturday and rubrics blahblahblah for Thursday and Friday if we choose to do a 1960 supplement (and really, do we need the whole list of things to change for that…)
-
-%%every label seems to need \phantomsection. Unclear why code won't supply it
+%%every label seems to need \phantomsection.
 
 %%need to check offset of asterisk in antiphons; the (default) new barspacing algorithm works, but e.g. Sicut novellae of Corpus Christi has the asterisk to the far right of the quarter bar, when in this case it should be aligned neatly
 %%too far to tthe left in certain mode 1 antiphons
 
 %% verse numbers of hymn always need to go on next line… this is a bad limitaation of Gregorio
 
-%%probably should remove all labels that only go from I or II Vespers to the same EXCEPT for page numbers (so in other words, chapter and hymn don't get label and  pageref, but psalms do, because otherrwise it could be another feast, common, etc.)
+%%probably should remove all labels that only go from I or II Vespers to the same EXCEPT for page numbers (so in other words, chapter and hymn MOSTLY don't get label and  pageref, but psalms do as needed, because otherrwise it could be another feast, common, etc.)
 %%this makes life easier and cuts down on number of labels substantially
 
 %%need to follow this format in commons where last psalm and verse change between 2 Vespers
@@ -176,5 +168,4 @@
 %\customsubfile{vr_NN_festa_octobris}
 %\customsubfile{vr_NN_festa_novembris}
 %\customsubfile{vr_NN_festa_decembris}
-
 \end{document}
