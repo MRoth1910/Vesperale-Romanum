@@ -463,12 +463,12 @@ Numbers=OldStyle]
 }
 
 
-%%in particular for canticle at OPBMV
+%%in particular for canticle at OPBMV and Compline of dead for 1 November after II Vespers and Vespers of dead
   \NewDocumentCommand{\canticumspecial}{mmm}{
 	\needspace{4\baselineskip}%
-	\smalltitle{#1.}%            %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
-	\smallscore[n]{#2}%
-	\cantiquetexte{#3}%
+	\smalltitle{#1.}%    %%filename        %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
+	\smallscore[n]{#2}% %%file
+	\cantiquetexte{#3}% %%verse number, can be 2 or 3, in case of Compline of the dead
 	}
 
 % Could use, before \smallscore \grecommentary taking an argument instead but this sits too low on Nunc Dimittis
@@ -560,7 +560,7 @@ Numbers=OldStyle]
   }
   
   %%for feasts such as Imposition of Stigmata of St Francis on Sept 17.
-  %%first two arguments as above
+  %%first two arguments as above, Dedication of the Lateran on Nov 9
   %%break line as needed and the remaining text is the 3rd argument
    \NewDocumentCommand{\longdatefeast}{mmm}{%
   \par
@@ -864,13 +864,22 @@ Pater noster, Ave María, \textit{et} Credo.%
 }%
 } 
 
-%%for referring to chapter and hymn placed at I or II Vespers (where II has different parts)
+%%for referring to chapter and/or hymn and/or verse placed at I or II Vespers (where II has different parts)
 \NewDocumentCommand{\caphymn}{m}{%
 \rubrique{Capitulum et Hymnus ut in #1 Vesperis.}%
 }
 
+\NewDocumentCommand{\caphymnvv}{m}{%
+\rubrique{Capitulum, Hymnus, et \vv ut in #1 Vesperis.}%
+}
+
 \NewDocumentCommand{\hymnusut}{m}{%
 \rubrique{Hymnus ut in #1 Vesperis.}%
+}
+
+%%a few doubles even are permanently impeded at II Vespers by another (higher-ranking) double the next day, e.g. St Clement, St Cecilia…
+\NewDocumentCommand{\procomm}{m}{%
+\smalltitle{Pro comm.\@ S.\@ #1, Antiphona.}%
 }
 
 %%for commemoration of following at II Vespers of major feasts.
@@ -906,6 +915,10 @@ Pater noster, Ave María, \textit{et} Credo.%
 \rubrique{In Quadrag.\@ commem. feriæ.}%
 }
 
+\NewDocumentCommand{\commferiae}{}{%
+\rubrique{Commem.\@ feriæ.}%
+}
+
 %%for Fridays where Vespers is of Our Lady on Saturday, unless the next day is a feast of IX Lessons.
 \NewDocumentCommand{\bvmsabbato}{}{%
 \rubrique{Ad Vesperas, nisi occurrat Festum IX Lectionum, a Capitulo fit de Sancta Maria in Sabbato.}%
@@ -920,6 +933,10 @@ Pater noster, Ave María, \textit{et} Credo.%
 \NewDocumentCommand{\amsrubrique}{}{%
 \rubrique{Hymnus \normaltext{Ave Maris Stella, \pageref{M-hy_ave_maris_stella_mode_1_LA1949}.}%
 }%
+}
+
+\NewDocumentCommand{\vigiliarubrique}{m}{%
+\rubrique{De Vigilia #1 nihil fit nisi in Missa.}%
 }
 
 %%%%%%%SPACING%%
