@@ -827,6 +827,11 @@ Pater noster, Ave María, \textit{et} Credo.%
 \smalltitle{Ad Magnificat, Antiphona.}%
 }
 
+%%to pair with initial score in cases where only Mag antiphon is proper e.g. on Feb 2
+\NewDocumentCommand{\admagnificatmode}{m}{%
+\smalltitle{Ad Magnificat, Antiphona. #1}%
+}
+
 %%for use in collects etc. %%\@ would lead to too narrow of a space (see LU)
 %%needs to be followed by {}
 \NewDocumentCommand{\nomen}{}{%
