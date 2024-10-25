@@ -1,5 +1,4 @@
-% !TEX TS-program = lualatexmk
-% !TEX parameter =  --shell-escape
+% !TEX TS-program = LuaLaTeX+se
 
 \documentclass[vesperale_romanum.tex]{subfiles}
 
@@ -13,24 +12,25 @@
 
 \thispagestyle{empty}
 
-%%need to fix sectioning and heading commands later for Vesperale
+%%need to fix sectioning and heading commands
 
-\section{IN NATIVITATE DOMINI.}
+%%only with festum
+%\phantomsection
+%\addcontentsline{toc}{section}{A Nativitate Domini usque 5 Jan.}
+
+%\festum{IN NATIVITATE DOMINI.}
 
  %% to change in common headers \section command has center environment, this adds space (which we want) but too much
  
  %% screenshot of Praglia code uses section here, but I'm not sure that we want that for feasts like Circumcision, Epiphany, etc.
-
+ 
+ \section[A Nativitate Domini usque 5 Jan.]{IN NATIVITATE DOMINI.}\header{in nativitate domini.}
+ 
 \rank{Duplex I Classis cum Octava privilegiata III ordinis.}
 
 %%\rank leads to a lot of space underneath — or use of \smalltitle (including inside another macro) or \invesperis — leaves a lot of space so in some cases like Xmas this is OK as it's always on a newpage but for most feasts we won't want this
 
-%\subsection{in i vesperis.}  %%%we should rewrite this as macros and just not have subsections like this
-
 \invesperis{i}
-
-%%this needs a macro
-%\smalltitle{I Antiphona 8. G.}
 
 \primaantiphona{8. G.}
 
@@ -49,9 +49,8 @@
 \gscore[5. Ant.]{1. g}{an_levate_capita_vestra_solesmes_1961}
 \psalmus{116}{116_1g}{116_1}
 
-\capitulum \label{cap_24_dec}
-
-\scripture{Tit. 3, 4 – 5.}
+\label{cap_24_dec}
+\capitulum{Tit. 3, 4 – 5.}
 
 \lettrine{A}{p}páruit benígnitas et humánitas Salvatóris nostri Dei:~† non ex opéribus justítiæ, quæ fécimus nos,~* sed secúndum suam misericórdiam salvos nos fecit.
 
@@ -72,7 +71,8 @@
 \textes{or_natitivatis_dom}
 
 \hymnusadcompletorium
-
+\label{hy_te_lucis_ante_terminum_in_nativitate_domini_solesmes_1961}
+\phantomsection
 \gscore[]{8.}{hy_te_lucis_ante_terminum_in_nativitate_domini_solesmes_1961}
 
 \rubrique{Hic tonus (vel ad libitum tonus Hymni Vesperarum) servandus est ad Completorium usque ad Epiphaniarn, etiam in Festis occurentibus.}
@@ -94,15 +94,14 @@
 \psalmus{111}{111_7b}{111_7}
 
 \gscore[4. Ant.]{4. A*}{an_apud_dominum_misericordia_solesmes_1961}
-\psalmus{129}{129_4A_A_star}{129_4A_Astar}
+\psalmus{129}{129_4A_A_star}{129_4A_A_star}
  %%did not originally add the _star when working on Sacred Heart…
 
 \gscore[5. Ant.]{8. G}{an_de_fructu_ventris_tui_solesmes_1961}
 \psalmus{131}{131_8G}{131_8}
 
-\label{cap_2_vesperis_nativitatis_dom} \capitulum
-
-\scripture{Heb. 1, 1 – 2.}
+\label{cap_2_vesperis_nativitatis_dom}
+\capitulum{Heb. 1, 1 – 2.}
 
 \lettrine{M}{u}ltifáriam multísque modis olim Deus loquens pátribus in prophétis:~† novíssime diébus istis locútus est nobis in Fílio, quem constítuit hærédem universórum,~* per quem fecit et sǽcula.
 
@@ -144,9 +143,7 @@ Per eúmdem Dóminum.
 
 \rubrique{Antiphona \normaltext{Tecum princípium} cum reliquis Antiphonis et Psalmis de Nativitate, ut supra, \normaltext{\pageref{2_vesperas_dec_25}.} Et dicuntur etiam in aliis Festis infra hanc Octavam occurrentibus.}
 
-\capitulum
-
-\scripture{Act. 6, 8.}
+\capitulum{Act. 6, 8.}
 
 \lettrine{S}{t}éphanus autem plenus grátia et fortitúdine,~* faciébat prodígia et signa magna in pópulo.
 
@@ -186,9 +183,9 @@ Per eúmdem Dóminum.
 
 \invesperis{i}
 
-\capitulum \label{cap_quanto_tempore}
+\label{cap_quanto_tempore}
 
-\scripture{Gal. 4, 1 – 2.}
+\capitulum{Gal. 4, 1 – 2.}
 
 \lettrine[depth=1]{Q}{u}anto témpore hæres párvulus est, nihil differt a servo, cum sit dóminus ómnium:~† sed sub tutóribus et actóribus est,~* usque ad præfínitum tempus a patre.
 
@@ -271,8 +268,9 @@ Vesperas \rubrique{dicuntur de Circumcisione Domini sine nulla commemoratione.}
 
 \litdate{1 Januarii}
 
-\festum{In Circumcisione Domini et Octava Nativitatis.} \label{i_vesperis_circumcisionis}
+ \phantomsection \label{i_vesperis_circumcisionis}
 
+\festum{In Circumcisione Domini et Octava Nativitatis.}
 \rank{Duplex II classis.}
 
 \primaantiphona{6. F.}
@@ -306,9 +304,7 @@ Vesperas \rubrique{dicuntur de Circumcisione Domini sine nulla commemoratione.}
 
 %% commonheaders code should allow for + in fifth antiphon to display as †
 
-\capitulum
-
-\scripture{Tit. 2, 11–12.}
+\capitulum{Tit. 2, 11–12.}
 
 \lettrine{A}{p}páruit grátia Dei Salvatóris nostri ómnibus homínibus,~† erúdiens nos, ut abnegántes impietátem et sæculária desidéria,~* sóbrie, et juste, et pie vivámus in hoc sǽculo.
 
@@ -335,7 +331,7 @@ Qui tecum vivit et regnat in unitáte.
 
 \rr Salutáre suum, allelúia.
 
-\admagnificat \label{magnam_haereditatem}
+\admagnificat \label{an_magnum_haereditatis_solesmes_1961}
 
 \gscore[]{2. a}{an_magnum_haereditatis_solesmes_1961}
 
@@ -384,9 +380,7 @@ de Sanctissimo Nomine Jesu, in casu, fit pariter Officium diei 2 Januarii, vel s
 
 \psalmus{115}{115_8c}{115_8}
 
-\capitulum
-
-\scripture{Phil. 2, 8 – 10.}
+\capitulum{Phil. 2, 8 – 10.}
 
 %%this text probably needs to be in its own file!
 
@@ -504,7 +498,7 @@ In I Vesperis \rubrique{Antiphonæ et Psalmis ut in I Vesperis Circumcisionis Do
 
 %% Pre-1939 prayer; also, a good example of how prayer should be inserted with input but then takes an argument instead of copying and pasting the whole thing each time.
 
-\lettrine{D}{e}us, qui nos beáti Telésphorum Mártyris tui atque Pontíficis ánnua solemnitáte lætíficas:~† concéde propítius; ut, cujus natalícia cólimus,~* de ejúsdem étiam protectióne gaudeámus. Per Dóminum.
+\lettrine{D}{e}us, qui nos beáti Telésphorum Mártyris tui atque Pontíficis ánnua solemnitáte lætíficas:~† concéde propítius; ut cujus natalícia cólimus,~* de ejúsdem étiam protectióne gaudeámus. Per Dóminum.
 
 \rubrique{Ad Completorium dicuntur Psalmi Dominicæ. Non dicuntur Preces.}
 
