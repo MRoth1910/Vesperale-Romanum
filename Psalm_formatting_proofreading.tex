@@ -53,7 +53,7 @@ Numbers=OldStyle]
 \begin{document}
  \section{Proofreading: ``Errors'' to fix in gabc or tex fiiles for Psalms}
  
- {\centering Version 1.4, \today\par}
+ {\centering Version 1.5, \today\par}
  
 \begin{itemize}
  \item
@@ -72,7 +72,7 @@ The breviary has different punctuation than the antiphonale, whose punctuation i
  As mentioned in the overall style guide, \textit{Flex} needs to become \textit{Flexa}. This is still followed by a colon, and we add the appropriate number of forward slashes added for spaces, lest the word run into the previous one. 
 
  \item
-\texttt{ctrl+F} is your friend! It might be worth creating a macro just for spacing (to replace \verb|\hspace| in particular…) TBD. The non-semantic version could be used for the most finicky cases that require a bigger value for some reason.
+\texttt{ctrl+F} is your friend! It might be worth creating a macro just for spacing (to replace \verb|\hspace*| in particular…) TBD. The non-semantic version could be used for the most finicky cases that require a bigger value for some reason.
 
  \item
 For psalms sung with tone 4 A* or 8 G*, the convention today is to sing the alternate ending on each verse; this is not given as an EUOUAE ending for antiphons in any edition, and Solesmes did not encourage the practice (doing it only at the doxology, e.g. in Dom Suñol's book). We should add the additional note to form the punctum (always in the form \texttt{fg..} or whatever the notes are — the dots must both follow the last note of the podatus).
@@ -90,21 +90,23 @@ This is therefore a deliberate choice in deviating from the historcal examples o
  
  \end{itemize}
 \begin{itemize}
-\item Tones 1 D2 and 4E must remain separate, due to the pointing needed for dactyls, and 3 a and 3 b must remain in one file and tones 3 a2 and 3g in another.
-  \item All psalms will require insertion of doxology (\textit{Glória Patri}). (\textit{Requiem ætérnam} for the office of the dead, nothing for the Triduum). It needs to be written out for ease, just like in the Liber Usualis. (I suspect that I inadvertently unchecked ``Include Glória Patri'' when using Ben Bloomfield's website, but reorganizing the files is, at this point, a waste of time.)
- \item Each ``verse'' needs to be numbered (assuming that we continue to number psalms!) according to the \textit{Liber Usualis,} edition to be specified.
+\item Tones 1 D2 and 4E must remain separate, due to the pointing needed for dactyls, and 3a and 3b must remain in one file and tones 3 a2 and 3g in another.
+  \item All psalms will require insertion of doxology (\textit{Glória Patri}); updated as of Oct 2024, with kerning (via \verb|hspace*|, not the primitive \verb|kern| as in earlier versions). In earlier versions, the downloaded psalms didn't have the doxology, but now they do, so we need to fix the letters). (\textit{Requiem ætérnam} for the office of the dead, nothing for the Triduum). It needs to be written out for ease, just like in the Liber Usualis.
+  \item  \verb|hspace*| keeps the hyphens in the text; they otherwise disappear at the end of a line if the following syllable is at the beginning of the next line. It's not entirely clear why this is, because this macro doesn't destroy the syllabification (unlike repeated uses of \verb|textit|.
+  
+   \item Each ``verse'' needs to be numbered (assuming that we continue to number psalms!) according to the \textit{Liber Usualis}
  
  Update as of May 18, 2024: Numbers have been removed from the psalm file. There is no reason to not let the environments and packages for numbered lists (namely the \verb|enumerate| environment and the \verb|enumitem| package) do their thing, and in fact, the problem of spacing after periods was exacerbated by manually inserting numbers (which is also a waste of time).
  \item \texttt{\textbf{Sanc}to} needs to become \texttt{\textbf{San}cto}; idem for italic.
  \item \emph{The following are examples of things to look for, but the list of clashing characters to kern manually is probably non-exhaustive…}
- if ``ló'' is italicized, then it will need to be kerned (with \verb|\hspace|). A good starting point for this persnickety combo is 0.03em. (in doxology of tones 1, 3 a2/g, 6, 8; others are either bolded or ``u'' is also italicized)
-  \item \verb|\hspace{0.03em}| after ``a'' of ``Patri'' in mode 4
-  \item italicized \hspace{0.03em}\textit{J} usually needs to be adjusted ( \verb|\hspace{0.03em}| was used, in fact, in this text).
+ if ``ló'' is italicized, then it will need to be kerned (with \verb|\hspace*|). A good starting point for this persnickety combo is 0.03em. (in doxology of tones 1, 3 a2/g, 6, 8; others are either bolded or ``u'' is also italicized)
+  \item \verb|\hspace*{0.03em}| after ``a'' of ``Patri'' in mode 4
+  \item italicized \hspace*{0.03em}\textit{J} usually needs to be adjusted ( \verb|\hspace*{0.03em}| was used, in fact, in this text).
   \item
-  Add kerning (\verb|\hspace|) for Gloria Patri of tone 8 (in ``Spíritui'' and in ''sæculórum'') to account for italics.
-   \item  \verb|\hspace{0.03em}| in mode 1 doxology before ``l'' of ``sæculórum'' (in fact virtually every form if -cu or -la, ló, etc. are italicized needs adjusting…)
+  Add kerning (\verb|\hspace*|) for Gloria Patri of tone 8 (in ``Spíritui'' and in ''sæculórum'') to account for italics.
+   \item  \verb|\hspace*{0.03em}| in mode 1 doxology before ``l'' of ``sæculórum'' (in fact virtually every form if -cu or -la, ló, etc. are italicized needs adjusting…)
    \item a, e, u, i, æ, œ (rare!) are usually going to require adjustment (after the letter) when italics are involved.
-   \item  \verb|\hspace{0.03em}| if ``tui'' is italicized (e.g. modes 1, 3 a2/g/g2, 6 doxology)
+   \item  \verb|\hspace*{0.03em}| if ``tui'' is italicized (e.g. modes 1, 3 a2/g/g2, 6 doxology)
    \item
    Syllabification follows the Liber Usualis in case of doubt.
    \begin{itemize}
@@ -505,7 +507,7 @@ Psalm 124:
   \item Remove \texttt{ë} and replace with \texttt{e}.
     \item Make sure that ``réd'' is in the same syllable of ``rédimet'' and in ``redémptio'' (and that ``pt'' is together) respectively.
    \item in this case, ``s-t'' belong in different syllables of ``sustinébit''.
-    \item \verb|\hspace{0.03em}| after ``a'' of ``Patri'' when this is in mode 4. (in Liber Usualis, at least, this is the only mode; tbd if this is the case in the full \textit{Vesperale}).
+    \item \verb|\hspace*{0.03em}| after ``a'' of ``Patri'' when this is in mode 4. (in Liber Usualis, at least, this is the only mode; tbd if this is the case in the full \textit{Vesperale}).
  
   \end{itemize}
   
@@ -594,6 +596,8 @@ Psalm 136:
   \item
    ``om-nes'' becomes  ``o-mnes''
   \item Remove comma after ``tui''
+    \item
+period after ``me'' at end of line
   \item
   
   Remove commas before and after ``Deus''
@@ -736,5 +740,7 @@ Fixed mistaken Latin under ps. 76.2.
 1.3 add ps 145 (office of the dead using LU/LA 1949 for this)
 
 1.4 1.3 add ps 142 (Compline of the dead on 2 Nov using LA 1949 for this)
+
+1.5 clean up instructions
 \end{document}
 
