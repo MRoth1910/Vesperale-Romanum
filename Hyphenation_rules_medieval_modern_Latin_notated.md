@@ -39,7 +39,7 @@ otherwise, the hyphenation point is before the last consonant.
 	- *The-sprotia*, *ca-stra*, *ton-strix*
 	- *tem-plum*, *mem-brum*, *spec-trum*, *scep-trum*, *mulc-trum*, *in-fra*
 	- *sanc-tus*, *temp-to*
-NB San-ctus, red-em-ptor according to the actual books (of chant, not necessarily in the prayers)
+NB San-ctus, red-em-ptor according to the actual books (of chant and in the prayers per Solesmes; there's a collect with San-ctus)
 
 4. If *u* is a semivowel after *(s)q*, *ng* or *s*, the hyphenation point is
 before *(s)q*, *g* or *s*, respectively.
