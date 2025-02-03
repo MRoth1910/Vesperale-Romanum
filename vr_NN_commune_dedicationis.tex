@@ -1,0 +1,81 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_NN_commune_dedicationis}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\section[Commune Dedicationis Ecclesiæ]{COMMUNE DEDICATIONIS ECCLESIÆ.}
+\header{commune dedicationis ecclesiæ.}
+
+\thispagestyle{empty}
+
+\invesperis{i}
+%\espacetitre
+
+\primaantiphona{7. a.}
+
+\initialscore{an_domum_tuam_domine_solesmes_1961}
+\psalmus{109}{109_7a}{109_7}
+
+\gscore[2. Ant.]{1. D2}{an_domus_mea_solesmes_1961} 
+\psalmus{110}{110_1D2}{110_1D2}
+
+%%v. 10 breaks on its own, but if it doesn't, then \hspace is needed before \textit, which will remove hyphen. To watch!
+
+\gscore[3. Ant.]{1. f}{an_haec_est_domus_domini_solesmes_1961}
+\psalmus{111}{111_1f}{111_1}
+
+\gscore[4. Ant.]{8. c}{an_bene_fundata_est_solesmes_1961}
+\psalmus{112}{112_8c}{112_8}
+
+\gscore[5. Ant.]{1. g}{an_lapides_pretiosi_solesmes_1961}
+\psalmus{147}{147_1g}{147_1}
+
+\label{cap_ded_ecc}
+\capitulum{Apoc. 21, 2.}
+
+\lettrine{V}{i}di civitátem sanctam Jerúsalem novam,~† descendéntem de cælo a Deo,~* parátam sicut spónsam ornátam viro suo.
+
+\smalltitle{Hymnus.} \label{caelestis_urbs_jerusalem}
+
+\gscore[]{1.}{hy_caelestis_urbs_jerusalem_solesmes_1961}
+
+\vv Hæc est domus Dómini fírmiter ædificáta.
+
+\rr Bene fundáta est supra firmam petram.
+
+\smalltitle{Ad Magnificat, Antiphona.}
+\gscore[]{1. g}{an_sanctificavit_dominus_solesmes_1961}
+
+\oratio
+
+\rubrique{In ipso die Dedicationis Ecclesiæ et per Octavam, et quando varianda est Oratio ob concursum Dedicalionis alterius Ecclesiæ:}
+
+\lettrine{D}{e}us, qui invisibíliter ómnia cóntines, et tamen pro salúte géneris humáni signa tuæ poténtiæ visibíliter osténdis:~† templum hoc poténtia tuæ inhabitatiónis illústra, et concéde; ut omnes, qui huc deprecatúri convéniunt,~* ex quacúmque tribulatióne ad te clamáverint, consolatiónis tuæ benefícia consequántur. Per Dóminum.
+
+\rubrique{In Anniversario Dedicationis Ecclesiæ et per Octavam:}
+
+\lettrine{D}{e}us, qui nobis per síngulos annos hujus sancti templi tui consecratiónis réparas diem, et sacris semper mystériis repræséntas incólumes:~† exáudi preces pópuli tui, et præsta; ut quisquis hoc templum benefícia petitúrus ingréditur,~* cuncta se impetrásse lætétur. Per Dóminum.
+
+\invesperis{ii}
+
+\omniapraeter
+
+\vv Domum tuam Dómine decet sanctitúdo.
+ 
+\rr In longitúdinem diérum.
+
+\smalltitle{Ad Magnificat, Antiphona.}
+\gscore[]{6. F}{an_o_quam_metuendus_solesmes_1961}
+
+\rubrique{Infra Octavam Dedicat. Eccl., et in ejus die Octava, omnia ut in Festo.}
+
+
+\end{document}
