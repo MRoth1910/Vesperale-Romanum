@@ -950,10 +950,13 @@ Pater noster, Ave María, \textit{et} Credo.%
 
 %%does this count as a magic number?
 
-\NewDocumentCommand{\baselineskipvspace}{m}{%
-\vspace{1\baselineskip}%
+\NewDocumentCommand{\baselineskipvspace}{}{%
+\vspace{\baselineskip}%
 }
 
+\NewDocumentCommand{\variablevspace}{m}{%
+\vspace{#1\baselineskip}%
+}
 \NewDocumentCommand{\baselineskipvspace}{m}{%
 \vspace{0.5\baselineskip}%
 }
