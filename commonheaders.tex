@@ -957,12 +957,17 @@ Pater noster, Ave María, \textit{et} Credo.%
 \NewDocumentCommand{\variablevspace}{m}{%
 \vspace{#1\baselineskip}%
 }
-\NewDocumentCommand{\baselineskipvspace}{m}{%
+
+\NewDocumentCommand{\halfbskipvspace}{}{%
 \vspace{0.5\baselineskip}%
 }
 
-\NewDocumentCommand{\negativebaselineskipvspace}{m}{%
+\NewDocumentCommand{\negativebaselineskipvspace}{}{%
 \vspace{-1\baselineskip}%
+}
+
+\NewDocumentCommand{\neghalfbskipvspace}{}{%
+\vspace{-0.5\baselineskip}%
 }
 
 \NewDocumentCommand{\tinyhspace}{}{%
