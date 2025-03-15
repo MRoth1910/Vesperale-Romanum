@@ -6,14 +6,14 @@
 %%%%%%%%%%%%%%% INDICES %%%%%%%%%%%%%%%
 
 %%\usepackage{imakeidx}
-%%
-%%\indexsetup{level=\section*,toclevel=section,noclearpage,othercode=\footnotesize\thispagestyle{empty}}
-%%\makeindex[name=H,title=Index Hymnorum, columns=2,columnseprule]
-%%\makeindex[name=A,title=Index Antiphonarum, columns=2,columnseprule]
-%%%%\makeindex[name=R,title=Index Responsoriorum, columns=2,columnseprule]
-%%\makeindex[name=P,title=Index Psalmorum, columns=2,columnseprule]
-%%\makeindex[name=T,title=Toni Communes, columns=2,columnseprule]
-%%\makeindex[name=F,title=Index Festorum, columns=2,columnseprule]
+
+%%%\indexsetup{level=\section*,toclevel=section,othercode=\footnotesize\thispagestyle{empty}}
+%%%\makeindex[name=H,title=index hymnorum., columns=2,columnseprule]
+%%%\makeindex[name=V,title=index variarum., columns=2,columnseprule]
+%%%\makeindex[name=R,title=index responsoriorum., columns=2,columnseprule]
+%%%\makeindex[name=P,title=index psalmorum., columns=2,columnseprule]
+%%%%%\makeindex[name=T,title=toni communes., columns=2,columnseprule]
+%%%%%%\makeindex[name=F,title=index festorum., columns=2,columnseprule]
 
 %% This is the format of the recent Solesmes books.
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
@@ -82,12 +82,39 @@ headsep=3mm,
 
 %% any chant using gregorioscore in some way will need alteration to account for indexing chant name, psalms etc.
 
-  \NewDocumentCommand{\initialscore}{O{}m}{%
-    \grechangedim{initialraise}{0.5cm}{scalable}%
-  \greannotation{#1}%
-   \grechangestyle{initial}{\fontspec{EB Garamond Initials}\fontsize{45}{45}\selectfont}% larger, illustrated initial for first antiphon
- \gregorioscore{partitions/#2}%
-  \grechangedim{initialraise}{0cm}{scalable}}
+ %% default should be 40, if not using, annotations need to be turned off in gabc. For the first antiphon of the office, Gospel canticle etc. (initial is both to refer to first and the large illustrated initial, used sometimes with an annotation, cf. Christus factus est of Tenebrae in the ritus monasticus. However, 
+  \NewDocumentCommand{\initialscore}{m}{%
+      \grechangedim{initialraise}{0.5cm}{scalable}%
+%  \greannotation{#1}%
+   \grechangestyle{initial}{\fontspec{EB Garamond Initials}\fontsize{45}{45}\selectfont}%
+%% \gregorioscore{partitions/#2}
+  \gregorioscore{partitions/#1}
+   \grechangedim{initialraise}{0cm}{scalable}}
+   
+    \makeatletter
+\NewDocumentCommand{\idxinitialscore}{mmm}{
+  %% #1 : name of the score file
+  %% #2 : office part if needed
+  %% #3 :mode numeral
+  %% #4 :office part letter T, H, A, P, R, F, V
+    %% #5 : the indexed name of the piece; needs to be repeated (unfortunately — — — will be alphabetized as such, not under previous entry
+
+  
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \needspace{4\baselineskip} 
+  \protected@edef\@currentlabelname{#3}
+  \phantomsection
+  \label{#1}
+\initialscore{#1}
+  %% if #5 (indexed name) is blank, nothing is indexed.
+  %% this is for pieces that are repetitions of another piece (antiphons after psalms)
+%  \ifblank{#5}{}
+  %% if optional arg #1 has been passed as 'n', set no initial
+%%%  \ifx n#1\gresetinitiallines{0}\fi
+%  \gregorioscore{partitions/#1}
+   {\index[#2]{#3}}
+  }
+\makeatother
 
 %produces a score with a smaller initial (default is 40 pt) and annotations like in the Solesmes books; the 1st is optional and can be omitted as needed. %%update 23/5/23 apparently
  \NewDocumentCommand{\gscore}{O{}mm}{%    %%you can also omit the mode and it typesets correctly.
@@ -96,8 +123,34 @@ headsep=3mm,
 \grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
  \gregorioscore{partitions/#3}%
  }
+ 
+  \makeatletter
+\NewDocumentCommand{\idxscore}{mO{}mmm}{
+  %% #1 : name of the score file
+  %% #2 : office part if needed
+  %% #3 :mode numeral
+  %% #4 :office part letter T, H, A, P, R, F, V
+    %% #5 : the indexed name of the piece; needs to be repeated (unfortunately — — — will be alphabetized as such, not under previous entry
 
-%% score with no initial, e.g psalms, common tones, etc.
+  
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \needspace{4\baselineskip} 
+  \protected@edef\@currentlabelname{#5}
+  \phantomsection
+  \label{#1}
+\gscore[#2]{#3}{#1}
+  %% if #5 (indexed name) is blank, nothing is indexed.
+  %% this is for pieces that are repetitions of another piece (antiphons after psalms)
+%  \ifblank{#5}{}
+  %% if optional arg #1 has been passed as 'n', set no initial
+%%%  \ifx n#1\gresetinitiallines{0}\fi
+%  \gregorioscore{partitions/#1}
+   {\index[#4]{#5}}
+  }
+\makeatother
+
+
+%% score with no initial, e.g psalms, common tones, etc. need not be indexed as such
 \newcommand{\smallscore}[2][y]{
   \gresetinitiallines{0}
   \gregorioscore{partitions/#2} %% à remplacer avec NewDocumentCommand ; les arguments ne marchent pas correctement … que fait le [y] ?
