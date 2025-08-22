@@ -952,6 +952,11 @@ Pater noster, Ave María, \textit{et} Credo.%
 \rubrique{Et fit comm.\@ sequentis.}%
 }
 
+%%for d2c feasts followed by a simple
+\NewDocumentCommand{\nocommseq}{}{%
+\rubrique{Et non fit comm.\@ sequentis.}%
+}
+
 %%for Vespers of the following
 \NewDocumentCommand{\vespsequenti}{}{%
 \rubrique{Vesp.\@ de sequenti.}%
@@ -968,11 +973,22 @@ Pater noster, Ave María, \textit{et} Credo.%
 \rubrique{Vesp.\@ de sequenti, comm.\@ præced.}%
 }
 
+\NewDocumentCommand{\vespsequentiscomms}{m}{%
+\rubrique{Vesp.\@ de sequenti, comm.\@ præced. et #1.}%
+}
+
 %%for Vespers of the following day beginning at the chapter (doubles that concur with each other)
 %%changed 4 Sept 2024 from de to a because while de is probably OK Latin, I see a more often in the books.
 \NewDocumentCommand{\capitdeseq}{}{%
 \rubrique{Vesp. a capit.\@ a seq., comm.\@ præced.}%
 }
+
+
+\NewDocumentCommand{\capitdeseqcomms}{m}{%
+\rubrique{Vesp. a capit.\@ a seq., comm.\@ præced. et #1.}%
+}
+
+
 
 %%commemoration of the Lenten feria
 \NewDocumentCommand{\quadcommferiae}{}{%
