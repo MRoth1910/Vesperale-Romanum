@@ -612,6 +612,14 @@ Numbers=OldStyle]
   \makebox[\textwidth]{\Large #2.}%
   }
   
+  \NewDocumentCommand{\specialdatefeast}{m}{%
+  \par
+  \noindent
+  \makebox[0pt][l]%
+  {\phantom{10.}} %
+  \makebox[\textwidth]{\Large #1.}%
+  }
+  
   %%for feasts such as Imposition of Stigmata of St Francis on Sept 17.
   %%first two arguments as above, Dedication of the Lateran on Nov 9
   %%break line as needed and the remaining text is the 3rd argument
@@ -983,13 +991,16 @@ Pater noster, Ave María, \textit{et} Credo.%
 \rubrique{Vesp. a capit.\@ a seq., comm.\@ præced.}%
 }
 
-
 \NewDocumentCommand{\capitdeseqcomms}{m}{%
 \rubrique{Vesp. a capit.\@ a seq., comm.\@ præced. et #1.}%
 }
 
 \NewDocumentCommand{\capitdeseqquad}{}{%
 \rubrique{Vesp. a capit.\@ a seq., comm.\@ præced. et Feriæ in Quadrag.}%
+}
+
+\NewDocumentCommand{\capitdeseqcommfer}{}{%
+\rubrique{Vesp. a capit.\@ a seq., comm.\@ præced. et Feriæ.}%
 }
 
 
@@ -1001,6 +1012,11 @@ Pater noster, Ave María, \textit{et} Credo.%
 \NewDocumentCommand{\commferiae}{}{%
 \rubrique{Commem.\@ feriæ.}%
 }
+
+\NewDocumentCommand{\odoctoroptime}{}{%
+\rubrique{In utrisque Vesperis, Ant. \normaltext{O Doctor óptime, \pageref{M-an_o_doctor_optime_solesmes_1960}.}}%
+}
+
 
 %%for Fridays where Vespers is of Our Lady on Saturday, unless the next day is a feast of IX Lessons.
 \NewDocumentCommand{\bvmsabbato}{}{%
