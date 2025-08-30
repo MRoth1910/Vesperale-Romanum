@@ -9,9 +9,9 @@ You can open an Issue. Or if you'd like, vesperaleromanum(at)gmail.com
 
 # About
 
-The Vesperale Romanum has thousands of pieces that need to be proofread and then typeset. Some pieces (mostly antiphons of the Proprium Tempore) remain to be transcribed and uploaded to Gregobase or edited there. At that point, they can then be typeset.
-
 Our project builds upon the great work of the Vatican commission, which published the official edition of the Antiphonale Romanum in 1912 (a vesperale followed in 1913) and the monks of the abbey of Saint-Pierre de Solesmes, whose research of medieval manuscripts led to the Vatican commission and to subsequent editions published with the rhythmic signs favored by Solesmes.
+
+The Vesperale Romanum has thousands of pieces that need to be proofread and then typeset. Some pieces (mostly antiphons of the Proprium Tempore) remain to be transcribed and uploaded to Gregobase or edited there. At that point, they can then be typeset.
 
 # Why a new vesperale?
 It is intended as a replacement for print copies, given that neither the full antiphonal nor either vesperale (Vaticana or Solesmes) are in print. Further, we wish to take advantage of Gregorio, which allows for computer typesetting of Gregorian chant via LuaLaTeX; this is superior to relying on scans, since even if a high-quality scan were available, the quality of the printed score would quickly deterioate, which is the case with the republished Liber Usualis and Liber Brevior, where the neumes such as the quilisma or the rhythmic signs (notably the ictus) are not always identifiable.
@@ -74,7 +74,7 @@ The schola cantorum with which I sing serves as my testing environment.
 
 We also thank those who inspired us to chant in the first place and our teachers, especially for those who are in the lineage of Dom André Mocquereau and Dom Joseph Gajard, the masters themselves, for we would have no need of a new book without them, and it is Dom Mocquereau in particular who directed the publication of the Solesmes editions as we know them, in whose footsteps Dom Gajard continued after the death of his confrère.
 
-Finally, Georg Duffner and Octavio Pardo designed the font used for the body, and Georg is currently working on improving it.
+Finally, Georg Duffner and Octavio Pardo designed the font used for the body, and Georg is currently working on improving it (now on hiatus as of 2024 but the initials font is complete enough to be used for drop caps of certain scores)
 
 # Contributions
 
@@ -84,7 +84,7 @@ Finally, Georg Duffner and Octavio Pardo designed the font used for the body, an
 
 # To Do
 
-- Collect all chants from Gregobase of the psalter, the ~~proper of time,~~ the ~~commons of saints,~~ and the proper of saints (on a rolling basis, i.e. grab what you need as you work on it, edit, commit, and push; as of Sept 2025, May and February are left to do) as well as the ~~appendix for benediction~~ (done as of October 2024) and for the "Hymni Antiqui" (first verse only; to be taken from the existing files with corrected lyrics, or from the *Antiphonale Monasticum*)
+- Collect all chants from Gregobase of the psalter, the ~~proper of time,~~ the ~~commons of saints,~~ and the proper of saints (on a rolling basis, i.e. grab what you need as you work on it, edit, commit, and push; as of Sept 2025, May and February are left to do) as well as the ~~appendix for benediction~~ (done as of October 2024) and for the "Hymni Antiqui" (first verse only; to be taken from the existing files with corrected lyrics, or from the *Antiphonale Monasticum*); typeset along with texts taken from DivinumOfficium (collects, chapters, versicles) and rubrics added from antiphonale/vesperale
 - Index these pieces as well as the psalms (the index of psalms will be complicated due to the pointing and partial repetition so to minimize page turns but to not use up valuable space), based on code from Nocturnale Romanum project.
   - Remove `--` in file name and replace with `_` (to allow for easier copying/pasting in some LaTeX editors such as in TeXShop) and remove `ant.`, `...`, and `(` or `)`.
 - Proofread (add EUOUAE to Magnificat endings, comment off EUOUAE to psalm endings — psalms will need this only when the psalm is not printed below an antiphon), remove space before commas, change `ae` or `oe` `æ` and `œ` respectively as well as `aé` to `ǽ` (U+01fd) ~(but not, for now `œ` with an acute accent)~ (as of October 2024, this is fixed, and we can use TeX to make an accented `œ`!)
