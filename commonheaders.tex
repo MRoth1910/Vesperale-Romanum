@@ -202,7 +202,10 @@ headsep=3mm,
 \NewDocumentCommand{\altnormal}{}{\grechangestyle{abovelinestext}{\normalfont\fontsize{8}{10}\selectfont}}
 %%  resets ALT font
 \NewDocumentCommand{\altitshape}{}{\grechangestyle{abovelinestext}{\itshape\fontsize{8}{10}\selectfont}} 
-
+%%for hymns like Vexilla Regis (May 3)
+\NewDocumentCommand{\translationnormal}{}{\grechangestyle{translation}{\normalfont}}
+%%  resets ALT font
+\NewDocumentCommand{\translationreset}{}{\grechangestyle{translation}{\itshape}} 
 
 %% fine-tuning of space between the staff and the text above lines (used for Magnificats; needs to be rethought  and worked into \smallscore
 \newcommand{\altraise}{-0.4mm} %% default is -0.1cm %% needs to be fine-tuned for \rubrique command with EB Garamond font. -0.4mm is MB value, previously 1.4mm and -0.2cm  (this value works best for Magnificat but it does not work with common tones)
