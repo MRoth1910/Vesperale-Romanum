@@ -118,6 +118,13 @@ Et Sacra eadem Congregatio, audita specialis Commissionis pro cantu liturgico gr
 
 \raggedbottom
 
+\setlength{\defaultparskip}{\parskip}
+\setlength{\parskip}{0.5\baselineskip plus 2pt}
+
+\begingroup
+\setlength{\parindent}{0pt}
+
+%\setlength{\parfillskip}{30\p@ \@plus 1fil}
 {\centering{\large \capspace{KALENDARIUM PERPETUUM}.}\par} \thispagestyle{empty} \markboth{Calendrier}{Calendrier} \nopagebreak \par \nopagebreak\vspace{5mm}\label{kalendarium} %%will need to fix the label later
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
@@ -154,7 +161,9 @@ Et Sacra eadem Congregatio, audita specialis Commissionis pro cantu liturgico gr
 \input{november}
 
 \input{december}
+\endgroup
 
+\setlength{\parskip}{\defaultparskip}
 \normalsize
 
 \flushbottom
