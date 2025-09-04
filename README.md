@@ -14,7 +14,7 @@ Our project builds upon the great work of the Vatican commission, which publishe
 The Vesperale Romanum has thousands of pieces that need to be proofread and then typeset. Some pieces (mostly antiphons of the Proprium Tempore) remain to be transcribed and uploaded to Gregobase or edited there. At that point, they can then be typeset.
 
 # Why a new vesperale?
-It is intended as a replacement for print copies, given that neither the full antiphonal nor either vesperale (Vaticana or Solesmes) are in print. Further, we wish to take advantage of Gregorio, which allows for computer typesetting of Gregorian chant via LuaLaTeX; this is superior to relying on scans, since even if a high-quality scan were available, the quality of the printed score would quickly deterioate, which is the case with the republished _Liber Usualis_ and _Liber Brevior,_ where the neumes such as the quilisma or the rhythmic signs (notably the ictus) are not always identifiable.
+It is intended as a replacement for print copies, given that neither the full antiphonal nor either vesperale (Vaticana or Solesmes) are in print or are easily obtained. Further, we wish to take advantage of Gregorio, which allows for computer typesetting of Gregorian chant via LuaLaTeX; this is superior to relying on scans, since even if a high-quality scan were available, the quality of the printed score would quickly deterioate, which is the case with the republished _Liber Usualis_ and _Liber Brevior,_ where the neumes such as the quilisma or the rhythmic signs (notably the ictus) are not always identifiable.
 
 However, this is not simply a reproduction. We aim to improve upon the traditional books to make the book as easy to use as possible, although a certain familiarity with the office is required due to the nature of a printed book.
 
@@ -55,7 +55,6 @@ We inclue the chants needed for benediction, and a supplement for the 1960 offic
 
 The verse numbers going from 1 to n are kept from the form of the Liber Usualis as a reference for choirmasters working with singers and organists not sufficiently fluent in Latin, particularly useful in finding their place in rehearsals or keeping track of divisions while singing the office (This is subject to change, but it is a primary practical consideration). The FSSP's vesperal for the 1960 office does the same thing.
 
-
 # Sources:
 
 - [Liber Antiphonarius](https://archive.org/details/liber-antiphonarius-1960) of Solesmes (LA)
@@ -81,15 +80,15 @@ The punctuation and syllabification of the psalms is to follow the _Liber Antiph
 
 # To Do
 
-- Collect all chants from Gregobase of the psalter, the ~~proper of time,~~ the ~~commons of saints,~~ and the proper of saints (on a rolling basis, i.e. grab what you need as you work on it, edit, commit, and push; as of Sept 2025, May and February are left to do) as well as the ~~appendix for benediction~~ (done as of October 2024) and for the "Hymni Antiqui" (first verse only; to be taken from the existing files with corrected lyrics, or from the *Antiphonale Monasticum*)
-- Remove `--` in file name and replace with `_` (to allow for easier copying/pasting in some LaTeX editors such as in TeXShop) and remove `ant.`, `...`, and `(` or `)`.
+- Collect all chants from Gregobase of the psalter, the ~~proper of time,~~ the ~~commons of saints,~~ and the proper of saints (on a rolling basis, i.e. grab what you need as you work on it, edit, commit, and push; as of Sept 2025, May and February are left to do) as well as the ~~appendix for benediction~~ (done as of October 2024) and for the "Hymni Antiqui" (following 1913 VR format; chants to be taken from the existing files with corrected lyrics, or from the *Antiphonale Monasticum* and transcribed for Saint Michael, with our ictus placement) (completed as of September 4, 2025)
+- Remove `--` in file name and replace with `_` (to allow for easier copying/pasting) and remove `ant.`, `...`, and `(` or `)`.
 - Proofread (add EUOUAE to Magnificat endings, comment off EUOUAE for most antiphon endings — they will need this only when the psalm is not printed below an antiphon).
 - remove space before colons (we use Latin options and language for `babel` that inserts a thin space), change `ae` or `oe` `æ` and `œ` respectively as well as `aé` to `ǽ` (U+01fd) and use TeX to create `œ` with an acute accent) (fixed as of October 2024).
 - Correct italics of psalm tex files (See this [issue](https://github.com/Nocturnale-Romanum/nocturnale-romanum/issues/17#issue-1714660808).) 
 - Transcribe versicles of feasts where the solemn tone is given and create gabc file (now possible with manual intervention required with the Psalm Tone Tool as of October 2024)
--  Build (that is, create subfile and typeset) psalter (draft done as of summer 2024, except for page breaks), common tones, proper of time (draft, except for headers and page breaks done as of summer 2024), commons of saints (drafts done as of autumn 2024), the proper of saints (as of Sept 2025, May and February are left to do), proper of France, 1955/60 (done as of Oct 2024, edited as of Sept 2025) and benediction (draft finished as of spring 2025).
+-  Build (that is, create subfile and typeset) psalter (draft done as of summer 2024, except for page breaks), common tones, proper of time (draft, except for headers and page breaks done as of summer 2024), commons of saints (drafts done as of autumn 2024), the proper of saints (as of Sept 2025 now complete), proper of France (complete Sept 2025), 1955/60 (done as of Oct 2024, edited as of Sept 2025) and benediction (draft finished as of spring 2025).
 -   This means also means copy, insert, and correct (based on Solesmes/Vaticana) collects, chapters, and versicles.
-- Index these pieces as well as the psalms (the index of psalms will be complicated due to the pointing and partial repetition so to minimize page turns but to not use up valuable space), based on code from Nocturnale Romanum project.
+- Index these pieces as well as the psalms (the index of antiphons and esp. that of index of psalms will be complicated due to the pointing and partial repetition so to minimize page turns but to not use up valuable space), based on code from Nocturnale Romanum project.
 - Finish [table of moveable feasts and perpetual Roman calendar](https://github.com/MRoth1910/Kalendarium) (and/or insert it into the main PDF)
 - Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
 - Proofread completed book(s).
