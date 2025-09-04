@@ -1,0 +1,108 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_35_commune_non_virginum}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\section[Commune non Virginum]{COMMUNE SANCTÆ MARTYRIS TANTUM}\header{commune non virginum.}
+\subtitle{et nec Virginis nec Martyris.}
+%\thispagestyle{empty}
+
+\invesperis{i}
+
+\primaantiphona{3. a.}
+
+\initialscore{an_dum_esset_rex_solesmes_1961}
+\psalmus{109}{109_3a}{109_3a_b}
+%\espacetitre %no magic numbers
+
+\gscore[2. Ant.]{4. A*}{an_in_odorem_solesmes_1961}
+\psalmus{112}{112_4A_A_star}{112_4A_A_star}
+
+\gscore[3. Ant.]{8. G}{an_jam_hiems_transiit_solesmes_1961}
+\psalmus{121}{121_8G}{121_8}
+
+\gscore[4. Ant.]{1. f}{an_veni_electa_mea_solesmes_1961}
+\psalmus{126}{126_1f}{126_1}
+
+\gscore[5. Ant.]{8. G*}{an_ista_est_speciosa_non_virginis_solesmes_1961}
+\psalmus{147}{147_8Gstar}{147_8}
+
+%%stop worrying and love what it does: the alignement issue is not really one cf same common in LA1949
+
+\specialcapitulum{Pro Martyre tantum.}{Eccli. 51, 1 – 3.}
+
+\lettrine{C}{o}nfitébor tibi, Dómine Rex, et collaudábo te Deum Salvatórem meum.~† Confitébor nómini tuo: quóniam adjútor et proté\-ctor fa\-ctus es mihi,~* et liberásti corpus meum a perditióne.
+
+\specialcapitulum{Pro nec Virgine nec Martyre.}{Prov. 31, 10 – 11.}
+
+\lettrine{M}{u}líerem fortem quis invéniet? procul et de últimis fínibus prétium ejus.~† Confídit in ea cor viri sui,~* et spóliis non indigébit.
+
+%%problem with J is perhaps descending annotation with old-style figures BUT latexmk runs lead to changed position even when the hymn is not changed otherwise…
+
+\hymnusmode{2.}
+
+\initialscore{hy_fortem_virili_pectore_solesmes_1961}
+
+%%
+
+\smalltitle{Tempore Paschali.}
+
+\gscore[]{3.}{hy_fortem_virili_pectore_tp_solesmes_1961} %%finish transcribing %%check elisions
+
+\rubrique{Ab Ascensione ad Pentecosten, pro doxologia dicitur:}
+
+\smallscore{dox_ascensionis_tristes_erant}
+
+\altertonus
+
+\gscore[]{4.}{hy_fortem_virili_pectore_paschal_time_solesmes_1961}
+
+\vel
+
+\smallscore{dox_ascensionis_deus_tuorum_alter_tonus_mode_4}
+
+%%should we bother with TP Alleluia? at some point you do just have to know this rubric.
+
+\vv Spécie tua et pulchritúdine tua. \tpalleluia
+
+\rr Inténde próspere procéde, et regna. \tpalleluia
+
+\admagnificat
+
+\label{an_simile_est_negotiatori_solesmes_1961}\phantomsection
+\gscore[]{8. G}{an_simile_est_negotiatori_solesmes_1961}
+
+\specialoratio{Pro Virgine Martyre.}
+
+\lettrine{D}{e}us, qui inter cétera poténtiæ tuæ mirácula, étiam in sexu frágili vi\-ctóriam martýrii contulísti:~† concéde propítius; ut qui beatæ \textit{N.} Mártyris tuæ natalítia cóIimus,~* per ejus ad te exémpla gradiámur. Per Dóminum.
+
+\specialoratio{Pro pluribus Martyribus tantum.}
+
+\lettrine{D}{a} nobis, quǽsumus Dómine Deus noster, san\-ctárum Mártyrum tuárum \textit{N.} et \textit{N.} palmas incessábili devotióne venerári:~† ut quas digna mente non póssumus celebráre,~* humílibus saltem frequentémus obséquiis. Per Dóminum.
+
+\specialoratio{Pro nec Virgine non Martyre.}
+
+\lettrine{E}{x}áudi nos Deus salutáris noster:~† ut sicut de beátæ \textit{N.} tuæ festivitáte gaudémus;~* ita piæ devotiónis erudiámur affé\-ctu.
+Per Dóminum.
+
+\invesperis{ii}
+
+\omniapraeter %%not in any edition, but it's the best rubric given that it makes references to Lauds and such
+
+\vv Diffúsa est grátia in lábiis tuis. \tpalleluia
+
+\rr Proptérea bendíxit te Deus in ætérnum. \tpalleluia
+
+\admagnificat
+\label{an_manum_suam_solesmes_1961}\phantomsection
+\gscore[]{8. G}{an_manum_suam_solesmes_1961}
+
+\end{document}

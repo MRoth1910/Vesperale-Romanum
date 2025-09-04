@@ -1,0 +1,95 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_38_bmv_in_sabbato}}
+\fi
+
+\begin{document}
+
+%% in sabbato should be on its own line in final version or in, then sabbato as needed
+%%\chapter{OFFICIUM B. MARIÆ V. IN SABBATO.}\header{officium b.m.v. in sabbato.}
+
+%%\chapter[Toni Communes.]{OFFICIUM B. MARIÆ V. IN SABBATO.}\header{toni communes.} %% Need to redefine chapter to allow for optional argument to be used in TOC
+
+%\thispagestyle{empty}
+
+%% in sabbato should be on its own line in final version or in, then sabbato as needed
+%%\chapter{OFFICIUM B. MARIÆ V. IN SABBATO.}\header{officium b.m.v. in sabbato.}
+
+\section[Officium B.M.V. in Sabbato]{OFFICIUM B.M.V. IN SABBATO.} \header{officium b.m.v. in sabbato.} %%will want to fix the white space here
+
+\simplex
+
+\rubrique{Omnibus Sabbatis per annum, præterquam in Adventu, Quadragesima, Quatuor Temporibus et Vigiliis, et nisi Officium fieri debeat de Feria propter Officium alicujus Dominicæ infra Hebdomadam ponendum, ac nisi Festum IX Lectionum occurrat, fit Officium de S. Maria, modo infrascripto.}
+
+\rubrique{In Vesperis Feria VI dicuntur Antiphonæ et Psalmi feriales; et a Capitulo fit de S. Maria ut infra. Quod si Feria VI celebratum sit Officium IX Lectionum, de S. Maria fit tantum commemoratio in dictis Vesperis, cum Ant., \vvrub{} et Oratione ut infra; quæ Commem. omittitur quando Feria VI occurrit vel Duplex I classis, vel aliud ejusdem B.M.V. Officium.}
+
+\capitulum{Eccli. 24, 14}
+\textes{Capitulum_BMV}
+
+\label{hy_ave_maris_stella_in_sab_solesmes_1961}\phantomsection
+\hymnusmode{I.}
+\initialscore{hy_ave_maris_stella_in_sab_solesmes_1961}
+
+\altertonus
+\gscore[]{7.}{hy_ave_maris_stella_in_sab_mode_7_solesmes_1961}
+
+\vv Diffúsa est grátia in lábiis tuis.
+
+\rr Propteréa benedíxit te Deus in ætérnum.
+
+\admagnificat
+
+\label{an_beata_mater_in_sabbato_solesmes_1961}\phantomsection
+
+\gscore[]{2. D}{an_beata_mater_in_sabbato_solesmes_1961}
+
+\oratio \label{oratio_bmv}\phantomsection
+
+\lettrine{C}{o}ncéde nos famúlos tuos, quæsumus Domíne Deus, perpétua mentis et corpóris sanitáte gaudére:~† et gloriósa beátæ Mariæ semper Virgínis intercessióne,~* a præsénti liberári tristítia, et æterna perfrúi lætítia. Per Dóminum.
+
+%\rubrique{Oratio \normaltext{Concéde \pageref{concede_bmv}.}}
+
+\rubrique{Vel alia Antiphona et Oratio pro temporis varietate, ut infra.}
+
+\rubrique{Post Orationem fit Suffragium de Omnibus Sanctis, ut sequitur:}
+
+\gscore[Ant.]{7.}{an_sancti_omnes_intercedant_solesmes_1961}
+
+\vv Mirificávit Dóminus Sanctos suos.
+
+\rr Et exaudivit éos clamántes ad se.
+%
+\oratio
+%
+\lettrine{A}{} cunctis nos, quǽsumus, Dómine, mentis et córporis defende perículis: \nolinebreak[4]*~et, intercedénte beáto Joseph, beátis Apóstolis tuis Petro et Paulo, atque beáto \textit{N.} et ómnibus Sanctis, salútem nobis tríbue benígnus et pacem ** ut destructis adversitátibus et erroribus univérsis * Ecclésia tua secúra tibi sérviat libertáte. Per eúmdem Dóminum nostrum.
+
+\rubrique{Tempore autem Paschali, loco præcedentis Suffragii, fit commemoratio de Cruce, ut in Psalterio, \normaltext{\pageref{comm_cruce}.}}
+
+\rubrique{Si autem occurrat Festum Simplex, de eo fit commem. ante i\-psum Suffragium.}
+
+Completorium \rubrique{dicitur de Feria VI ut in Psalterio, nisi Festum præcedens exigat Completorium de Dominica.} %%will need a \pageref in normaltext
+
+\rubrique{Ad Completorium, Hymnus cantantur in tono solito de B.M.V., et in fine dicitur: \normaltext{Jesu tibi sit gloria, Qui natus es de Vírgine.}}
+
+¶ Post Nativitatem Domini \rubrique{usque ad Purificationem, Officium B.M.V. dicitur ut supra, præter sequentia.}
+
+\rubrique{Ad Magnificat, Antiphona \normaltext{Magnum hæreditátis, \pageref{M-an_magnum_haereditatis_solesmes_1961}.} Oratio \normaltext{Deus, qui salútis ætérnæ, \pageref{M-or_jan_1}.}}
+
+%\oratio
+
+%\lettrine{D}{eus}, qui salútis ætérnæ, beátæ Maríæ virginitáte fecúnda, humáno géneri prǽmia præstitísti: tríbue, quǽsumus; ut i\-psam pro nobis intercédere sentiámus, per quam merúimus auctórem vitæ suscípere, Dóminum nóstrum Jesum Christum Fílium tuum. 
+
+¶ Tempore Paschali, \rubrique{℣℣. ℟℟. additur \normaltext{Allelúia;} et ad Magnif. dicititur sequens Antiphona.}
+
+\smalltitle{Ad Magnificat, Antiphona.}
+
+\label{an_regina_caeli_off_bmv_in_sab_TP_solesmes_1961}\phantomsection
+\gscore[]{1. D2}{an_regina_caeli_off_bmv_in_sab_TP_solesmes_1961}
+
+\rubrique{Oratio \normaltext{Concéde, \pageref{oratio_bmv}.} Commem. de Cruce.} %%will need a \pageref in normaltext
+
+\end{document}

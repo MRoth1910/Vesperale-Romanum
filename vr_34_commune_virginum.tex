@@ -1,0 +1,121 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_34_commune_virginum}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\section[Commune Virginum]{COMMUNE VIRGINUM.}\header{commune virginum.}
+
+%\thispagestyle{empty}
+
+\invesperis{i} \label{1_vesperas_conf_virg}
+
+\primaantiphona{1. f.}
+
+\initialscore{an_haec_est_virgo_sapiens_et_una_solesmes_1961}
+\psalmus{109}{109_1f}{109_1}
+%
+\gscore[2. Ant.]{1. f}{an_haec_est_virgo_sapiens_quam_solesmes_1961}
+\psalmus{112}{112_1f}{112_1}
+
+\gscore[3. Ant.]{3. a2}{an_haec_est_quae_nescivit_solesmes_1961}
+\psalmus{121}{121_3a2}{121_3a2_g}
+
+\gscore[4. Ant.]{1. f}{an_veni_electa_mea_solesmes_1961}
+\psalmus{126}{126_1f}{126_1}
+
+\gscore[5. Ant.]{3. a}{an_ista_est_speciosa_virginum_solesmes_1961}
+\psalmus{147}{147_3a}{147_3a_b}
+
+\label{cap_communis_virginum}
+\capitulum{2 Cor. 10, 17 – 18}
+
+\lettrine{F}{r}atres: Qui gloriátur, in Dómino gloriétur.~† Non enim qui seípsum comméndat, ille probatus est:~* sed quem Deus
+comméndat.
+
+%%problem with J is perhaps descending annotation with old-style figures BUT latexmk runs lead to changed position even when the hymn is not changed otherwise…
+
+\hymnusmode{8.}
+\label{hy_jesu_corona_virginum_solesmes_1961}
+\initialscore{hy_jesu_corona_virginum_solesmes_1961}
+
+%% Solesmes omits this version in Liber Usualis; melody of Fortem virili pectore
+\altertonus
+
+\gscore[]{2.}{hy_jesu_corona_virginum_alter_tonus}
+%%
+
+\smalltitle{Tempore Paschali.}
+
+\gscore[]{3.}{hy_jesu_corona_virginum_tp_solesmes}
+
+%%J initial causes problem even after multiple passes with latexmk (in fact we had multiple passes BEFORE I changed anything else in the hymn)
+
+%%rubric from LU
+
+\rubrique{Ab Ascensione ad Pentecosten, pro doxologia dicitur:}
+
+\smallscore{dox_ascensionis_tristes_erant}
+
+\altertonus
+
+\gscore[]{4.}{hy_jesu_corona_virginum_tp_alter_tonus_solesmes_1961}
+
+\vel
+
+\smallscore{dox_ascensionis_deus_tuorum_alter_tonus_mode_4}
+
+\vv Spécie tua et pulchritúdine tua. \tpalleluia
+
+\rr Inténde próspere procéde, et regna. \tpalleluia
+
+\admagnificat
+\label{an_veni_sponsa_christi_i_vesperis_solesmes_1961}
+\gscore[]{8. G}{an_veni_sponsa_christi_i_vesperis_solesmes_1961}
+
+\specialoratio{Pro Virgine Martyre.}
+
+\lettrine{D}{e}us, qui inter cétera poténtiæ tuæ mirácula, étiam in sexu frágili vi\-ctóriam martýrii contulísti:~† concéde propítius; ut qui beatæ \textit{N.} Vírginis et Mártyris tuæ natalítia cóIimus,~* per ejus ad te exémpla gradiámur. Per Dóminum.
+
+\aliaoratio
+
+\lettrine{I}{n}dulgéntiam nobis, quǽsumus Dómine, beata \textit{N.} Virgo et Martyr implóret:~† quæ tibi grata semper éxstitit et mérito castitátis,~* et tuæ professióne virtútis. Per Dóminum.
+
+%\lettrine{E}{x}áudi, quǽsumus Dómine, preces nostras, quas in beáti \textit{N.} Confessóris tui atque Pontíficis sollemnitáte deférimus:~† et, qui tibi digne méruit famulári, ejus intercedéntibus méritis, ab ómnibus nos absólve peccátis. Per Dóminum.
+
+\specialoratio{Pro Virgine non Martyre.}
+
+\lettrine{E}{x}áudi nos Deus salutáris noster:~† ut sicut de beátæ \textit{N.} Vírginis tuæ festivitáte gaudémus;~* ita piæ devotiónis erudiámur affé\-ctu.
+Per Dóminum.
+
+\rubrique{¶ Si fuerint plures, in utrisque Vesperis ad Magnificat, Antiphona:}
+
+%%need to decide if EUOUAE should be changed or not
+%%changing for now (changed as of Oct 2024)
+\label{an_prudentes_virgines_solesmes_1961}
+\gscore[]{4. A*}{an_prudentes_virgines_solesmes_1961}
+
+\oratio
+
+\lettrine{D}{a} nobis, quǽsumus Dómine Deus noster, san\-ctárum Vírginum et Mártyrum tuárum \textit{N.} et \textit{N.} palmas incessábili devotióne venerári:~† ut quas digna mente non póssumus celebráre,~* humílibus saltem frequentémus obséquiis. Per Dóminum.
+
+\invesperis{ii}
+
+\omniapraeter %%not in any edition, but it's the best rubric given that it makes references to Lauds and such
+
+\vv Diffúsa est grátia in lábiis tuis. \tpalleluia
+
+\rr Proptérea bendíxit te Deus in ætérnum. \tpalleluia
+
+\admagnificat
+\label{an_veni_sponsa_christi_ii_vesperis_solesmes_1961}
+\gscore[]{7. c}{an_veni_sponsa_christi_ii_vesperis_solesmes_1961}
+
+\end{document}

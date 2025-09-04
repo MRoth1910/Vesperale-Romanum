@@ -1,0 +1,150 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_32_commune_confessoris_pontificis}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+%% the Iste Confessor seems to pose problems notably with S and p and then 3 at the beginning of lines, above the clef on the staff below
+
+%% the Iste Confessor seems to pose problems notably with S and p and then 3 at the beginning of lines, above the clef on the staff below
+
+\section[Commune Confessoris Pontificis]{COMMUNE CONFESSORIS PONTIFICIS.}
+\header{commune confessoris pontificis.}
+
+%\thispagestyle{empty}
+
+%\label{1_vesperas_conf_pont}
+
+\invesperis{i}
+
+\primaantiphona{7. c.}
+
+\initialscore{an_ecce_sacerdos_magnus_solesmes_1961}
+\psalmus{109}{109_7c}{109_7}
+%
+\gscore[2. Ant.]{7. c}{an_non_est_inventus_solesmes_1961}
+\psalmus{110}{110_7c}{110_7}
+
+\gscore[3. Ant.]{8. G*}{an_ideo_jurejurando_solesmes_1961}
+\psalmus{111}{111_8Gstar}{111_8}
+
+\gscore[4. Ant.]{7. c}{an_sacerdotes_dei_solesmes_1961}
+\psalmus{112}{112_7c}{112_7}
+
+\gscore[5. Ant.]{3. g}{an_serve_bone_et_fidelis_intra_conf_pontificis_solesmes_1961}
+\psalmus{116}{116_3g}{116_3a2_g}
+
+\label{cap_com_conf_pont}
+\capitulum{Eccl. 44, 16 – 17}
+
+\lettrine{E}{c}ce sacérdos magnus,~† qui in diébus suis plácuit Deo, et invéntus est justus:~* et in témpore iracúndiæ factus est reconciliátio.
+
+\hymnusmode{8. (1)} \label{hymnus_com_conf_pont}
+
+\initialscore{hy_iste_confessor_conf_pontificis_1_solesmes_1961}
+
+\aliustonus[(2)]
+
+\gscore[]{8.}{hy_iste_confessor_conf_pontificis_2_solesmes_1961}
+
+\aliustonus[(3)] %%5. is too close to Sit. Need to watch.
+
+\gscore[]{8.}{hy_iste_confessor_conf_pontificis_3_solesmes_1961}
+
+\aliustonus[(4)]
+
+\gscore[]{1.}{hy_iste_confessor_conf_pontificis_4_solesmes_1961}
+
+\vv Amávit eum Dóminus, et ornávit eum.
+
+\rr Stolam glóriæ índuit eum.
+
+\label{an_sacerdos_et_pontifex_ora_solesmes_1961}\phantomsection
+\admagnificat %%need to fix asterisk placement
+\zerobaroffsettextleft
+\gscore[]{1. D}{an_sacerdos_et_pontifex_ora_solesmes_1961}
+\resetbaroffsettextleft
+
+Pro Doctoribus, \rubrique{Ant. \normaltext{\pageref{o_doctor_com_conf_pont},} ut infra.}
+
+\oratio
+
+\lettrine{D}{a}, quǽsumus, omnípotens Deus:~† ut beáti \textit{N.} Confessóris tui atque Pontíficis veneránda sollémnitas, et devotiónem nobis áugeat et salútem. Per Dóminum.
+
+\aliaoratio
+
+\lettrine{E}{x}áudi, quǽsumus Dómine, preces nostras, quas in beáti \textit{N.} Confessóris tui atque Pontíficis sollemnitáte deférimus:~† et, qui tibi digne méruit famulári, ejus intercedéntibus méritis, ab ómnibus nos absólve peccátis. Per Dóminum.
+
+\specialoratio{Pro Doctoribus.}
+
+%%to modify later
+
+\lettrine{D}{e}us, qui pópulo tuo ætérnæ salútis beátum \textit{N.} minístrum tribuísti:~† præsta, quǽsumus; ut quem Do\-ctórem vitæ habúimus in terris,~* intercessórem habére mereámur in cælis. Per Dóminum.
+
+%%Solesmes closes "PD nostrum" but this is atypical and not needed.
+
+\invesperis{ii}
+
+\rubrique{Antiphonæ et Psalmi ut in I Vesperis, sed loco ultimi Ps. \normaltext{Meménto,} ut infra.}
+
+\psalmus{131}{131_3g}{131_3a2_g}
+
+\rubrique{Capit. \normaltext{Ecce sacérdos} et Hymnus ut in I Vesperis.}
+
+\vv Justum dedúxit Dóminus per vias rectas.
+
+\rr Et osténdit illi regnum Dei.
+
+\admagnificat
+\label{an_amavit_eum_dominus_solesmes_1961}\phantomsection
+\gscore[]{1. D2}{an_amavit_eum_dominus_solesmes_1961}
+
+\rubrique{Sequens Antiphona dicitur ad Magnificat in II Vesperis pro solis summis Pontificibus.}
+\label{an_dum_esset_summus_pontifex_solesmes_1961}\phantomsection
+\gscore[]{1. f}{an_dum_esset_summus_pontifex_solesmes_1961}
+
+\rubrique{¶ Si occurrat celebrari Festum plurium Confessorum Pontificum, Officium fit ut supra; sed in Oratione, quæ ponuntar in singulari, dicantur in plurali.}
+
+\phantomsection
+\label{o_doctor_com_conf_pont}
+
+%%need to fix these doctors and get them on the same page
+
+{\centering{Pro Doctoribus.\par}}
+
+\rubrique{In Festis Doctorum, Officium fit de Confessore Pontifice vel non Pontifice, pro qualitate Sancti.}
+
+\smalltitle{In utrisque Vesperis. Ad Magnificat, Antiphona.}
+\label{an_o_doctor_optime_solesmes_1961}
+\gscore[]{2. D}{an_o_doctor_optime_solesmes_1961}
+
+\smalltitle{Nomina Doctorum Ecclesiæ.}
+
+\greseteolcustos{manual}
+\gresetinitiallines{0}
+\gregorioscore{partitions/an_o_doctor_optime_Beda_solesmes_1961}
+\begin{nstabbing}
+\>\enspace{}Ephrem \>\>Ambró-\>\>si \>Cy-\>\enspace{}\hspace{0.25mm}ríl-\enspace{}le \>\>\enspace{}Hi-\>\thickspace{}lá-\>ri\\
+\>\enspace{}Le-\enspace{}o \>\>An-sél-\>\>me \>Bá-\>\enspace{}\hspace{0.25mm}si-\kern0.75emli \>\>\enspace{}Jo-\>\thickspace{}án-\>nes\\
+\>\enspace{}Pe-tre \>\>An-tó\>\>ni \>Lau\>\enspace{}\hspace{0.25mm}rén-ti \>\>Fran\>cí-\>sce\\
+\>\enspace{}Thoma \>\>Ro-\>\medspace{}bér-te
+
+\end{nstabbing}
+
+\gregorioscore{partitions/an_o_doctor_optime_Athanasi_solesmes_1961}
+\begin{nstabbing}
+\>Augu\>\>stí-\>ne\\
+\>I-\>\enspace{}si-\>dó-\>re
+\end{nstabbing}
+
+\gregorioscore{partitions/an_o_doctor_optime_Petre_solesmes_1961}
+\gresetinitiallines{1}
+
+\end{document}

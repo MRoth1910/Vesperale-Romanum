@@ -1,0 +1,360 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_06_octavae_epiphaniae}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+%% am having trouble with crossreference for ps 112
+
+%%\labe{112_4E} is in vr_NN_in_nativitate_usque_5_jan.tex and it's not resolving crossreference between the two files, not even if I run the main file which SHOULD get the right pages otherwise.
+
+\begin{document}
+
+%\thispagestyle{empty}
+
+%\addcontentsline{toc}{section}{Ab Epiphianiam ad Septuagesimam} \phantomsection
+%
+%\festum{In Epiphania Domini.}
+
+ \section[Ab Epiphianiam ad Septuagesimam]{IN EPIPHANIA DOMINI.}\header{in epiphania domini.}\header{in epiphania domini et in octava.}
+%%could also be section with optional argument
+
+\duplexclassis{I}[cum Octava privilegiata II ordinis]
+
+%\rank{Duplex I classis.}
+
+%%octave not in LA1949?
+
+\invesperis{i} \label{1_vesperis_epiphaniae}
+
+\rubrique{Antiphonæ et psalmi ut in II Vesperis, sed loco ultimi Ps. \normaltext{Laudáte Dóminum,} ut infra.}
+
+\psalmus{116}{116_7c2}{116_7}
+
+\caphymnvv{II}
+
+\admagnificat
+
+\gscore[]{8. G}{an_magi_videntes_stellam_solesmes_1961}
+
+\rubrique{Oratio \normaltext{Deus, qui hodiérna,} ut infra \normaltext{\pageref{or_epiphaniae}.}}
+
+\hymnusadcompletorium \label{tonus_oct_epiphaniae}
+
+\gscore[]{8.}{hy_te_lucis_ante_terminum_in_epiphania_solesmes}
+
+\rubrique{in Festo Sanctæ Familiæ:}
+
+\smallscore{dox_holy_family}
+
+\rubrique{Hic tonus servatur ad Completorium per totam Octavam.}
+
+\invesperis{ii}
+
+\primaantiphona{2. D}
+
+\initialscore{an_ante_luciferum_genitus_solesmes_1961}
+
+\psalmus{109}{109_2}{109_2}
+
+\gscore[2. Ant.]{1. g2}{an_venit_lumen_tuum_solesmes_1961}
+
+\psalmus{110}{110_1g2}{110_1}
+
+%%LaTeX refuses to acknowledge the line break with hspace inserted so a manual, hard hyphen was inserted
+
+\gscore[3. Ant.]{1. g2}{an_apertis_thesauris_solesmes_1961}
+
+\psalmus{111}{111_1g2}{111_1}
+
+\gscore[4. Ant.]{4. E}{an_maria_et_flumina_solesmes_1961}
+
+%%need to make psalm label distinct so that psalm can go elsewhere with a label to minimize page turning and distance
+
+\label{112_4E}
+
+\psalmus{112}{112_4E}{112_4E}
+
+%\rubrique{Ps. \normaltext{Laudáte Púeri, \pageref{M-112_4E}.}}
+%
+%%%should point to Nativity document
+
+\gscore[5. Ant.]{7. c2}{an_stella_ista_solesmes_1961}
+
+\psalmus{113}{113_7c2}{113_7}
+
+%%ps 116 could be printed alone  above(since it's much shorter)
+
+\capitulum{Isaiæ 60, 1}
+\lettrine{S}{u}rge, illumináre Jerúsalem, quia venit lumen tuum,~* et glória Dómini super te orta est.
+
+\hymnusmode{3.}
+
+\initialscore{hy_crudelis_herodes_deum_solesmes_1961.gabc}
+
+\rubrique{Sic terminantur Hymni per totam Octavam, nisi aliter concluendi sint, juxta rubricas.}
+
+\smalltitle{Alter tonus ad libitum.}
+
+\gscore[]{8.}{hy_crudelis_herodes_deum_another_chant_solesmes_1961}
+
+\rubrique{In hoc altero tono cantantur Hymni per totam Octavam.}
+
+\smallscore{versiculus_vesperis_epiphianiae_domini}
+
+\rubrique{Sic cantantur in die Festi: alias adhibetur tonus solitus.}
+
+\admagnificat
+
+\gscore[]{1. D}{an_tribus_miraculis_solesmes_1961}
+
+\oratio \label{or_epiphaniae}
+
+\lettrine{D}{e}us, qui hodiérna die Unigénitum tuum géntibus stella duce revelásti:~† concéde propítius; ut qui jam te ex fide cognóvimus,~* usque ad contemplándam spéciem tuæ celsitúdinis perducámur. Per eúmdem Dóminum.
+
+\rubrique{Si Epiphania venerit in Sabbato, in II Vesperis fit commemoratio Dominicæ infra octavam Epiphaniæ, Ant.\@ \normaltext{Remánsit, \pageref{com_dom_in_oct_epiphaniae}.}}
+
+%%needs macro or separate file
+
+\vv  Omnes de Saba vénient, allelúia.
+
+\rr Aurum et thus deferéntes, allelúia.
+
+\rubrique{Oratio \normaltext{Vota quǽsumus, \pageref{or_dom_1_pe}.}}
+
+\rubrique{Infra Octavam Epiphaniæ ad Vesperas et ad Completorium, omnia dicuntur ut in die Festi, præter antiphonas ad Magnificat,
+quæ singulis diebus habentur propriæ, ut sequitur.}
+
+\rubrique{De Dominica infra Octavam non dicitur Officium, sed fit tantummodo commemoratio in Festo Sanctæ Familiæ,  tum si hoc in i\-psa celebretur Dominica,
+tum si ob occursum diei Octavæ i\-psum in diem Sabbati vel in proximiorem antecedentem Feriam anticipetur, ut infra notabitur.}
+\biggerrule
+
+\dominicadate{infra Octavam Epiphaniæ}
+
+\bigtitle{Sanctæ Familiæ Jesu, Mariæ, Joseph.} \label{sancta_familia}
+%\header {sanctæ familiæ jesu, mariæ, joseph.}
+%%headers need to be fixed later…
+
+\duplexmajus
+
+\rubrique{Quando dies Octava Epiphaniæ in Dominicam inciderit, Sabbato præcedenti Officium fit de Sancta Familia, et Feria VI dicuntur I Vesperæ de i\-psa Sancta Familia, cum commemoratiom præcedentis diei infra Octavam ac Dominicæ infra Octavam, ut infra.}
+
+\rubrique{Sicubi tamen hoc Sabbato occurrat Festum Duplex I classis, Officium de Sancta Familia cum commemoratio de ipsius Dominicæ anticipatur in proximiorem Feriam in qua secus faciendum esset Officium de Octava; et in Officio tam Festi Duplicis I classis quam Sanctæ Familiæ fit commemoratio currentis diei infra Octavam.}
+
+\rubrique{Denique, a die 7 ad 12 Januarii inclusive, ubi occurrerit Dominica simul et Festum Duplex 1 classis, in utrisque Vesperis Festi agitur commemoratio prius Sanctæ Familiæ, cujus Officium. cum omnibus et singulis juribus in perpetuum Officio Dominicæ subrogatum exstitit, deinde Dominicæ et Octavæ.}
+
+\invesperisminor{I}
+
+\primaantiphona{1. g}
+
+%%1st antiphon  is same ant as Mar 19, needs to be exact same code and ideally gabc header.
+
+\initialscore{an_jacob_autem_genuit_solesmes_1961}
+
+\psalmus{109}{109_1g}{109_1}
+
+%%2nd is not the same antiphon as Mar 19
+
+\gscore[2. Ant.]{7. c}{an_angelus_domini_apparuit_holy_family_solesmes_1961}
+
+\psalmus{112}{112_7c}{112_7}
+
+\gscore[3. Ant.]{7. d}{an_pastores_venerunt_solesmes_1961}
+
+\psalmus{121}{121_7d}{121_7}
+
+\gscore[4. Ant.]{2. D}{an_magi_intrantes_solesmes_1961}
+\label{ps_126_2}
+
+\psalmus{126}{126_2}{126_2}
+
+\gscore[5. Ant.]{1. f}{an_erat_pater_ejus_solesmes_1961}
+
+\psalmus{147}{147_1f}{147_1}
+
+\capitulum{Luc. 2, 51}
+
+\lettrine{D}{e}scéndit Jesus cum María et Joseph, et venit Názareth,~* et erat súbditus illis.
+
+\hymnus
+
+\gscore[]{2.}{hy_o_lux_beata_caelitum_solesmes_1961}
+
+\vv Beáti qui hábitant in domo tua, Dómine.
+
+\rr In sǽcula sæculórum laudábunt te.
+
+\admagnificat
+
+\gscore[]{8. G}{an_verbum_caro_factum_est_solesmes_1961}
+
+\oratio \label{or_sanctae_familiae}
+
+\lettrine{D}{o}mine Jesu Christe, qui Maríæ et Joseph súbditus, domésticam vitam ineffabílibus virtútibus consecrásti:~† fac nos, utriúsque auxílio, Famíliæ sanctæ tuæ exémplis ínstrui;~* et consórtium cónsequi sempitérnum. Qui vivis et regnas cum Deo Patre.
+
+\rubrique{Et fit commemoratio præcedentis diei infra Octavam:
+Antiphona diei currentis propria, \normaltext{℣. Reges Tharsis,} oratio \normaltext{Deus, qui hodiérna.}}
+\label{com_dom_in_oct_epiphaniae}
+\rubrique{Deinde commemoratio Dominicæ.}
+
+\gscore[Ant.]{2.}{an_remansit_puer_solesmes_1961}
+
+%%needs macro or separate file
+
+\vv  Omnes de Saba vénient, allelúia.
+
+\rr Aurum et thus deferéntes, allelúia.
+
+\oratio \label{or_dom_1_pe}
+
+%%needs just the slightest shift with package option findent
+
+\lettrine[findent=0.05em]{V}{o}ta quǽsumus Dómine, supplicántis pópuli cælésti pietáte proséquere:~† ut et quæ agénda sunt, vídeant,~* et ad implénda quæ víderint, convaléscant.
+Per Dóminum.
+
+%%probably could be a macro, for newer feasts only.
+
+\rubrique{Completorium de Dominica.}
+
+%%add pageref and label for tone of hymn at Compline
+%%OR add only doxology in the same place.
+
+\rubrique{¶ Ad Completorium, Hymnus cantatur in tono Octavæ \normaltext{\pageref{tonus_oct_epiphaniae}} cum doxologia \normaltext{Jesu, tuis obédiens,} ut supra.}
+
+\invesperisminor{II}
+
+\rubrique{Antiphonæ de I Vesperis quoties in eis de hoc Festo facta tantum fuerit commemoratio.}
+
+\gscore[1. Ant.]{8. G}{an_post_triduum_solesmes_1961}
+
+\psalmus{109}{109_8G}{109_8}
+
+\gscore[2. Ant.]{4. E}{an_dixit_mater_jesu_ad_illum_solesmes_1961}
+%%actually needs to go under Vespers of the Epiphany
+
+%\psalmus{112}{112_4E}{112_4E}
+
+\rubrique{Ps. \normaltext{Laudáte Púeri, \pageref{M-112_4E}.}}
+
+%%does it need the prefix if it's in the same subfile. TBD!
+
+\gscore[3. Ant.]{8. G}{an_descendit_jesus_cum_eis_solesmes_1961}
+
+\psalmus{121}{121_8G}{121_8}
+
+\gscore[4. Ant.]{2. D}{an_et_jesus_proficiebat_solesmes_1961}
+
+\rubrique{Ps. \normaltext{Nisi Dóminus, \pageref{ps_126_2}.}}
+
+\gscore[5. Ant.]{8. G}{an_et_dicebant_solesmes_1961}
+
+\psalmus{147}{147_8G}{147_8}
+
+\caphymn{I}
+
+\vv Ponam univérsos fílios tuos doctos a Dómino.
+
+\rr Et multitúdinem pacis fíliis tuis.
+
+\admagnificat
+
+\gscore[]{8. G}{an_maria_autem_solesmes_1961}
+
+\rubrique{Oratio \normaltext{Dómine Jesu Christe,} ut supra, \normaltext{\pageref{or_sanctae_familiae}.}}
+
+\rubrique{Et fit commemoratio sequentis diei infra Octavam:
+Antiphona diei currentis propria, \normaltext{℣. Reges Tharsis,} oratio \normaltext{Deus, qui hodiérna.}}
+
+\rubrique{Deinde commemoratio Dominicæ.}
+
+\gscore[Ant.]{8.}{an_fili_quid_fecisti_solesmes_1961}
+
+\vv  Omnes de Saba vénient, allelúia.
+
+\rr Aurum et thus deferéntes, allelúia.
+
+\rubrique{Oratio \normaltext{Vota quǽsumus} ut supra, \normaltext{\pageref{or_dom_1_pe}.}}
+
+\rubrique{¶ Si dies Octava Epiphania inciderit in Dominicam, nihil fit de Dominica,
+in i\-psa die Octava, sed tantum in I Vesperis diei Octavæ fit commemoratio pro II Vesperis Dominicæ si die 12 Januarii, ut supra, celebratum fuerit Officium de Sancta Familia.}
+
+%%the LA1949 follows the Pius X breviary in assigning the antiphons to DATES specifically
+
+%%date is flush left on same line but for now (18 dec 2023) that seems too complicated.
+
+\bigtitle{7 Jan. Secunda die infra Octavam.}
+
+\gscore[Ad Magnif.]{Ant. 7. a}{an_videntes_stellam_solesmes_1961}
+
+\bigtitle{8 Jan. Tertia Die.}
+
+\gscore[Ad Magnif.]{Ant. 8. c}{an_lux_de_luce_solesmes_1961}
+
+\bigtitle{9 Jan. Quarta Die.}
+
+\gscore[Ad Magnif.]{Ant. 8. G}{an_interrogabat_magos_solesmes_1961}
+
+\bigtitle{10 Jan. Quinta Die.}
+
+\gscore[Ad Magnif.]{Ant. 8. c}{an_omnes_de_saba_solesmes_1961}
+
+\rubrique{Commemoratio \normaltext{ S. Hygini,} Papæ et Martyris. Ant.\@ \normaltext{Iste sanctus, \pageref{M-an_cs_iste_sanctus_pro_lege_solesmes_1961}, ℣. Glória et honóre.}}
+
+%%this is in the antiphonal as is. page for St Telesphorus refers (properly) to the commemorations section.
+
+%\gscore[Ant.]{8.}{an_cs_iste_sanctus_pro_lege_solesmes_1961}
+%
+%\vv Glória et honóre coronásti eum Dómine.
+%
+%\rr Et constituísti eum super ópera mánuum tuárum.
+
+\oratio
+
+\lettrine{I}{n}firmitátem nostram réspice, omnípotens Deus:~† et quia pondus própriæ actiónis gravat,~* beáti Hygíni Mártyris tui atque Pontíficis intercéssio gloriósa nos prótegat.
+Per Dóminum.
+
+\bigtitle{11 Jan. Sexta Die.}
+
+\gscore[Ad Magnif.]{Ant. 1. f}{an_admoniti_magi_solesmes_1961}
+
+\bigtitle{12 Jan. Septima Die.}
+
+\rubrique{Vesperæ de sequenti die Octava.}
+
+%\newpage
+
+\bigtitle{In Octava Epiphaniæ.}
+
+\duplexmajus
+
+In I Vesperis, \rubrique{omnia dicuntur ut in I Vesperis Epiphaniæ, \normaltext{\pageref{1_vesperis_epiphaniae},} excepta oratione.}
+
+\oratio
+
+\lettrine{D}{e}us, cujus Unigénitus in substántia nostræ carnis appáruit:~† præsta, quǽsumus; ut per eum, quem símilem nobis foris agnóvimus,~* intus reformári mereámur. 
+Qui tecum vivit et regnat in unitáte.
+
+Ad Vesperas, \rubrique{omnia dicuntur sicut in die Epiphaniæ, excepta oratione \normaltext{Deus, cujus Unigénitus.}}
+
+\rubrique{Quando Octava Epiphaniæ venerit in Sabbato, in II Vesperis octavæ fit commemoratio 
+Dominicæ II Epiphaniæ, ut infra.}
+
+Dominica I post Epiphaniam, \rubrique{quæ est infra octavam, Officium fit de Sancta Familia, ut supra,
+\normaltext{\pageref{sancta_familia};} sed Dominica in diem 13 januarii inciderit, agitur de die 
+Octava Epiphaniæ juxta rubricas.}
+
+%%where to break these files is not always clear based on the continuous flow of original LA1949
+
+\biggerrule
+
+%%for now, rule to break page and start on new page
+%%to be fixed when full book is finished keeping in mind how custom subfile commands work — which involves breaking page!
+
+
+\end{document}
