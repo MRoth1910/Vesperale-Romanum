@@ -2,68 +2,68 @@
 % !TEX parameter =  --shell-escape
 
 \documentclass[11pt]{book}
-\input{../commonheaders.tex}
+\input{commonheaders.tex}
 \externaldocument[M-]{\subfix{vesperale_romanum}}
 
 \begin{document}
 %% order TBD.
-%%%local version%%%
+%%%github  version%%%
 
 %%section titles need to be on new page which should happen if we restrict section to start of new subfile only BUT subsection* and sectiion* need same treatment
 %%do we want to use section* or special festum command?
-\customsubfile{vr_01_prolegomena} %%these probably WILL be 01
+\customsubfile{vr_01_prolegomena} %%these probably WILL be 01; include Kalendarium in prologomena file eventually
 %%need to remove \mainmatter command and put it at end of whatever 02 is
-\customsubfile{vr_NN_toni_communes} %%watch for hfull boxes in ALT, e.g. in collect examples; %%do we put in psalm tone examples…%%descenders are problem%%
-\customsubfile{vr_NN_canticum_bmv} %%ALT works for Toni Communes, not so much for psalm endings
-\customsubfile{vr_NN_tempus_adventus}
-\customsubfile{vr_NN_in_nativitate_usque_5_jan}
-\customsubfile{vr_NN_octavae_epiphaniae}
-\customsubfile{vr_NN_tempus_post_epiphaniam}
-\customsubfile{vr_NN_tempus_septuagesimae}
-\customsubfile{vr_NN_tempus_quadragesimae_passionis}
+\customsubfile{vr_02_toni_communes} %%watch for hfull boxes in ALT, e.g. in collect examples; %%do we put in psalm tone examples…%%descenders are problem%%
+\customsubfile{vr_03_canticum_bmv} %%ALT works for Toni Communes, not so much for psalm endings
+\customsubfile{vr_04_tempus_adventus}
+\customsubfile{vr_05_in_nativitate_usque_5_jan}
+\customsubfile{vr_06_octavae_epiphaniae}
+\customsubfile{vr_07_tempus_post_epiphaniam}
+\customsubfile{vr_08_tempus_septuagesimae}
+\customsubfile{vr_09_tempus_quadragesimae_passionis}
 %\customsubfile{vr_NN_tempus_passionis}
-\customsubfile{vr_NN_tempus_paschale}
-\customsubfile{vr_NN_trinitate_ad_sc}
-\customsubfile{vr_NN_sab_post_pentecosten}
-\customsubfile{vr_NN_dom_post_pentecosten}
-\customsubfile{vr_NN_in_commemorationibus_sanctorum} %% for now doctor's names work
-\customsubfile{vr_NN_psalterium}
+\customsubfile{vr_10_tempus_paschale}
+\customsubfile{vr_11_trinitate_ad_sc}
+\customsubfile{vr_12_sab_post_pentecosten}
+\customsubfile{vr_13_dom_post_pentecosten}
+\customsubfile{vr_14_in_commemorationibus_sanctorum} %% for now doctor's names work
+\customsubfile{vr_15_psalterium}
 %%Te Lucis BVM is problem
 %% commemorationes sanctorum %% to adjust
 %% common commemorations %% to adjust but otherwise done (can be considered redundant though) 
 %% the psalter + commemorations (of saints and suffrages) are middle of book
 %%books start with Saint Andrew and end before the vigil
-\customsubfile{vr_NN_festa_decembris}
-\customsubfile{vr_NN_festa_januarii}
-\customsubfile{vr_NN_festa_februarii}
-\customsubfile{vr_NN_festa_martii}
-\customsubfile{vr_NN_festa_aprilis}
-\customsubfile{vr_NN_festa_maii}
-\customsubfile{vr_NN_festa_junii}
-\customsubfile{vr_NN_festa_julii}
-\customsubfile{vr_NN_festa_augusti}
-\customsubfile{vr_NN_festa_septembris}
-\customsubfile{vr_NN_festa_octobris}
-\customsubfile{vr_NN_festa_novembris}
-\customsubfile{vr_NN_commune_apostolorum} \customsubfile{vr_NN_commune_unius_martyris}
-\customsubfile{vr_NN_commune_apostolo_evang_martyrum_tp}
-\customsubfile{vr_NN_commune_plurimorum_martyrum_extra_tp}
-\customsubfile{vr_NN_commune_confessoris_pontificis} %%doctors' names are a problem as is Iste confessor (sometimes) (Names working as of Oct 8 2024!!
-\customsubfile{vr_NN_commune_confessoris_non_pontificis}
-\customsubfile{vr_NN_commune_virginum} %%J in hymn is problem (fixed as of Oct 2024)
-\customsubfile{vr_NN_commune_non_virginum}
-\customsubfile{vr_NN_commune_dedicationis}
-\customsubfile{vr_NN_commune_bmv} %% % need to ensure spacing at antiphon Sancta Maria
-\customsubfile{vr_NN_bmv_in_sabbato}
-\customsubfile{vr_NN_officium_parvum}
-\customsubfile{vr_NN_officium_defunctorum}
-\customsubfile{vr_NN_varia}
+\customsubfile{vr_16_festa_decembris}
+\customsubfile{vr_17_festa_januarii}
+\customsubfile{vr_18_festa_februarii}
+\customsubfile{vr_19_festa_martii}
+\customsubfile{vr_20_festa_aprilis}
+\customsubfile{vr_21_festa_maii}
+\customsubfile{vr_22_festa_junii}
+\customsubfile{vr_23_festa_julii}
+\customsubfile{vr_24_festa_augusti}
+\customsubfile{vr_25_festa_septembris}
+\customsubfile{vr_26_festa_octobris}
+\customsubfile{vr_27_festa_novembris}
+\customsubfile{vr_28_commune_apostolorum}
+\customsubfile{vr_29_commune_unius_martyris}
+\customsubfile{vr_30_commune_apostolo_evang_martyrum_tp}
+\customsubfile{vr_31_commune_plurimorum_martyrum_extra_tp}
+\customsubfile{vr_32_commune_confessoris_pontificis} %%doctors' names are a problem as is Iste confessor (sometimes) (Names working as of Oct 8 2024!!
+\customsubfile{vr_33_commune_confessoris_non_pontificis}
+\customsubfile{vr_34_commune_virginum} %%J in hymn is problem (fixed as of Oct 2024)
+\customsubfile{vr_35_commune_non_virginum}
+\customsubfile{vr_36_commune_dedicationis}
+\customsubfile{vr_37_commune_bmv} %% % need to ensure spacing at antiphon Sancta Maria
+\customsubfile{vr_38_bmv_in_sabbato}
+\customsubfile{vr_39_officium_parvum}
+\customsubfile{vr_40_officium_defunctorum}
+\customsubfile{vr_41_varia}
 %%\customsubfile{vr_NN_prop_gallia} if feeling ambitious
-\customsubfile{vr_NN_hymni_antiqui} 
-\customsubfile{vr_NN_proprium_galliae}
-\customsubfile{vr_NN_pius_12_1960}
-\customsubfile{vr_NN_variationes} %% Rubrical changes up to 1960
-%%\newpage
+\customsubfile{vr_42_hymni_antiqui} 
+\customsubfile{vr_43_proprium_galliae}
+\customsubfile{vr_44_pius_12_1960}
+\customsubfile{vr_45_variationes} %% Rubrical changes up to 1960%%\newpage
 %%\phantomsection isn't included by MB
 %%\addcontentsline{toc}{chapter}{Indices}
 %%\cprintindex{H}{Index Hymnorum}
@@ -76,8 +76,6 @@
 
 \tableofcontents
 \thispagestyle{empty}
-
-%%NN to be replaced with 01, 02… like Matthias does with Nocturnale
 
 %% \chapter needs to be able to take optional argument which it SHOULD by default %%what needs to be \chapter, \section etc isn't clear in my own head (as of Sept 2023)
 
@@ -116,57 +114,11 @@
 
 %%\lettrine[depth=1] should probably be used consistently with Q (collects starting "Quaesumus")
 
-%%every label seems to need \phantomsection.
-
 %%need to check offset of asterisk in antiphons; the (default) new barspacing algorithm works, but e.g. Sicut novellae of Corpus Christi has the asterisk to the far right of the quarter bar, when in this case it should be aligned neatly
 %%too far to tthe left in certain mode 1 antiphons
 
-%% verse numbers of hymn always need to go on next line… this is a bad limitaation of Gregorio
+%% verse numbers of hymn always need to go on next line… this is a bad limitation of Gregorio
 
 %%probably should remove all labels that only go from I or II Vespers to the same EXCEPT for page numbers (so in other words, chapter and hymn MOSTLY don't get label and  pageref, but psalms do as needed, because otherrwise it could be another feast, common, etc.)
 %%this makes life easier and cuts down on number of labels substantially
-
-%%need to follow this format in commons where last psalm and verse change between 2 Vespers
-
-%%\rubrique{Antiphonæ et Psalmi ut in I Vesperis, sed loco ultimi Ps. \normaltext{Crédidi,} ut infra.}
-%%
-%%\psalmus{115}{115_1a2}{115_1}
-%%
-%%\rubrique{Capit. \normaltext{Beátus vir} et Hymnus ut in I Vesperis.}
-
-%\customsubfile{vr_02_kalendarii} %%probably WILL be 02 %%needs fixing with code from Kalendarium repository
-%\customsubfile{vr_NN_tempus_adventus} %%done
-%\customsubfile{vr_NN_tempus_nativitatis}%%done renamed
-%\customsubfile{vr_NN_tempus_epiphaniae} %%done but renamed
-%\customsubfile{vr_NN_tempus_post_epiphaniam}%%done
-%\customsubfile{vr_NN_tempus_quadragesimae}%%done and now combined
-%\customsubfile{vr_NN_tempus_passionis}%%done
-%\customsubfile{vr_NN_tempus_paschale}%%done
-%%added separate file for feasts from Trinity until Sacred Heart
-%\customsubfile{vr_NN_sab_post_pentecosten}%%done!
-%\customsubfile{vr_NN_dom_post_pentecosten}%%done!
-%\customsubfile{vr_NN_commune_apostolorum} %%done!
-%\customsubfile{vr_NN_commune_unius_martyris}%%done
-%\customsubfile{vr_NN_commune_ap_ev_martyrum_tp}done!
-%\customsubfile{vr_NN_commune_plur_martyrum}done!
-%\customsubfile{vr_NN_commune_confessoris} %%pontiff AND non-pontiff would be easiest  due to doctors (done, need to keep an eye on doctors' names) DONE (2 files)
-%\customsubfile{vr_NN_commune_virginis} DONE but watch J in hymn
-%\customsubfile{vr_NN_commune_non_virginis} done!
-%\customsubfile{vr_NN_commune_dedicationis} done!
-%%\customsubfile{vr_NN_commune_bmv} %% done!
-%%%sabbato  %%done!
-%%%parvum
-%\customsubfile{vr_NN_officium_defunctorum}
-%\customsubfile{vr_NN_festa_januarii}
-%\customsubfile{vr_NN_festa_februarii}
-%\customsubfile{vr_NN_festa_martii}
-%\customsubfile{vr_NN_festa_aprilis}
-%\customsubfile{vr_NN_festa_maii}
-%\customsubfile{vr_NN_festa_junii}
-%\customsubfile{vr_NN_festa_julii}
-%\customsubfile{vr_NN_festa_augusti}
-%\customsubfile{vr_NN_festa_septembris}
-%\customsubfile{vr_NN_festa_octobris}
-%\customsubfile{vr_NN_festa_novembris}
-%\customsubfile{vr_NN_festa_decembris}
 \end{document}
