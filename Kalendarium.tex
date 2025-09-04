@@ -1,0 +1,137 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+\documentclass[11pt]{book}
+\input{../commonheaders.tex}
+\usepackage{showframe}
+
+\raggedbottom
+
+\usepackage{ragged2e}
+%\usepackage{geometry}
+\usepackage[parfill]{parskip}
+
+\usepackage{longtable}
+\usepackage{multirow,makecell}
+
+\usepackage{colortbl}
+
+\usepackage{layout}
+\pagestyle{plain}
+%\setlength{\columnsep}{3pc}
+\setlength{\parindent}{0mm}
+\setlength{\marginparwidth}{7mm}
+\setlength{\marginparsep}{3mm}
+\setlength{\headsep}{10pt}
+
+\usepackage{microtype}
+\usepackage[defaultlines=2,all]{nowidow}
+\usepackage[hyphenation,lastparline,nosingleletter]{impnattypo} 
+\usepackage{epsfig}
+\spaceskip=1.0\fontdimen2\font plus 3\fontdimen3\font minus 0.8\fontdimen4\font %% this probably needs adjusting as I don't use the same fonts
+
+%% Commands for tables and for rotating the cell text taken from Matthias B. Could be moved to commonheaders.
+
+\renewcommand{\arraystretch}{1.25}
+\newcommand{\boldhline}{\noalign{\global\arrayrulewidth1.5pt}\hline\noalign{\global\arrayrulewidth1pt}}
+\newcommand{\thinhline}{\noalign{\global\arrayrulewidth0.5pt}\hline\noalign{\global\arrayrulewidth1pt}}
+\newcommand{\whiteline}{\noalign{\global\arrayrulewidth4pt}\hline\noalign{\global\arrayrulewidth1pt}}
+\newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+
+%% these commands use Matthias B's commands but in a cleaner and shorter format. Could be moved to commonheaders.
+
+\NewDocumentCommand\hang{}{\setlength{\hangindent}{10pt}}
+\NewDocumentCommand\mem{m}{\textit{Comm.} #1}
+\NewDocumentCommand\gcolor{m}{\textcolor{gregoriocolor}{#1}} %% requires gregoriotex (declared in commonheaders). Months should be in black italic type if not using any red. Dominical Letters can remain in roman type.
+
+%\NewDocumentCommand\capspace{m}{{\addfontfeature{LetterSpace=5.0}{#1}}}
+%
+%\NewDocumentCommand\scspace{m}{\textsc{{{\addfontfeature{LetterSpace=5.0}{#1}}}}}
+
+\begin{document}
+
+%%the table is too wide. The line breaks stink, and the leading is bad. Words are in different places in the cell (top, bottom, center) so it looks like trash.
+
+%%it probably needs to be on two pages
+
+%%Calendar entries need better breaks; doesn't break even if a cell extends into the bottom margin. Letters peak over left or right margin (particularly in calendar)
+
+\pagestyle{plain}
+%\input{tabella_festorum_mobilium}
+
+%\pagebreak
+
+\normalsize
+
+% TABLE DU CALENDRIER
+
+%%% modeled on the table in the Liber antiphonarius 1949.
+%% need a column for Pentecost and then to fill in the dates from the table
+
+%% the original syntax for centering has been fixed. This now puts the leap-year rubric in the right place on the page. Centering each table might work if vertical rules should be aligned (the second table on each page isn't aligned)
+
+{\centering{\large \capspace{KALENDARIUM PERPETUUM}.}\par} \thispagestyle{empty} \markboth{Calendrier}{Calendrier} \nopagebreak \par \nopagebreak\vspace{5mm}\label{kalendarium} %%will need to fix the label later
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.4}
+\fontsize{8}{9}\selectfont
+%\begin{longtable}{>{\centering}p{0.025\textwidth}|>{\raggedleft}p{0.025\textwidth}|>{\raggedright\arraybackslash}p{0.85\textwidth}}
+%\boldhline
+%\multirow{1.5}{*}{\STAB{\rotatebox[origin=c]{90}{{\footnotesize \gcolor{L.D.}}}}} & \multirow{1.5}{*}{\STAB{\rotatebox[origin=c]{90}{{\footnotesize \gcolor{Jour}}}}} &  \multicolumn{1}{c}{\multirow{1.75}{*}{{\footnotesize \gcolor{Mois}}}} \\[8.5pt]
+%\boldhline
+%\null & \null & \null\\[2pt]
+%\endfirsthead
+%\boldhline
+%\multirow{1.5}{*}{\STAB{\rotatebox[origin=c]{90}{{\footnotesize \gcolor{L.D.}}}}} & \multirow{1.5}{*}{\STAB{\rotatebox[origin=c]{90}{{\footnotesize \gcolor{Jour}}}}} &  \multicolumn{1}{c}{\multirow{1.75}{*}{{\footnotesize \gcolor{Mois}}}} \\[8.5pt]
+%\boldhline
+%\null & \null & \null\\[2pt]
+%\endhead
+%\endfoot
+%\endlastfoot
+%\end{longtable}
+%% this commented-out code originated from Matthias B's version, but there is no need for headers per the Latin original.
+%\myrule
+
+% DEBUT CALENDRIER
+%\null &\null &\null &\null\\[1pt]
+
+%% longtable repeats in each month file. This means the settings need to be changed each time unless there is a cleaner way to do this.
+
+%% Currently scshape or capshape is repeated after the abbreviation when S., B. or SS. is used in the title of a feast. This avoids awkward spacing of periods, which fall outside the braces.
+
+%% Line breaks after Comm. are OK per the Liber antiphonarius.
+
+\input{januarius}
+%
+\input{februarius}
+%%
+\textes{In_anno_bisextili}%% contains ad hoc vspace command which could be removed, modified, or replaced with a custom spacing command to avoid magic numbers. rubrique macro is defined in commonheaders file
+%%%% In the current configuration this is commented out and the text is inserted in the calendar table itself for reasons of space. Result TBD as the table of moveable feasts needs serious work and may have to cover two pages.
+%%
+\input{martius}
+
+\input{aprilis}
+
+\input{maius}
+
+\input{junius}
+
+%%\pagebreak 
+
+\input{julius}
+
+\input{augustus}
+
+\input{september}
+
+\input{october}
+
+\input{november}
+
+\input{december}
+
+\normalsize
+
+\flushbottom
+
+\end{document}

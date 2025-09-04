@@ -114,6 +114,51 @@ Et Sacra eadem Congregatio, audita specialis Commissionis pro cantu liturgico gr
 
 (Acta Apost. Sedis, 1915, fasc. 9, p. 237).
 
+\newpage
+
+\raggedbottom
+
+{\centering{\large \capspace{KALENDARIUM PERPETUUM}.}\par} \thispagestyle{empty} \markboth{Calendrier}{Calendrier} \nopagebreak \par \nopagebreak\vspace{5mm}\label{kalendarium} %%will need to fix the label later
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.4}
+\fontsize{8}{9}\selectfont
+
+\input{januarius}
+%
+\input{februarius}
+%%
+
+\textes{In_anno_bisextili}%% contains ad hoc vspace command which could be removed, modified, or replaced with a custom spacing command to avoid magic numbers. rubrique macro is defined in commonheaders file
+%%%% In the current configuration this is commented out and the text is inserted in the calendar table itself for reasons of space. Result TBD as the table of moveable feasts needs serious work and may have to cover two pages.
+%%
+\input{martius}
+
+\input{aprilis}
+
+\input{maius}
+
+\input{junius}
+
+%%\pagebreak 
+
+\input{julius}
+
+\input{augustus}
+
+\input{september}
+
+\input{october}
+
+\input{november}
+
+\input{december}
+
+\normalsize
+
+\flushbottom
+
 \mainmatter
 
 \end{document}
