@@ -1,0 +1,547 @@
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
+\documentclass[vesperale_romanum.tex]{subfiles}
+
+\ifcsname preamble@file\endcsname
+  \setcounter{page}{\getpagerefnumber{M-vr_42_hymni_antiqui}}
+\fi
+
+%%this code when \customsubfiles is used should allow for continuous pagination when subfiles are compiled individually.
+
+\begin{document}
+
+\chapter*{HYMNI OFFICII ROMANI}
+\vspace{-1.8\baselineskip}
+\subtitle{secundum antiquum usum.}
+\addcontentsline{toc}{chapter}{Hymni Antiqui.}\phantomsection
+
+\header{hymni antiqui.}
+
+\rubrique{Tonus cujusque Hymni infra positi semper idem est ac Tonus
+ejusdem Hymni secundum usum novum, sicut ponitur in Antiphonario,
+nisi aliter notetur.}
+
+\rubrique{Ceterum, quæcumque præscribuntur in Antiphonario circa tonum
+et doxologiam aliquando mutanda in Hymnis ratione Festi, vel Temporis aut Octavae currentis, 
+vel circa vocales aut syllabas praeter metrum
+occurrentes: omnino pariter observanda sunt in hoc Hymnario antiquo,
+nisi aliter notetur.}
+
+\rubrique{Hymni pro quibus non est textus antiquus, sumendi sunt ex Antiphonario.}
+
+%\addcontentsline{toc}{section}{— — — Psalterii.}\phantomsection
+\section[— — — Psalterii.]{— — — Psalterii.}
+
+\bigtitle{Dominica ad Vesperas.}
+
+\gscore[]{8.}{hy_lucis_creator_antiquus}
+
+\vel
+
+\gscore[]{8.}{hy_lucis_creator_ad_lib_1_antiquus}
+
+\vel
+
+\gscore[]{1.}{hy_lucis_creator_ad_lib_2_antiquus}
+
+\begin{hymnusmulticol}
+\textes{lucis_creator_antiquus}
+\end{hymnusmulticol}
+
+\bigtitle{Feria II ad Vesperas.}
+
+\gscore[]{1.}{hy_immensae_conditor_fer_2_ad_vesp_antiquus}
+
+\bigtitle{Feria III ad Vesperas.}
+
+\gscore[]{1.}{hy_telluris_ingens_conditor_fer_3_ad_vesp_antiquus}
+
+\bigtitle{Feria IV ad Vesperas.}
+
+\gscore[]{1.}{hy_caeli_deus_sanctissime_fer_4_ad_vesp_antiquus}
+
+\bigtitle{Feria V ad Vesperas.}
+
+\gscore[]{1.}{hy_magnae_deus_potentiae_fer_5_ad_vesp_antiquus}
+
+\bigtitle{Feria VI ad Vesperas.}
+
+\gscore[]{1.}{hy_plasmator_homini_deus_fer_6_ad_vesp_antiquus}
+
+\bigtitle{Sabbato ad Vesperas.}
+\label{hy_o_lux_beata_trinitas_textus_antiquus_sab_ad_vesp}
+\gscore[]{8.}{hy_o_lux_beata_trinitas_textus_antiquus_sab_ad_vesp}
+
+\begin{hymnusmulticol}
+\textes{o_lux_beata_trinitas_textus_antiquus_sab_ad_vesp}
+\end{hymnusmulticol}
+\newpage
+\bigtitle{Ad Completorium.}
+
+\smalltitle{1. In Feriis et Festis Simplicibus per Annum.}
+
+\gscore[]{8.}{hy_te_lucis_ante_terminum_in_fer_et_fest_simpl_solesmes_antiquus}
+
+\smalltitle{2. In Dominicis et minoribus Festis per Annum.}
+
+\gscore[]{8.}{hy_te_lucis_ante_terminum_dom_solesmes_antiquus}
+
+\smalltitle{3. In majoribus Festis per Annum.}
+
+\gscore[]{4.}{hy_te_lucis_ante_terminum_in_solemnitatibus_solesmes_antiquus}
+
+\begin{hymnusmulticol}
+\textes{te_lucis_textus_antiquus}
+\end{hymnusmulticol}
+
+\smalltitle{3. Tempore Paschali in Officio de Tempore et de Sanctis.}
+
+\gscore[]{8.}{hy_te_lucis_ante_terminum_in_tempore_paschali_solesmes_antiquus}
+
+\smalltitle{4. In Festis et Octavis B. Mariae Virginis.}
+
+\gscore[]{2.}{hy_te_lucis_ante_terminum_bmv_solesmes_antiquus}
+
+%\addcontentsline{toc}{section}{— — — Proprium Temporum.}\phantomsection
+\section[— — — Proprium Temporum.]{— — — Proprium Temporum.}
+\bigtitle{In Adventu.}
+%%check ictus and rhythmic signs
+\gscore[]{4.}{hy_conditor_alme_siderum_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{conditor_alme_siderum_textus_antiquus}
+\end{hymnusmulticol}
+
+\hymnusantiquusrubrique{M-hy_te_lucis_ante_terminum_in_adventu_solesmes_1961}
+
+\bigtitle{In Nativitate Domini.}
+
+\gscore[]{1.}{hy_christe_redemptor_omnium_25_dec_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{christe_redemptor_omnium_25_dec_textus_antiquus}
+\end{hymnusmulticol}
+
+\hymnusantiquusrubrique{M-hy_te_lucis_ante_terminum_in_nativitate_domini_solesmes_1961}
+
+\bigtitle{In Festi SS.\@ Stephani, Joannis, et S.\@ Thomæ Cantuar.}
+
+\rubrique{Hymni de Communibus in tono \normaltext{Christe Redémptor,} cum doxologia \normaltext{Glória tibi.}}
+
+\bigtitle{In Festo SS.\@ Innocentium.}
+
+\gscore[]{1.}{hy_salvete_flores_martyrum_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{salvete_flores_martyrum_textus_antiquus}
+\end{hymnusmulticol}
+
+\bigtitle{In Epiphania Domini.}
+
+\gscore[]{3.}{hy_hostis_herodes_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{hostis_herodes_textus_antiquus}
+\end{hymnusmulticol}
+
+\smallscore{dox_hostis_herodes_textus_antiquus}
+
+\altertonus
+
+\gscore[]{8.}{hy_hostis_herodes_alter_tonus_textus_antiquus}
+
+\bigtitle{In Quadragesima.}
+\gscore[]{2.}{hy_audi_benigne_conditor_textus_antiquus} 
+\begin{hymnusmulticol}
+\textes{audi_benigne_conditor_textus_antiquus}
+\end{hymnusmulticol}
+
+\bigtitle{Tempus Passionis.}
+\label{hy_vexilla_regis_textus_antiquus}\phantomsection
+\gscore[]{1.}{hy_vexilla_regis_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{vexilla_regis_textus_antiquus}
+\end{hymnusmulticol}
+
+\rubrique{\normaltext{\textsc{i}.} In Inventione S.\@ Crucis dicitur: \normaltext{In hoc pascháli gáudio.}}
+
+\rubrique{In Exaltatione vero ejusdem: \normaltext{In hac tríumphi glória.}}
+
+\bigtitle{Tempore Paschali in Officio de Tempore.}
+
+\gscore[]{8.}{hy_ad_coenam_agni_providi_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{ad_coenam_agni_providi_textus_antiquus}
+\end{hymnusmulticol}
+
+\smallscore{dox_ad_coenam_agni_providi_textus_antiquus}
+
+\altertonus
+
+\gscore[]{4.}{hy_ad_coenam_agni_providi_alter_tonus_textus_antiquus}
+
+\bigtitle{In Ascensione Domini.}
+
+\gscore[]{4.}{hy_jesu_nostra_redemptio_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{jesu_nostra_redemptio_textus_antiquus}
+\end{hymnusmulticol}
+
+\harubrique
+
+\smallscore{dox_ascensionis_textus_antiquus}
+
+\bigtitle{In Pentecoste.}
+
+\label{hy_veni_creator_pentecost_antiquus}
+\gscore[]{8.}{hy_veni_creator_spiritus_solesmes_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{veni_creator_textus_antiquus}
+\end{hymnusmulticol}
+
+\harubrique
+
+\smallscore{dox_pent_ad_horas_textus_antiquus}
+
+\bigtitle{In Festo Ss. Trinitatis.}
+
+\rubrique{Hymnus \normaltext{O Lux beáta Trínitas. \pageref{hy_o_lux_beata_trinitas_textus_antiquus_sab_ad_vesp},} ut supra in Vesperis Sabbati.}
+
+%\addcontentsline{toc}{section}{— — — Proprium Sanctorum.}\phantomsection
+\section[— — — Proprium Sanctorum.]{— — — Proprium Sanctorum.}
+
+\bigtitle{In Festo Immaculatæ Conceptionis B.M.V.}
+
+\rubrique{In fine Hymnorum ad Completorium et ad Horas, dicitur:}
+
+Glória tibi Dómine, –
+Qui natus es de Vírgine, –
+Cum Pa\tinyhspace\textit{tre} et San\-cto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\rubrique{Quæ doxologia semper dicenda est, quando in Antiphonario ponitur: \normaltext{Jesu tibi sit glória, Qui natus es de Vírgine, etc.}}
+
+\bigtitle{In Festo SS.\@ Nominis Jesu.}
+
+\rubrique{Hymni ad Completorium et ad Horas cantantur ut in Nativitate Domini et in fine dicitur \normaltext{Glória tibi Dómine, Qui natus es de Vírgine.}}
+
+\bigtitle{In Utrisque Festo Cathedræ Sancti Petri.}
+
+\gscore[]{4.}{hy_quodcumque_vinclis__textus_antiquus}
+
+\bigtitle{In Conversione Sancti Pauli.}
+
+\label{hy_doctor_egregie_textus_antiquus}\phantomsection
+\gscore[]{4.}{hy_doctor_egregie_textus_antiquus}
+
+\bigtitle{In Apparitione B.M.V. Immaculatæ.}
+
+\rubrique{Hymnus ut in Antiphonario sed in fine dicitur:}
+
+Glória Patri, genitǽque Proli, –
+Et tibi, compar utriúsque semper, –
+Spíritus alme, Deus unus omni –
+Témpore sæcli. Amen.
+
+\bigtitle{In Inventione S.\@ Crucis.}
+
+\rubrique{Hymnus \normaltext{Vexílla Regis, \pageref{hy_vexilla_regis_textus_antiquus}.} In stropha \normaltext{O Crux ave,} dicitur \normaltext{In hoc pascháli gáudio.}}
+
+\bigtitle{In Nativitate S.\@ Joannis Baptistæ.}
+
+\infinediciitur{Ut queant laxis}
+
+Glória Patri, genitǽque Proli, –
+Et tibi, compar utriúsque semper, –
+Spíritus alme, Deus unus omni –
+Témpore sæcli. Amen.
+
+\bigtitle{In Festo SS.\@ Apostolorum Petri et Pauli.}
+
+\gscore[]{4.}{hy_aurea_luce_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{aurea_luce_textus_antiquus}
+\end{hymnusmulticol}
+
+\altertonus
+
+\gscore[]{1.}{hy_aurea_luce_alter_tonus_textus_antiquus}
+
+\bigtitle{In Comm.\@ Sancti Pauli.}
+
+\rubrique{Hymnus \normaltext{Doctor egrégie, \pageref{hy_doctor_egregie_textus_antiquus}.}}
+
+\bigtitle{In Festo Mariæ Magdalenæ.}
+
+\infinediciitur{Pater supérni lúminis}
+
+Deo Patri sit glória, –
+Ejúsque soli Fílio, –
+Cum Spíritu Paráclito, –
+Et nunc et in perpétuum. Amen.
+
+\bigtitle{In Festo Sancti Petri ad Vincula.}
+
+\gscore[]{4.}{hy_petrus_beatus_textus_antiquus}
+
+\bigtitle{In Transfiguratione Domini.}
+
+\infinediciitur{Quicúmque Christum quǽritis}
+
+Glória tibi, Dómine, –
+Qu\textit{i} apparuísti hódie, –
+Cum Patr\textit{e} et Sa\-ncto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\bigtitle{In Exaltatione S.\@ Crucis.}
+
+\rubrique{Hymnus \normaltext{Vexílla Regis, \pageref{hy_vexilla_regis_textus_antiquus}.} In stropha \normaltext{O Crux ave,} dicitur \normaltext{In hac triúmphi glória.}}
+
+Glória tibi, Dómine, –
+Qu\textit{i} apparuísti hódie, –
+Cum Patr\textit{e} et Sa\-ncto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\bigtitle{In Festo Septem Doloris B.M.V.}
+
+\rubrique{Hymni ut in Antiphonario sed in fine Hymni ad Completorium dicitur doxologia:}
+
+Glória tibi, Dómine, –
+Qui passus es pro sérvulis, –
+Cum Patr\textit{e} et Sa\-ncto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\bigtitle{In Festo Impress.\@ Stigmatum S.\@ Francisci.}
+
+\rubrique{In Hymno \normaltext{Iste Conféssor,} dicitur:}
+
+Hac die lætus méruit beátas – Vúlnera Christi.
+
+\bigtitle{In Dedicatione S.\@ Michaelis Archangeli.}
+
+\gscore[]{2.}{hy_tibi_christe_splendor_patris}
+
+\bigtitle{In Festo SS.\@ Rosaii B.M.V.}
+
+\rubrique{Hymni ut in Antiphonario, sed in fine dicitur:}
+
+Glória tibi Dómine, –
+Qui natus es de Vírgine, –
+Cum Pa\tinyhspace\textit{tre} et San\-cto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\bigtitle{In Festo Omnium Sanctorum.}
+
+\gscore[]{8.}{hy_christe_redemptor_omnium_1_nov_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{christe_redemptor_omnium_1_nov_textus_antiquus}
+\end{hymnusmulticol}
+
+\newpage
+%\addcontentsline{toc}{section}{— — — Commune Sanctorum.}\phantomsection
+\section[— — — Commune Sanctorum.]{— — — Commune Sanctorum.}
+
+\bigtitle{Commune Apostolorum et Evangelistarum extra T.P.}
+
+\gscore[]{4.}{hy_exsultet_caelum_laudibus_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{exsultet_caelum_laudibus_textus_antiquus}
+\end{hymnusmulticol}
+
+\altertonus
+
+\gscore[]{1.}{hy_exsultet_caelum_laudibus_alter_tonus_textus_antiquus}
+
+\bigtitle{Commune Apostolorum et Evangelistarum T.P.}
+
+\gscore[]{3.}{hy_tristes_erant_apostoli_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{tristes_erant_apostoli_textus_antiquus}
+\end{hymnusmulticol}
+
+\smallscore{dox_tristes_erant_apostoli_textus_antiquus}
+
+\rubrique{Ab Ascensione ad Pentecosten dicitur sub eodem cantu doxologia:}
+
+Glória tibi Dómine, – Qui scandis super sídera, – Cum Pa\tinyhspace\textit{tre} et San\-cto Spíritu, –
+In sempitérna sǽcula.
+Amen. 
+
+\bigtitle{Commune Unius Martyris extra T.P.}
+
+\gscore[]{8.}{hy_deus_tuorum_militum_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{deus_tuorum_militum_textus_antiquus}
+\end{hymnusmulticol}
+
+\altertonus
+
+\gscore[]{3.}{hy_deus_tuorum_militum_alter_tonus_textus_antiquus}
+
+\newpage
+
+\bigtitle{Commune Plurim.\@ Martyrum extra T.P.}
+
+\gscore[]{2.}{hy_sanctorum_meritis_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{sanctorum_meritis_textus_antiquus}
+\end{hymnusmulticol}
+
+\altertonus
+
+\gscore[]{3.}{hy_sanctorum_meritis_alter_tonus_textus_antiquus}
+
+\bigtitle{Commune Unius et Plurim.\@ Martyrum T.P.}
+
+\smalltitle{Pro Uno Martyre.}
+
+\gscore[]{3.}{hy_deus_tuorum_militum_alter_tonus_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{deus_tuorum_militum_textus_antiquus_sine_dox}
+\end{hymnusmulticol}
+
+\smallscore{dox_tristes_erant_apostoli_textus_antiquus}
+
+\rubrique{Ab Ascensione ad Pentecosten dicitur sub eodem cantu doxologia:}
+
+Glória tibi Dómine, – Qui scandis super sídera, – Cum Pa\tinyhspace\textit{tre} et San\-cto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\altertonus
+
+\gscore[]{4.}{hy_deus_tuorum_militum_alter_tonus_tp_textus_antiquus}
+
+\smalltitle{Pro Pluribus Martyribus.}
+
+\gscore[]{3.}{hy_rex_gloriose_martyrum_tp_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{rex_gloriose_martyrum_tp_textus_antiquus}
+\end{hymnusmulticol}
+
+%\smallscore{dox_tristes_erant_apostoli_textus_antiquus}
+
+\altertonus
+
+\gscore[]{4.}{hy_rex_gloriose_martyrum_alter_tonus_tp_textus_antiquus}
+
+\bigtitle{Commune Confessoris Pontificis}
+
+\gscore[]{8}{hy_iste_confessor_ccp_1_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{iste_confessor_textus_antiquus}
+\end{hymnusmulticol}
+
+\aliustonus[(2)]
+
+\gscore[]{8.}{hy_iste_confessor_ccp_2_textus_antiquus}
+
+\aliustonus[(3)]
+
+\gscore[]{8.}{hy_iste_confessor_ccp_3_textus_antiquus}
+
+\aliustonus[(4)]
+
+\gscore[]{1.}{hy_iste_confessor_ccp_4_textus_antiquus}
+
+\bigtitle{Commune Confessoris non Pontificis}
+
+\gscore[]{2.}{hy_iste_confessor_ccnp_5_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{iste_confessor_textus_antiquus}
+\end{hymnusmulticol}
+
+\aliustonus[(6)]
+
+\gscore[]{1}{hy_iste_confessor_ccnp_6_textus_antiquus}
+
+\aliustonus[(7)]
+
+\gscore[]{1.}{hy_iste_confessor_ccnp_7_textus_antiquus}
+
+\aliustonus[(8)]
+
+\gscore[]{4.}{hy_iste_confessor_ccnp_8_textus_antiquus}
+
+\bigtitle{Commune Virginum.}
+
+\gscore[]{8.}{hy_jesu_corona_virginis_textus_antiquus}
+
+\altertonus
+
+\gscore[]{2.}{hy_jesu_corona_virginis_alter_tonus_textus_antiquus}
+
+\smalltitle{Tempore Paschali}
+
+\gscore[]{3.}{hy_jesu_corona_virginum_tp_textus_antiquus}
+
+\smallscore{dox_tristes_erant_apostoli_textus_antiquus}
+
+\rubrique{Ab Ascensione ad Pentecosten dicitur sub eodem cantu doxologia:}
+
+Glória tibi Dómine, – Qui scandis super sídera, – Cum Pa\tinyhspace\textit{tre} et San\-cto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\altertonus
+\gscore[]{4.}{hy_jesu_corona_virginum_tp_alter_tonus_textus_antiquus}
+
+\bigtitle{Commune non Virginum.}
+
+\gscore[]{2.}{hy_fortem_virili_pectore_textus_antiquus}
+
+\begin{hymnusmulticol}
+\textes{fortem_virili_pectore}
+\end{hymnusmulticol}
+
+\smalltitle{Tempore Paschali}
+
+\gscore[]{3.}{hy_fortem_virili_pectore_tp_textus_antiquus}
+
+\smallscore{dox_tristes_erant_apostoli_textus_antiquus}
+
+\rubrique{Ab Ascensione ad Pentecosten dicitur sub eodem cantu doxologia:}
+
+Glória tibi Dómine, – Qui scandis super sídera, – Cum Pa\tinyhspace\textit{tre} et San\-cto Spíritu, –
+In sempitérna sǽcula.
+Amen.
+
+\gscore[]{4.}{hy_fortem_virili_pectore_alter_tonus_tp_ta}
+
+\bigtitle{In Dedicatione Ecclesiæ.}
+
+\gscore[]{4.}{hy_urbs_jerusalem_beata_solesmes_1934}
+
+\begin{hymnusmulticol}
+\textes{urbs_beata_jerusalem}
+\end{hymnusmulticol}
+
+\bigtitle{In Officio Parvo B.M.V.}
+
+\rubrique{In tono B.M.V.}
+
+\begin{hymnusmulticol}
+\textes{memento_salutis_actor_textus_antiquus}
+\end{hymnusmulticol}
+
+\end{document}
