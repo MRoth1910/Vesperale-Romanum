@@ -11,7 +11,18 @@
 
 \begin{document}
 
+%\clearpage{\thispagestyle{empty}\cleardoublepage}
+
+\newpage\null\thispagestyle{empty}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\thispagestyle{empty}
 %%we need to figure out blank pages here
+
+\vspace*{\fill}
+{\centering{{\huge\capspace{VESPERALE ROMANUM}}}\par}
+\vspace*{\fill}
 
 \begin{titlepage}
  \begin{center}
@@ -34,10 +45,46 @@
  {\centering{\large{Editio Nova}\par}}
 {\centering{\LARGE\scspace{sancta maria ab assumptione}\par}}
  {\centering{\capspace{\YEAR}\par}}
+ 
+ %%maybe have to replace \YEAR with MMXV and then move \YEAR to next page for each revision/new edition
 \end{titlepage}
 
-\shipout\null
-\shipout\null
+\thispagestyle{empty}
+
+Editio Prima: 2025
+
+\vspace{\baselineskip}
+
+%%translate "made with"
+
+Lua\LaTeX{} \& Gregorio v. 6.0
+
+\vspace{\baselineskip}
+
+\scspace{isbn}:
+
+\vspace*{\fill}
+{\centering{\Large\scspace{Nihil obstat.}\par}}
+
+\vspace{\baselineskip}
+
+{\centering{\Large\scspace{Imprimatur.}\par}}
+
+\vspace*{\fill}
+
+%%to translate: Free from all known restrictions.
+
+%%%dummy text for now
+  \makebox[0pt][l]%
+  {\phantom{10.}} %
+
+%\shipout\null
+%\shipout\null
+\newpage\null\thispagestyle{empty}
+
+\newpage\null\thispagestyle{empty}\newpage
+%\cleardoublepage
+%\cleardoublepage
 
 \frontmatter
 
