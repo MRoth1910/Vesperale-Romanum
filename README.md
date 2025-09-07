@@ -20,19 +20,21 @@ However, this is not simply a reproduction. We aim to improve upon the tradition
 
 Join us! We especially need:
 
-– those who sing Vespers regularly (particularly some form of 1960 or Pius X/XII Vespers) to voice their opinion and submit corrections, including academics and professional church musicians who sing Vespers, and clergy familiar with the traditional office and with chant.
-– anyone interested in type (to fix some problems in EB Garamond)
-– graphic designers (we need an artist for the title page)
-– TeX experts
-– anyone with experience printing a chant book (or aa breviary, missal, etc.) in the last ten to twenty years
-– Gregorio-specific experts
-– someone with a solid understanding of the pre-1955 rubrics
-– a Latinist (or a few)
+- those who sing Vespers regularly (particularly some form of 1960 or Pius X/XII Vespers) to voice their opinion and submit corrections, including academics and professional church musicians who sing Vespers, and clergy familiar with the traditional office and with chant.
+- anyone interested in type (to fix some problems in EB Garamond)
+- graphic designers (we need an artist for the title page)
+- TeX experts
+- anyone with experience printing a chant book (or aa breviary, missal, etc.) in the last ten to twenty years
+= Gregorio-specific experts
+- someone with a solid understanding of the pre-1955 rubrics
+- a Latinist (or a few)
 
 
-- To actually compile documents, you need a working LaTeX distribution and an editor (either a GUI for LaTeX specifically or your text editor of choice. See [here](https://latex-tutorial.com/installation/) for information about MikTeX, [here](https://tug.org/mactex/) for MacTeX (which works very well on macOS), and [here](https://tug.org/texlive/acquire-netinstall.html) for TeXLive. You can also work on [Overleaf](https://www.overleaf.com) if you really want.
-- It may be helpful to edit gabc files in a visual editor such as [Source and Summit](https://www.sourceandsummit.com/editor/alpha) (but note that it isn't up to date, so some Gregorio features won't work correctly!).
-- See below for font information.
+To actually compile documents, you need a working LaTeX distribution and an editor (either a GUI for LaTeX specifically or your text editor of choice. See [here](https://latex-tutorial.com/installation/) for information about MikTeX, [here](https://tug.org/mactex/) for MacTeX (which works very well on macOS), and [here](https://tug.org/texlive/acquire-netinstall.html) for TeXLive. You can also work on [Overleaf](https://www.overleaf.com) if you really want.
+
+It may be helpful to edit gabc files in a visual editor such as [Source and Summit](https://www.sourceandsummit.com/editor/alpha) (but note that it isn't up to date, so some Gregorio features won't work correctly!).
+
+ See below for font information.
 
 
 # Top-level tasks
