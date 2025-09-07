@@ -1,4 +1,6 @@
-% !TEX TS-program = LuaLaTeX+se
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
+
 \documentclass[11pt]{article}
 \usepackage[a4paper]{geometry}
 \usepackage[french, ecclesiasticlatin.usej, english]{babel}
@@ -51,37 +53,71 @@ Numbers=OldStyle]
 }
 
 \begin{document}
-\section{General Proofreading and Stylistic Considerations, Version 0.6. \today}
+\section{General Proofreading and Stylistic Considerations, Version 0.7. \today}
 
 The typographical standards are peculiar, due to the typesetting system required and other factors (namely, the sources of the chant and individual preferences), so some documentation should be given.
 
-Modern typesetting of chant is inconsistent with ligatures. Dom Pothier did use ``æ'' and ``st'' or ``ct'' in books which he edited and had printed before his departure from Solesmes and before the monks stopped printing themselves. The Vatican edition, at least in the 1913 Vesperale Romanum, uses ``æ'', but the Solesmes antiphonal does not, nor does the Liber Usualis.
+Modern typesetting of chant is inconsistent with ligatures. Dom Pothier did use ``æ'' and ``st'' or ``ct'' in books which he edited and had printed before his departure from Solesmes and before the monks stopped printing themselves. The Vatican edition, at least in the 1913 Vesperale Romanum, uses ``æ'', but the Solesmes antiphonal does not, nor does the \textit{Liber Usualis,} but Desclée editions using the Solesmes scores use ligatures (cf. \textit{Chants divers}).
 
-However, part of this project's aim is taking full advantage of computer typography, and the ease of using OpenType font features in Lua\LaTeX. The ligatures for ``st'' or ``ct'' can be set, and are, via \verb|fontspec|. Because \verb|babel| (or at least its Latin extension) is prone to not working, it seems best to type directly (say, option + \verb|'| on macOS to get ``æ'') or switching to a Unicode keyboard (needed for ``ǽ'') or copying and pasting. This also seems important, since it insists on the ability of Lua\LaTeX to support Unicode (provided that the chosen typeface supports it — and EB Garamond supports almost all Catholic typographical needs but the Maltese cross, actually a cross pattée, which isn't needed in an antiphonal, with the exception of ``œ'' with an acute accent, which is very rarely needed). By the way, another reason for using the ligatures is to ensure some consistency with the way that the chant is supposed to be sung according to the Vaticana and the classical Solesmes method.
+However, part of this project's aim is taking full advantage of computer typography, and the ease of using OpenType font features in Lua\LaTeX{}. The ligatures for ``st'' or ``ct'' can be set, and are, via \verb|fontspec|. Because \verb|babel| (or at least its Latin extension) is prone to not working, it is best to type directly (say, option + \verb|'| on macOS to get ``æ'') or switching to a Unicode keyboard (needed for ``ǽ'') or copying and pasting. This also seems important, since it insists on the ability of Lua\LaTeX{} to support Unicode (provided that the chosen typeface supports it — and EB Garamond supports almost all Catholic typographical needs except for the Maltese cross (actually a cross pattée, which isn't needed in an antiphonal).
 
-Gregorio also provides its own shortcuts, particularly for the ℣ and ℟, but using those of the text font works too, and that is the approach taken. The slashed-A is more difficult to create, so it has been avoided although if someone wants to provide code based on the Gregorio documentation, that is certainly welcome.
+For ``œ'' with an acute accent, which is very rarely needed), we have a \TeX{} solution:
 
-Some of this will be repeated from the psalm proofreading guide, FYI. 
+\begin{verbatim}\ooalign{\hss\kern.2ex\'{}\hss\crcr\oe\end{verbatim}
+
+This goes between \verb|{}| with \verb|<v>| tags in scores to keep the vowel centered. (These are philologically required and are not substitutable in writing for ``ǽ''.)
+
+By the way, another reason for using the ligatures is to ensure some consistency with the way that the chant is supposed to be sung according to the Vaticana and the classical Solesmes method.
+
+Gregorio also provides its own shortcuts, particularly for the ℣ and ℟, but using those of the text font works too, and that is the approach taken. (The period after closing tags needs to be removed from Gregobase scores when two periods are printed.)
+
+The slashed-A is more difficult to create, so we are not using it.
 
 \begin{itemize}
 \item
- Punctuation goes inside of braces so \verb|\textbf{nunc},| (\textbf{nunc},) or \verb|\textit{nunc},| (\textit{nunc},) is now\\ \verb|\textbf{nunc,}| (\textbf{nunc,}) or \verb|\textit{nunc,}| (\textit{nunc,}). This is usually the American standard, and it ensures both correct kerning as well as less of a clash between the last letter of a word and the following punctuation mark. You should be able to do a find-and-replace with whatever editor you use.
+ Punctuation goes inside of braces so \verb|\textbf{nunc},| (\textbf{nunc},) or \verb|\textit{nunc},| (\textit{nunc},) is now\\ \verb|\textbf{nunc,}| (\textbf{nunc,}) or \verb|\textit{nunc,}| (\textit{nunc,}).
+ \begin{itemize}
  \item
-Scriptural books will be given an abbreviation (essentially, the one in the sources, except for the letter of Peter, which is \textit{1 Petri.}). Arabic numbers shall be used, both before books of which there is more than one and after, for chapter and verse. The chapter and verse are separated by a comma, according to the French custom, and the references closes with a period.
- For example, \spurhspace\textit{Jer. 11, 20.} and \textit{1 Cor. 9, 24.}
+ This is the American standard, and it ensures both correct kerning as well as less of a clash between the last letter of a word and the following punctuation mark. You should be able to do a find-and-replace with whatever editor you use.
+ \end{itemize}
+ \item
+Scriptural books will be given an abbreviation (essentially, the one in the sources, except for the letter of Peter, which is \textit{Petri,} and Isaiah is \textit{Isaiæ}).
+\item
+Arabic numbers shall be used, both before books of which there is more than one and after, for chapter and verse. The chapter and verse are separated by a comma, according to the French custom, and the references closes with a period.
+ \begin{itemize}
+\item
+ For example, \hspace{0.05em}\textit{Jer. 11, 20.} and \textit{1 Cor. 9, 24.}\end{itemize}
  \item
 The en dash \verb|–| will be used for Scriptural passages of multiple consecutive verses, in American style, but surrounded by a space like in French style. \textit{Luc. 1, 46 – 55.}
 \item
-\verb|babel| offers a thin space between a word and a following colon. This looks nice (and is the Swiss usage). We will follow this (which will require a ctrl+f search of any .gabc file from Gregobase). The psalm files from Ben Bloomfield do not have an extra, manually-inserted space, and we aim to keep it that way.
+\verb|babel| offers a thin space between a word and a following colon.
+ \begin{itemize}
+ \item
+ This looks nice (and is essentially the Swiss usage).
+ \item
+ We will follow this (which will require a ctrl+f search of any .gabc file from Gregobase).
+ \item
+ The psalm files from Ben Bloomfield do not have an extra, manually-inserted space, and we aim to keep it that way.
 \item
-We will let \LaTeX\ (well, \verb|babel|) do its thing with other double punctuation marks: no other intervention should be needed. This also saves quite a bit of space on the page (unfortunately at a premium), even if one has a preference for the spaces of French typography, so it's a good compromise.
+We will let \LaTeX{}\ (well, \verb|babel|) do its thing with other double punctuation marks: no other intervention should be needed. This also saves quite a bit of space on the page (unfortunately at a premium): this is the best compromise between American/Anglo and French usage.
+\end{itemize}
 \item
-Both the Vatican edition and the Solesmes (by which we really mean Desclée, once the monks gave control of the printing operations to the firm) editions insert spaces around the dagger and the asterisk, such as in the collects and psalms. However, just as in psalm files from Ben Bloomfield, we will keep them with preceding words, using \verb|~|. The Vaticana allows the symbols to float to the next line, but  a more-than-cursory glance at the Solesmes editions suggests that this isn't the case for those books. Either way works, so we are picking the Solesmes way and sticking with it.
+Both the Vatican edition and the Solesmes (by which we really mean Desclée) editions insert spaces around the dagger and the asterisk, such as in the collects and psalms. However, just as in psalm files from Ben Bloomfield, we will keep them with preceding words, using \verb|~|. The Vaticana allows the symbols to float to the next line, but  a more-than-cursory glance at the Solesmes editions suggests that this isn't the case for those books. Either way works, so we are picking the Solesmes way and sticking with it.
+ \begin{itemize}
 \item
-The syllabification of non-psalm texts needs to be determined. Solesmes masterfully kept together most words which have a different syllabification in the missal such as ``Sanctus'' (San-ctus or Sanc-tus, the latter being followed by \verb|babel|, an editorial decision taken, even though the ``ct'' grouping dates to Roman times; this comes from Keno Wehr). ``Omnium'' and related words would be treated differently as well (see any number of chants where the hyphenation indicates o-mn but where the missal texts are om-). If the package cannot be fixed, then \verb|\-| is required. (There may be better ways than the LaTeX soft hyphen: to be investigated further as of Dec. 5, 2023, but for now this is the solution.). Other consonant pairs have the same problem (``pt'', ''ps'' — particularly ``ipse'' and so on, etc.) \emph{Update September 30, 2024} ``San-ctus'' is the preferred syllabification in the Liber Usualis.
+If someone wants to fork Octavio Pardo's version of EB Garamond and create a narrow no-break space \verb|U+202F|, based on the guidelines from the French \textit{Imprimerie nationale,} we can use this to do a find-and-replace search for every \verb|†~| and \verb|*~|.
+\end{itemize}
+\item
+Solesmes masterfully kept together most words which have a different syllabification in the missal such as ``Sanctus'' (San-ctus or Sanc-tus, the latter being followed by \verb|babel|, even though the ``ct'' grouping dates to Roman times according to Keno Wehr). ``Omnium'' and related words would be treated differently as well (see any number of chants where the hyphenation indicates o-mn but where the missal texts are om-).
+ \begin{itemize}
+ \item
+  If the package hyphenation cannot be fixed, then \verb|\-| is required. (There may be better ways than the LaTeX{} soft hyphen: to be investigated further as of Dec. 5, 2023, but for now this is the solution.). Other consonant pairs have the same problem (``pt'', ''ps'' — particularly ``ipse'' and so on, etc.) \emph{Update September 30, 2024} ``San-ctus'' is the preferred syllabification in the \textit{Liber Usualis.} 
 
 \item
 There are also some words (in psalms, antiphons, hymns, etc.) whose syllabification has to be fixed or checked, both based on what Jacques Perrière has done for corresponding .gabc files and based on the expertise of someone knowledgeable about pre-1981 Solesmes publications (a common example would be Redemptor; a review of the \verb|babel| documentation will be necessary. A notated copy of the documentation available has been made available (that is, some comments about pre-1960s Solesmes practice are added to the plaintext file).
+ \item
+\verb|Red-ém-ptor| is the preferred syllabification of that word.
+\end{itemize}
 
 \item
 The sources are to be followed, so the colon alone is used for dialogue (no guillemets as in modern, i.e. postconciliar editions) if anything is offset at all, e.g. in ps. 109 (and any chant which quotes it).
@@ -91,15 +127,15 @@ The sources are to be followed, so the colon alone is used for dialogue (no guil
 \subsection{Other Considerations}
 \begin{itemize}
 \item
-For chant itself: the Si rules are those of Solesmes plus a clarification based on their traditional typography: the note is flat until the word ends, until a natural sign is printed, a bar appears (very rare in the evening offices), or a line ends (also rare); the note is also flat when printed for the entire chant. We leave off the feature to print a flat at a custos as it is only used once and it causes problems on second passes.
+For chant itself: the Si/Ti rules are those of Solesmes plus a clarification based on their traditional typography: the note is flat until the word ends, until a natural sign is printed, a bar appears (very rare in the evening offices, but it appears in some graduals, cf. those of SS.\@ Peter and Paul and of the XIII Sunday after Pentecost), or a line ends (also rare, cf. the tract of Palm Sunday); the note is also flat when printed for the entire chant. We leave off the feature to print a flat at a custos as it is only used once in any edition and it causes problems on second passes.
 \item
-Adjustments to italicized syllables in psalms need to be made carefully.
+Adjustments to italicized syllables in psalms need to be made carefully. First, two repeated \verb|\textit{| invocations need to be removed by searching for \verb|}\textit{| and replacing it with nothing, to recombine the word, to allow for correct syllable breaks. Then \verb|\hspace*| is inserted to correct letters (especially serifs or round letters such as ``o'') from touching too much.
 \item
 All titles will end with a period. If one is not present at the end of something such as ``I Antiphona 8. G'', it should be added (there is a little inconsistency here in the sources). (Revised Oct 2024: the mode differential no longer gets a period in this instance; \verb|\primaantiphona| does not include a period after <differentia> and periods need to be removed from the argument where they are found in the text)
 \item
 Roman numerals, following the monastic antiphonal, will not be followed by periods; the book looks more modern this way.
 \item
-To follow on the above, Scripture verses as numbers will be used instead of chapter divisions of the Vulgate by letter (the 1934 Antiphonale monasticum already does this). They will be taken from DivinumOfficium.
+To follow on the above, Scripture verses as numbers will be used instead of chapter divisions of the Vulgate by letter (cf. the \textit{Antiphonale Monasticum}). They will be taken from DivinumOfficium.
 \item
 (Fixed) For now ``Capitulum'' is written on one line, the Scriptural source on another line, but if someone wants to make it so that the two can be on one line (like in the antiphonal), please, contribute! \emph{as of May 2024} there is a solution which should allow for elegant indentation and placement of elements on the same line. ``Lectio brevis'' at Compline gets the same treatment.
 \item in the commons, there are sometimes several orations, not chosen randomly by the celebrant but assigned to each saint; they are needed in case a saint isn't on the general calendar but where the office is taken from the common due to the lack of a local, proper office. There may be too much space between these which is essentially wasteful, but the idea is that the word ``Oratio.'' (or whatever introduces a second, etc. prayer) can't be split from the text, so we require space in the macro definition (as of September 2024).
@@ -109,14 +145,18 @@ To follow on the above, Scripture verses as numbers will be used instead of chap
 Chants which in the Solesmes antiphonal have an illustrated initial should be given one here. Ditto usage of \verb|greannotation| (one or both invocations) versus a line of text (``Antiphona ad Magnificat'', with or without the mode). Style for antiphons on Sundays is TBD, since the source books use "Antiphona ad Magnificat" which takes up so much more room. \emph{as of September 2024} ferial days of any season, Saturdays/Sundays \textit{per annum,} and other Sundays follow the Liber Usualis style, but all feasts and commons use antiphonal style.
 \item While the final use of the sectioning commands, with changes made via \verb|titlesec| is  to be determined, a preliminary form approaching what the final project should resemble is in the \verb|commonheaders| (as of October 2023). Determining the correct commands to use is a major ``next step''.
 \item
-The pilcrow is italicized for now because it looks nice. This isn't necessarily proper, but it's a choice.
+The pilcrow is italicized, in most cases, for now because it looks nice. This isn't necessarily proper, but it's a choice.
 \item
 Originally, the plan was to copy the Roman antiphonal for the proper of saints (which requires three lines for the date, the saint's name or the name of the feast, and the rank) but copying the monastic antiphonal might be a better way forward. To be determined. (Contributions welcome in the meantime.)
-\item the Iste Confessor, per the pre-1960 rubrics, has two texts for the third strophe (Latin \textit{verse} of what in English is the first first, before the first double bar (and in our edition the number ``2.''). When the antiphonal/breviary indicates \textit{m.t.v.} on the feast day, then one followss this rubric which means that``the third verse is changed''.
+\begin{itemize}
+\item only special feasts (cf. Feria VI post Dom. Passionis) and major feasts require the date to be at the top of the entry; the rest have the date on the left side, with the entry centered, then the rank is below.
+\end{itemize}
+\item the ``Iste Conféssor'', per the pre-1960 rubrics, has two texts for the third strophe (Latin \textit{verse} of what in English is the first first, before the first double bar (and in our edition the number ``2.''). When the antiphonal/breviary indicates \textit{m.t.v.} on the feast day, then one followss this rubric which means that``the third verse is changed''.
 
 \begin{itemize}
 \item
-Gregorio doesn't offer an easy way to print text underneath a single melody that allows for proper alignment, and hacking the translation feature is error-prone. We have chosen to mark the words with an ``*'' and to include the melody and the other text between \verb|[]|.
+Gregorio doesn't offer an easy way to print text underneath a single melody that allows for proper alignment, and hacking the translation feature is error-prone. We have chosen to mark the words with an ``*'' and to include the melody and the other text between \verb|[]| in the hymn ``Iste conféssor''.
+\item but we hack the translation feature for the ``Vexílla regis``.
 \end{itemize}
 \end{itemize}
 
@@ -124,7 +164,7 @@ Version History:
 
 0.1: First full draft. Oct. 13, 2023.
 
-0.2: Revisions made to make the sentences clearer and to note possibilities for future changes to the LaTeX macros.
+0.2: Revisions made to make the sentences clearer and to note possibilities for future changes to the LaTeX{} macros.
 
 0.3 Note of Capitulum code revision
 
@@ -133,5 +173,7 @@ Version History:
 0.5 Add information about Iste confessor and third verse; modify Magnificat antiphon style; confirm syllabification where \verb|babel| differs from pre-1970s Solesmes, fix typos; space around collect texts.
 
 0.6 revise period usage with macro \verb|\primaantiphona|
+
+0.7 revision
 
 \end{document}
