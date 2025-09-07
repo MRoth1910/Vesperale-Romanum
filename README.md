@@ -11,12 +11,41 @@ You can open an Issue. Or if you'd like, vesperaleromanum(at)gmail.com
 
 Our project builds upon the great work of the Vatican commission, which published the official edition of the Antiphonale Romanum in 1912 (a vesperale followed in 1913) and the monks of the abbey of Saint-Pierre de Solesmes, whose research of medieval manuscripts led to the Vatican commission and to subsequent editions published with the rhythmic signs favored by Solesmes.
 
-The Vesperale Romanum has thousands of pieces that need to be proofread and then typeset. Some pieces (mostly antiphons of the Proprium Tempore) remain to be transcribed and uploaded to Gregobase or edited there. At that point, they can then be typeset.
-
 # Why a new vesperale?
 It is intended as a replacement for print copies, given that neither the full antiphonal nor either vesperale (Vaticana or Solesmes) are in print or are easily obtained. Further, we wish to take advantage of Gregorio, which allows for computer typesetting of Gregorian chant via LuaLaTeX; this is superior to relying on scans, since even if a high-quality scan were available, the quality of the printed score would quickly deterioate, which is the case with the republished _Liber Usualis_ and _Liber Brevior,_ where the neumes such as the quilisma or the rhythmic signs (notably the ictus) are not always identifiable.
 
 However, this is not simply a reproduction. We aim to improve upon the traditional books to make the book as easy to use as possible, although a certain familiarity with the office is required due to the nature of a printed book.
+
+# Contributions
+
+Join us! We especially need:
+
+– those who sing Vespers regularly (particularly some form of 1960 or Pius X/XII Vespers) to voice their opinion and submit corrections, including academics and professional church musicians who sing Vespers, and clergy familiar with the traditional office and with chant.
+– anyone interested in type (to fix some problems in EB Garamond)
+– graphic designers (we need an artist for the title page)
+– TeX experts
+– anyone with experience printing a chant book (or aa breviary, missal, etc.) in the last ten to twenty years
+– Gregorio-specific experts
+– someone with a solid understanding of the pre-1955 rubrics
+– a Latinist (or a few)
+
+
+- To actually compile documents, you need a working LaTeX distribution and an editor (either a GUI for LaTeX specifically or your text editor of choice. See [here](https://latex-tutorial.com/installation/) for information about MikTeX, [here](https://tug.org/mactex/) for MacTeX (which works very well on macOS), and [here](https://tug.org/texlive/acquire-netinstall.html) for TeXLive. You can also work on [Overleaf](https://www.overleaf.com) if you really want.
+- It may be helpful to edit gabc files in a visual editor such as [Source and Summit](https://www.sourceandsummit.com/editor/alpha) (but note that it isn't up to date, so some Gregorio features won't work correctly!).
+- See below for font information.
+
+
+# Top-level tasks
+
+- Collect all chants from Gregobase and transcribe missing solemn versicles, etc. common tones; psalms are taken from Ben Bloomfield's Psalm Tone Tool. (This should be done as of Sept. 2025). Correct as necessary (file names, following style guides)
+- Collect texts from Divinum Officium or Psalm Tone Tool; correct as necessary per style guides.
+– Typeset each part of proper of time, of saints, commons, varia, appendices. Done as of Sept. 2025
+- Index chants that need to be indexed, create index of feasts as well. To do as of Sept. 2025.
+– Correct Latin rubrics (both for typographical errors and for errors in Latin in new rubrics). To do as of Sept. 2025.
+– Correct typographical errors of first draft (following style guide, checked against Solesmes LA1949). To do as of Sept. 2025.
+– Tweak Gregorio output (including finalizing where EUOUAE needs to be kept) adjusting page breaks accordingly.
+- Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
+- Proofread completed book(s) (including pageref to Gregorio scores).
 
 # Editorial Principles and Choices Made
 
@@ -24,36 +53,38 @@ The vesperale project follows at its heart the office up to the changes of Pope 
 
 This aims to be a practical book to be put out as soon as possible, and we do not intend to include any melodic restitutions, which also avoids disturbing the faithful used to the existing melodies.
 
-We plan to include the ancient hymns in the appendix (the FSSP vesperal for 1960 does as well).
+We plan to include the ancient hymns in the appendix; the FSSP vesperal for 1960 does as well.
 
 We will keep the reciting tone of psalms in mode 3 on Do. The more recent form of tone 6 is paired per custom with the antiphons of mode 6.
-The ending of tone 2 psalms is the same as in the Vatican Edition and the Solesmes books.
+The ending of tone 2 psalms is the same as in the Vatican Edition and the Solesmes books, and the default tone for the tonus peregrinus is the Solesmes tone in common use.
 
-For tones 4A* and 8G*: we will, however, deviate. The endings with a podatus will be given at the end of the first verse because custom has changed even even from Solesmes-style practice: Dom Suñol decreed that this special ending was to be sung only at the doxology, but in practice, it is sung for every verse.
+For tones 4A* and 8G*: we will, however, deviate: the endings with a podatus will be given at the end of the first verse and where EUOUAE is printed.
 
-Since the psalm ending is provided, EUOUAE is largely commented off in the code for psalm antiphons (it will be entirely removed from scores of the Triduum). But as this is a practical edition, the Magnificats will be printed in one block as in the Liber Usualis, and so EUOUAE will be kept there (As of June 2024). In some cases, EUOUAE is given if a page turn to the psalm is necessary (since chanters may wish to turn back to the antiphon before singing the final verse beginning "Sicut erat…").
+Since the psalm ending is provided, EUOUAE is usually commented off in the code for psalm antiphons (it will be entirely removed from scores of the Triduum). But as this is a practical edition, the Magnificats will be printed in one block as in the Liber Usualis, and so EUOUAE will be kept there. In some cases, EUOUAE is given if a page turn to the psalm is necessary (since chanters may wish to turn back to the antiphon before singing the final verse beginning "Sicut erat…").
 
-The rhythmic signs are kept. Although the spacing is different between the Vatican Edition and the Solesmes books (sometimes admittedly obscuring the _mora vocis_), it is easier to keep all rhythmic signs than to pick and to choose, and given the number of chanters who still use even the ictus (sometimes called the "vertical episema"), it is better to abstain from interventions and to simply reproduce the signs, ideally up to the 1960 edition of the _Liber antiphonarius_ wherein most but not all "redundant cadences" where notes on an accent on a penultimate syllable and on the final weak syllable have a dot; most antiphosn in the last versions of the Solesmes editions, and therefore most Gregobase antiphons, have the dot on both notes.
+The rhythmic signs are kept. It is easier to keep the rhythmic signs than to pick and choose and to then change the spacing from the Solesmes edition to the Vatican Edition. With a few exceptions where Solesmes had to faithfully observe the Vatican Edition's inclusion of incorrect notation (on first syllables of spondees following a half bar, which should have two longer neumes instead of one ordinary punctum) we simply reproduce the signs and notation, ideally up to the 1960 edition of the _Liber antiphonarius._
 
-We wish to facilitate chanting, and the direction of chanters by choirmasters, by providing pointed psalms (italics and bolding following the _Liber Usualis,_ with the first verse of the psalm provided in chant) under every antiphon or, for the common and proper of saints and for the variable psalms of major feasts of the temporal cycle, at least once per division of the book so as to reduce repetition but in minimizing the turns needed (and the number of ribbons or bookmarks). 
+Pointed psalms (italics and bolding following the _Liber Usualis,_ with the first verse of the psalm provided in chant) are given under every antiphon or, for the common and proper of saints and for the variable psalms of major feasts of the temporal cycle, at least once per division of the book so as to reduce repetition but in minimizing the turns needed (and the number of ribbons or bookmarks). This makes chanting easier, with fewer page turns.
 
-For the psalter, antiphons are given as in the antiphonal and in the _Liber Usualis_ for Sunday and Saturday Vespers and at Compline; otherwise, the psalms and antiphons are as in the _Liber Usualis,_ with the full antiphon given at the beginning of the corresponding Vespers psalm (to faciliate chanting on double feasts which use the ferial psalms). 
+The verse numbers going from 1 to n are kept from the form of the Liber Usualis as a reference for choirmasters working with singers and organists not sufficiently fluent in Latin, particularly useful in finding their place in rehearsals or keeping track of divisions while singing the office. The FSSP vesperal keeps these numbers as well.
 
-For now (as of May 2024),in the psalter, we give the first verse of psalms which have a different first verse from the antiphon (e.g. at Friday Compline, but not at Saturday Vespers). The first verse is need in the case of Friday Compline sung on Saturday since the antiphon begins with the same words but is not the same text in full. The first psalm of Saturday Vespers presents a problem without an elegant solution: the first word "Benedictus" must be sung with the ordinary intonation, before the rest of the psalm as given, as the antiphon text does not contain the entire first verse. But in the fifth psalm, the intonation needs to be sung on the second verse (just as on Sundays with psalm 109), the antiphon containing the full first verse having been sung in full.
+For the psalter, antiphons are given as in the antiphonal and in the _Liber Usualis_ for Sunday and Saturday Vespers and at Compline; otherwise, the psalms and antiphons are as in the _Liber Usualis,_ with the full antiphon given at the beginning of the corresponding Vespers psalm (to faciliate chanting on double feasts which use the ferial psalms and on ferias for those following 1960).
 
-Proper antiphons in the other parts of the book are given before the psalm, as is the case for Matins and Tenebrae in the _Liber Usualis._
+In the psalter, we give the first verse of psalms which have a different first verse from the antiphon (e.g. at Friday Compline). The first verse is need in the case of Friday Compline since the antiphon begins with the same words but is not the same text in full.
+
+The first psalm of Saturday Vespers presents a problem without an elegant solution: the first word "Benedictus" must be sung with the ordinary intonation, before the rest of the psalm as given, as the antiphon text does not contain the entire first verse. Therefore, Saturday, only the first word of psalm 143.I with its intonation is needed for those singing Vespers per annum according to the 1960 office; due to page limitations, and to avoid confusion, we do not print it, but if needed, it is printed in full under Saturdays Vespers in Paschal Time. Note that in the fifth psalm, when following 1960 rubrics, the intonation needs to be sung on the second verse (just as on Sundays with psalm 109, for 1960 practice), the antiphon containing the full first verse having been sung in full.
+ 
+Proper antiphons in the other parts of the book are given before the psalm and are not repeated afterwards, as is the case for Matins and Tenebrae in the _Liber Usualis._
 
 In the _Liber Usualis,_ the most commonly used book even today, the singer is forced to turn delicate pages in order to find most of the psalms, and the book is very unbalanced, particularly for Sunday Vespers. We aim to avoid this by moving the psalter to the middle as in postconciliar editions. This should also maximize the life of the binding. Further, the size will hew as closely as possible to that of the modern Solesmes antiphonal.
 
-The tones of the hymns are taken from the 1912 edition as reproduced by Solesmes; the elisions are given per the Solesmes editions, that is to say that hypermetric syllables are left in, to let those chanters who sing them sing them and to let those who omit them do so as well.
+The tones of the hymns are taken from the 1912 edition as reproduced by Solesmes; the elisions are given per the Solesmes editions, that is to say that hypermetric syllables are left in, to let those chanters who sing them sing them and to let those who omit them do so as well, except for a few late editions which omit these syllables.
 
-The Magnificat will be given in full with all of the tones necessary, as in the Liber Usualis; the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones, which poses a problem with some tones such as 4E.
+The Magnificat will be given in full with all of the tones necessary, as in the _Liber Usualis;__ the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones, which poses a problem with some tones such as 4E.
 
 The common tones will also be reproduced in a dedicated section, at the front of the book (somewhat like in the antiphonal, and therefore not at Sunday/Monday Vespers and Sunday Compline).
 
-We inclue the chants needed for benediction, and a supplement for the 1960 office, as well as the latter changes of Pope Pius XII (e.g. May 31, August 22) will be included (however, this is a secondary task to actually typesetting the book). If possible, the proper for France will be typeset as well (as a secondary task).
-
-The verse numbers going from 1 to n are kept from the form of the Liber Usualis as a reference for choirmasters working with singers and organists not sufficiently fluent in Latin, particularly useful in finding their place in rehearsals or keeping track of divisions while singing the office (This is subject to change, but it is a primary practical consideration). The FSSP's vesperal for the 1960 office does the same thing.
+We inclue a selection of chants needed for benediction.
 
 # Sources:
 
@@ -72,34 +103,6 @@ The versicle punctuation also comes from the chant books. Ensuring that chanters
 
 The punctuation and syllabification of the psalms is to follow the _Liber Antiphonarius_ and especially the _Liber Usualis,_ since bolding and italics are determined by `\textbf` and `\textit` with the text in between curly braces `{}`. For the flex (`†`), a decision will have to be made on a case-by-case basis if problems arise, as the placement may have changed in the 1961 LU. Additionally, Ben Bloomfield seems to have followed the breviary, so commas need deleting, colons need replacing with periods (at the end of verses), etc. and we will add verse numbers following the LU for convenience (this is done in LaTeX using `\item` and an `enumerate` environment controlled with the `enumitem` package)
 
-# Contributions
-
-- To actually compile documents, you need a working LaTeX distribution and an editor (either a GUI for LaTeX specifically or your text editor of choice. See [here](https://latex-tutorial.com/installation/) for information about MikTeX, [here](https://tug.org/mactex/) for MacTeX (which works very well on macOS), and [here](https://tug.org/texlive/acquire-netinstall.html) for TeXLive. You can also work on [Overleaf](https://www.overleaf.com) if you really want.
-- It may be helpful to edit gabc files in a visual editor such as [Source and Summit](https://www.sourceandsummit.com/editor/alpha) (but note that it isn't up to date, so some Gregorio features won't work correctly!).
-- See below for font information.
-
-# To Do
-
-- Collect all chants from Gregobase of the psalter, the ~~proper of time,~~ the ~~commons of saints,~~ and the proper of saints (on a rolling basis, i.e. grab what you need as you work on it, edit, commit, and push; as of Sept 2025, May and February are left to do) as well as the ~~appendix for benediction~~ (done as of October 2024) and for the "Hymni Antiqui" (following 1913 VR format; chants to be taken from the existing files with corrected lyrics, or from the *Antiphonale Monasticum* and transcribed for Saint Michael, with our ictus placement) (completed as of September 4, 2025)
-- Remove `--` in file name and replace with `_` (to allow for easier copying/pasting) and remove `ant.`, `...`, and `(` or `)`.
-- Proofread (add EUOUAE to Magnificat endings, comment off EUOUAE for most antiphon endings — they will need this only when the psalm is not printed below an antiphon).
-- remove space before colons (we use Latin options and language for `babel` that inserts a thin space), change `ae` or `oe` `æ` and `œ` respectively as well as `aé` to `ǽ` (U+01fd) and use TeX to create `œ` with an acute accent) (fixed as of October 2024).
-- Correct italics of psalm tex files (See this [issue](https://github.com/Nocturnale-Romanum/nocturnale-romanum/issues/17#issue-1714660808).) 
-- Transcribe versicles of feasts where the solemn tone is given and create gabc file (now possible with manual intervention required with the Psalm Tone Tool as of October 2024)
--  Build (that is, create subfile and typeset) psalter (draft done as of summer 2024, except for page breaks), common tones, proper of time (draft, except for headers and page breaks done as of summer 2024), commons of saints (drafts done as of autumn 2024), the proper of saints (as of Sept 2025 now complete), proper of France (complete Sept 2025), 1955/60 (done as of Oct 2024, edited as of Sept 2025) and benediction (draft finished as of spring 2025).
--   This means also means copy, insert, and correct (based on Solesmes/Vaticana) collects, chapters, and versicles.
-- Index these pieces as well as the psalms (the index of antiphons and esp. that of index of psalms will be complicated due to the pointing and partial repetition so to minimize page turns but to not use up valuable space), based on code from Nocturnale Romanum project.
-- Finish [table of moveable feasts and perpetual Roman calendar](https://github.com/MRoth1910/Kalendarium) (and/or insert it into the main PDF)
-- Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
-- Proofread completed book(s).
-
-
-Along the way: we need someone who is a real LaTeX expert to help, particularly with the table of moveable feasts (which has different requirements than the main project and is quite complex), sectioning commands, widows/orphans (in the proper of saints epecially, ~the date, the feast name, and the rank~ (thank you David Carlisle and TeXSE) plus the text cannot be separated over two pages), spacing of elements on pages (e.g. scores should not stretch too much, and we shouldn't have too much white space between a title and a following score)
-  - someone to design a cover (that is, someone who knows how to use software to do it correctly, taking into account the spine etc.)
-  - a skilled Latinist to proofread rubrics (mostly taken from the Vaticana, but occasionally emended from the LA) and to help expand abbreviations if this is deemed necessary;
-  - an expert (cleric or monk, probably) familiar with syllable divisions in the preconciliar Latin breviary/missal and chant books: collects etc. follow Solesmes practice (-ct for example, not c-t, but i-ps, o-mn seem to break convention as a vowel is left alone the end of a line)
-  -  Since the chants are not being restored, a musicologist seems overkill, but a monk of Fontgombault or one of its foundations as well as a priest from a traditional community who sings Vespers regularly would be helpful.
-    -  Ditto consultations with a monk of Solesmes or a monastic of another abbey that has experience with using LuaLaTeX to make an entire book (particularly with Gregorio).
 
 # Fonts and other things
 
