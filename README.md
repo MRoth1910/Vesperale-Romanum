@@ -68,7 +68,7 @@ The rhythmic signs are kept. It is easier to keep the rhythmic signs than to pic
 
 Pointed psalms (italics and bolding following the _Liber Usualis,_ with the first verse of the psalm provided in chant) are given under every antiphon or, for the common and proper of saints and for the variable psalms of major feasts of the temporal cycle, at least once per division of the book so as to reduce repetition but in minimizing the turns needed (and the number of ribbons or bookmarks). This makes chanting easier, with fewer page turns.
 
-The verse numbers going from 1 to n are kept from the form of the Liber Usualis as a reference for choirmasters working with singers and organists not sufficiently fluent in Latin, particularly useful in finding their place in rehearsals or keeping track of divisions while singing the office. The FSSP vesperal keeps these numbers as well.
+The verse numbers going from 1 to n are kept from the form of the _Liber Usualis_ as a reference for choirmasters working with singers and organists not sufficiently fluent in Latin, particularly useful in finding their place in rehearsals or keeping track of divisions while singing the office. The FSSP vesperal keeps these numbers as well.
 
 For the psalter, antiphons are given as in the antiphonal and in the _Liber Usualis_ for Sunday and Saturday Vespers and at Compline; otherwise, the psalms and antiphons are as in the _Liber Usualis,_ with the full antiphon given at the beginning of the corresponding Vespers psalm (to faciliate chanting on double feasts which use the ferial psalms and on ferias for those following 1960).
 
