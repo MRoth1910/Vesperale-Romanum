@@ -124,13 +124,6 @@
 
 %% ALT with descenders (normally p and y) particularly in italics causes issues on second pass. 1st pass is perfect. but default tends to make the score too big. Will need to carefully scrutinize lines in certain scores lest the pages be too stretched. This is a problem for common tones and for Magnificats with tone endings printed as in Liber Usualis.
 
-%%we do not want beginnings of psalm verse to stretch (this always happens with "Sicut"
-%%Update Dec 4, 2023: this is because of the spacing defaults with periods. Sometimes, it becomes a sentence space. %%Update Dec 21 2023: frenchspacing plus more advanced LaTeX *may* resolve this, because even frenchspacing still leaves big spaces and doesn't treat the same characters the same way every time
-
-%% update May 18 2024, no this is fixed with switch to enumerate environment and labelsep being set to 3pt. 
-%%underfull hbox is a problem for psalms which is now in mddle of line instead of right after number and period at beginning.
-
-
 %%\lettrine[depth=1] should probably be used consistently with Q (collects starting "Quaesumus")
 
 %%need to check offset of asterisk in antiphons; the (default) new barspacing algorithm works, but e.g. Sicut novellae of Corpus Christi has the asterisk to the far right of the quarter bar, when in this case it should be aligned neatly
@@ -140,22 +133,6 @@
 
 %%probably should remove all labels that only go from I or II Vespers to the same EXCEPT for page numbers (so in other words, chapter and hymn MOSTLY don't get label and  pageref, but psalms do as needed, because otherrwise it could be another feast, common, etc.)
 %%this makes life easier and cuts down on number of labels substantially
-
-%%\newpage
-%%\phantomsection isn't included by MB
-%%\addcontentsline{toc}{chapter}{Indices}
-%%\cprintindex{H}{Index Hymnorum}
-%%\cprintindex{A}{Index Antiphonarum}
-%%\cprintindex{R}{Index Responsorium} %%% See NR commonheaders file %% DO NOT need for office of the dead, because VR 1913 has no mattins!
-%%\cprintindex{P}{Index Psalmorum}
-%%\cprintindex{T}{Index Tonorum communorum}
-%%\cprintindex{F}{Index Festorum}
-%%need index of anything else (LA1949 has Benediction)
-
-\tableofcontents
-\thispagestyle{empty}
-
-%%NN to be replaced with 01, 02… like Matthias does with Nocturnale
 
 %% \chapter needs to be able to take optional argument which it SHOULD by default %%what needs to be \chapter, \section etc isn't clear in my own head (as of Sept 2023)
 
@@ -199,8 +176,6 @@
 %%need to check offset of asterisk in antiphons; the (default) new barspacing algorithm works, but e.g. Sicut novellae of Corpus Christi has the asterisk to the far right of the quarter bar, when in this case it should be aligned neatly
 %%too far to tthe left in certain mode 1 antiphons
 
-%% verse numbers of hymn always need to go on next line… this is a bad limitaation of Gregorio
-
 %%probably should remove all labels that only go from I or II Vespers to the same EXCEPT for page numbers (so in other words, chapter and hymn MOSTLY don't get label and  pageref, but psalms do as needed, because otherrwise it could be another feast, common, etc.)
 %%this makes life easier and cuts down on number of labels substantially
 
@@ -211,41 +186,5 @@
 %%\psalmus{115}{115_1a2}{115_1}
 %%
 %%\rubrique{Capit. \normaltext{Beátus vir} et Hymnus ut in I Vesperis.}
-
-%\customsubfile{vr_02_kalendarii} %%probably WILL be 02 %%needs fixing with code from Kalendarium repository
-%\customsubfile{vr_NN_tempus_adventus} %%done
-%\customsubfile{vr_NN_tempus_nativitatis}%%done renamed
-%\customsubfile{vr_NN_tempus_epiphaniae} %%done but renamed
-%\customsubfile{vr_NN_tempus_post_epiphaniam}%%done
-%\customsubfile{vr_NN_tempus_quadragesimae}%%done and now combined
-%\customsubfile{vr_NN_tempus_passionis}%%done
-%\customsubfile{vr_NN_tempus_paschale}%%done
-%%added separate file for feasts from Trinity until Sacred Heart
-%\customsubfile{vr_NN_sab_post_pentecosten}%%done!
-%\customsubfile{vr_NN_dom_post_pentecosten}%%done!
-%\customsubfile{vr_NN_commune_apostolorum} %%done!
-%\customsubfile{vr_NN_commune_unius_martyris}%%done
-%\customsubfile{vr_NN_commune_ap_ev_martyrum_tp}done!
-%\customsubfile{vr_NN_commune_plur_martyrum}done!
-%\customsubfile{vr_NN_commune_confessoris} %%pontiff AND non-pontiff would be easiest  due to doctors (done, need to keep an eye on doctors' names) DONE (2 files)
-%\customsubfile{vr_NN_commune_virginis} DONE but watch J in hymn
-%\customsubfile{vr_NN_commune_non_virginis} done!
-%\customsubfile{vr_NN_commune_dedicationis} done!
-%%\customsubfile{vr_NN_commune_bmv} %% done!
-%%%sabbato  %%done!
-%%%parvum
-%\customsubfile{vr_NN_officium_defunctorum}
-%\customsubfile{vr_NN_festa_januarii}
-%\customsubfile{vr_NN_festa_februarii}
-%\customsubfile{vr_NN_festa_martii}
-%\customsubfile{vr_NN_festa_aprilis}
-%\customsubfile{vr_NN_festa_maii}
-%\customsubfile{vr_NN_festa_junii}
-%\customsubfile{vr_NN_festa_julii}
-%\customsubfile{vr_NN_festa_augusti}
-%\customsubfile{vr_NN_festa_septembris}
-%\customsubfile{vr_NN_festa_octobris}
-%\customsubfile{vr_NN_festa_novembris}
-%\customsubfile{vr_NN_festa_decembris}
 
 \end{document}
