@@ -1188,6 +1188,16 @@ Pater noster, Ave María, \textit{et} Credo.%
 %%	\printindex[#1]
 %%}
 
+%% command to wrap printindex and set the headers for indices
+\newcommand{\cprintindex}[2][\jobname]{% first argument is optional with
+                                % `\jobname` as default
+    \setheaders{Indices}{#2}%
+    \pagestyle{fancy}%
+    \thispagestyle{empty}%
+    \printindex[#1]
+}
+
+
 %%preface
       \setlength{\columnsep}{3pc}
 %\setlength{\columnsep}{10pt}
