@@ -1,7 +1,7 @@
 # Vesperale-Romanum
 Main repository for the Vesperale Romanum
 
-The Vesperale Romanum is an excerpt of the Antiphonale Romanum, the chant book of the Roman Rite for chanting Vespers and Compline, the evening hours of the Divine Office. The rubrics followed will be Divino Afflatu, following the calendar until the changes of Pope Pius XII (see below).
+The Vesperale Romanum is an excerpt of the Antiphonale Romanum, the chant book of the Roman Rite for chanting Vespers and Compline, the evening hours of the Divine Office. The rubrics followed will be Divino Afflatu, following the calendar until the changes of Pope Pius XII (but see below for accomodations accounting for the Pius XII and 1960 offices).
 
 # Contact
 
@@ -41,11 +41,11 @@ It may be helpful to edit gabc files in a visual editor such as [Source and Summ
 
 - Collect all chants from Gregobase and transcribe missing solemn versicles, etc. common tones; psalms are taken from Ben Bloomfield's Psalm Tone Tool. (This should be done as of Sept. 2025). Correct as necessary (file names, following style guides)
 - Collect texts from Divinum Officium or Psalm Tone Tool; correct as necessary per style guides.
-– Typeset each part of proper of time, of saints, commons, varia, appendices. Done as of Sept. 2025
+- Typeset each part of proper of time, of saints, commons, varia, appendices. Done as of Sept. 2025
 - Index chants that need to be indexed, create index of feasts as well. To do as of Sept. 2025.
-– Correct Latin rubrics (both for typographical errors and for errors in Latin in new rubrics). To do as of Sept. 2025.
-– Correct typographical errors of first draft (following style guide, checked against Solesmes LA1949). To do as of Sept. 2025.
-– Tweak Gregorio output (including finalizing where EUOUAE needs to be kept) adjusting page breaks accordingly.
+- Correct Latin rubrics (both for typographical errors and for errors in Latin in new rubrics). To do as of Sept. 2025.
+- Correct typographical errors of first draft (following style guide, checked against Solesmes LA1949). To do as of Sept. 2025.
+- Tweak Gregorio output (including finalizing where EUOUAE needs to be kept) adjusting page breaks accordingly.
 - Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
 - Proofread completed book(s) (including pageref to Gregorio scores).
 
@@ -68,7 +68,7 @@ The rhythmic signs are kept. It is easier to keep the rhythmic signs than to pic
 
 Pointed psalms (italics and bolding following the _Liber Usualis,_ with the first verse of the psalm provided in chant) are given under every antiphon or, for the common and proper of saints and for the variable psalms of major feasts of the temporal cycle, at least once per division of the book so as to reduce repetition but in minimizing the turns needed (and the number of ribbons or bookmarks). This makes chanting easier, with fewer page turns.
 
-The verse numbers going from 1 to n are kept from the form of the Liber Usualis as a reference for choirmasters working with singers and organists not sufficiently fluent in Latin, particularly useful in finding their place in rehearsals or keeping track of divisions while singing the office. The FSSP vesperal keeps these numbers as well.
+The verse numbers going from 1 to n are kept from the form of the _Liber Usualis_ as a reference for choirmasters working with singers and organists not sufficiently fluent in Latin, particularly useful in finding their place in rehearsals or keeping track of divisions while singing the office. The FSSP vesperal keeps these numbers as well.
 
 For the psalter, antiphons are given as in the antiphonal and in the _Liber Usualis_ for Sunday and Saturday Vespers and at Compline; otherwise, the psalms and antiphons are as in the _Liber Usualis,_ with the full antiphon given at the beginning of the corresponding Vespers psalm (to faciliate chanting on double feasts which use the ferial psalms and on ferias for those following 1960).
 
