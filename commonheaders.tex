@@ -5,15 +5,16 @@
 
 %%%%%%%%%%%%%%% INDICES %%%%%%%%%%%%%%%
 
-%%\usepackage{imakeidx}
+\usepackage{imakeidx}
 
-%%%\indexsetup{level=\section*,toclevel=section,othercode=\footnotesize\thispagestyle{empty}}
-%%%\makeindex[name=H,title=index hymnorum., columns=2,columnseprule]
-%%%\makeindex[name=V,title=index variarum., columns=2,columnseprule]
-%%%\makeindex[name=R,title=index responsoriorum., columns=2,columnseprule]
-%%%\makeindex[name=P,title=index psalmorum., columns=2,columnseprule]
-%%%%%\makeindex[name=T,title=toni communes., columns=2,columnseprule]
-%%%%%%\makeindex[name=F,title=index festorum., columns=2,columnseprule]
+\indexsetup{level=\section*,toclevel=section,othercode=\footnotesize\thispagestyle{empty}}
+\makeindex[name=A,title=index antiphonæ, columns=2,columnseprule]
+\makeindex[name=H,title=index hymnorum., columns=2,columnseprule]
+\makeindex[name=V,title=index variarum., columns=2,columnseprule]
+%%\makeindex[name=R,title=index responsoriorum., columns=2,columnseprule]
+\makeindex[name=P,title=index psalmorum., columns=2,columnseprule]
+\makeindex[name=T,title=toni communes., columns=2,columnseprule]
+\makeindex[name=F,title=index festorum., columns=2,columnseprule]
 
 %% This is the format of the recent Solesmes books.
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
@@ -62,6 +63,8 @@ headsep=3mm,
 
 
 \AtBeginDocument{\setlength{\parindent}{1em}} %%  default is 20 pt, this reduces indent from that of Computer Modern to the font's
+
+\newlength{\defaultparskip}
 
 \sloppy %% to allow larger spaces which avoid overfull hbox (MB: %% We want to allow large inter-words space 
 %% to avoid overfull boxes in two-columns rubrics.)
@@ -198,6 +201,7 @@ headsep=3mm,
 
 %% A-bove L-ines T-ext shall be italicized and in a smaller font
 \grechangestyle{abovelinestext}{\itshape\fontsize{8}{10}\selectfont}
+
 %% for psalm tones etc. Roman/upright text is what the Liber Usualis uses. 
 \NewDocumentCommand{\altnormal}{}{\grechangestyle{abovelinestext}{\normalfont\fontsize{8}{10}\selectfont}}
 %%  resets ALT font
