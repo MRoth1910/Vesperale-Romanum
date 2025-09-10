@@ -10,9 +10,10 @@
 \indexsetup{level=\section*,toclevel=section,othercode=\footnotesize\thispagestyle{empty}}
 \makeindex[name=A,title=index antiphonarum., options=-s A,columns=2,columnseprule]
 \makeindex[name=H,title=index hymnorum., options=-s H,columns=2,columnseprule]
-\makeindex[name=P,title=index psalmorum., options=vr_test_index,columns=2,columnseprule]
-\makeindex[name=V,title=index variorum., options=vr_test_index,columns=2,columnseprule]
-\makeindex[name=F,title=index festorum., options=vr_test_index,columns=2,columnseprule]
+%\makeindex[name=P,title=index psalmorum., options=-s P,columns=2,columnseprule]
+%%no ready to typeset Pss yet so this style .ist file isn't real yet
+\makeindex[name=V,title=index variorum., options=-s V,columns=2,columnseprule]
+\makeindex[name=F,title=index festorum., options=-s F, columns=2,columnseprule]
 
 %% This is the format of the recent Solesmes books.
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
@@ -92,29 +93,22 @@ headsep=3mm,
   \gregorioscore{partitions/#1}
    \grechangedim{initialraise}{0cm}{scalable}}
    
-    \makeatletter
-\NewDocumentCommand{\idxinitialscore}{mmm}{
-  %% #1 : name of the score file
-  %% #2 : office part if needed
-  %% #3 :mode numeral
-  %% #4 :office part letter T, H, A, P, R, F, V
-    %% #5 : the indexed name of the piece; needs to be repeated (unfortunately — — — will be alphabetized as such, not under previous entry
-
-  
+\makeatletter
+\NewDocumentCommand{\idxinscore}{mmmm}{
+  %% #1 :  the indexed name of the piece
+  %% #2 :  name of the score file
+  %% #3 : :office part letter H, A, V
+  %% #4   mode
   %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip} 
-  \protected@edef\@currentlabelname{#3}
-  \phantomsection
-  \label{#1}
-\initialscore{#1}
-  %% if #5 (indexed name) is blank, nothing is indexed.
-  %% this is for pieces that are repetitions of another piece (antiphons after psalms)
-%  \ifblank{#5}{}
-  %% if optional arg #1 has been passed as 'n', set no initial
-%%%  \ifx n#1\gresetinitiallines{0}\fi
-%  \gregorioscore{partitions/#1}
-   {\index[#2]{#3}}
+  \needspace{4\baselineskip}%
+  \protected@edef\@currentlabelname{#1}%
+  \phantomsection%
+  \label{#2%
+  }%
+  \index[#3]{#1 {#4}%
   }
+\initialscore{#2}%
+  }%
 \makeatother
 
 %produces a score with a smaller initial (default is 40 pt) and annotations like in the Solesmes books; the 1st is optional and can be omitted as needed. %%update 23/5/23 apparently
@@ -124,6 +118,60 @@ headsep=3mm,
 \grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
  \gregorioscore{partitions/#3}%
  }
+ 
+ 
+  \NewDocumentCommand{\anscore}{O{}mO{}m}{%    %%you can also omit the mode and it typesets correctly.
+ \greannotation{#1 Ant.}%
+\greannotation{#2 #3}%
+\grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
+ \gregorioscore{partitions/#4}%
+ }
+ 
+     \makeatletter
+\NewDocumentCommand{\idxan}{mmmO{}O{}}{
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \needspace{4\baselineskip} 
+  \protected@edef\@currentlabelname{#1}
+  \phantomsection
+  \label{#2}{%
+  }%
+    \index[A]{#1 #3%
+    }%
+\anscore[#4]{#3.}[#5]{#2}
+%% #1 indexed name of piece
+%% #2  gabc file name
+%% #3 mode without differentia, no punctuation except if it's ``per.''
+%% #4 is an number; only ever 1 through 5 (unfortunately it follows mode
+%% #5 differentia; the last 2 arguments are in odd places but they are the ones in []
+}
+\makeatother
+
+
+\makeatother
+
+ \NewDocumentCommand{\admagnifscore}{mmm}{%
+  \greannotation{Ad Magnif.}%
+\greannotation{#1. #2}%
+\grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
+ \gregorioscore{partitions/#3}%
+ }
+
+     \makeatletter
+\NewDocumentCommand{\idxadmagnif}{mmmm}{
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \needspace{4\baselineskip} 
+  \protected@edef\@currentlabelname{#1}
+  \phantomsection
+  \label{#2}{%
+  }%
+    \index[A]{#1 #3}%
+\admagnifscoretest{#3}{#4}{#2}
+%% #1 indexed name of piece
+%% #2  gabc file name
+%% #3 mode without differentia, no punctuation: period is inserted with \admagnifscore: this prevents punctuation from being added to index
+%% #4 differentia
+}
+\makeatother
  
   \makeatletter
 \NewDocumentCommand{\idxscore}{mO{}mmm}{
@@ -146,10 +194,49 @@ headsep=3mm,
   %% if optional arg #1 has been passed as 'n', set no initial
 %%%  \ifx n#1\gresetinitiallines{0}\fi
 %  \gregorioscore{partitions/#1}
-   {\index[#4]{#5}}
+   \index[#4]{#5}
   }
 \makeatother
 
+%%score with only mode 
+ \NewDocumentCommand{\gregoscore}{mm}{%
+ \greannotation{#1.%
+ }%
+\grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
+ \gregorioscore{partitions/#2}%
+ }
+  \makeatletter
+  
+\NewDocumentCommand{\idxhy}{mmm}{
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \needspace{4\baselineskip} 
+  \protected@edef\@currentlabelname{#1}
+  \phantomsection
+  \label{#2}{%
+  }%
+    \index[H]{#1 #3}%
+\gregoscore{#3}{#2}
+%% #1 indexed name of piece
+%% #2  gabc file name
+%% #3 mode
+}
+\makeatother
+
+  \makeatletter
+\NewDocumentCommand{\idxva}{mmm}{
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \needspace{4\baselineskip} 
+  \protected@edef\@currentlabelname{#1}
+  \phantomsection
+  \label{#2}{%
+  }%
+    \index[V]{#1 #3}%
+\gregoscore{#3}{#2}
+%% #1 indexed name of piece
+%% #2  gabc file name
+%% #3 mode
+}
+\makeatother
 
 %% score with no initial, e.g psalms, common tones, etc. 
 \NewDocumentCommand{\smallscore}{m}{%
@@ -158,6 +245,20 @@ headsep=3mm,
   \gresetinitiallines{1}%
 }
 
+\makeatletter
+\NewDocumentCommand{\idxsmall}{mmm}{
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \needspace{4\baselineskip} 
+  \protected@edef\@currentlabelname{#1}
+  \phantomsection
+  \label{#2}{%
+  }%
+    \index[A]{#1 {#3}}%
+\smallscore{#2}
+%% #1 indexed name of piece
+%% #2  gabc file name
+%% #3 mode without differentia, no punctuation except if it's ``per.''
+\makeatother
 
 %%using the new bar-spacing algorithm by default optimizes spacing. Occasionally asterisks or other signs float too far in one direction or the other.
 
@@ -368,8 +469,6 @@ Numbers=OldStyle]
 }}
 
 %% to print in black within rouge group.
-
-%\NewDocumentCommand{\textenoir}{m}{%
 
 \NewDocumentCommand{\textenoir}{m}{%
 \textcolor{black}%
@@ -596,63 +695,105 @@ Numbers=OldStyle]
  {\centering{\Large#1}\par}%
  }
  
- %%formatting date on major feasts of sanctoral cycle or moveable feasts that follow Easter where this is listed in antiphonal.
-
-%  \NewDocumentCommand{\biglitdate}{m}{%
-%\needspace{5\baselineskip}  %% very small if there are neumes above the staff, including flats in mode 2, e.g. O Doctor optime
-%\vspace{\baselineskip}
-% {\centering{\large #1}}\par} %}
-
-
 %%formatting date of feasts where this listed at top of page
-\NewDocumentCommand{\litdate}{m}{%
-\smalltitle{Die #1.}%
+\NewDocumentCommand{\idxlitdate}{mm}{%
+\index[F]{#1%
+}%
+\smalltitle{Die #2.}%
 }
 
-%for most/ordinary feasts of Sanctorale 
-%%"as long as text isn't long enough to over-print number according to David Carlisle
-\NewDocumentCommand{\datefeast}{mm}{%
+%%formatting for Sunday feasts : inter, post… name is for consistency
+\NewDocumentCommand{\idxdominicadate}{mm}{%
+\index[F]{#1%
+}%
+\smalltitle{Dominica #2.}%
+}
+
+%%formatting for feasts that fall on a weekday fixed to some other thing, like Corpus Christi, Sacred Heart, BVM in Passiontide, and the new feasts found in the appendix (Feria Roman numeral in Latin: inter, post… name is for consistency
+\NewDocumentCommand{\idxferiadate}{mm}{%
+\index[F]{#1%
+}
+\smalltitle{Feria #2.%
+}%
+}
+
+\NewDocumentCommand{\idxdatefeast}{mmm}{%
+\index[F]{#1%
+}
   \par
   \noindent
-  \makebox[0pt][l]{#1.}%
-  \makebox[\textwidth]{\Large #2.}%
+  \makebox[0pt][l]{#2.%
   }
+  \makebox[\textwidth]{\Large #3.%
+ }%
+ }
   
-  \NewDocumentCommand{\specialdatefeast}{m}{%
+  \NewDocumentCommand{\idxspecialdatefeast}{mm}{%
+  \index[F]{#1%
+}%
   \par
   \noindent
   \makebox[0pt][l]%
   {\phantom{10.}} %
-  \makebox[\textwidth]{\Large #1.}%
+  \makebox[\textwidth]{\Large #2.}%
   }
   
   %%for feasts such as Imposition of Stigmata of St Francis on Sept 17.
   %%first two arguments as above, Dedication of the Lateran on Nov 9
   %%break line as needed and the remaining text is the 3rd argument
-   \NewDocumentCommand{\longdatefeast}{mmm}{%
+   \NewDocumentCommand{\idxlongdatefeast}{mmmm}{%
+   \index[F]{#1%
+}%
   \par
   \noindent
-  \makebox[0pt][l]{#1.}%
-  \makebox[\textwidth]{\Large #2}%
-\hfill\makebox[\textwidth]{\large #3.}%
+  \makebox[0pt][l]{#2.}%
+  \makebox[\textwidth]{\Large #3}%
+\hfill\makebox[\textwidth]{\large #4.}%
   }
-  
-%%  alternatively
-%%  \NewDocumentCommand\datefeast{mm}{%
-%%\noindent #1.\hfill{}{\Large#2.}\hfill{}%
-%%}
 
 
-%%formatting for Sunday feasts : inter, post… name is for consistency
-\NewDocumentCommand{\dominicadate}{m}{%
-\smalltitle{Dominica #1.}%
-}
-
-%%formatting for feasts that fall on a weekday fixed to some other thing, like Corpus Christi, Sacred Heart, BVM in Passiontide, and the new feasts found in the appendix (Feria Roman numeral in Latin: inter, post… name is for consistency
-\NewDocumentCommand{\feriadate}{m}{%
-\smalltitle{Feria #1.}%
-}
-
+%%%formatting date of feasts where this listed at top of page
+%\NewDocumentCommand{\litdate}{m}{%
+%\smalltitle{Die #1.}%
+%}
+%
+%%%formatting for Sunday feasts : inter, post… name is for consistency
+%\NewDocumentCommand{\dominicadate}{m}{%
+%\smalltitle{Dominica #1.}%
+%}
+%
+%%%formatting for feasts that fall on a weekday fixed to some other thing, like Corpus Christi, Sacred Heart, BVM in Passiontide, and the new feasts found in the appendix (Feria Roman numeral in Latin: inter, post… name is for consistency
+%\NewDocumentCommand{\feriadate}{m}{%
+%\smalltitle{Feria #1.}%
+%}
+%
+%%for most/ordinary feasts of Sanctorale 
+%%%"as long as text isn't long enough to over-print number according to David Carlisle
+%\NewDocumentCommand{\datefeast}{mm}{%
+%  \par
+%  \noindent
+%  \makebox[0pt][l]{#1.}%
+%  \makebox[\textwidth]{\Large #2.}%
+%  }
+%  
+%  \NewDocumentCommand{\specialdatefeast}{m}{%
+%  \par
+%  \noindent
+%  \makebox[0pt][l]%
+%  {\phantom{10.}} %
+%  \makebox[\textwidth]{\Large #1.}%
+%  }
+%  
+%  %%for feasts such as Imposition of Stigmata of St Francis on Sept 17.
+%  %%first two arguments as above, Dedication of the Lateran on Nov 9
+%  %%break line as needed and the remaining text is the 3rd argument
+%   \NewDocumentCommand{\longdatefeast}{mmm}{%
+%  \par
+%  \noindent
+%  \makebox[0pt][l]{#1.}%
+%  \makebox[\textwidth]{\Large #2}%
+%\hfill\makebox[\textwidth]{\large #3.}%
+%  }
 
 %%for most important feasts (as of 16 dec 2023 leaving section alone as is, but it's similar styling)
 \NewDocumentCommand{\festum}{m}{%
