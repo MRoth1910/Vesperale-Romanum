@@ -1,0 +1,11 @@
+
+headings_check = 1
+
+
+%sets it to a colon followed by a space
+delim_0 ": "
+delim_1 ": "
+delim_2 ": "
+
+delim_n ", "
+

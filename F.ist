@@ -1,0 +1,23 @@
+% Use colon instead of comma for main entry delimiter
+delim_0 ": "
+
+% Use comma for subentries (you can change this if needed)
+delim_1 ", "
+delim_2 ", "
+
+% Set right-justified page numbers
+%pagenumberalignment = right
+
+% Optional: Don't compress spaces if using prefixes in sort keys
+% compress_blanks = false
+
+% Optional: Turn off page range compression (like 1--3)
+% page_precedence = 0
+
+% Optional: Don't merge identical page numbers
+% merge = 0
+
+% Optional: Formatting (you can tweak if needed)
+item_0 "\n\\item "
+item_1 "\n\\subitem "
+item_2 "\n\\subsubitem "
