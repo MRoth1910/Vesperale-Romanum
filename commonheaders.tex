@@ -8,13 +8,11 @@
 \usepackage{imakeidx}
 
 \indexsetup{level=\section*,toclevel=section,othercode=\footnotesize\thispagestyle{empty}}
-\makeindex[name=A,title=index antiphonarum, columns=2,columnseprule]
-\makeindex[name=H,title=index hymnorum., columns=2,columnseprule]
-\makeindex[name=V,title=index variarum., columns=2,columnseprule]
-%%\makeindex[name=R,title=index responsoriorum., columns=2,columnseprule]
-\makeindex[name=P,title=index psalmorum., columns=2,columnseprule]
-\makeindex[name=T,title=toni communes., columns=2,columnseprule]
-\makeindex[name=F,title=index festorum., columns=2,columnseprule]
+\makeindex[name=A,title=index antiphonarum., options=-s A,columns=2,columnseprule]
+\makeindex[name=H,title=index hymnorum., options=-s H,columns=2,columnseprule]
+\makeindex[name=P,title=index psalmorum., options=vr_test_index,columns=2,columnseprule]
+\makeindex[name=V,title=index variorum., options=vr_test_index,columns=2,columnseprule]
+\makeindex[name=F,title=index festorum., options=vr_test_index,columns=2,columnseprule]
 
 %% This is the format of the recent Solesmes books.
 \usepackage[paperheight=205mm,paperwidth=135mm]{geometry}
@@ -153,12 +151,13 @@ headsep=3mm,
 \makeatother
 
 
-%% score with no initial, e.g psalms, common tones, etc. need not be indexed as such
-\newcommand{\smallscore}[2][y]{
-  \gresetinitiallines{0}
-  \gregorioscore{partitions/#2} %% à remplacer avec NewDocumentCommand ; les arguments ne marchent pas correctement … que fait le [y] ?
-  \gresetinitiallines{1}
+%% score with no initial, e.g psalms, common tones, etc. 
+\NewDocumentCommand{\smallscore}{m}{%
+   \gresetinitiallines{0}%
+  \gregorioscore{partitions/#1}%
+  \gresetinitiallines{1}%
 }
+
 
 %%using the new bar-spacing algorithm by default optimizes spacing. Occasionally asterisks or other signs float too far in one direction or the other.
 
@@ -1180,22 +1179,6 @@ Pater noster, Ave María, \textit{et} Credo.%
 
 \setcounter{tocdepth}{2} %% probably should hide subsections from TOC of most documents
 
-%%%% command to wrap printindex and set the headers for indices
-%%\newcommand{\cprintindex}[2]{
-%%	\setheaders{Indices}{#2}
-%%	\pagestyle{fancy}
-%%	\thispagestyle{empty}
-%%	\printindex[#1]
-%%}
-
-%% command to wrap printindex and set the headers for indices
-\newcommand{\cprintindex}[2][\jobname]{% first argument is optional with
-                                % `\jobname` as default
-    \setheaders{Indices}{#2}%
-    \pagestyle{fancy}%
-    \thispagestyle{empty}%
-    \printindex[#1]
-}
 
 
 %%preface
@@ -1221,6 +1204,26 @@ Pater noster, Ave María, \textit{et} Credo.%
   }%
   }
   
+  \setcounter{tocdepth}{2} %% probably should hide subsections from TOC of most documents
+
+  
+  %% command to wrap printindex and set the headers for indices
+\newcommand{\cprintindex}[2]{
+	\setheaders{Indices}{#2} 
+	\pagestyle{fancy}
+	\thispagestyle{empty}
+	\printindex[#1]
+}
+
+%  %% command to wrap printindex and set the headers for indices
+%\newcommand{\cprintindex}[2][\jobname]{% first argument is optional with
+%                                % `\jobname` as default
+%    \setheaders{Indices}{#2}%
+%    \pagestyle{fancy}%
+%    \thispagestyle{empty}%
+%    \printindex[#1]
+%}
+%  
 %%%SUBFILES%%%
 \usepackage{xr} %%to allow cross-references between documents%%%
   \usepackage{subfiles}
