@@ -557,7 +557,7 @@ Numbers=OldStyle]
         \NewDocumentCommand{\psalmus}{mmm}{
 	\needspace{4\baselineskip}%
 	\smalltitle{Psalmus #1.}%            %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
-	\smallscore[n]{#2}%
+	\smallscore{#2}%
 	\pstexte{#3}}
     
     %%r5.17.2024: removed obsolete, never-really-used version for multicolumn formatting inappropriate on such a small sheet
@@ -602,7 +602,7 @@ Numbers=OldStyle]
 	\smalltitle{Canticum #1.}%
 	\vspace{-\baselineskip}%
 	\smalltitle{\textit{#2.}}%
-	\smallscore[n]{#3}%
+	\smallscore{#3}%
 	\cantiquetexte{#4}%
 	{#5}%
 }
@@ -612,7 +612,7 @@ Numbers=OldStyle]
   \NewDocumentCommand{\canticumspecial}{mmm}{
 	\needspace{4\baselineskip}%
 	\smalltitle{#1.}%    %%filename        %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
-	\smallscore[n]{#2}% %%file
+	\smallscore{#2}% %%file
 	\cantiquetexte{#3}% %%verse number, can be 2 or 3, in case of Compline of the dead
 	}
 
