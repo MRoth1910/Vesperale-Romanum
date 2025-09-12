@@ -105,8 +105,8 @@ headsep=3mm,
   \phantomsection%
   \label{#2%
   }%
-  \index[#3]{#1 {#4}%
-  }
+  \index[#3]{#1 #4%
+  }%
 \initialscore{#2}%
   }%
 \makeatother
@@ -201,7 +201,7 @@ headsep=3mm,
   \label{#2}{%
   }%
     \index[H]{#1 #3}%
-\gscore[]{#3}{#2}
+\gscore[]{#3.}{#2}
 %% #1 indexed name of piece
 %% #2  gabc file name
 %% #3 mode
@@ -740,47 +740,47 @@ Numbers=OldStyle]
 
 
 %%%formatting date of feasts where this listed at top of page
-%\NewDocumentCommand{\litdate}{m}{%
-%\smalltitle{Die #1.}%
-%}
-%
-%%%formatting for Sunday feasts : inter, post… name is for consistency
-%\NewDocumentCommand{\dominicadate}{m}{%
-%\smalltitle{Dominica #1.}%
-%}
-%
-%%%formatting for feasts that fall on a weekday fixed to some other thing, like Corpus Christi, Sacred Heart, BVM in Passiontide, and the new feasts found in the appendix (Feria Roman numeral in Latin: inter, post… name is for consistency
-%\NewDocumentCommand{\feriadate}{m}{%
-%\smalltitle{Feria #1.}%
-%}
-%
-%%for most/ordinary feasts of Sanctorale 
-%%%"as long as text isn't long enough to over-print number according to David Carlisle
-%\NewDocumentCommand{\datefeast}{mm}{%
-%  \par
-%  \noindent
-%  \makebox[0pt][l]{#1.}%
-%  \makebox[\textwidth]{\Large #2.}%
-%  }
-%  
-%  \NewDocumentCommand{\specialdatefeast}{m}{%
-%  \par
-%  \noindent
-%  \makebox[0pt][l]%
-%  {\phantom{10.}} %
-%  \makebox[\textwidth]{\Large #1.}%
-%  }
-%  
-%  %%for feasts such as Imposition of Stigmata of St Francis on Sept 17.
-%  %%first two arguments as above, Dedication of the Lateran on Nov 9
-%  %%break line as needed and the remaining text is the 3rd argument
-%   \NewDocumentCommand{\longdatefeast}{mmm}{%
-%  \par
-%  \noindent
-%  \makebox[0pt][l]{#1.}%
-%  \makebox[\textwidth]{\Large #2}%
-%\hfill\makebox[\textwidth]{\large #3.}%
-%  }
+\NewDocumentCommand{\litdate}{m}{%
+\smalltitle{Die #1.}%
+}
+
+%%formatting for Sunday feasts : inter, post… name is for consistency
+\NewDocumentCommand{\dominicadate}{m}{%
+\smalltitle{Dominica #1.}%
+}
+
+%%formatting for feasts that fall on a weekday fixed to some other thing, like Corpus Christi, Sacred Heart, BVM in Passiontide, and the new feasts found in the appendix (Feria Roman numeral in Latin: inter, post… name is for consistency
+\NewDocumentCommand{\feriadate}{m}{%
+\smalltitle{Feria #1.}%
+}
+
+%for most/ordinary feasts of Sanctorale 
+%%"as long as text isn't long enough to over-print number according to David Carlisle
+\NewDocumentCommand{\datefeast}{mm}{%
+  \par
+  \noindent
+  \makebox[0pt][l]{#1.}%
+  \makebox[\textwidth]{\Large #2.}%
+  }
+  
+  \NewDocumentCommand{\specialdatefeast}{m}{%
+  \par
+  \noindent
+  \makebox[0pt][l]%
+  {\phantom{10.}} %
+  \makebox[\textwidth]{\Large #1.}%
+  }
+  
+  %%for feasts such as Imposition of Stigmata of St Francis on Sept 17.
+  %%first two arguments as above, Dedication of the Lateran on Nov 9
+  %%break line as needed and the remaining text is the 3rd argument
+   \NewDocumentCommand{\longdatefeast}{mmm}{%
+  \par
+  \noindent
+  \makebox[0pt][l]{#1.}%
+  \makebox[\textwidth]{\Large #2}%
+\hfill\makebox[\textwidth]{\large #3.}%
+  }
 
 %%for most important feasts (as of 16 dec 2023 leaving section alone as is, but it's similar styling)
 \NewDocumentCommand{\festum}{m}{%
