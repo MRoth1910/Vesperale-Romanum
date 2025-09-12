@@ -121,7 +121,7 @@ In the appendix, an asterisk indicates the years in which an addition or variati
 
 After consulting the ordo, one celebrates only what is listed as II Vespers of feasts (i.e. most feasts other than those not reduced to commemorations at Lauds only, suppressed from the calendar) as found in the main body of the antiphona. One ignores the rubrics to commemorate the precedeing or following feast, most octaves, or a Sunday (especially on the feasts of the Holy Family, the Trinity, and Christ the King, which are the only feasts fixed to Sunday), as well as the vigil of the Epiphany, per the rubrics.
 
-In conforming with the decree _Cum Sanctissima,_ it seems possible to celebrate Vespers in the evening of a feast reduced originally to a commemoration, both in Lent and outside of it, per the 1960 rubrics.
+In conforming with the decree _Cum Sanctissima,_ it seems possible to celebrate Vespers in the evening of a feast reduced originally to a commemoration, both in Lent and outside of it, per the 1960 rubrics. For this reason, simplex feasts reduced to a commemoration in 1955 or 1960 are kept, even in cases where there is no commemoration at Vespers of the previous evening (e.g. Feb. 3, Sept. 9).
 
 # Expressions of gratitude
 
