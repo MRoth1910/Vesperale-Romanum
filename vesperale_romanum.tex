@@ -2,12 +2,14 @@
 % !TEX parameter =  --shell-escape
 
 \documentclass[11pt]{book}
-\input{commonheaders.tex}
+\input{../commonheaders.tex}
 
 %%for calendar
 \usepackage{showframe}
 
 \usepackage{ragged2e}
+%%can be used for \scripture definition as well
+
 %\usepackage{geometry}
 %\usepackage[parfill]{parskip}
 
@@ -26,7 +28,7 @@
 
 \begin{document}
 %% order TBD.
-%%%github version%%%
+%%%local version%%%
 
 %%section titles need to be on new page which should happen if we restrict section to start of new subfile only BUT subsection* and sectiion* need same treatment
 %%do we want to use section* or special festum command?
@@ -84,10 +86,13 @@
 \customsubfile{vr_44_pius_12_1960}
 \customsubfile{vr_45_variationes} %% Rubrical changes up to 1960%%\newpage
 
+
+\newpage
+
 \addcontentsline{toc}{chapter}{Indices}
 \cprintindex{A}{index antiphonarum.}
 \cprintindex{H}{index hymnorum.}
-\cprintindex{P}{index psalmorum.}
+%\cprintindex{P}{index psalmorum.}
 \cprintindex{V}{index variorum.}
 \cprintindex{F}{index festorum.}
 
@@ -119,6 +124,5 @@
 %% ALT with descenders (normally p and y) particularly in italics causes issues on second pass. 1st pass is perfect. but default tends to make the score too big. Will need to carefully scrutinize lines in certain scores lest the pages be too stretched. This is a problem for common tones and for Magnificats with tone endings printed as in Liber Usualis.
 
 %% verse numbers of hymn always need to go on next line…early gregorio user input needs to be changed.
-
 
 \end{document}
