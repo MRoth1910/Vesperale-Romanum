@@ -103,6 +103,18 @@ headsep=3mm,
   }%
 \initialscore{#4}%
   }%
+  
+  \NewDocumentCommand{\idxprima}{mmmm}{
+  %% #1 :  the indexed name of the piece
+  %% #2 :  mode
+  %% #3 : differentia
+  %% #4   name of the score file
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \index[A]{#1 #2%
+  }%
+  \primaantiphona{#2. #3}{}
+\initialscore{#4}%
+  }%
 
 %produces a score with a smaller initial (default is 40 pt) and annotations like in the Solesmes books; the 1st is optional and can be omitted as needed. %%update 23/5/23 apparently
  \NewDocumentCommand{\gscore}{O{}mm}{%    %%you can also omit the mode and it typesets correctly.
