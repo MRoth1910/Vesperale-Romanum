@@ -52,7 +52,7 @@ It may be helpful to edit gabc files in a visual editor such as [Source and Summ
 
 # Editorial Principles and Choices Made
 
-The vesperale project follows at its heart the office up to the changes of Pope Pius XII. For the most part, it is possible to use the Divino Afflatu offices for the 1960 office, which is already the case for most people using a vintage Liber Usualis.
+The vesperale project follows at its heart the office up to the changes of Pope Pius XII. For the most part, it is possible to use the Divino Afflatu offices for the 1960 office, which is already the case for most people using a vintage _Liber Usualis._
 
 This aims to be a practical book to be put out as soon as possible, and we do not intend to include any melodic restitutions, which also avoids disturbing the faithful used to the existing melodies.
 
@@ -87,7 +87,10 @@ The Magnificat will be given in full with all of the tones necessary, as in the 
 
 The common tones will also be reproduced in a dedicated section, at the front of the book (somewhat like in the antiphonal, and therefore not at Sunday/Monday Vespers and Sunday Compline).
 
-We inclue a selection of chants needed for benediction.
+We include a selection of chants needed for benediction.
+
+The ancient hymns, the new feasts, and the proper of France, although printed before the Index Generalis (ToC) (Sept 2025 version) will be essentially an appendix.
+
 
 # Sources:
 
