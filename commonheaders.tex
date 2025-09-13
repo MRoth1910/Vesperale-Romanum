@@ -93,23 +93,28 @@ headsep=3mm,
   \gregorioscore{partitions/#1}
    \grechangedim{initialraise}{0cm}{scalable}}
    
-\makeatletter
 \NewDocumentCommand{\idxinscore}{mmmm}{
   %% #1 :  the indexed name of the piece
-  %% #2 :  name of the score file
-  %% #3 : :office part letter H, A, V
-  %% #4   mode
+  %% #2 :  office part letter H, A, V
+  %% #3 : mode
+  %% #4   name of the score file
   %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip}%
-  \protected@edef\@currentlabelname{#1}%
-  \phantomsection%
-  \label{#2%
+  \index[#1]{#2 #3%
   }%
-  \index[#3]{#1 #4%
+\initialscore{#4}%
   }%
-\initialscore{#2}%
+  
+  \NewDocumentCommand{\idxprima}{mmmm}{
+  %% #1 :  the indexed name of the piece
+  %% #2 :  mode
+  %% #3 : differentia
+  %% #4   name of the score file
+  %% this prevents page breaks between the phantom section and its label, and the actual score.
+  \index[A]{#1 #2%
   }%
-\makeatother
+  \primaantiphona{#2. #3}{}
+\initialscore{#4}%
+  }%
 
 %produces a score with a smaller initial (default is 40 pt) and annotations like in the Solesmes books; the 1st is optional and can be omitted as needed. %%update 23/5/23 apparently
  \NewDocumentCommand{\gscore}{O{}mm}{%    %%you can also omit the mode and it typesets correctly.
@@ -119,7 +124,6 @@ headsep=3mm,
  \gregorioscore{partitions/#3}%
  }
  
- 
   \NewDocumentCommand{\anscore}{O{}mO{}m}{%    %%you can also omit the mode and it typesets correctly.
  \greannotation{#1 Ant.}%
 \greannotation{#2 #3}%
@@ -127,27 +131,16 @@ headsep=3mm,
  \gregorioscore{partitions/#4}%
  }
  
-     \makeatletter
-\NewDocumentCommand{\idxan}{mmmO{}O{}}{
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip} 
-  \protected@edef\@currentlabelname{#1}
-  \phantomsection
-  \label{#2}{%
-  }%
+\NewDocumentCommand{\idxan}{mO{}mO{}m}{
     \index[A]{#1 #3%
     }%
-\anscore[#4]{#3.}[#5]{#2}
+\anscore[#2]{#3.}[#4]{#5}
 %% #1 indexed name of piece
-%% #2  gabc file name
-%% #3 mode without differentia, no punctuation except if it's ``per.''
-%% #4 is an number; only ever 1 through 5 (unfortunately it follows mode
-%% #5 differentia; the last 2 arguments are in odd places but they are the ones in []
+%% #2   is a number; only ever 1 through 5 in []
+%% #3   mode without differentia, no punctuation except if it's ``per.'' 
+%% #4 differentia;in []
+%% #5  tgabc file name
 }
-\makeatother
-
-
-\makeatother
 
  \NewDocumentCommand{\admagnifscore}{mmm}{%
   \greannotation{Ad Magnif.}%
@@ -156,73 +149,52 @@ headsep=3mm,
  \gregorioscore{partitions/#3}%
  }
 
-     \makeatletter
 \NewDocumentCommand{\idxadmagnif}{mmmm}{
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip} 
-  \protected@edef\@currentlabelname{#1}
-  \phantomsection
-  \label{#2}{%
-  }%
-    \index[A]{#1 #3}%
-\admagnifscoretest{#3}{#4}{#2}
+    \index[A]{#1 #2}%
+\admagnifscore{#2}{#3}{#4}
 %% #1 indexed name of piece
-%% #2  gabc file name
-%% #3 mode without differentia, no punctuation: period is inserted with \admagnifscore: this prevents punctuation from being added to index
-%% #4 differentia
+%% #2   mode without differentia, no punctuation: period is inserted with \admagnifscore: this prevents punctuation from being added to index
+%% #3 differentia
+%% #4 gabc file name
 }
-\makeatother
  
-  \makeatletter
-\NewDocumentCommand{\idxscore}{mmmmO{}}{
-  %% #1 : the indexed name of the piece;
-  %% #2 :  name of the score file
-     %% #3 : office part letter A, H, V
-  %% #4 :mode numeral
-  %% #5 : differentia if there is one in []
-  
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip} 
-  \protected@edef\@currentlabelname{#1}
-  \phantomsection
-  \label{#2}
-     {\index[#3]{#1 #4}%
+\NewDocumentCommand{\idxscore}{mmmO{}m}{
+  %% #1 :  office part letter A, H, V
+  %% #2 :    the indexed name of the piece; name of the score file
+     %% #3 : mode numeral
+  %% #4 : differentia if there is one in []
+  %% #5 :  gabc file
+     {\index[#1]{#2 #3}%
      }
-\gscore[]{#4. #5}{#2}%
+\gscore[]{#3. #4}{#5}%
 }
-\makeatother
 
-  \makeatletter
+\NewDocumentCommand{\idxmag}{mmmm}{
+\admagnificat{}
+  %% #1 :    the indexed name of the piece; name of the score file
+     %% #2 : mode numeral 1-8
+  %% #3 : differentia 
+  %% #4 :  gabc file
+     {\index[A]{#1 #2}%
+     }
+\gscore[]{#2. #3}{#4}%
+}
+
 \NewDocumentCommand{\idxhy}{mmm}{
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip} 
-  \protected@edef\@currentlabelname{#1}
-  \phantomsection
-  \label{#2}{%
-  }%
-    \index[H]{#1 #3}%
-\gscore[]{#3.}{#2}
+    \index[H]{#1 #2}%
+\gscore[]{#2.}{#3}
 %% #1 indexed name of piece
 %% #2  gabc file name
 %% #3 mode
 }
-\makeatother
 
-  \makeatletter
 \NewDocumentCommand{\idxva}{mmm}{
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip} 
-  \protected@edef\@currentlabelname{#1}
-  \phantomsection
-  \label{#2}{%
-  }%
-    \index[V]{#1 #3}%
-\gscore[]{#3}{#2}
+    \index[V]{#1 #2}%
+\gscore[]{#2.}{#3}
 %% #1 indexed name of piece
 %% #2  gabc file name
 %% #3 mode
 }
-\makeatother
 
 %% score with no initial, e.g psalms, common tones, etc. 
 \NewDocumentCommand{\smallscore}{m}{%
@@ -233,19 +205,13 @@ headsep=3mm,
 
 \makeatletter
 \NewDocumentCommand{\idxsmall}{mmm}{
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
-  \needspace{4\baselineskip} 
-  \protected@edef\@currentlabelname{#1}
-  \phantomsection
-  \label{#2}{%
-  }%
-    \index[A]{#1 {#3}}%
+    \index[A]{#1 {#2}%
+    }%
 \smallscore{#2}
 %% #1 indexed name of piece
-%% #2  gabc file name
-%% #3 mode without differentia, no punctuation except if it's ``per.''
+%% #2  mode without differentia, no punctuation except if it's ``per.'' 
+%% #3  gabc file name
 }
-\makeatother
 
 %%using the new bar-spacing algorithm by default optimizes spacing. Occasionally asterisks or other signs float too far in one direction or the other.
 
