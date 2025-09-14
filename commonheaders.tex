@@ -134,7 +134,7 @@ headsep=3mm,
 \NewDocumentCommand{\idxan}{mO{}mO{}m}{
     \index[A]{#1 #3%
     }%
-\anscore[#2]{#3.}[#4]{#5}
+\anscore[#2.]{#3.}[#4]{#5}
 %% #1 indexed name of piece
 %% #2   is a number; only ever 1 through 5 in []
 %% #3   mode without differentia, no punctuation except if it's ``per.'' 
@@ -144,7 +144,7 @@ headsep=3mm,
 
  \NewDocumentCommand{\admagnifscore}{mmm}{%
   \greannotation{Ad Magnif.}%
-\greannotation{#1. #2}%
+\greannotation{Ant. #1. #2}%
 \grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
  \gregorioscore{partitions/#3}%
  }
@@ -954,8 +954,8 @@ Pater noster, Ave María, \textit{et} Credo.%
 }
 
 %%especially for common of apostles etc. in paschal time
-\NewDocumentCommand{\hymnusspecial}{mO{}}{%
-\smalltitle{#1, Hymnus. #2}%
+\NewDocumentCommand{\hymnusspecial}{O{}O{}}{%
+\smalltitle{#1 Hymnus. #2}%
 }
 
 %%for proper of saints where the hymn is proper
