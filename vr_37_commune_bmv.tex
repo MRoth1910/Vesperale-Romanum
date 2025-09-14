@@ -20,24 +20,25 @@
 
 \invesperis{i}
 
- \primaantiphona{3. a}
-\initialscore{an_dum_esset_rex_solesmes_1961}
+%% #1 indexed name of piece
+%% #2   is a number; only ever 1 through 5 in []
+%% #3   mode without differentia, no punctuation except if it's ``per.'' 
+%% #4 differentia;in []
+%% #5  tgabc file name
+
+\idxprima{Dum esset rex}{3}{a}{an_dum_esset_rex_solesmes_1961}
 \psalmus{109}{109_3a}{109_3a_b}
-%\espacetitre %no magic numbers
 
-\gscore[2. Ant.]{4. A*}{an_laeva_ejus_solesmes_1961}
+\idxan{Læva ejus}[2]{4}[A*]{an_laeva_ejus_solesmes_1961}
 \psalmus{112}{112_4A_A_star}{112_4A_A_star}
-%\espacetitre
 
-\gscore[3. Ant.]{3. b}{an_nigra_sum_solesmes_1961} %% this is annoyingly stretched
+\idxan{Nigra sum}[3]{3}[b]{an_nigra_sum_solesmes_1961}
 \psalmus{121}{121_3b}{121_3a_b}
 
-%\espacetitre
-
-\gscore[4. Ant.]{8. G}{an_jam_hiems_transiit_solesmes_1961}
+\idxan{Jam hiems transiit}[4]{8}[G]{an_jam_hiems_transiit_solesmes_1961}
 \psalmus{126}{126_8G}{126_8}
 
-\gscore[5. Ant.]{4. A*}{an_speciosa_facta_es_solesmes_1961}
+\idxan{Speciosa facta es}[5]{4}[A*]{an_speciosa_facta_es_solesmes_1961}
 \psalmus{147}{147_4A_A_star}{147_4A_A_star}
 
 \capitulum{Eccli. 24, 14}
@@ -52,23 +53,20 @@
 %%not in antiphonale but needed…
 %%maybe all caps inicipit suffices
 \hymnus
-\label{hy_ave_maris_stella_mode_1_LA1949}
-\phantomsection
-\gscore[]{1.}{hy_ave_maris_stella_mode_1_LA1949}
+
+\idxhy{Ave Maris Stella~01@Ave Maris Stella}{1}{hy_ave_maris_stella_mode_1_LA1949}
 
 \smalltitle{Alter Tonus.}
-\gscore[]{4.}{hy_ave_maris_stella_mode_4}
+\idxhy{Ave Maris Stella~02@– Alter Tonus}{4}{hy_ave_maris_stella_mode_4}
 
 \smalltitle{Alter Tonus.}
-\gscore[]{7.}{hy_ave_maris_stella_mode_7}
+\idxhy{Ave Maris Stella~03@– Alter Tonus}{7}{hy_ave_maris_stella_mode_7}
 
 %\espace
 \textes{versiculus_bmv}
 
-\admagnificat
-\label{an_sancta_maria_solesmes_1961}
-\phantomsection
-\gscore[]{4. E}{an_sancta_maria_solesmes_1961}
+\idxmag{Sancta Maria}{4}{E}{an_sancta_maria_solesmes_1961}
+
 %%The minipage not allowing breaks causes problems: the score will be stretched to fill the page.
 
 %%we need a better way to handle this! alt text is  too finicky, minipages can't break
@@ -115,13 +113,10 @@
 
 \invesperis{ii}
 
-\rubrique{Omnia ut in primis Vesperis, præter sequentia.}
+\omniapraeter
 
 \textes{versiculus_bmv}
 
-\admagnificat 
-\label{an_beatam_me_dicent_comm_bmv_solesmes_1961}
-\phantomsection
-\gscore[]{8. G}{an_beatam_me_dicent_comm_bmv_solesmes_1961}
+\idxmag{Beatam me dicent}{8}{G}{an_beatam_me_dicent_comm_bmv_solesmes_1961}
 
 \end{document}
