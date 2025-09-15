@@ -124,9 +124,10 @@ headsep=3mm,
  \gregorioscore{partitions/#3}%
  }
  
+ %%leaving as is but I need conditionals for the following 2 commands to work as intended
   \NewDocumentCommand{\anscore}{O{}mO{}m}{%    %%you can also omit the mode and it typesets correctly.
  \greannotation{#1 Ant.}%
-\greannotation{#2 #3}%
+\greannotation{#2. #3}%
 \grechangestyle{initial}{\fontsize{28}{28}\selectfont}%
  \gregorioscore{partitions/#4}%
  }
@@ -134,12 +135,33 @@ headsep=3mm,
 \NewDocumentCommand{\idxan}{mO{}mO{}m}{
     \index[A]{#1 #3%
     }%
-\anscore[#2.]{#3.}[#4]{#5}
+\anscore[#2.]{#3}[#4]{#5}
 %% #1 indexed name of piece
-%% #2   is a number; only ever 1 through 5 in []
+%% #2   is a number; only ever 1 through 5 in,[] periods taken care of with previous command (for now: there has got to be a way to fix this so that we can omit anscore #1/idxan #2and  period
 %% #3   mode without differentia, no punctuation except if it's ``per.'' 
-%% #4 differentia;in []
-%% #5  tgabc file name
+%% #4 differentia []
+%% #5  gabc file name
+}
+
+\NewDocumentCommand{\idxscore}{mmmO{}m}{
+  %% #1 :  office part letter A, H, V
+  %% #2 :    the indexed name of the piece; name of the score file
+     %% #3 : mode numeral
+  %% #4 : differentia if there is one in []
+  %% #5 :  gabc file
+     {\index[#1]{#2 #3}%
+     }
+\gscore[]{#3. #4}{#5}%
+}
+
+%%most scores are antiphons, probably a perpetually impeded Mag antiphon for a commemoration or suffrage (Veni Sancte is still its own thing: this reduces ad hoc indexing calls
+\NewDocumentCommand{\idxant}{mmm}{
+  %% #1 :  the indexed name of the piece; name of the score file
+  %% #2 :    mode numeral
+     %% #3 :gabc file
+     {\index[A]{#1 #2}%
+     }
+\gscore[Ant.]{#2.}{#3}%
 }
 
  \NewDocumentCommand{\admagnifscore}{mmm}{%
@@ -157,17 +179,7 @@ headsep=3mm,
 %% #3 differentia
 %% #4 gabc file name
 }
- 
-\NewDocumentCommand{\idxscore}{mmmO{}m}{
-  %% #1 :  office part letter A, H, V
-  %% #2 :    the indexed name of the piece; name of the score file
-     %% #3 : mode numeral
-  %% #4 : differentia if there is one in []
-  %% #5 :  gabc file
-     {\index[#1]{#2 #3}%
-     }
-\gscore[]{#3. #4}{#5}%
-}
+
 
 \NewDocumentCommand{\idxmag}{mmmm}{
 \admagnificat{}
