@@ -48,7 +48,7 @@ It may be helpful to edit gabc files in a visual editor such as [Source and Summ
 - Revise ONLY to fix typographical errors (following style guide, checked against Solesmes LA1949). To do as of Sept. 2025.
 - Tweak Gregorio output (including finalizing where EUOUAE needs to be kept) adjusting page breaks accordingly.
 - Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
-- Proofread completed book(s) (including pageref to Gregorio scores).
+- Proofread completed book(s) (including ensuring correct pageref to Gregorio scores); finalize page breaks.
 
 # Editorial Principles and Choices Made
 
