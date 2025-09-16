@@ -23,9 +23,13 @@
 
  %% to change in common headers \section command has center environment, this adds space (which we want) but too much
  
- %% screenshot of Praglia code uses section here, but I'm not sure that we want that for feasts like Circumcision, Epiphany, etc.
- \index[F]{Nativitas Domini~01@Nativitas Domini}
- \section[A Nativitate Domini usque 5 Jan]{IN NATIVITATE DOMINI.}\header{in nativitate domini.}
+ %% screenshot of Praglia code uses section here, but I'm not sure that we want that for feasts like Circumcision, Epiphany, etc. (and we can use addcontentsline to fake it
+
+\idxlitdate{Nativitas Domini~01@Nativitas Domini}{25 Decembris}
+\festum{IN NATIVITATE DOMINI}
+\addcontentsline{toc}{section}{A Nativitate Domini usque 5 Jan}\phantomsection
+ 
+ \header{in nativitate domini.}
  
 \duplexclassis{I}[cum Octava privilegiata III ordinis]
 
@@ -33,21 +37,19 @@
 
 \invesperis{i}
 
-\primaantiphona{8. G}
-
-\initialscore{an_rex_pacificus_solesmes_1961}
+\idxprima{Rex pacificus}{8}{G}{an_rex_pacificus_solesmes_1961}
 \label{109_8g} \phantomsection \psalmus{109}{109_8G}{109_8}
 
-\gscore[2. Ant.]{7. a}{an_magnificatus_est_solesmes_1961}
+\idxan{Magnificatus est}[2]{7}[a]{an_magnificatus_est_solesmes_1961}
 \label{110_7a}\phantomsection \psalmus{110}{110_7a}{110_7} 
 
-\gscore[3. Ant.]{8. G}{an_completi_sunt_solesmes_1961}
+\idxan{Completi sunt}[3]{8}[G]{an_completi_sunt_solesmes_1961}
 \psalmus{111}{111_8G}{111_8}
 
-\gscore[4. Ant.]{8. G}{an_scitote_quia_prope_solesmes_1961}
+\idxan{Scitote}[4]{8}[G]{an_scitote_quia_prope_solesmes_1961}
 \psalmus{112}{112_8G}{112_8}
 
-\gscore[5. Ant.]{1. g}{an_levate_capita_vestra_solesmes_1961}
+\idxan{Levate capita vestra}[5]{1}[g]{an_levate_capita_vestra_solesmes_1961}
 \psalmus{116}{116_1g}{116_1}
 
 \label{cap_24_dec} \phantomsection
@@ -58,7 +60,7 @@
 \label{jesu_redemptor_omnium_nativitatis} \phantomsection
 
 \hymnus
-\gscore[]{1.}{hy_jesu_redemptor_omnium_nativitatis_solesmes_1961} 
+\idxhy{Jesu redemptor omnium}{1}{hy_jesu_redemptor_omnium_nativitatis_solesmes_1961} 
 
 %%Hymn cap J hangs very low! but this is not the case for the Holy Name (same word too).
 
@@ -66,8 +68,7 @@
 
 \smallscore{versiculus_i_vesperis_nativitatis_domini}
 
-\admagnificat
-\gscore[]{8. G}{an_cum_ortus_fuerit_solesmes_1961}
+\idxmag{Cum ortus fuerit}{8}{G}{an_cum_ortus_fuerit_solesmes_1961}
 
 \oratio
 
@@ -78,7 +79,7 @@
 \hymnusadcompletorium
 \label{hy_te_lucis_ante_terminum_in_nativitate_domini_solesmes_1961}
 \phantomsection
-\gscore[]{8.}{hy_te_lucis_ante_terminum_in_nativitate_domini_solesmes_1961}
+\idxhy{Te lucis ante terminum@– in Nativitate Dom.}{8}{hy_te_lucis_ante_terminum_in_nativitate_domini_solesmes_1961}
 
 \rubrique{Hic tonus (vel ad libitum tonus Hymni Vesperarum) servandus est ad Completorium usque ad Epiphaniarn, etiam in Festis occurentibus.}
 
@@ -86,23 +87,21 @@
 \label{2_vesperas_dec_25}\phantomsection
 \invesperis{ii}
 
-\smalltitle{I Antiphona 1. g} 
-
-\initialscore{an_tecum_principium_solesmes_1961}
+\idxprima{Tecum principium}{1}{g}{an_tecum_principium_solesmes_1961}
 \psalmus{109}{109_1g}{109_1}
 
-\gscore[2. Ant.]{7. a}{an_redemptionem_misit_solesmes_1961} %%should EUOUAE be there if the psalm isn't but it's only 1 psalm referenced elsewhere?
+\idxan{}[2]{7}[a]{an_redemptionem_misit_solesmes_1961} %%should EUOUAE be there if the psalm isn't but it's only 1 psalm referenced elsewhere?
 \rubrique{Ps. \normaltext{Confitébor, \pageref{110_7a}.}}
 %\psalmus{110}{110_7a}{110_7a} 
 
-\gscore[3. Ant.]{7. b}{an_exortum_est_nativitate_solesmes_1961}
+\idxan{Exortum est~01@Exortum est \textit{in Nat. Domini}}[3]{7}[b]{an_exortum_est_nativitate_solesmes_1961}
 \psalmus{111}{111_7b}{111_7}
 
-\gscore[4. Ant.]{4. A*}{an_apud_dominum_misericordia_solesmes_1961}
+\idxan{Apud Dominum misericordia}[4]{4}[A*]{an_apud_dominum_misericordia_solesmes_1961}
 \psalmus{129}{129_4A_A_star}{129_4A_A_star}
  %%did not originally add the _star when working on Sacred Heart…
 
-\gscore[5. Ant.]{8. G}{an_de_fructu_ventris_tui_solesmes_1961}
+\idxan{De fructu}[5]{8}[G]{an_de_fructu_ventris_tui_solesmes_1961}
 \psalmus{131}{131_8G}{131_8}
 
 \label{cap_2_vesperis_nativitatis_dom} \phantomsection
@@ -118,7 +117,7 @@
 \rubrique{Sic cantatur tantum in die festi: alias servatur tonus communis.}
 
 \admagnificat \label{hodie_christus_natus_est} \phantomsection
-\gscore[]{1. g2}{an_hodie_christus_natus_est_solesmes_1961}
+\idxan{}[]{1. g2}{an_hodie_christus_natus_est_solesmes_1961}
 
 \oratio \label{or_natitivatis_dom} \phantomsection
 
@@ -129,7 +128,7 @@ Per eúmdem Dóminum.
 
 \rubrique{Deinde pro S.\@ Stephano.}
 
-\gscore[Ant.]{8. C}{an_stephanus_autem_solesmes_1961}
+\idxant{Stephanus autem}{8}{an_stephanus_autem_solesmes_1961}
 
 %%These verses probably all need to be macros or tex files inserted with \input
 
@@ -155,16 +154,14 @@ Per eúmdem Dóminum.
 
 \label{deus_tuorum_militum_nat} \hymnus
 
-\gscore[]{1.}{hy_deus_tuorum_militum_st_stephen_solesmes_1961}
+\idxhy{Deus tuorum militum~04@– \textit{pro S. Stephano}}{1}{hy_deus_tuorum_militum_st_stephen_solesmes_1961}
 
 \vv Stéphanus vidit cælos apértos.
 
 \rr Vidit et introívit: beátus homo, cui cæli patébant.
 
 \label{an_sepelierunt_stephanum_solesmes}\phantomsection
-\admagnificat
-
-\gscore[]{8. G}{an_sepelierunt_stephanum_solesmes}
+\idxmag{Sepelierun}{8}{G}{an_sepelierunt_stephanum_solesmes}
 
  \label{oratio_s_stephani_dec_26} \phantomsection
 
@@ -174,7 +171,7 @@ Per eúmdem Dóminum.
 
 \rubrique{Deinde pro S.\@ Joanne.}
 \label{an_iste_est_johannes_solesmes_1961} \phantomsection
-\gscore[Ant.]{1.}{an_iste_est_johannes_solesmes_1961}
+\idxant{Iste est Joannes}{1}{an_iste_est_johannes_solesmes_1961}
 
 \vv Valde honorándus est beátus Joánnes.
 
@@ -203,15 +200,13 @@ nul fit, nisi in i\-psa die Octava, ut suis locis notatur.}
 
 \hymnus
 
-\gscore[]{1.}{hy_exsultet_orbis_gaudiis_st_john_solesmes_1961}
+\idxhy{Exsultet orbis gaudiis~03@– \textit{Pro S. Joanne}}{1}{hy_exsultet_orbis_gaudiis_st_john_solesmes_1961}
 
 \vv Valde honorándus est beátus Joánnes.
 
 \rr Qui supra pectus Dómini in cœna recúbuit.
 
-\admagnificat
-
-\gscore[]{6. F}{an_exiit_sermo_solesmes_1961}
+\idxmag{Exiit sermo}{6}{F}{an_exiit_sermo_solesmes_1961}
 
 \oratio \label{oratio_s_joannis_dec_27} \phantomsection
 
@@ -223,7 +218,7 @@ Per Dóminum.
 \label{an_hi_sunt_qui_cum_mulieribus_solesmes_1961}
 \phantomsection
 
-\gscore[Ant.]{1.}{an_hi_sunt_qui_cum_mulieribus_solesmes_1961}
+\idxant{Hi sunt qui cum mulieribus}{1}{an_hi_sunt_qui_cum_mulieribus_solesmes_1961}
 
 \vv Heródes irátus occídit multos púeros.
 
@@ -250,15 +245,13 @@ Oratio \normaltext{Concéde, quǽsumus, \pageref{or_natitivatis_dom}.}}
 
 \hymnus
 
-\gscore[]{1.}{hy_salvete_flores_martyrum_solesmes_1961}
+\idxhy{Salvete flores martyrum}{1}{hy_salvete_flores_martyrum_solesmes_1961}
 
 \vv Sub throno Dei omnes Sancti clamant.
 
 \rr Víndica sánguinem nostrum, Deus noster.
 
-\admagnificat
-
-\gscore[]{2. D}{an_innocentes_pro_christo_solesmes_1961}
+\idxmag{Innocentes pro Christo}{2}{D}{an_innocentes_pro_christo_solesmes_1961}
 
 \oratio \label{oratio_28_dec} \phantomsection
 
@@ -307,8 +300,7 @@ Odavmn, ut suo loco notatur.}
 
 \rr Et habitávit in nobis, allelúia.
 
-\admagnificat
-\gscore[]{8. G}{an_dum_medium_silentium_solesmes_1961}
+\idxmag{Dum medium silentium}{8}{G}{an_dum_medium_silentium_solesmes_1961}
 
 \oratio %%%this can be a separate file too
 
@@ -333,8 +325,8 @@ Qui tecum vivit et regnat in unitáte.
 
 \rr Et habitávit in nobis, allelúia.
 
-\admagnificat \label{puer_jesus} \phantomsection
-\gscore[]{6. F}{an_puer_jesus_solesmes_solesmes_1961}
+\label{puer_jesus} \phantomsection
+\idxmag{Puer Jesus}{6}{F}{an_puer_jesus_solesmes_solesmes_1961}
 
 \rubrique{Oratio \normaltext{Omnípotens sempitérne} ut supra.}
 
@@ -376,7 +368,7 @@ Qui tecum vivit et regnat in unitáte.
 
 \duplex
 
-Vesperas \rubrique{dicuntur de Circumcisione Domini Confessoris commemoratione.}
+Vesperas \rubrique{dicuntur de Circumcisione Domini sine ulla commemoratione.}
 
 \biggerrule
 
@@ -391,29 +383,27 @@ Vesperas \rubrique{dicuntur de Circumcisione Domini Confessoris commemoratione.}
 \festum{In Circumcisione Domini et Octava Nativitatis}
 \duplexclassis{II}
 
-\primaantiphona{6. F}
-
-\initialscore{an_o_admirabile_commercium_solesmes_1961}
+\idxprima{O admirabile commercium}{6}{F}{an_o_admirabile_commercium_solesmes_1961}
 
 %%episema on "lar" is quite low, could be adjusted…
 
 \psalmus{109}{109_6_alt}{109_6_alt}
 
-\gscore[2. Ant.]{3. a2}{an_quando_natus_es_solesmes_1961}
+\idxan{Quando natus es}[2]{3}[a2]{an_quando_natus_es_solesmes_1961}
 
 %% 3a2 spacing is weird because 3 sits so high on baseline
 
 \psalmus{112}{112_3a2}{112_3a2_g}
 
-\gscore[3. Ant.]{4. E}{an_rubum_quem_solesmes_1961}
+\idxan{Rubem quem}[3]{4}[E]{an_rubum_quem_solesmes_1961}
 
 \psalmus{121}{121_4E}{121_4E}
 
-\gscore[4. Ant.]{1. f}{an_germinavit_radix_solesmes_1961}
+\idxan{Germinavit radix}[4]{1. f}{an_germinavit_radix_solesmes_1961}
 
 \psalmus{126}{126_1f}{126_1}
 
-\gscore[5. Ant.]{2. D}{an_ecce_maria_genuit_solesmes_1961}
+\idxan{Ecce Maria genuit}[5]{2. D}{an_ecce_maria_genuit_solesmes_1961}
 
 %%this antiphon is only listed once in the LA, LU, and AM1934, on Gregobase at least.
 
@@ -432,9 +422,7 @@ Vesperas \rubrique{dicuntur de Circumcisione Domini Confessoris commemoratione.}
 
 \rr Et habitávit in nobis, allelúia.
 
-\admagnificat
-
-\gscore[]{8. G}{an_propter_nimiam_solesmes_1961}
+\idxmag{Propter nimiam}{8}{G}{an_propter_nimiam_solesmes_1961}
 
  \label{or_jan_1}\phantomsection
  
@@ -453,9 +441,7 @@ Qui tecum vivit et regnat in unitáte.
 
  \label{an_magnum_haereditatis_solesmes_1961} \phantomsection
  
- \admagnificat
-
-\gscore[]{2. A}{an_magnum_haereditatis_solesmes_1961}
+\idxmag{Magnum hæreditatis}{2}{A}{an_magnum_haereditatis_solesmes_1961}
 
 \rubrique{Oratio \normaltext{Deus, qui salútis} ut supra.}
 
@@ -475,23 +461,20 @@ de Sanctissimo Nomine Jesu, in casu, fit pariter Officium diei 2 Januarii, vel s
 
 \invesperis{i}
 
-\primaantiphona{8. G}
-
-\initialscore{an_omnis_qui_invocaverit_solesmes_1961}
+\idxprima{Omnis qui invocaverit}{8}{G}{an_omnis_qui_invocaverit_solesmes_1961}
 
 \rubrique{Ps. \normaltext{Dixit Dóminus, \pageref{109_8g}.}}
 
-\gscore[2. Ant.]{5. a}{an_sanctum_et_terribile_solesmes_1961}
+\idxan{Sanctum et terribile}[2]{5}[a]{an_sanctum_et_terribile_solesmes_1961}
 
 \psalmus{110}{110_5a}{110_5}
 
-\gscore[3. Ant.]{3. a2}{an_ego_autem_in_domino_solesmes_1961}
+\idxan{Ego autem in Domino}[3]{3}[a2]{an_ego_autem_in_domino_solesmes_1961}
 
-\label{111_3a2}
-
+\label{111_3a2}\phantomsection
 \psalmus{111}{111_3a2}{111_3a2_g}
 
-\gscore[4. Ant.]{4. E}{an_a_solis_ortu_solesmes_1961}
+\idxan{A solis ortu}[4]{4}[E]{an_a_solis_ortu_solesmes_1961}
 
 \rubrique{Ps. \normaltext{Laudáte Púeri, \pageref{M-112_4E}.}}
 
@@ -499,7 +482,7 @@ de Sanctissimo Nomine Jesu, in casu, fit pariter Officium diei 2 Januarii, vel s
 
 %\psalmus{112}{112_4E}{112_4E}
 
-\gscore[5. Ant.]{8. c}{an_sacrificabo_hostiam_solesmes_1961}
+\idxan{Sacrificabo}[5]{8}[c]{an_sacrificabo_hostiam_solesmes_1961}
 
 \psalmus{115}{115_8c}{115_8}
 
@@ -512,15 +495,13 @@ de Sanctissimo Nomine Jesu, in casu, fit pariter Officium diei 2 Januarii, vel s
 \hymnus
 
 %%changed pœnitentibus to pæ-
-\gscore[]{1.}{hy_jesu_dulcis_memoria_solesmes_1957}
+\idxhy{Jesu dulcis memoria}{1}{hy_jesu_dulcis_memoria_solesmes_1957}
 
 \vv Sit nomen Dómini benedíctum, allelúia.
 
 \rr Ex hoc nunc et usque in sǽculum, allelúia.
 
-\admagnificat
-
-\gscore[]{8. G}{an_fecit_mihi_magna_solesmes_1961}
+\idxmag{Fecit mihi magna}{8}{G}{an_fecit_mihi_magna_solesmes_1961}
 
 \oratio
 
@@ -532,9 +513,7 @@ de Sanctissimo Nomine Jesu, in casu, fit pariter Officium diei 2 Januarii, vel s
 
 \omniapraeter
 
-\admagnificat
-
-\gscore[]{1. g}{an_vocabis_nomen_ejus_solesmes_1961}
+\idxmag{Vocabis}{1}{g}{an_vocabis_nomen_ejus_solesmes_1961}
 
 \litdate{2 Januarii} %%There are ordinarily no 2 Vespers since the octave day was changed from duplex to simplex in 1911.
 
@@ -601,22 +580,8 @@ In I Vesperis \rubrique{Antiphonæ et Psalmis ut in I Vesperis Circumcisionis Do
 
 \rubrique{Oratio \normaltext{Omnípotens sempitérne, \pageref{oratio_dom_infra_oct_nat}.}}
 
-%\admagnificat
-%\gscore[]{6. F}{an_puer_jesus_solesmes_solesmes_1961}
-
-%\oratio %%%this can be a separate file too.
-%
-%\lettrine{O}{m}nípotens sempitérne Deus, dírige actus nostros in beneplácito tuo:~† ut in nómine dilécti Fílii tui~* mereámur bonis opéribus abundáre:
-%Qui tecum vivit et regnat in unitáte.
-
-%%St Telesphorus will need pageref after we build Commemorations of the saints and insert into project directory
-
 \index[F]{Telesphori Papæ Mart.}
 \rubrique{Deinde commem. S.\@ Telesphori, Papæ, Martyris. Ant.\@ \normaltext{Iste sanctus, \pageref{M-an_cs_iste_sanctus_pro_lege_solesmes_1961}, ℣. Glória et honóre.}}
-
-%\vv Glória et honóre coronásti eum Dómine.
-%
-%\rr Et constituísti eum super ópera mánuum tuárum.
 
 \oratio
 
