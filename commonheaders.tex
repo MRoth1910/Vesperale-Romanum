@@ -94,11 +94,11 @@ headsep=3mm,
    \grechangedim{initialraise}{0cm}{scalable}}
    
 \NewDocumentCommand{\idxinscore}{mmmm}{
-  %% #1 :  the indexed name of the piece
-  %% #2 :  office part letter H, A, V
+  %% #1 : office part letter H, A, V
+  %% #2 :  the indexed name of the piece  
   %% #3 : mode
   %% #4   name of the score file
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
+
   \index[#1]{#2 #3%
   }%
 \initialscore{#4}%
@@ -109,7 +109,7 @@ headsep=3mm,
   %% #2 :  mode
   %% #3 : differentia
   %% #4   name of the score file
-  %% this prevents page breaks between the phantom section and its label, and the actual score.
+
   \index[A]{#1 #2%
   }%
   \primaantiphona{#2. #3}{}
@@ -214,8 +214,8 @@ headsep=3mm,
     \index[V]{#1 #2}%
 \gscore[]{#2.}{#3}
 %% #1 indexed name of piece
-%% #2  gabc file name
-%% #3 mode
+%% #2  mode
+%% #3  gabc file name
 }
 
 %% score with no initial, e.g psalms, common tones, etc. 
@@ -227,11 +227,10 @@ headsep=3mm,
 
 \makeatletter
 \NewDocumentCommand{\idxsmall}{mmm}{
-    \index[A]{#1 {#2}%
-    }%
-\smallscore{#2}
+    \index[A]{#1 #2}%
+\smallscore{#3}
 %% #1 indexed name of piece
-%% #2  mode without differentia, no punctuation except if it's ``per.'' 
+%% #2  mode without differentia, no punctuation except if it's ``per.''  (and we're going to put T. per. unfortunately to be consistent
 %% #3  gabc file name
 }
 
