@@ -212,7 +212,7 @@ headsep=3mm,
 
 \NewDocumentCommand{\idxva}{mmm}{
     \index[V]{#1 #2}%
-\gscore[]{#2.}{#3}
+\gscore[]{#2.}{#3}%
 %% #1 indexed name of piece
 %% #2  mode
 %% #3  gabc file name
@@ -225,12 +225,11 @@ headsep=3mm,
   \gresetinitiallines{1}%
 }
 
-\makeatletter
 \NewDocumentCommand{\idxsmall}{mmm}{
     \index[A]{#1 #2}%
-\smallscore{#3}
+\smallscore{#3}%
 %% #1 indexed name of piece
-%% #2  mode without differentia, no punctuation except if it's ``per.''  (and we're going to put T. per. unfortunately to be consistent
+%% #2  mode without differentia, no punctuation except if it's ``per.''
 %% #3  gabc file name
 }
 
@@ -537,10 +536,9 @@ Numbers=OldStyle]
     \end{enumerate}}
     
      %% Command de Matthias Bry modifié, prints psalm incipit score with the text
-     %% #1 is psalm number (so an integer from 1 to 150
+     %% #1 is psalm number (so an integer from 1 to 150)
 %% #2 is the gabc file somethng like #1_7a.gabc — if there is a way to append a variable mode and ending to #1, then that'd be cool
-%% #3 is the psalm file name described above (and which is confusingly a different argument number when the command is nested): something like 109_7.tex
-
+%% #3 is the psalm file name
         \NewDocumentCommand{\psalmus}{mmm}{
 	\needspace{4\baselineskip}%
 	\smalltitle{Psalmus #1.}%            %% needspace plus smalltitle with \vspace{baselineskip} adds a lot of white space
