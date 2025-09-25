@@ -6,7 +6,6 @@
 %%%%%%%%%%%%%%% INDICES %%%%%%%%%%%%%%%
 
 \usepackage{imakeidx}
-
 \indexsetup{level=\section*,toclevel=section,othercode=\footnotesize\thispagestyle{empty}}
 \makeindex[name=A,title=index antiphonarum., options=-s A,columns=2,columnseprule]
 \makeindex[name=H,title=index hymnorum., options=-s H,columns=2,columnseprule]
@@ -31,12 +30,13 @@
 % headings from appearing on empty pages.
 \usepackage[savepos]{zref}
 \usepackage{fancyhdr}
+\usepackage{afterpage}
 \usepackage{needspace} %%pour réserver de l'espace en bas de page ; ça évite des séparations entre les titres et la partition ou le texte qui les suivent. %%mais  ça génère des problèmes lorsque il faut 2 ou 3 titres l'un après l'autre (date ou jour, nom d'une fête, rang liturgique, office célébré… 
 \usepackage[compact]{titlesec}
 \usepackage{xcolor}
 %\usepackage{xstring}
 \usepackage{enumitem}%% psalm textes are in list format modified via this package
-%\usepackage{expl3}
+\usepackage{expl3}
 \usepackage{etoolbox}
 \usepackage{lettrine}
 \usepackage{perpage}%%%to reset footnotes at each page%%%
@@ -371,7 +371,6 @@ Numbers=OldStyle]
 
 %\newcommand{\cc}{{\fontspec[Scale=\customscale]{FreeSerif}\symbol{"2720}~}}%from Matthias
 
-
 %% typesets a cross pattée
 \NewDocumentCommand{\cc}{}{%
     % Grouping to keep font changes local
@@ -608,26 +607,63 @@ Numbers=OldStyle]
     \input{textes/#1}%
     }
     
-    
-    %% SC work for page headers and for secondary headings but not so much for things like "Dominica…" and certainly not the feast name%%
-    
+   
+
     %%%% Headers%%%%
     \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 
-\fancyhead[RO]{\small\rightmark\hspace{0.5cm}\thepage}
-\fancyhead[LE]{\small\thepage\hspace{0.5cm}\leftmark}
+\setlength{\headheight}{14pt} % prevent "headheight too small" warning
 
-\newcommand{\setheaders}[2]{
-	\renewcommand{\rightmark}{{\sc#2}}
-	\renewcommand{\leftmark}{{\sc#1}}
+% ============ Header State ============
+\newcommand{\lecustomheader}{} % Last header shown on even pages
+\newcommand{\rocustomheader}{} % Last header shown on odd pages
+
+% ============ Define Header Style ============
+\NewDocumentCommand{\headerstyle}{m}{%
+  \small\scshape\addfontfeature{LetterSpace=5.0}#1%
 }
-\setheaders{}{}
+
+% ============ Headers ============
+\fancyhead[LE]{%
+  \thepage\hspace{0.5cm}\headerstyle{\lecustomheader}%
+}
+\fancyhead[RO]{%
+  \headerstyle{\rocustomheader}\hspace{0.5cm}\thepage%
+}
+
+% ============ Set Header Command ============
+\NewDocumentCommand{\setcustomheader}{m}{%
+  \ifodd\value{page}
+    \gdef\lecustomheader{\rocustomheader}% keep old for LE
+    \gdef\rocustomheader{#1}% update RO
+  \else
+    \gdef\rocustomheader{\lecustomheader}% keep old for RO
+    \gdef\lecustomheader{#1}% update LE
+  \fi
+  \markboth{}{} % clear chapter/section auto headers
+}
+
+%Delay header change to the next page when it gets it wrong
+\NewDocumentCommand{\nextcustomheader}{m}{%
+  \afterpage{%
+    \setcustomheader{#1}%
+  }%
+}
+
+%% orginal
+%\fancyhead[RO]{\small\rightmark\hspace{0.5cm}\thepage}
+%\fancyhead[LE]{\small\thepage\hspace{0.5cm}\leftmark}
+
+%\newcommand{\setheaders}[2]{
+%	\renewcommand{\rightmark}{{\sc#2}}
+%	\renewcommand{\leftmark}{{\sc#1}}
+%}
+%\setheaders{}{}
 
 %%note as of 5.17.2024: we need to learn how to get fancyhdr or titlesec or both to work in the fulll book
-
 
  %% TITLE COMMANDS %%%% had been dead in NR version of the same, but Matthias says this isn't a good idea.
  %%need to figure out multiple section headers AND a chapter header so that everything fits…
@@ -1319,10 +1355,9 @@ Pater noster, Ave María, \textit{et} Credo.%
   
   \setcounter{tocdepth}{2} %% probably should hide subsections from TOC of most documents
 
-  
   %% command to wrap printindex and set the headers for indices
 \newcommand{\cprintindex}[2]{
-	\header{#2} 
+	\setcustomheader{#2} 
 	\pagestyle{fancy}
 	\thispagestyle{empty}
 	\printindex[#1]
