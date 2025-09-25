@@ -1,4 +1,5 @@
-% !TEX TS-program = LuaLaTeX+se
+% !TEX TS-program = lualatexmk
+% !TEX parameter =  --shell-escape
 
 \documentclass[vesperale_romanum.tex]{subfiles}
 
@@ -42,7 +43,7 @@
 %\vspace{2mm}
 \smalltitle{Tonus solemnis.}
 
-\gscore[]{}{Deus_in_adjutorium_tonus_solemnior} %% includes content from Laus_tibi_Domine_tonus_solemnior.gabc to include Vel as in LA1949.
+\gscore[]{}{Deus_in_adjutorium_tonus_solemnior} %% includes content from Laus_tibi_Domine_tonus_solemnior to include Vel as in LA1949.
 
 %\smallscore{Laus_tibi_Domine_tonus_solemnior}
 
@@ -71,24 +72,55 @@ In Canticis ex Evangelio (\textit{Magnificat, Nunc dimittis}) inceptio fit ad si
 
 Pro Cantico \textit{Magnificat} in singulis Tonis, antiqui utebantur quotidie modulatione solemni, nempe magis ornata, quæ secundum usum nunc communiorem, usurpari potest saltem in Festis majoribus, seu primæ vel secundæ classis.
 
-Quando Antiphona est tantum inchoanda ante Psalmum (ut in Semiduplicibus et infra), si ejus prima verba sunt eadem ac prima verba Psalmi et ex i\-pso Psalmo desumpta, Psalmus incipi debet in chorda tenoris, ab eo verbo in quo desinit inchoatio Antiphonæ. In Antiphonario post prima verba Psalmi quæ non repeti debent, ponitur signum ]. Si Antiphona componitur ex primo versu Psalmi, ut Ant.\@ \textit{Qui habitat }in Officio Dedicationis, Cantor in Officio Duplici incipit Psalmum cum initio a secundo versu (nisi in fine Antiphonæ addatur Alleluia; tunc enim resumitur Psalmus a primo versu).
+Quando Antiphona est tantum inchoanda ante Psalmum (ut in Semiduplicibus et infra et ad Horas minores), si ejus prima verba sunt eadem ac prima verba Psalmi et ex i\-pso Psalmo desum\-pta, Psalmus incipi debet in chorda tenoris, ab eo verbo in quo desinit inchoatio Antiphonæ.%
+%In Antiphonario post prima verba Psalmi quæ non repeti debent, ponitur signum ].%
+Si Antiphona componitur ex primo versu Psalmi, ut Ant.\@ \textit{Qui habitat }in Officio Dedicationis, Cantor in Officio Duplici incipit Psalmum cum initio a secundo versu (nisi in fine Antiphonæ addatur Alleluia; tunc enim resumitur Psalmus a primo versu).
 
-%%tonus 1
+\altnormal
+\smalltitle{Primus Tonus.}
+\smallscore{primus_tonus}
 
 \rubrique{(Loco diiferentiæ \normaltext{g2} potest ad libitum usurpari Diff. \normaltext{g;} et pro diiferentia \normaltext{a3,} Diff. \normaltext{a2.)}}
 
 In omnibus Tonis Psalmorum flexa fit deprimendo ultimam syllabam ac etiam penultimam si sit brevis. Sed in monosyllaba vel hebraica dictione fit tantum sustinendo vocem in tenore, cum aliquantula pausa.\footnote{Ex decretis S.R.C. 8 Julii et 8 Decembris 1912, quando in Lectionibus et Versiculis et in Psalmorum mediationibus monosyilaba vel hebraica dictio occurrit, potest ad libitum immutari clausula, vel proferri sub modulatione consueta.}
 
-%%tonus 3
+\smalltitle{Secondus Tonus.}
+\smallscore{secundus_tonus}
+
+\rubrique{Vel:}
+\smallscore{secundus_tonus_a}
+
+\smalltitle{Tertius Tonus.}
+\smallscore{tertius_tonus}
 \rubrique{(Loco hujus ultimæ diiferentiæ quæ cum solis Antiphonis \normaltext{Confitémini Dómino, Dómine probásti} et \normaltext{Allelúia} in Vesperis ferialibus usurpatur, adhiberi potest diiferentia \normaltext{g.)}}
 
-%%tonus 4
+\smalltitle{Quartus Tonus.}
 
-Quando Antiphona notatur cum A*, potest ad libitum adhiberi Differentia sequens.
+\smallscore{quartus_tonus}
 
-%%tonus 6
+\rubrique{Altera Positio ejusdem toni. (Quando Antiphona notatur cum \normaltext{A*,} potest ad libitum adhiberi Differentia sequens.)}
 
+\smallscore{quartus_tonus_c_a}
+
+\smalltitle{Quintus Tonus.}
+\smallscore{quintus_tonus}
+
+\smalltitle{Sextus Tonus.}
+
+\smallscore{sextus_tonus}
 Apud antiquos Mediatio fiebat ut in 1 Tono : sed a sæculo XVI sensim hujus invaluit alterius Mediationis, quæ jam in antiquis Tonalibus reperitur ut secunda Mediatio pro longioribus versibus.
+
+\smallscore{sextus_tonus_alt}
+\smalltitle{Septimus Tonus.}
+\smallscore{septimus_tonus}
+
+\smalltitle{Octavus Tonus.}
+
+\rubrique{(Quando Antiphona notatur cum \normaltext{G*,} potest ad libitum adhiberi Differentia sequens.)}
+
+\smallscore{octavus_tonus}
+
+\altitshape
 
 \smalltitle{Tonus peregrinus.}
 
@@ -105,9 +137,9 @@ Hic Tonus usurpatur pro Psalmis qui dicendi prescribuntur in Precibus Officii si
 \gscore[]{}{tonus_in_directum}
 
 In voce monosyllaba vel hebraica, flexa fit eodem modo quo supra, vel ad libitum recta voce et protracta cum pausa, sicut in aliis Tonis Psalmorum.
-\newpage
+%\newpage
 Sabbato Sancto ad Completorium pro Psalmis, et in Officio Resurrectionis Domini usque ad Vesperas Sabbati in Albis, pro Psalmis qui ad Horas cantantur sine Antiphona et pro Cantico \textit{Nunc dimíttis,} potest usurpari Tonus sequens:
-
+\grechangenextscorelinedim{2}{spacebeneathtext}{0.1cm}{scalable}
 \gscore[]{}{tonus_ad_compl_in_sab_san} %%hspace needed for italic touching bold
 
 \rubrique{Flexa ut in Tono 2 Psalmodiæ.}
@@ -212,6 +244,7 @@ Adhibetur etiam in Officio Defunctorum, etiam ad Vesperas, in Exsequiis et Absol
 
 \smalltitle{Tonus solemnis.}
 
+\grechangenextscorelinedim{10,12,13}{spacebeneathtext}{0.13cm}{scalable}
 \gscore[]{}{or_tonus_antiqui_solemnis}
 
 In i\-psa Oratione fit fiexa tantum, in fine primæ distinctionis.
