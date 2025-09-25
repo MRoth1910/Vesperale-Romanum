@@ -40,14 +40,15 @@ It may be helpful to edit gabc files in a visual editor such as [Source and Summ
 # Top-level tasks
 
 - Collect all chants from Gregobase and transcribe missing solemn versicles, etc. common tones; psalms are taken from Ben Bloomfield's Psalm Tone Tool. (This should be done as of Sept. 2025). Correct as necessary (file names, following style guides)
-- Collect texts from Divinum Officium or Psalm Tone Tool; correct as necessary per style guides.
+- Collect texts from Divinum Officium or Psalm Tone Tool (should be complete as of Sept. 2025); correct as necessary per style guides.
 - Typeset each part of proper of time, of saints, commons, varia, appendices. 1st draft done as of Sept. 2025
-- Index chants that need to be indexed. To do/in progress as of Sept. 2025.
+- Index chants that need to be indexed: most ants, hymns, varia. (should be complete as of Sept. 2025)
+- Index psalms (if we choose). to do.
 - Create index of feasts (excluding 1960 and proprium Galliae). 1st revision done as of Sept. 2025.
 - Correct Latin rubrics (both for typographical errors and for errors in Latin in new rubrics). To do as of Sept. 2025.
 - Revise ONLY to fix typographical errors (following style guide, checked against Solesmes LA1949). To do as of Sept. 2025.
 - Tweak Gregorio output (including finalizing where EUOUAE needs to be kept) adjusting page breaks accordingly.
-- Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
+- Add/correct LaTeX sectioning commands and add/change headers (fiest attempt should be complete as of Sept. 2025); correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
 - Proofread completed book(s) (including ensuring correct pageref to Gregorio scores); finalize page breaks.
 
 # Editorial Principles and Choices Made
