@@ -635,7 +635,7 @@ Numbers=OldStyle]
 }
 
 % ============ Set Header Command ============
-\NewDocumentCommand{\setcustomheader}{m}{%
+\NewDocumentCommand{\cheader}{m}{%
   \ifodd\value{page}
     \gdef\lecustomheader{\rocustomheader}% keep old for LE
     \gdef\rocustomheader{#1}% update RO
@@ -647,9 +647,9 @@ Numbers=OldStyle]
 }
 
 %Delay header change to the next page when it gets it wrong
-\NewDocumentCommand{\nextcustomheader}{m}{%
+\NewDocumentCommand{\ncheader}{m}{%
   \afterpage{%
-    \setcustomheader{#1}%
+    \cheader{#1}%
   }%
 }
 
@@ -1357,7 +1357,7 @@ Pater noster, Ave María, \textit{et} Credo.%
 
   %% command to wrap printindex and set the headers for indices
 \newcommand{\cprintindex}[2]{
-	\setcustomheader{#2} 
+	\cheader{#2} 
 	\pagestyle{fancy}
 	\thispagestyle{empty}
 	\printindex[#1]
