@@ -84,7 +84,7 @@ In the _Liber Usualis,_ the most commonly used book even today, the singer is fo
 
 The tones of the hymns are taken from the 1912 edition as reproduced by Solesmes; the elisions are given per the Solesmes editions, that is to say that hypermetric syllables are left in, to let those chanters who sing them sing them and to let those who omit them do so as well, except for a few late editions which omit these syllables.
 
-The Magnificat will be given in full with all of the tones necessary, as in the _Liber Usualis;__ the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones, which poses a problem with some tones such as 4E.
+The Magnificat will be given in full with all of the tones necessary, as in the _Liber Usualis;_ the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones, which poses a problem with some tones such as 4E.
 
 The common tones will also be reproduced in a dedicated section, at the front of the book (somewhat like in the antiphonal, and therefore not at Sunday/Monday Vespers and Sunday Compline).
 
