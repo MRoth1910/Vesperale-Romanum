@@ -40,14 +40,15 @@ It may be helpful to edit gabc files in a visual editor such as [Source and Summ
 # Top-level tasks
 
 - Collect all chants from Gregobase and transcribe missing solemn versicles, etc. common tones; psalms are taken from Ben Bloomfield's Psalm Tone Tool. (This should be done as of Sept. 2025). Correct as necessary (file names, following style guides)
-- Collect texts from Divinum Officium or Psalm Tone Tool; correct as necessary per style guides.
+- Collect texts from Divinum Officium or Psalm Tone Tool (should be complete as of Sept. 2025); correct as necessary per style guides.
 - Typeset each part of proper of time, of saints, commons, varia, appendices. 1st draft done as of Sept. 2025
-- Index chants that need to be indexed. To do/in progress as of Sept. 2025.
+- Index chants that need to be indexed: most ants, hymns, varia. (should be complete as of Sept. 2025)
+- Index psalms (if we choose). to do.
 - Create index of feasts (excluding 1960 and proprium Galliae). 1st revision done as of Sept. 2025.
 - Correct Latin rubrics (both for typographical errors and for errors in Latin in new rubrics). To do as of Sept. 2025.
 - Revise ONLY to fix typographical errors (following style guide, checked against Solesmes LA1949). To do as of Sept. 2025.
 - Tweak Gregorio output (including finalizing where EUOUAE needs to be kept) adjusting page breaks accordingly.
-- Add/correct LaTeX sectioning commands and add/change headers; correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
+- Add/correct LaTeX sectioning commands and add/change headers (fiest attempt should be complete as of Sept. 2025); correct `pageref` and `label` [(See this thread ](https://groups.google.com/g/gregorio-users/c/WPbwsmIqHrc/m/-Z9RxtYTAgAJ)) which will produce a completed draft.
 - Proofread completed book(s) (including ensuring correct pageref to Gregorio scores); finalize page breaks.
 
 # Editorial Principles and Choices Made
@@ -83,7 +84,7 @@ In the _Liber Usualis,_ the most commonly used book even today, the singer is fo
 
 The tones of the hymns are taken from the 1912 edition as reproduced by Solesmes; the elisions are given per the Solesmes editions, that is to say that hypermetric syllables are left in, to let those chanters who sing them sing them and to let those who omit them do so as well, except for a few late editions which omit these syllables.
 
-The Magnificat will be given in full with all of the tones necessary, as in the _Liber Usualis;__ the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones, which poses a problem with some tones such as 4E.
+The Magnificat will be given in full with all of the tones necessary, as in the _Liber Usualis;_ the antiphonal gives the first half but presumes that the chanter memorized the second half of the text and can correctly apply the tones, which poses a problem with some tones such as 4E.
 
 The common tones will also be reproduced in a dedicated section, at the front of the book (somewhat like in the antiphonal, and therefore not at Sunday/Monday Vespers and Sunday Compline).
 
