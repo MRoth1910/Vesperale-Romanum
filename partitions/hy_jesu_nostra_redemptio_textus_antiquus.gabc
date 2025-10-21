@@ -4,11 +4,24 @@ mode:4;
 book:The Liber Usualis, 1961, p. 852;
 transcriber:Andrew Hinkley;
 %%
-(c4) <v>\def\J{\raise2pt\hbox{J}}\J</v>E(f)su(e!fwg'!hv) no(g)stra(fd) red(f)ém(efg)pti(f)o,(e.) (;) A(g)mor(hj) et(h) de(gf)si(g)dé(g')ri(f)um,(ed..) (:) De(cd)us(d) cre(dc)á(d)tor(fe) ó(de)mni(e)um,(e.) (;) Ho(g)mo(gh) in(g) fi(fd)ne(f) tém(efg)po(f)re.(e.) (::) 
+(c4) <v>\def\J{\raise2pt\hbox{J}}\J</v>E(f)su(e!fwg'!hv) no(g)stra(fd) red(f)ém(efg)pti(f)o,(e.) (;) A(g)mor(hj) et(h) de(gf)si(g)dé(g')ri(f)um,(ed..) (:) De(cd)us(d) cre(dc)á(d)tor(fe) ó(de)mni(e)um,(e.) (;) Ho(g)mo(gh) in(g) fi(fd)ne(f) tém(efg)po(f)re.(e.) (::)
 
-%%<v>\def\J{\raise2pt\hbox{J}}\J</v>
-
-
-
-
-%%A(efe)men.(de..) (::)
+%2. Quæ(f) te(e!fwg'!hv) vi(g)cit(fd) cle(f)mén(efg)ti(f)a,(e.) (;)
+%Ut(g) fer(hj)res(h) no(gf)stra(g) crí(g')mi(f)na,(e[ll:1]d..) (:)
+%Cru(cd)dé(d)lem(dc) mor(d)tem(fe) pá(de)ti(e)ens,(e.) (;)
+%Ut(g) nos(gh) a(g) mor(fd)te(f) tól(efg)le(f)res!(e.) (::) 
+%
+%3. In(f)fér(e!fwg'!hv)ni(g) clau(fd)stra(f) pé(efg)ne(f)trans,(e.) (;)
+%Tu(g)os(hj) ca(h)ptí(gf)vos(g) réd(g')i(f)mens:(e[ll:1]d..) (:)
+%Vi(cd)ctor(d) tri(dc)úm(d)pho(fe) nó(de)bi(e)li,(e.) (;)
+%Ad(g) dex(gh)tram(g) Pa(fd)tris(f) ré(efg)si(f)dens.(e.) (::) 
+%
+%4. I(f)psa(e!fwg'!hv) te(g) co(fd)gat(f) pí(efg)e(f)tas,(e.) (;)
+%Ut(g) ma(hj)la(h) no(gf)stra(g) sú(g')per(f)es(e[ll:1]d..) (:)
+%Par(cd)cén(d)d<e>o</e>,(d) et(dc) vo(d)ti(fe) cóm(de)po(e)tes(e.) (;)
+%Nos(g) tu(gh)o(g) vul(fd)tu(f) sá(efg)ti(f)es.(e.) (::) 
+%
+%5. Tu(f) e(e!fwg'!hv)sto(g) no(fd)strum(f) gáu(efg)di(f)um,(e.) (;)
+%Qui(g) es(hj) fu(h)tú(gf)rus(g) prǽ(g')mi(f)um:(e[ll:1]d..) (:)
+%Sit(cd) no(d)stra(dc) in(d) te(fe) gló(de)ri(e)a(e.) (;)
+%Per(g) cun(gh)cta(g) sem(fd)per(f) sǽ(efg)cu(f)la.(e.) (::)  A(efe)men.(de..) (::)
