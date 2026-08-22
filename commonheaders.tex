@@ -24,7 +24,7 @@
      \babelprovide[hyphenrules=latin]{ecclesiasticlatin}
 \usepackage{xspace}%% better to use {} after certain macros (or even within definitions) 
      \usepackage{multicol}
-%\usepackage{paracol}
+\usepackage{paracol}
 %\footnotelayout{m} %% this allows merged footnote if text is in parallel columns (mostly translations)
 \usepackage{emptypage} %% The emptypage package prevents page numbers and
 % headings from appearing on empty pages.
@@ -42,6 +42,7 @@
 \usepackage{perpage}%%%to reset footnotes at each page%%%
 \usepackage[hidelinks]{hyperref}
 \usepackage{refcount}
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%% HYPHENATION AND TYPOGRAPHICAL CONVENTIONS %%%%%%%%%%%%%%
 
@@ -284,10 +285,10 @@ headsep=3mm,
 %%  resets ALT font
 \NewDocumentCommand{\translationreset}{}{\grechangestyle{translation}{\itshape}} 
 
-%% fine-tuning of space between the staff and the text above lines (used for Magnificats; needs to be rethought  and worked into \smallscore
+% fine-tuning of space between the staff and the text above lines (used for Magnificats; needs to be rethought  and worked into \smallscore
 \newcommand{\altraise}{-0.4mm} %% default is -0.1cm %% needs to be fine-tuned for \rubrique command with EB Garamond font. -0.4mm is MB value, previously 1.4mm and -0.2cm  (this value works best for Magnificat but it does not work with common tones)
 \grechangedim{abovelinestextraise}{\altraise}{scalable}
-
+%
 \newcommand{\altheight}{0.5cm} %% default is 0.3cm and value must be bigger than text height; this should fix the problem. but needs further investigation. currently 6mm in MB command
 \grechangedim{abovelinestextheight}{\altheight}{scalable} %% this is a very finicky command.
 
@@ -607,8 +608,6 @@ Numbers=OldStyle]
     \input{textes/#1}%
     }
     
-   
-
     %%%% Headers%%%%
     \pagestyle{fancy}
 \fancyhead{}
@@ -684,7 +683,7 @@ Numbers=OldStyle]
 
 \addto\captionsecclesiasticlatin{\renewcommand\contentsname{\centerline{INDEX GENERALIS.}}}
 
-%this command still needs work
+%this command still needs work and is basically deprecated
 \NewDocumentCommand{\header}{m}{\setheaders{{\scshape\addfontfeature{LetterSpace=5.0}#1}}{{\scshape\addfontfeature{LetterSpace=5.0} #1}}}
 
 \NewDocumentCommand{\smalltitle}{m}{%
@@ -1131,6 +1130,10 @@ Pater noster, Ave María, \& Credo.%
 \rubrique{Comm.\@ præc.\@ Ant. \normaltext{Hic vir, \pageref{M-an_cs_hic_vir_despiciens_solesmes_1961}, \vv Justum dedúxit.}}%
 }
 
+\NewDocumentCommand{\similabo}{}{%
+\rubrique{Ant.\@ \normaltext{Similábo eum, \pageref{M-an_similabo_eum_solesmes_1961}, \vv Amávit eum Dóminus.}}%
+}
+
 
 %%for commemoration of following at II Vespers of major feasts.
 \NewDocumentCommand{\commemoration}{}{%
@@ -1352,6 +1355,17 @@ Pater noster, Ave María, \& Credo.%
   \rubrique{Ad Completorium, tonus ut in Antiphonario, \normaltext{\pageref{#1}.}%
   }%
   }
+  
+  %%for Mass booklets
+      \NewDocumentCommand{\texteparacol}{ +mm+m }{%
+    \smallskip% 
+       \begin{paracol}{2}
+           #1
+           \switchcolumn
+           \begin{otherlanguage*}{#2}
+    #3
+    \end{otherlanguage*}
+    \end{paracol}}
   
   \setcounter{tocdepth}{2} %% probably should hide subsections from TOC of most documents
 
