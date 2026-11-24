@@ -53,7 +53,7 @@ Numbers=OldStyle]
 }
 
 \begin{document}
-\section{General Proofreading and Stylistic Considerations, Version 0.7. \today}
+\section{General Proofreading and Stylistic Considerations, Version 0.8. \today}
 
 The typographical standards are peculiar, due to the typesetting system required and other factors (namely, the sources of the chant and individual preferences), so some documentation should be given.
 
@@ -111,12 +111,13 @@ If someone wants to fork Octavio Pardo's version of EB Garamond and create a nar
 Solesmes masterfully kept together most words which have a different syllabification in the missal such as ``Sanctus'' (San-ctus or Sanc-tus, the latter being followed by \verb|babel|, even though the ``ct'' grouping dates to Roman times according to Keno Wehr). ``Omnium'' and related words would be treated differently as well (see any number of chants where the hyphenation indicates o-mn but where the missal texts are om-).
  \begin{itemize}
  \item
-  If the package hyphenation cannot be fixed, then \verb|| is required. (There may be better ways than the LaTeX{} soft hyphen: to be investigated further as of Dec. 5, 2023, but for now this is the solution.). Other consonant pairs have the same problem (``pt'', ''ps'' — particularly ``ipse'' and so on, etc.) \emph{Update September 30, 2024} ``San-ctus'' is the preferred syllabification in the \textit{Liber Usualis.} 
+\emph{Update September 30, 2024} ``San-ctus'' is the preferred syllabification in the \textit{Liber Usualis.} 
 
 \item
 There are also some words (in psalms, antiphons, hymns, etc.) whose syllabification has to be fixed or checked, both based on what Jacques Perrière has done for corresponding .gabc files and based on the expertise of someone knowledgeable about pre-1981 Solesmes publications (a common example would be Redemptor; a review of the \verb|babel| documentation will be necessary. A notated copy of the documentation available has been made available (that is, some comments about pre-1960s Solesmes practice are added to the plaintext file).
  \item
 \verb|Red-ém-ptor| is the preferred syllabification of that word.
+\item \emph{Update November 23, 2026} the package patterns seem to be modified to account for the necessary changes
 \end{itemize}
 
 \item
@@ -127,7 +128,7 @@ The sources are to be followed, so the colon alone is used for dialogue (no guil
 \subsection{Other Considerations}
 \begin{itemize}
 \item
-For chant itself: the Si/Ti rules are those of Solesmes plus a clarification based on their traditional typography: the note is flat until the word ends, until a natural sign is printed, a bar appears (very rare in the evening offices, but it appears in some graduals, cf. those of SS.\@ Peter and Paul and of the XIII Sunday after Pentecost), or a line ends (also rare, cf. the tract of Palm Sunday); the note is also flat when printed for the entire chant. We leave off the feature to print a flat at a custos as it is only used once in any edition and it causes problems on second passes.
+For chant itself: the Si/Ti rules are those of Solesmes plus a clarification based on their traditional typography: the note is flat until the word ends, until a natural sign is printed, a bar appears (very rare in the evening offices, but it appears in some graduals, cf. those of SS.\@ Peter and Paul and of the XIII Sunday after Pentecost), or a line ends (also rare, cf. the tract of Palm Sunday); the note is also flat when printed for the entire chant. We leave off the feature to print a flat at a custos as it is only used once in any edition and it causes problems on second passes (\item \emph{Update November 23, 2026} this should be fixed, but it remains off)
 \item
 Adjustments to italicized syllables in psalms need to be made carefully. First, two repeated \verb|\textit{| invocations need to be removed by searching for \verb|}\textit{| and replacing it with nothing, to recombine the word, to allow for correct syllable breaks. Then \verb|\hspace*| is inserted to correct letters (especially serifs or round letters such as ``o'') from touching too much.
 \item
@@ -138,9 +139,9 @@ Roman numerals, following the monastic antiphonal, will not be followed by perio
 To follow on the above, Scripture verses as numbers will be used instead of chapter divisions of the Vulgate by letter (cf. the \textit{Antiphonale Monasticum}). They will be taken from DivinumOfficium.
 \item
 (Fixed) For now ``Capitulum'' is written on one line, the Scriptural source on another line, but if someone wants to make it so that the two can be on one line (like in the antiphonal), please, contribute! \emph{as of May 2024} there is a solution which should allow for elegant indentation and placement of elements on the same line. ``Lectio brevis'' at Compline gets the same treatment.
-\item in the commons, there are sometimes several orations, not chosen randomly by the celebrant but assigned to each saint; they are needed in case a saint isn't on the general calendar but where the office is taken from the common due to the lack of a local, proper office. There may be too much space between these which is essentially wasteful, but the idea is that the word ``Oratio.'' (or whatever introduces a second, etc. prayer) can't be split from the text, so we require space in the macro definition (as of September 2024).
+\item in the commons, there are sometimes several orations, not chosen randomly by the celebrant but assigned to each saint; they are needed in case a saint isn't on the general calendar but where the office is taken from the common due to the lack of a proper office. There may be too much space between these which is essentially wasteful, but the idea is that the word ``Oratio.'' (or whatever introduces a second, etc. prayer) can't be split from the text, so we require space in the macro definition (as of September 2024).
 \item
-\verb|lettrine| provides a nice way to use drop capitals for chapters and orations. Letters like ``Q'' and sometimes ``R'' will require some adjustment via package options, but it's otherwise straightforward.
+\verb|lettrine| provides a nice way to use drop capitals for chapters and orations. Letters like ``Q'' and sometimes ``R'' will require some adjustment via package options, but it's otherwise straightforward. Only one letter ordinarily is given as the second argument to be made a small capital.
 \item
 Chants which in the Solesmes antiphonal have an illustrated initial should be given one here. Ditto usage of \verb|greannotation| (one or both invocations) versus a line of text (``Antiphona ad Magnificat'', with or without the mode). Style for antiphons on Sundays is TBD, since the source books use "Antiphona ad Magnificat" which takes up so much more room. \emph{as of September 2024} ferial days of any season, Saturdays/Sundays \textit{per annum,} and other Sundays follow the Liber Usualis style, but all feasts and commons use antiphonal style.
 \item While the final use of the sectioning commands, with changes made via \verb|titlesec| is  to be determined, a preliminary form approaching what the final project should resemble is in the \verb|commonheaders| (as of October 2023). Determining the correct commands to use is a major ``next step''.
@@ -151,7 +152,7 @@ Originally, the plan was to copy the Roman antiphonal for the proper of saints (
 \begin{itemize}
 \item only special feasts (cf. Feria VI post Dom. Passionis) and major feasts require the date to be at the top of the entry; the rest have the date on the left side, with the entry centered, then the rank is below.
 \end{itemize}
-\item the ``Iste Conféssor'', per the pre-1960 rubrics, has two texts for the third strophe (Latin \textit{verse} of what in English is the first first, before the first double bar (and in our edition the number ``2.''). When the antiphonal/breviary indicates \textit{m.t.v.} on the feast day, then one followss this rubric which means that``the third verse is changed''.
+\item the ``Iste Conféssor'', per the pre-1960 rubrics, has two texts for the third strophe (Latin \textit{verse} of what in English is the first first, before the first double bar (and in our edition the number ``2.''). When the antiphonal/breviary indicates \textit{m.t.v.} on the feast day, then one follows this rubric which means that``the third verse is changed''.
 
 \begin{itemize}
 \item
@@ -175,5 +176,7 @@ Version History:
 0.6 revise period usage with macro \verb|\primaantiphona|
 
 0.7 revision
+
+0.8 revision of Nov. 23, 2026
 
 \end{document}
