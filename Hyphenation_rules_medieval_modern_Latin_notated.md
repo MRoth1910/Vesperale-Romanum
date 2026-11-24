@@ -39,7 +39,7 @@ otherwise, the hyphenation point is before the last consonant.
 	- *The-sprotia*, *ca-stra*, *ton-strix*
 	- *tem-plum*, *mem-brum*, *spec-trum*, *scep-trum*, *mulc-trum*, *in-fra*
 	- *sanc-tus*, *temp-to*
-NB San-ctus, red-em-ptor according to the actual books (of chant and in the prayers per Solesmes; there's a collect with San-ctus)
+NB San-ctus, red-em-ptor according to the actual books (of chant and in the prayers per Solesmes; we correct via `babelpatterns`)
 
 4. If *u* is a semivowel after *(s)q*, *ng* or *s*, the hyphenation point is
 before *(s)q*, *g* or *s*, respectively.
@@ -117,8 +117,10 @@ suppressed.
 	- *ne-gle-go* (not *neg-lego*), *ne-gotium* (not *neg-otium* or *nego-tium*)
 	- *su-sci-pio* (not *sus-cipio*), *su-spen-do* (not *sus-pendo*),
 	  *su-sti-neo* (not *sus-tineo*)
-[NB: Solesmes used "red-emptor" cf. Office of the Nativity, AM1934 in Christe, Red-emptor Omnium)
-[Solesmes uses sus-cip-e, e.g. Gloria IX is clearly hyphenated this way.]
+
+   Note: Solesmes used "red-emptor" cf. Office of the Nativity, AM1934 in Christe, Red-emptor Omnium), and Solesmes uses sus-cip-e, e.g. Gloria IX is clearly hyphenated this way. We adjust with `babelpatterns` but we generally leave otherwise the forms alone.
+
+
 
 4. Where a common letter has fallen away at the word boundary, the word
 boundary is ignored. The word is hyphenated according to the general rules. A
