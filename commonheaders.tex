@@ -20,9 +20,29 @@
 %\usepackage[paperwidth=160mm, paperheight=240mm]{geometry}
 
 \usepackage{fontspec}
-\usepackage[english,french,ecclesiasticlatin.usej,activeacute]{babel} %%added activeacute as an option for convenience especially for Kyrie
-     \babelprovide[hyphenrules=latin]{ecclesiasticlatin}
-\usepackage{xspace}%% better to use {} after certain macros (or even within definitions) 
+\usepackage[english,french,ecclesiasticlatin.usej,activeacute]{babel}
+\babelprovide[hyphenrules=latin]{ecclesiasticlatin}
+
+% ---- Patterns (LuaTeX only) -------------------------------------------
+% N.B. a pattern replaces any existing one with the same letters
+% ("Renew pattern" in the log); TeX takes the max digit at each position.
+\babelpatterns[ecclesiasticlatin]{
+  5mn  m6n
+  5ct  c6t
+  5pt  p6t
+  5ps  p6s
+  re6d5em
+  su6s5c
+  su6s5p
+  su6s5t
+}
+
+% ---- Hyphenmins: forbids isolated single-letter vowels ----------------
+\addto\extrasecclesiasticlatin{\lefthyphenmin=2 \righthyphenmin=2 }
+
+% ---- One-offs ----------------------------------------------------------
+\babelhyphenation[ecclesiasticlatin]{pro-pter}
+\babelhyphenation[ecclesiasticlatin]{sic-ut}\usepackage{xspace}%% better to use {} after certain macros (or even within definitions) 
      \usepackage{multicol}
 \usepackage{paracol}
 %\footnotelayout{m} %% this allows merged footnote if text is in parallel columns (mostly translations)
